@@ -107,10 +107,7 @@ nav a:hover{
     background:rgba(255,255,255,.40);
     color:white;
 }
-.submenu-toggle:hover{
-    background:rgba(255,255,255,.40);
-    color:white;
-}
+
 nav a.active{
 
     background:var(--white);
@@ -1007,7 +1004,7 @@ header nav li.has-submenu {
 }
 
 .submenu-toggle:hover {
-    background: rgba(255,255,255,.15);
+    background: rgba(255,255,255,.40);
 }
 
 .submenu-toggle .arrow {
