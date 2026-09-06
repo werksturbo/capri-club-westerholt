@@ -104,9 +104,8 @@ nav a{
 }
 
 nav a:hover{
-
-    background:rgba(255,255,255,.15);
-
+    background:rgba(255,255,255,.25);
+    color:white;
 }
 
 nav a.active{
