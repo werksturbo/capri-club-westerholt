@@ -85,22 +85,19 @@ nav ul{
 }
 
 nav a{
-
     color:white;
     text-decoration:none;
+    display:inline-block;
 
     padding:12px 12px;
 
     border-radius:8px;
 
     font-size:16px;
-
     font-weight:600;
 
     transition:.25s;
-
     white-space:nowrap;
-
 }
 
 nav a:hover{
