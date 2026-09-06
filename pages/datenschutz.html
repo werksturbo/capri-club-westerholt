@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Datenschutzerklärung | Werksturbo Register</title>
+
+    <meta name="description"
+          content="Datenschutzerklärung des Ford Capri III Werksturbo Registers">
+
+    <link rel="stylesheet" href="../css/home.css">
+
+    <style>
+        /* =========================================================
+           MOBILE NAVIGATION
+           ========================================================= */
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+
+            header {
+                position: relative !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                min-height: 74px !important;
+                height: auto !important;
+                padding: 8px 14px !important;
+                box-sizing: border-box !important;
+            }
+
+            header .logo {
+                flex: 0 1 auto !important;
+                min-width: 0 !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+
+            header .logo img {
+                display: block !important;
+                width: auto !important;
+                max-width: min(72vw, 300px) !important;
+                max-height: 58px !important;
+                margin: 0 !important;
+            }
+
+            /* =====================================================
+               HAMBURGER
+               ===================================================== */
+
+            .mobile-menu-toggle {
+                position: absolute !important;
+                left: 14px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+
+                width: 48px !important;
+                height: 48px !important;
+
+                margin: 0 !important;
+                padding: 9px 8px !important;
+
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 5px !important;
+
+                border: 1px solid rgba(255,255,255,.35) !important;
+                border-radius: 8px !important;
+
+                background: rgba(255,255,255,.10) !important;
+                color: inherit !important;
+
+                cursor: pointer !important;
+                box-sizing: border-box !important;
+                z-index: 10001 !important;
+            }
+
+            .mobile-menu-toggle span {
+                display: block !important;
+                width: 25px !important;
+                height: 3px !important;
+                border-radius: 3px !important;
+                background: currentColor !important;
+            }
+
+            /* =====================================================
+               MOBILE MENÜ
+               ===================================================== */
+
+            header nav {
+                display: none !important;
+
+                position: absolute !important;
+                z-index: 10000 !important;
+
+                top: calc(100% - 1px) !important;
+                left: 10px !important;
+                right: 10px !important;
+
+                width: auto !important;
+                height: auto !important;
+
+                max-height: calc(100vh - 90px) !important;
+                overflow-y: auto !important;
+
+                margin: 0 !important;
+                padding: 6px 0 !important;
+
+                border-radius: 0 0 10px 10px !important;
+
+                box-sizing: border-box !important;
+
+                background: #0b4f78 !important;
+                box-shadow: 0 8px 20px rgba(0,0,0,.28) !important;
+            }
+
+            header.nav-open nav {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            header nav a {
+                display: block !important;
+                width: 100% !important;
+                min-height: 45px !important;
+
+                padding: 11px 18px !important;
+
+                box-sizing: border-box !important;
+
+                text-align: left !important;
+
+                font-size: 17px !important;
+                line-height: 1.3 !important;
+
+                white-space: normal !important;
+                border-radius: 0 !important;
+            }
+
+            header nav a.active {
+                background: rgba(255,255,255,.16) !important;
+            }
+        }
+
+        /* =========================================================
+           KLEINE SMARTPHONES
+           ========================================================= */
+
+        @media (max-width: 420px) {
+
+            header {
+                min-height: 66px !important;
+                padding: 6px 10px !important;
+            }
+
+            header .logo img {
+                max-width: 68vw !important;
+                max-height: 52px !important;
+            }
+
+            .mobile-menu-toggle {
+                left: 10px !important;
+                width: 44px !important;
+                height: 44px !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../images/logo-werksturbo.png"
+                 alt="Werksturbo Register">
+        </a>
+    </div>
+
+    <!-- Hamburger für Smartphones und Tablets -->
+    <button class="mobile-menu-toggle"
+            id="mobileMenuToggle"
+            type="button"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+            aria-controls="mainNavigation">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <nav id="mainNavigation">
+
+        <a href="../index.html">Startseite</a>
+        <a href="../register.html">Register</a>
+        <a href="pressefotos.html">Pressefotos</a>
+        <a href="dokumente.html">Dokumente</a>
+        <a href="presseberichte.html">Presseberichte</a>
+        <a href="wissensdatenbank.html">Wissensdatenbank</a>
+        <a href="kontakt.html">Kontakt</a>
+
+    </nav>
+
+</header>
+
+
+<!-- ==========================================
+     SEITENKOPF
+=========================================== -->
+
+<section class="page-header">
+
+    <h2>Datenschutzerklärung</h2>
+
+    <p>
+        Der Schutz Deiner persönlichen Daten ist mir wichtig.
+        Nachfolgend informiere ich Dich darüber, welche Daten beim Besuch
+        dieser Website verarbeitet werden und zu welchem Zweck dies geschieht.
+    </p>
+
+</section>
+
+
+<!-- ==========================================
+     VERANTWORTLICHER
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Verantwortlicher</h3>
+
+        <p>
+            Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+        </p>
+
+        <p>
+            Name: Dirk Zentara<br>
+            Straße: Akkoallee 58<br>
+            PLZ / Ort: 45659 Recklinghausen<br>
+            E-Mail: dirk.zentara@freenet.de
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     HOSTING
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Hosting</h3>
+
+        <p>
+            Diese Website wird über <strong>GitHub Pages</strong> bereitgestellt.
+            Beim Aufruf der Website werden technisch notwendige Informationen
+            durch den Hosting-Anbieter verarbeitet, um den sicheren Betrieb
+            der Website zu gewährleisten.
+        </p>
+
+        <p>
+            Weitere Informationen findest Du in den
+            Datenschutzbestimmungen von GitHub.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     SERVER-LOGFILES
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Server-Logfiles</h3>
+
+        <p>
+            Beim Besuch dieser Website werden automatisch Informationen
+            erfasst, die Dein Browser an den Server übermittelt.
+            Hierzu gehören beispielsweise:
+        </p>
+
+        <ul>
+            <li>IP-Adresse</li>
+            <li>Datum und Uhrzeit des Zugriffs</li>
+            <li>Browsertyp und Browserversion</li>
+            <li>verwendetes Betriebssystem</li>
+            <li>besuchte Seiten</li>
+        </ul>
+
+        <p>
+            Diese Daten dienen ausschließlich der technischen Bereitstellung,
+            Stabilität und Sicherheit der Website und werden nicht mit
+            anderen Daten zusammengeführt.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     KONTAKT
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Kontaktaufnahme per E-Mail</h3>
+
+        <p>
+            Wenn Du den auf dieser Website angebotenen E-Mail-Link nutzt,
+            werden die von Dir freiwillig übermittelten Daten ausschließlich
+            zur Bearbeitung Deiner Anfrage verwendet.
+        </p>
+
+        <p>
+            Die Übermittlung erfolgt über Deinen eigenen E-Mail-Anbieter.
+            Eine Weitergabe Deiner Daten an Dritte erfolgt nicht,
+            sofern keine gesetzliche Verpflichtung besteht.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     COOKIES
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Cookies</h3>
+
+        <p>
+            Diese Website verwendet keine Cookies zur Analyse,
+            Werbung oder Nutzerverfolgung.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     EXTERNE DIENSTE
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Externe Inhalte und Dienste</h3>
+
+        <p>
+            Auf dieser Website werden derzeit keine externen Dienste,
+            Analysewerkzeuge oder eingebetteten Inhalte wie YouTube,
+            Google Maps oder vergleichbare Angebote verwendet.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     EXTERNE LINKS
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Links zu anderen Webseiten</h3>
+
+        <p>
+            Diese Website enthält Links zu externen Webseiten Dritter.
+            Für deren Inhalte und Datenschutzbestimmungen sind ausschließlich
+            die jeweiligen Betreiber verantwortlich.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     RECHTE
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Deine Rechte</h3>
+
+        <p>
+            Du hast jederzeit das Recht auf Auskunft über die zu Deiner
+            Person gespeicherten Daten sowie auf Berichtigung, Löschung,
+            Einschränkung der Verarbeitung und – soweit anwendbar –
+            auf Datenübertragbarkeit.
+        </p>
+
+        <p>
+            Sofern eine Datenverarbeitung auf einer Einwilligung beruht,
+            kannst Du diese jederzeit mit Wirkung für die Zukunft widerrufen.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     BESCHWERDERECHT
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Beschwerderecht</h3>
+
+        <p>
+            Du hast das Recht, Dich bei einer zuständigen
+            Datenschutzaufsichtsbehörde über die Verarbeitung Deiner
+            personenbezogenen Daten zu beschweren.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     ÄNDERUNGEN
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Änderungen dieser Datenschutzerklärung</h3>
+
+        <p>
+            Diese Datenschutzerklärung wird bei Bedarf angepasst,
+            damit sie stets den aktuellen rechtlichen Anforderungen
+            sowie den technischen Änderungen dieser Website entspricht.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     STAND
+=========================================== -->
+
+<section class="page-section">
+
+    <div class="card card-wide">
+
+        <h3>Stand dieser Datenschutzerklärung</h3>
+
+        <p>
+            Juli 2026
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     FOOTER
+=========================================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h3>Ford Capri III Werksturbo Register</h3>
+
+        <div class="footer-nav">
+
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2026 Werksturbo Register
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==========================================
+     MOBILE MENU SCRIPT
+=========================================== -->
+
+<script>
+
+(function () {
+
+    const header = document.querySelector("header");
+    const toggle = document.getElementById("mobileMenuToggle");
+    const nav = document.getElementById("mainNavigation");
+
+    if (!header || !toggle || !nav) return;
+
+    function closeMenu() {
+
+        header.classList.remove("nav-open");
+
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+
+    }
+
+    toggle.addEventListener("click", function () {
+
+        const open = header.classList.toggle("nav-open");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            open ? "true" : "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            open ? "Menü schließen" : "Menü öffnen"
+        );
+
+    });
+
+    /* Menü nach Auswahl eines Links schließen */
+
+    nav.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", closeMenu);
+
+    });
+
+    /* Menü schließen, wenn außerhalb geklickt wird */
+
+    document.addEventListener("click", function (event) {
+
+        if (!header.contains(event.target)) {
+
+            closeMenu();
+
+        }
+
+    });
+
+    /* Menü schließen, wenn wieder auf Desktop-Breite gewechselt wird */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 900) {
+
+            closeMenu();
+
+        }
+
+    });
+
+})();
+
+</script>
+
+
+</body>
+</html>
