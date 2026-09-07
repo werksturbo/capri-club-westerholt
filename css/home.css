@@ -1261,3 +1261,20 @@ header nav ul.submenu a:hover {
         font-size:17px;
     }
 }
+
+
+/* ==========================================================
+   BILD DES MONATS – VOLLBREITE
+   Der umgebende .container darf diesen Bereich nicht begrenzen.
+   ========================================================== */
+
+.bild-des-monats{
+    padding:0 0 45px;
+}
+
+.bild-des-monats > .container{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0;
+}
