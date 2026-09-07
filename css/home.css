@@ -1151,10 +1151,10 @@ header nav ul.submenu a:hover {
 
     background:linear-gradient(
         to right,
-        rgba(255,255,255,0),
-        rgba(255,255,255,.48) 18%,
-        rgba(255,255,255,.86) 48%,
-        rgba(255,255,255,.96) 100%
+        rgba(255,255,255,0.15),
+        rgba(255,255,255,.65) 18%,
+        rgba(255,255,255,.93) 48%,
+        rgba(255,255,255,.99) 100%
     );
 
     border-radius:45px 0 0 45px;
