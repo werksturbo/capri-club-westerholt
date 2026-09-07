@@ -1094,7 +1094,6 @@ header nav ul.submenu a:hover {
     }
 }
 
-
 /* ==========================================================
    BILD DES MONATS
    ========================================================== */
@@ -1104,56 +1103,82 @@ header nav ul.submenu a:hover {
     padding:25px 0 45px;
 }
 
-.bild-des-monats h2{
-    text-align:center;
-    color:var(--primary);
-    font-size:42px;
-    margin-bottom:30px;
-}
-
 .bild-des-monats-inhalt{
-    max-width:1400px;
-    margin:0 auto;
-    padding:20px;
-    background:var(--white);
-    border-radius:14px;
-    box-shadow:0 8px 22px rgba(0,0,0,.12);
+    position:relative;
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0;
+    background:none;
+    border-radius:0;
+    box-shadow:none;
 
-    display:grid;
-    grid-template-columns:1.45fr 1fr;
-    gap:35px;
-    align-items:center;
+    display:block;
+    overflow:hidden;
 }
 
 .bild-des-monats-bild{
+    width:100%;
+    height:380px;
     overflow:hidden;
-    border-radius:10px;
+    border-radius:0;
 }
 
 .bild-des-monats-bild img{
     display:block;
     width:100%;
-    height:auto;
-    max-height:430px;
+    height:100%;
+    max-height:none;
     object-fit:cover;
-    border-radius:10px;
+    object-position:center;
+    border-radius:0;
 }
 
 .bild-des-monats-text{
-    padding:10px 5px;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    width:38%;
+    max-width:560px;
+    padding:45px 55px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    background:linear-gradient(
+        to right,
+        rgba(255,255,255,.82),
+        rgba(255,255,255,.96) 18%,
+        rgba(255,255,255,.98)
+    );
+
+    box-sizing:border-box;
+}
+
+.bild-des-monats-text::before{
+    content:"BILD DES MONATS";
+    display:block;
+    margin-bottom:10px;
+
+    color:var(--primary);
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:4px;
 }
 
 .bild-des-monats-text h3{
     color:var(--headline);
-    font-size:30px;
-    line-height:1.25;
+    font-size:36px;
+    line-height:1.15;
     margin-bottom:20px;
 }
 
 .bild-des-monats-text p{
-    color:#555;
+    color:#333;
     font-size:18px;
-    line-height:1.7;
+    line-height:1.6;
     margin-bottom:18px;
 }
 
@@ -1166,34 +1191,23 @@ header nav ul.submenu a:hover {
    BILD DES MONATS – RESPONSIVE
    ========================================================== */
 
-@media (max-width:900px){
+@media (max-width:1000px){
 
     .bild-des-monats{
-        padding:45px 0 50px;
+        padding:20px 0 40px;
     }
 
-    .bild-des-monats h2{
-        font-size:36px;
-        margin-bottom:25px;
-    }
-
-    .bild-des-monats-inhalt{
-        grid-template-columns:1fr;
-        gap:25px;
-        padding:25px;
-    }
-
-    .bild-des-monats-bild img{
-        max-height:none;
+    .bild-des-monats-bild{
+        height:340px;
     }
 
     .bild-des-monats-text{
-        padding:0;
+        width:42%;
+        padding:35px 35px;
     }
 
     .bild-des-monats-text h3{
-        font-size:26px;
-        text-align:center;
+        font-size:30px;
     }
 
     .bild-des-monats-text p{
@@ -1204,21 +1218,46 @@ header nav ul.submenu a:hover {
 @media (max-width:700px){
 
     .bild-des-monats{
-        padding:35px 0 40px;
-    }
-
-    .bild-des-monats h2{
-        font-size:34px;
+        padding:15px 0 35px;
     }
 
     .bild-des-monats-inhalt{
-        max-width:95%;
-        padding:18px;
-        border-radius:12px;
+        overflow:visible;
+    }
+
+    .bild-des-monats-bild{
+        height:auto;
+    }
+
+    .bild-des-monats-bild img{
+        width:100%;
+        height:auto;
+        object-fit:contain;
+    }
+
+    .bild-des-monats-text{
+        position:relative;
+        top:auto;
+        right:auto;
+        bottom:auto;
+        width:100%;
+        max-width:none;
+        padding:25px 20px;
+
+        background:var(--white);
+    }
+
+    .bild-des-monats-text::before{
+        font-size:11px;
+        letter-spacing:3px;
     }
 
     .bild-des-monats-text h3{
-        font-size:24px;
+        font-size:26px;
+        margin-bottom:15px;
     }
 
+    .bild-des-monats-text p{
+        font-size:17px;
+    }
 }
