@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="../css/home.css">
 
     <style>
-        /* =========================================================
-           MOBILE NAVIGATION
-           ========================================================= */
 
         .mobile-menu-toggle {
             display: none;
@@ -50,34 +47,24 @@
                 margin: 0 !important;
             }
 
-            /* =====================================================
-               HAMBURGER
-               ===================================================== */
-
             .mobile-menu-toggle {
                 position: absolute !important;
                 left: 14px !important;
                 top: 50% !important;
                 transform: translateY(-50%) !important;
-
                 width: 48px !important;
                 height: 48px !important;
-
                 margin: 0 !important;
                 padding: 9px 8px !important;
-
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
                 justify-content: center !important;
                 gap: 5px !important;
-
                 border: 1px solid rgba(255,255,255,.35) !important;
                 border-radius: 8px !important;
-
                 background: rgba(255,255,255,.10) !important;
                 color: inherit !important;
-
                 cursor: pointer !important;
                 box-sizing: border-box !important;
                 z-index: 10001 !important;
@@ -91,68 +78,91 @@
                 background: currentColor !important;
             }
 
-            /* =====================================================
-               MOBILE MENÜ
-               ===================================================== */
-
             header nav {
                 display: none !important;
-
                 position: absolute !important;
                 z-index: 10000 !important;
-
                 top: calc(100% - 1px) !important;
                 left: 10px !important;
                 right: 10px !important;
-
                 width: auto !important;
                 height: auto !important;
-
                 max-height: calc(100vh - 90px) !important;
                 overflow-y: auto !important;
-
                 margin: 0 !important;
                 padding: 6px 0 !important;
-
                 border-radius: 0 0 10px 10px !important;
-
                 box-sizing: border-box !important;
-
-                background: #0b4f78 !important;
+                background: #05019B !important;
                 box-shadow: 0 8px 20px rgba(0,0,0,.28) !important;
             }
 
             header.nav-open nav {
-                display: flex !important;
-                flex-direction: column !important;
+                display: block !important;
             }
 
-            header nav a {
+            header nav ul {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                width: 100% !important;
+                height: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                list-style: none !important;
+                gap: 0 !important;
+            }
+
+            header nav li {
+                display: block !important;
+                width: 100% !important;
+                height: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header nav li a {
                 display: block !important;
                 width: 100% !important;
                 min-height: 45px !important;
-
                 padding: 11px 18px !important;
-
                 box-sizing: border-box !important;
-
                 text-align: left !important;
-
                 font-size: 17px !important;
                 line-height: 1.3 !important;
-
                 white-space: normal !important;
                 border-radius: 0 !important;
             }
 
-            header nav a.active {
+            header nav li a.active {
                 background: rgba(255,255,255,.16) !important;
             }
-        }
 
-        /* =========================================================
-           KLEINE SMARTPHONES
-           ========================================================= */
+            .submenu-toggle {
+                display: block !important;
+                width: 100% !important;
+                min-height: 45px !important;
+                padding: 11px 18px !important;
+                box-sizing: border-box !important;
+                text-align: left !important;
+                font-size: 17px !important;
+                line-height: 1.3 !important;
+                white-space: normal !important;
+            }
+
+            header nav ul.submenu {
+                position: static !important;
+                min-width: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                background: rgba(0,0,0,.12) !important;
+            }
+
+            header nav ul.submenu a {
+                padding: 10px 18px 10px 34px !important;
+                font-size: 16px !important;
+            }
+        }
 
         @media (max-width: 420px) {
 
@@ -172,6 +182,84 @@
                 height: 44px !important;
             }
         }
+
+        header nav ul {
+            align-items: center;
+        }
+
+        header nav li {
+            position: relative;
+        }
+
+        header nav li.has-submenu {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .submenu-toggle {
+            appearance: none;
+            border: 0;
+            margin: 0;
+            padding: 12px 14px;
+            background: transparent;
+            color: white;
+            font: inherit;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.2;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .submenu-toggle .arrow {
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 12px;
+            transition: transform .18s ease;
+        }
+
+        .has-submenu.submenu-open .submenu-toggle .arrow {
+            transform: rotate(180deg);
+        }
+
+        header nav ul.submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 10002;
+            min-width: 220px;
+            margin: 0;
+            padding: 6px 0;
+            list-style: none;
+            background: #05019B;
+            box-shadow: 0 8px 20px rgba(0,0,0,.28);
+        }
+
+        .has-submenu.submenu-open > ul.submenu {
+            display: block;
+        }
+
+        header nav ul.submenu li {
+            display: block;
+            width: 100%;
+        }
+
+        header nav ul.submenu a {
+            display: block;
+            width: 100%;
+            min-height: auto;
+            padding: 10px 16px;
+            box-sizing: border-box;
+            text-align: left;
+            white-space: normal;
+            border-radius: 0;
+        }
+
+        header nav ul.submenu:empty {
+            display: none !important;
+        }
+
     </style>
 
 </head>
@@ -182,8 +270,8 @@
 
     <div class="logo">
         <a href="../index.html">
-            <img src="../images/logo-werksturbo.png"
-                 alt="Werksturbo Register">
+            <img src="../images/Logo_CCW.jpg"
+                 alt="Capri Club Westerholt">
         </a>
     </div>
 
@@ -201,16 +289,79 @@
 
     </button>
 
-    <nav id="mainNavigation">
+    <nav id="mainNavigation" aria-label="Hauptnavigation">
+        <ul>
 
-        <a href="../index.html">Startseite</a>
-        <a href="../register.html">Register</a>
-        <a href="pressefotos.html">Pressefotos</a>
-        <a href="dokumente.html">Dokumente</a>
-        <a href="presseberichte.html">Presseberichte</a>
-        <a href="wissensdatenbank.html">Wissensdatenbank</a>
-        <a href="kontakt.html">Kontakt</a>
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
 
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-club">
+                    Der Club <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-club">
+                </ul>
+            </li>
+
+            <li>
+                <a href="club-update.html">Club-Update</a>
+            </li>
+
+            <li>
+                <a href="fahrzeuge.html">Die Fahrzeuge</a>
+            </li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-schrauberbude">
+                    Schrauberbude <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-schrauberbude">
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-jahre">
+                    Jahresrückblicke <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-jahre">
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-fotoalbum">
+                    Fotoalbum <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-fotoalbum">
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-literatur">
+                    Capri Literatur <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-literatur">
+                </ul>
+            </li>
+
+            <li>
+                <a href="links.html">Links</a>
+            </li>
+
+            <li>
+                <a href="members-only.html">Members only</a>
+            </li>
+
+            <li>
+                <a href="kontakt.html">Kontakt</a>
+            </li>
+
+        </ul>
     </nav>
 
 </header>
@@ -506,7 +657,7 @@
 
     <div class="footer-content">
 
-        <h3>Ford Capri III Werksturbo Register</h3>
+        <h3>Capri Club Westerholt e.V.</h3>
 
         <div class="footer-nav">
 
@@ -518,7 +669,7 @@
 
         <div class="footer-bottom">
 
-            © 2026 Werksturbo Register
+            © 2026 Capri Club Westerholt e.V.
 
         </div>
 
@@ -531,8 +682,11 @@
      MOBILE MENU SCRIPT
 =========================================== -->
 
-<script>
+<!-- ==========================================
+     MOBILE MENU SCRIPT
+========================================== -->
 
+<script>
 (function () {
 
     const header = document.querySelector("header");
@@ -542,15 +696,13 @@
     if (!header || !toggle || !nav) return;
 
     function closeMenu() {
-
         header.classList.remove("nav-open");
-
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Menü öffnen");
-
     }
 
-    toggle.addEventListener("click", function () {
+    toggle.addEventListener("click", function (event) {
+        event.stopPropagation();
 
         const open = header.classList.toggle("nav-open");
 
@@ -563,43 +715,43 @@
             "aria-label",
             open ? "Menü schließen" : "Menü öffnen"
         );
-
     });
-
-    /* Menü nach Auswahl eines Links schließen */
 
     nav.querySelectorAll("a").forEach(function (link) {
-
         link.addEventListener("click", closeMenu);
-
     });
 
-    /* Menü schließen, wenn außerhalb geklickt wird */
+    nav.querySelectorAll(".submenu-toggle").forEach(function (button) {
+        button.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const parent = button.closest(".has-submenu");
+            const isOpen = parent.classList.toggle("submenu-open");
+
+            button.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+        });
+    });
 
     document.addEventListener("click", function (event) {
-
         if (!header.contains(event.target)) {
-
             closeMenu();
 
+            nav.querySelectorAll(".submenu-open").forEach(function (item) {
+                item.classList.remove("submenu-open");
+            });
         }
-
     });
 
-    /* Menü schließen, wenn wieder auf Desktop-Breite gewechselt wird */
-
     window.addEventListener("resize", function () {
-
         if (window.innerWidth > 900) {
-
             closeMenu();
-
         }
-
     });
 
 })();
-
 </script>
 
 
