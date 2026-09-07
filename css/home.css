@@ -125,7 +125,7 @@ nav a.active{
 ========================== */
 
 .hero{
-    height:200px;
+    height:220px;
 
     background-image:
         linear-gradient(rgba(8,46,73,.55),
@@ -150,15 +150,15 @@ nav a.active{
 
     max-width:900px;
 
-    padding:30px;
+    padding:20px;
 
 }
 
 .hero h1{
 
-    font-size:66px;
+    font-size:46px;
 
-    margin-bottom:15px;
+    margin-bottom:8px;
 
     text-shadow:2px 2px 8px black;
 
@@ -166,11 +166,11 @@ nav a.active{
 
 .hero h2{
 
-    font-size:34px;
+    font-size:26px;
 
     font-weight:300;
 
-    margin-bottom:40px;
+    margin-bottom:0;
 
     text-shadow:2px 2px 8px black;
 
@@ -727,13 +727,13 @@ nav ul{
 
 .hero{
 
-    height:300px;
+    height:220px;
 
 }
 
 .hero h1{
 
-    font-size:42px;
+    font-size:40px;
 
 }
 
@@ -767,7 +767,7 @@ nav a{
 
 .hero{
 
-    height:280px;
+    height:200px;
 
 }
 
