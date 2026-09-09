@@ -419,6 +419,15 @@
             box-shadow: 0 0 0 3px rgba(5,1,155,.12);
         }
 
+        /* Formspree AJAX – Statusmeldungen */
+        .kontakt-formular .form-status { margin: 0 0 18px; padding: 14px 16px; border-radius: 8px; font-size: 15px; line-height: 1.45; }
+        .kontakt-formular .form-success { background: #f1f6fb; border-left: 4px solid #05019B; color: #243746; }
+        .kontakt-formular .form-success h4 { margin: 0 0 8px; color: #05019B; font-size: 22px; }
+        .kontakt-formular .form-success p { margin: 0 0 8px; color: #243746; }
+        .kontakt-formular .form-success p:last-child { margin-bottom: 0; }
+        .kontakt-formular .form-error { margin: 0 0 14px; padding: 10px 12px; border-radius: 6px; background: #fff2f2; color: #a00000; font-size: 14px; }
+        .kontakt-formular [data-fs-error] { display: block; margin: -10px 0 12px; color: #a00000; font-size: 13px; }
+
         .kontakt-formular button {
             display: inline-block;
             width: auto;
@@ -633,7 +642,10 @@
 
                     <h3>Ihre Nachricht an uns</h3>
 
-                    <form action="https://formspree.io/f/mkjnkbwz" method="post">
+                    <div data-fs-success></div>
+                    <div data-fs-error class="form-status form-error" hidden></div>
+
+                    <form id="contact-form" action="https://formspree.io/f/mkjnkbwz" method="post">
 
                         <label for="name">Name:</label>
                         <input
@@ -641,8 +653,10 @@
                             id="name"
                             name="name"
                             autocomplete="name"
+                            data-fs-field
                             required
                         >
+                        <span data-fs-error="name"></span>
 
                         <label for="email">E-Mail-Adresse:</label>
                         <input
@@ -650,8 +664,10 @@
                             id="email"
                             name="email"
                             autocomplete="email"
+                            data-fs-field
                             required
                         >
+                        <span data-fs-error="email"></span>
 
                         <label for="telefon">
                             Telefonnummer (nur für WhatsApp):
@@ -661,16 +677,20 @@
                             id="telefon"
                             name="phone"
                             autocomplete="tel"
+                            data-fs-field
                         >
+                        <span data-fs-error="phone"></span>
 
                         <label for="nachricht">Ihre Nachricht:</label>
                         <textarea
                             id="nachricht"
                             name="message"
+                            data-fs-field
                             required
                         ></textarea>
+                        <span data-fs-error="message"></span>
 
-                        <button type="submit">Senden</button>
+                        <button type="submit" data-fs-submit-btn>Senden</button>
 
                     </form>
 
@@ -723,6 +743,27 @@
         </div>
 
     </footer>
+
+<script>
+        window.formspree = window.formspree || function () {
+            (formspree.q = formspree.q || []).push(arguments);
+        };
+
+        formspree('initForm', {
+            formElement: '#contact-form',
+            formId: 'mkjnkbwz',
+            renderSuccess: ({ form }) => {
+                form.innerHTML = `
+                    <div class="form-status form-success">
+                        <h4>Vielen Dank!</h4>
+                        <p>Deine Nachricht wurde erfolgreich an den Capri Club Westerholt übermittelt.</p>
+                        <p>Wir freuen uns über Deine Nachricht und melden uns so bald wie möglich.</p>
+                    </div>
+                `;
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 <script>
 
@@ -843,4 +884,3 @@
 
 </body>
 </html>
-
