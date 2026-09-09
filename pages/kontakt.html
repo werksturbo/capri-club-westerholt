@@ -343,221 +343,54 @@
 
     <style>
         /* =========================================================
-           KONTAKTSEITE – CCW LOOK & FEEL
-           ========================================================= */
-
-        .kontakt-hero {
-            background: #05019B;
-            padding: 42px 20px 38px;
-            text-align: left;
-        }
-
-        .kontakt-hero .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .kontakt-hero h1 {
-            margin: 0;
-            color: white;
-            font-size: clamp(30px, 4vw, 46px);
-            line-height: 1.1;
-            font-weight: 700;
-        }
-
-        .kontakt-seite {
-            background: #05019B;
-            padding: 35px 20px 65px;
-        }
-
-        .kontakt-grid {
-            display: grid;
-            grid-template-columns: minmax(280px, 0.9fr) minmax(360px, 1.1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: start;
-        }
-
-        .kontakt-box,
-        .kontakt-formular {
-            background: #4169e1;
-            color: white;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .kontakt-box {
-            padding: 26px 28px 28px;
-            font-size: 18px;
-            line-height: 1.55;
-        }
-
-        .kontakt-box h2,
-        .kontakt-formular h2 {
-            margin: 0 0 18px;
-            color: white;
-            font-size: 28px;
-            line-height: 1.2;
-        }
-
-        .kontakt-box p {
-            margin: 0 0 18px;
-        }
-
-        .kontakt-adresse {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,.35);
-        }
-
-        .kontakt-adresse strong {
-            font-size: 20px;
-        }
-
-        .kontakt-formular {
-            overflow: hidden;
-        }
-
-        .kontakt-formular-kopf {
-            background: #3657cf;
-            padding: 13px 18px;
-        }
-
-        .kontakt-formular-kopf h2 {
-            margin: 0;
-        }
-
-        .kontakt-formular-inhalt {
-            padding: 24px 28px 28px;
-        }
-
-        .kontakt-formular label {
-            display: block;
-            margin: 0 0 7px;
-            color: white;
-            font-size: 18px;
-            line-height: 1.3;
-        }
-
-        .kontakt-formular input,
-        .kontakt-formular textarea {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            border: 0;
-            border-radius: 0;
-            background: white;
-            color: #222;
-            padding: 12px 14px;
-            margin: 0 0 20px;
-            font: inherit;
-            outline: none;
-        }
-
-        .kontakt-formular input {
-            min-height: 48px;
-        }
-
-        .kontakt-formular textarea {
-            min-height: 125px;
-            resize: vertical;
-        }
-
-        .kontakt-formular input:focus,
-        .kontakt-formular textarea:focus {
-            box-shadow: 0 0 0 3px rgba(255,255,255,.35);
-        }
-
-        .kontakt-senden {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 4px;
-            padding: 10px 16px;
-            border: 3px solid white;
-            border-radius: 18px;
-            background: transparent;
-            color: white;
-            font-size: 18px;
-            font-weight: 700;
-            text-align: left;
-            cursor: pointer;
-            transition: background .18s ease, transform .18s ease;
-        }
-
-        .kontakt-senden:hover {
-            background: rgba(255,255,255,.12);
-        }
-
-        .kontakt-senden:active {
-            transform: translateY(1px);
-        }
-
-        .kontakt-hinweis {
-            margin: 16px 0 0;
-            font-size: 14px;
-            line-height: 1.45;
-            opacity: .9;
-        }
-
-        @media (max-width: 800px) {
-            .kontakt-hero {
-                padding: 30px 15px 28px;
-            }
-
-            .kontakt-seite {
-                padding: 25px 15px 45px;
-            }
-
-            .kontakt-grid {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
-
-            .kontakt-box,
-            .kontakt-formular-inhalt {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .kontakt-box h2,
-            .kontakt-formular h2 {
-                font-size: 25px;
-            }
-        }
-    </style>
-
-
-    <style>
-        /* =========================================================
-           KONTAKT – Ergänzungen zum bestehenden CCW-Kachel-Design
+           KONTAKTSEITE – EINHEITLICHES CCW-KACHELDESIGN
            ========================================================= */
 
         .kontakt-kacheln {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
             gap: 30px;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
+            align-items: stretch;
         }
 
         .kontakt-kacheln .card {
             box-sizing: border-box;
+            background: #ffffff;
+            color: #243746;
+            border-radius: 12px;
+            border-top: 5px solid #05019B;
+            box-shadow: 0 8px 20px rgba(0,0,0,.10);
+            padding: 26px 28px 28px;
+        }
+
+        .kontakt-kacheln .card h3 {
+            margin: 0 0 20px;
+            color: #243746;
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: 700;
         }
 
         .kontakt-kacheln .card p {
+            margin: 0 0 18px;
+            color: #243746;
+            font-size: 16px;
             line-height: 1.55;
         }
 
-        .kontakt-formular form {
-            margin-top: 8px;
-        }
+        .kontakt-kacheln .card p:last-child { margin-bottom: 0; }
+
+        .kontakt-formular form { margin: 0; }
 
         .kontakt-formular label {
             display: block;
             margin: 0 0 6px;
-            font-weight: 600;
+            color: #243746;
+            font-size: 15px;
+            line-height: 1.3;
+            font-weight: 700;
         }
 
         .kontakt-formular input,
@@ -565,52 +398,59 @@
             display: block;
             width: 100%;
             box-sizing: border-box;
-            margin: 0 0 18px;
+            margin: 0 0 16px;
             padding: 11px 12px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            background: #fff;
-            color: #222;
+            border: 1px solid #d0d5da;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #243746;
             font: inherit;
+            font-size: 16px;
+            outline: none;
+            transition: border-color .18s ease, box-shadow .18s ease;
         }
 
-        .kontakt-formular input {
-            min-height: 44px;
-        }
-
-        .kontakt-formular textarea {
-            min-height: 125px;
-            resize: vertical;
-        }
+        .kontakt-formular input { min-height: 44px; }
+        .kontakt-formular textarea { min-height: 120px; resize: vertical; }
 
         .kontakt-formular input:focus,
         .kontakt-formular textarea:focus {
-            outline: 2px solid rgba(5,1,155,.25);
             border-color: #05019B;
+            box-shadow: 0 0 0 3px rgba(5,1,155,.12);
         }
 
         .kontakt-formular button {
-            display: block;
-            width: 100%;
-            padding: 11px 16px;
+            display: inline-block;
+            width: auto;
+            min-width: 150px;
+            padding: 11px 24px;
             border: 0;
-            border-radius: 4px;
+            border-radius: 7px;
             background: #05019B;
-            color: #fff;
+            color: #ffffff;
             font: inherit;
+            font-size: 16px;
             font-weight: 700;
             cursor: pointer;
+            transition: background .18s ease, transform .18s ease;
         }
 
         .kontakt-formular button:hover {
-            opacity: .9;
+            background: #1d7fc3;
+            transform: translateY(-2px);
         }
+
+        .kontakt-formular button:active { transform: translateY(0); }
+        .kontakt-kacheln .card strong { color: #243746; }
 
         @media (max-width: 800px) {
             .kontakt-kacheln {
                 grid-template-columns: 1fr;
                 gap: 20px;
+                max-width: 100%;
             }
+            .kontakt-kacheln .card { padding: 22px 20px 24px; }
+            .kontakt-kacheln .card h3 { font-size: 23px; }
         }
     </style>
 
