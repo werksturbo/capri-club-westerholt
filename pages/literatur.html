@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capri Literatur | Capri Club Westerholt e.V.</title>
+<link rel="stylesheet" href="../css/home.css">
+<style>
+.literatur-bereich{max-width:1200px;margin:0 auto}
+.literatur-rahmen{background:#fff;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.10);overflow:hidden}
+.literatur-iframe{display:block;width:100%;height:1800px;border:0;background:#fff}
+.literatur-fallback{padding:20px;text-align:center;background:#f4f6f8;color:#243746}
+.literatur-fallback a{color:#05019B;font-weight:700}
+@media(max-width:800px){.literatur-iframe{height:2200px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo"><a href="../index.html"><img src="../images/Logo_CCW.jpg" alt="Capri Club Westerholt"></a></div>
+<button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNavigation"><span></span><span></span><span></span></button>
+<nav id="mainNavigation" aria-label="Hauptnavigation">
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li class="has-submenu"><button class="submenu-toggle" type="button" aria-expanded="false">Der Club <span class="arrow">▾</span></button><ul class="submenu"></ul></li>
+<li><a href="../pages/club-update.html">Club-Update</a></li>
+<li><a href="../pages/fahrzeuge.html">Die Fahrzeuge</a></li>
+<li class="has-submenu"><button class="submenu-toggle" type="button" aria-expanded="false">Schrauberbude <span class="arrow">▾</span></button><ul class="submenu"></ul></li>
+<li class="has-submenu"><button class="submenu-toggle" type="button" aria-expanded="false">Jahresrückblicke <span class="arrow">▾</span></button><ul class="submenu"></ul></li>
+<li class="has-submenu"><button class="submenu-toggle" type="button" aria-expanded="false">Fotoalbum <span class="arrow">▾</span></button><ul class="submenu"></ul></li>
+<li class="has-submenu submenu-open"><button class="submenu-toggle" type="button" aria-expanded="true">Capri Literatur <span class="arrow">▾</span></button><ul class="submenu"><li><a href="../pages/literatur.html">Capri Literatur</a></li></ul></li>
+<li><a href="../pages/links.html">Links</a></li>
+<li><a href="../pages/members-only.html">Members only</a></li>
+<li><a href="../pages/kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="page-header"><h2>Capri Literatur</h2></section>
+<section class="page-section">
+<div class="literatur-bereich">
+<div class="literatur-rahmen">
+<iframe class="literatur-iframe" src="https://www.capri-club-westerholt.de/literatur" title="Bisherige Capri-Literatur-Seite"></iframe>
+<div class="literatur-fallback">Falls die bisherige Seite hier nicht angezeigt werden kann, kannst Du sie <a href="https://www.capri-club-westerholt.de/literatur" target="_blank" rel="noopener noreferrer">direkt öffnen</a>.</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-content">
+<h3>Capri Club Westerholt</h3>
+<div class="footer-nav"><a href="../pages/impressum.html">Impressum</a><a href="../pages/datenschutz.html">Datenschutz</a><a href="../pages/kontakt.html">Kontakt</a></div>
+<div class="footer-bottom">© 2026 Capri Club Westerholt</div>
+</div>
+</footer>
+
+<script>
+(function(){
+const header=document.querySelector("header"),toggle=document.getElementById("mobileMenuToggle"),nav=document.getElementById("mainNavigation");
+if(!header||!toggle||!nav)return;
+function closeMenu(){header.classList.remove("nav-open");toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","Menü öffnen")}
+toggle.addEventListener("click",function(){const open=header.classList.toggle("nav-open");toggle.setAttribute("aria-expanded",open?"true":"false");toggle.setAttribute("aria-label",open?"Menü schließen":"Menü öffnen")});
+nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",closeMenu)});
+document.addEventListener("click",function(e){if(!header.contains(e.target))closeMenu()});
+window.addEventListener("resize",function(){if(window.innerWidth>900)closeMenu()});
+nav.querySelectorAll(".submenu-toggle").forEach(function(b){b.addEventListener("click",function(){const item=b.closest(".has-submenu"),open=item.classList.toggle("submenu-open");b.setAttribute("aria-expanded",open?"true":"false")})});
+})();
+</script>
+</body>
+</html>
