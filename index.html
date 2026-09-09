@@ -6,6 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNGK21YQH9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PNGK21YQH9');
+</script>
 
     <title>Capri Club Westerholt | Wir leben die Legende</title>
 
@@ -165,7 +174,7 @@
 
                 box-sizing: border-box !important;
 
-                background: #05019B !important;
+                background: #0b4f78 !important;
 
                 box-shadow: 0 8px 20px rgba(0,0,0,.28) !important;
             }
@@ -287,9 +296,8 @@
             margin: 0;
             padding: 12px 14px;
             background: transparent;
-            color: white;
+            color: inherit;
             font: inherit;
-            font-weight: 600;
             font-size: 16px;
             line-height: 1.2;
             cursor: pointer;
@@ -317,7 +325,7 @@
             margin: 0;
             padding: 6px 0;
             list-style: none;
-            background: #05019B;
+            background: #0b4f78;
             box-shadow: 0 8px 20px rgba(0,0,0,.28);
         }
 
@@ -401,7 +409,7 @@
 
             <a href="index.html">
 
-                <img src="images/Logo_CCW.jpg"
+                <img src="images/logo-ccw.png"
                      alt="Capri Club Westerholt">
 
             </a>
@@ -427,10 +435,10 @@
 
         </button>
 
-            <!-- ============================================================================================================= -->
-            <!-- HAUPTNAVIGATION                    MENUE     MENUE                                                            -->
-            <!-- ============================================================================================================= -->
-  
+
+        <!-- =========================
+             HAUPTNAVIGATION
+             ========================= -->
 
         <nav id="mainNavigation" aria-label="Hauptnavigation">
     <ul>
@@ -493,7 +501,7 @@
                 Capri Literatur <span class="arrow">▾</span>
             </button>
             <ul class="submenu" id="submenu-literatur">
-                <!-- Literatur-Unterseiten werden im nächsten Schritt ergänzt -->
+                <li><a href="pages/literatur.html">Capri Literatur</a></li>
             </ul>
         </li>
 
@@ -515,91 +523,30 @@
     </header>
 
 
-    <!-- ============================================================================================================= -->
-    <!-- CCW STARTSEITE – GRUNDGERÜST -->
-    <!-- ============================================================================================================= -->
+    <!-- ========================= -->
+<!-- CCW STARTSEITE – GRUNDGERÜST -->
+<!-- ========================= -->
 
 <main>
 
-
-    <!-- ============================================================================================================= -->
-    <!-- Bild des Monats                                                                                               -->
-    <!-- ============================================================================================================= -->
-
-    
-<section class="bild-des-monats">
-
-    <div class="container">
-
-        <div class="bild-des-monats-inhalt">
-
-            <div class="bild-des-monats-bild">
-                <img src="bild_des_monats/bild_des_monats.jpg"
-                     alt="Bild des Monats">
-            </div>
-
-            <div class="bild-des-monats-text">
-
-                <h3>Erneut mit Pokal nach Hause</h3>
-
-                <p>
-                    Der weiße Capri von Janina war zum zweiten Mal bei einem
-                    Ford Capri Treffen dabei – und auch diesmal kam er nicht
-                    ohne Pokal nach Hause.
-                </p>
-
-                <p>
-                    Eine schöne Auszeichnung und ein schönes Beispiel dafür, 
-                    dass unsere Leidenschaft Generationen verbindet.
-                </p>
-
-                <p>
-                    <b>
-                        <i>
-                    Capri mehr als ein Auto
-                        </i>
-                    </b>    
-                </p>
-
-            </div>
-
+    <section class="hero ccw-hero">
+        <div class="hero-overlay">
+            <h1>Capri Club Westerholt</h1>
+            <h2>Wir leben die Legende</h2>
         </div>
+    </section>
 
-    </div>
+    <section class="welcome">
+        <div class="container">
+            <h2>Willkommen beim Capri Club Westerholt</h2>
+            <p>
+                Dies ist das neue Grundgerüst der CCW-Homepage.
+                Die bisherigen Inhalte werden Schritt für Schritt übernommen
+                und in das neue Kachellayout übertragen.
+            </p>
+        </div>
+    </section>
 
-</section>
-
-
-    <!-- ============================================================================================================= -->
-    <!-- Willkommen                                                                                                    -->
-    <!-- ============================================================================================================= -->
-
-
-    
-<section class="welcome">
-    <div class="container">
-
-        <h2>Willkommen beim Capri Club Westerholt</h2>
-
-        <p>
-                <B>
-                    Schön, dass Du hier bist! 
-                </B>  
-            
-                Der Capri Club Westerholt ist eine Gemeinschaft von Enthusiasten, 
-                die die Faszination für den Ford Capri verbindet und die Begeisterung für dieses besondere 
-                Fahrzeug gemeinsam lebt.
-        </p>
-
-    </div>
-</section>
-
-
-    <!-- ============================================================================================================= -->
-    <!-- Karten                                                                                                        -->
-    <!-- ============================================================================================================= -->
-
-    
     <section class="cards ccw-cards">
 
         <a class="card-link" href="pages/club-update.html">
@@ -675,123 +622,7 @@
          MOBILE MENU JAVASCRIPT
          ========================================================= -->
 
-    <script>
-
-        (function () {
-
-            const header =
-                document.querySelector("header");
-
-            const toggle =
-                document.getElementById("mobileMenuToggle");
-
-            const nav =
-                document.getElementById("mainNavigation");
-
-
-            if (!header || !toggle || !nav) {
-                return;
-            }
-
-
-            /* Menü schließen */
-
-            function closeMenu() {
-
-                header.classList.remove("nav-open");
-
-                toggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                toggle.setAttribute(
-                    "aria-label",
-                    "Menü öffnen"
-                );
-
-            }
-
-
-            /* Hamburger anklicken */
-
-            toggle.addEventListener(
-                "click",
-                function () {
-
-                    const open =
-                        header.classList.toggle("nav-open");
-
-
-                    toggle.setAttribute(
-                        "aria-expanded",
-                        open ? "true" : "false"
-                    );
-
-
-                    toggle.setAttribute(
-                        "aria-label",
-                        open
-                            ? "Menü schließen"
-                            : "Menü öffnen"
-                    );
-
-                }
-            );
-
-
-            /* Menü schließen,
-               wenn ein Link angeklickt wird */
-
-            nav.querySelectorAll("a").forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        closeMenu
-                    );
-
-                }
-            );
-
-
-            /* Menü schließen,
-               wenn außerhalb geklickt wird */
-
-            document.addEventListener(
-                "click",
-                function (event) {
-
-                    if (!header.contains(event.target)) {
-
-                        closeMenu();
-
-                    }
-
-                }
-            );
-
-
-            /* Bei Wechsel auf Desktop
-               Menü automatisch schließen */
-
-            window.addEventListener(
-                "resize",
-                function () {
-
-                    if (window.innerWidth > 900) {
-
-                        closeMenu();
-
-                    }
-
-                }
-            );
-
-        })();
-
-    </script>
-
+    <script src="js/menu.js"></script>
 
 </body>
 
