@@ -500,7 +500,7 @@
     <ul>
 
         <li>
-            <a class="active" href="../index.html">Home</a>
+            <a href="../index.html">Home</a>
         </li>
 
         <li class="has-submenu">
@@ -570,7 +570,7 @@
         </li>
 
         <li>
-            <a href="../pages/kontakt.html">Kontakt</a>
+            <a class="active" href="../pages/kontakt.html">Kontakt</a>
         </li>
 
     </ul>
@@ -633,7 +633,7 @@
 
                     <h3>Ihre Nachricht an uns</h3>
 
-                    <form action="#" method="post">
+                    <form action="https://formspree.io/f/mkjnkbwz" method="post">
 
                         <label for="name">Name:</label>
                         <input
@@ -641,6 +641,7 @@
                             id="name"
                             name="name"
                             autocomplete="name"
+                            required
                         >
 
                         <label for="email">E-Mail-Adresse:</label>
@@ -649,6 +650,7 @@
                             id="email"
                             name="email"
                             autocomplete="email"
+                            required
                         >
 
                         <label for="telefon">
@@ -657,14 +659,15 @@
                         <input
                             type="tel"
                             id="telefon"
-                            name="telefon"
+                            name="phone"
                             autocomplete="tel"
                         >
 
                         <label for="nachricht">Ihre Nachricht:</label>
                         <textarea
                             id="nachricht"
-                            name="nachricht"
+                            name="message"
+                            required
                         ></textarea>
 
                         <button type="submit">Senden</button>
