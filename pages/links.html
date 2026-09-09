@@ -1,1 +1,455 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | Capri Club Westerholt e.V.</title>
+    <meta name="description" content="Interessante Links zu Capri Clubs, Partnern und Firmen des Capri Club Westerholt e.V.">
+    <link rel="stylesheet" href="../css/home.css">
+
+    <style>
+        /* =========================================================
+           CCW LINKS – zwei parallele Kacheln
+           Die Inhalte werden aus zwei CSV-Dateien geladen.
+           ========================================================= */
+
+        .links-kacheln {
+            display:grid;
+            grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+            gap:30px;
+            max-width:1100px;
+            margin:0 auto;
+            align-items:stretch;
+        }
+
+        .links-kachel {
+            box-sizing:border-box;
+            background:#fff;
+            color:#243746;
+            border-radius:12px;
+            border-top:5px solid #05019B;
+            box-shadow:0 8px 20px rgba(0,0,0,.10);
+            padding:26px 28px 30px;
+        }
+
+        .links-kachel h3 {
+            margin:0 0 8px;
+            color:#243746;
+            font-size:25px;
+            line-height:1.2;
+        }
+
+        .links-kachel > p {
+            margin:0 0 22px;
+            color:#243746;
+            font-size:15px;
+            line-height:1.5;
+        }
+
+        .links-liste {
+            display:flex;
+            flex-direction:column;
+            gap:14px;
+        }
+
+        .link-eintrag {
+            display:grid;
+            grid-template-columns:78px minmax(0,1fr);
+            gap:16px;
+            align-items:center;
+            padding:13px;
+            border:1px solid #e1e5e9;
+            border-radius:9px;
+            background:#fff;
+            text-decoration:none;
+            color:inherit;
+            transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+        }
+
+        .link-eintrag:hover {
+            transform:translateY(-2px);
+            border-color:rgba(5,1,155,.35);
+            box-shadow:0 5px 14px rgba(0,0,0,.10);
+        }
+
+        .link-logo {
+            width:78px;
+            height:64px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            overflow:hidden;
+            border-radius:7px;
+            background:#f4f6f8;
+        }
+
+        .link-logo img {
+            display:block;
+            max-width:100%;
+            max-height:100%;
+            width:auto;
+            height:auto;
+            object-fit:contain;
+        }
+
+        .link-ohne-logo {
+            width:78px;
+            height:64px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:7px;
+            background:#f4f6f8;
+            color:#05019B;
+            font-size:12px;
+            font-weight:700;
+            text-align:center;
+        }
+
+        .link-text h4 {
+            margin:0 0 5px;
+            color:#05019B;
+            font-size:18px;
+            line-height:1.25;
+        }
+
+        .link-text p {
+            margin:0;
+            color:#243746;
+            font-size:14px;
+            line-height:1.4;
+        }
+
+        .links-leer,
+        .links-fehler {
+            margin:0;
+            padding:16px;
+            border-radius:8px;
+            font-size:14px;
+            line-height:1.4;
+        }
+
+        .links-leer {
+            background:#f4f6f8;
+            color:#66727d;
+            text-align:center;
+        }
+
+        .links-fehler {
+            background:#fff0f0;
+            color:#9b1c1c;
+        }
+
+        @media (max-width:800px) {
+            .links-kacheln {
+                grid-template-columns:1fr;
+                gap:20px;
+                max-width:100%;
+            }
+
+            .links-kachel {
+                padding:22px 20px 24px;
+            }
+        }
+
+        @media (max-width:460px) {
+            .link-eintrag {
+                grid-template-columns:62px minmax(0,1fr);
+                gap:12px;
+                padding:10px;
+            }
+
+            .link-logo,
+            .link-ohne-logo {
+                width:62px;
+                height:56px;
+            }
+
+            .link-text h4 {
+                font-size:17px;
+            }
+
+            .link-text p {
+                font-size:13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../images/Logo_CCW.jpg" alt="Capri Club Westerholt">
+        </a>
+    </div>
+
+    <button class="mobile-menu-toggle" id="mobileMenuToggle"
+            type="button" aria-label="Menü öffnen"
+            aria-expanded="false" aria-controls="mainNavigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav id="mainNavigation" aria-label="Hauptnavigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-club">
+                    Der Club <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-club"></ul>
+            </li>
+
+            <li><a href="../pages/club-update.html">Club-Update</a></li>
+            <li><a href="../pages/fahrzeuge.html">Die Fahrzeuge</a></li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-schrauberbude">
+                    Schrauberbude <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-schrauberbude"></ul>
+            </li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-jahre">
+                    Jahresrückblicke <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-jahre"></ul>
+            </li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-fotoalbum">
+                    Fotoalbum <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-fotoalbum"></ul>
+            </li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-literatur">
+                    Capri Literatur <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-literatur"></ul>
+            </li>
+
+            <li><a class="active" href="../pages/links.html">Links</a></li>
+            <li><a href="../pages/members-only.html">Members only</a></li>
+            <li><a href="../pages/kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <h2>Interessante Links</h2>
+    </section>
+
+    <section class="page-section">
+        <div class="links-kacheln">
+
+            <div class="links-kachel">
+                <h3>Capri Clubs</h3>
+                <p>Interessante Capri Clubs und befreundete Clubs aus der Capri-Szene.</p>
+                <div class="links-liste" id="clubs-liste">
+                    <p class="links-leer">Links werden geladen …</p>
+                </div>
+            </div>
+
+            <div class="links-kachel">
+                <h3>Unsere Partner</h3>
+                <p>Firmen und Partner, mit denen wir rund um den Capri zusammenarbeiten.</p>
+                <div class="links-liste" id="firmen-liste">
+                    <p class="links-leer">Links werden geladen …</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <h3>Capri Club Westerholt</h3>
+
+        <div class="footer-nav">
+            <a href="../pages/impressum.html">Impressum</a>
+            <a href="../pages/datenschutz.html">Datenschutz</a>
+            <a href="../pages/kontakt.html">Kontakt</a>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Capri Club Westerholt
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    const header = document.querySelector("header");
+    const toggle = document.getElementById("mobileMenuToggle");
+    const nav = document.getElementById("mainNavigation");
+
+    if (!header || !toggle || !nav) return;
+
+    function closeMenu() {
+        header.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+    }
+
+    toggle.addEventListener("click", function () {
+        const open = header.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!header.contains(event.target)) closeMenu();
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 900) closeMenu();
+    });
+
+    nav.querySelectorAll(".submenu-toggle").forEach(function (button) {
+        button.addEventListener("click", function () {
+            const item = button.closest(".has-submenu");
+            const isOpen = item.classList.toggle("submenu-open");
+            button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+    });
+})();
+
+function csvZeilen(text) {
+    return text.trim().split(/\r?\n/).filter(Boolean).map(function (zeile) {
+        const teile = [];
+        let feld = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < zeile.length; i++) {
+            const c = zeile[i];
+
+            if (c === '"') {
+                if (inQuotes && zeile[i + 1] === '"') {
+                    feld += '"';
+                    i++;
+                } else {
+                    inQuotes = !inQuotes;
+                }
+            } else if (c === ';' && !inQuotes) {
+                teile.push(feld.trim());
+                feld = "";
+            } else {
+                feld += c;
+            }
+        }
+
+        teile.push(feld.trim());
+        return teile;
+    });
+}
+
+function zeigeLinks(csvText, containerId) {
+    const container = document.getElementById(containerId);
+    const zeilen = csvZeilen(csvText);
+
+    if (zeilen.length <= 1) {
+        container.innerHTML = '<p class="links-leer">Noch keine Links eingetragen.</p>';
+        return;
+    }
+
+    const eintraege = zeilen.slice(1);
+
+    container.innerHTML = "";
+
+    eintraege.forEach(function (daten) {
+        const name = daten[0] || "";
+        const url = daten[1] || "#";
+        const logo = daten[2] || "";
+        const beschreibung = daten[3] || "";
+
+        if (!name) return;
+
+        const a = document.createElement("a");
+        a.className = "link-eintrag";
+        a.href = url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+
+        const logoBox = document.createElement("div");
+        logoBox.className = logo ? "link-logo" : "link-ohne-logo";
+
+        if (logo) {
+            const img = document.createElement("img");
+            img.src = "../" + logo;
+            img.alt = "Logo " + name;
+            img.loading = "lazy";
+            logoBox.appendChild(img);
+        } else {
+            logoBox.textContent = "LOGO";
+        }
+
+        const textBox = document.createElement("div");
+        textBox.className = "link-text";
+
+        const h4 = document.createElement("h4");
+        h4.textContent = name;
+
+        const p = document.createElement("p");
+        p.textContent = beschreibung;
+
+        textBox.appendChild(h4);
+        textBox.appendChild(p);
+
+        a.appendChild(logoBox);
+        a.appendChild(textBox);
+        container.appendChild(a);
+    });
+}
+
+async function ladeLinks() {
+    try {
+        const [clubsAntwort, firmenAntwort] = await Promise.all([
+            fetch("../data/clubs.csv"),
+            fetch("../data/firmen.csv")
+        ]);
+
+        if (!clubsAntwort.ok || !firmenAntwort.ok) {
+            throw new Error("CSV-Dateien konnten nicht geladen werden.");
+        }
+
+        const clubsText = await clubsAntwort.text();
+        const firmenText = await firmenAntwort.text();
+
+        zeigeLinks(clubsText, "clubs-liste");
+        zeigeLinks(firmenText, "firmen-liste");
+
+    } catch (fehler) {
+        document.getElementById("clubs-liste").innerHTML =
+            '<p class="links-fehler">Die Club-Links konnten momentan nicht geladen werden.</p>';
+
+        document.getElementById("firmen-liste").innerHTML =
+            '<p class="links-fehler">Die Partner-Links konnten momentan nicht geladen werden.</p>';
+
+        console.error(fehler);
+    }
+}
+
+ladeLinks();
+</script>
+
+</body>
+</html>
 
