@@ -418,7 +418,23 @@
             border-radius: 0 8px 8px 0;
         }
 
+        /* Einheitlicher Inhaltsrahmen wie beim Werksturbo Register:
+           1200px tatsächliche Nutzbreite innerhalb der 20px Innenabstände. */
+        .page-section {
+            width: 1240px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+
         @media (max-width: 1000px) {
+            .page-section {
+                width: 100%;
+            }
+
             .mitgliedschaft-karten {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -447,8 +463,9 @@
 
 
         .mitgliedschaft-text {
-            max-width: 1200px;
-            margin: 0 auto 30px;
+            width: 100%;
+            max-width: none;
+            margin: 0 0 30px;
             background: #ffffff;
             padding: 30px 38px 32px;
             border-radius: 12px;
@@ -470,8 +487,9 @@
         }
 
         .mitgliedschaft-karten {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: none;
+            margin: 0;
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 24px;
