@@ -515,6 +515,112 @@
             margin-top: auto;
         }
 
+        /* =========================================================
+           KACHEL "MITGLIED WERDEN"
+           ========================================================= */
+        .mitglied-werden-card {
+            cursor: pointer;
+        }
+
+        .mitglied-werden-layout {
+            display: grid;
+            grid-template-columns: 190px minmax(0, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .antrag-vorschau {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #243746;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .antrag-vorschau img {
+            display: block;
+            width: 170px;
+            height: 220px;
+            object-fit: contain;
+            background: #fff;
+            border: 1px solid #d7dce1;
+            box-shadow: 0 5px 14px rgba(0,0,0,.16);
+            margin-bottom: 9px;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .mitglied-werden-card:hover .antrag-vorschau img {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,.22);
+        }
+
+        .antrag-inhalt p {
+            margin: 0 0 14px;
+            line-height: 1.55;
+        }
+
+        .antrag-inhalt ol {
+            margin: 0 0 17px 22px;
+            padding: 0;
+            line-height: 1.55;
+        }
+
+        .antrag-inhalt li {
+            margin-bottom: 5px;
+            padding-left: 3px;
+        }
+
+        .antrag-button {
+            display: inline-block;
+            margin-top: 3px;
+            padding: 10px 18px;
+            border-radius: 5px;
+            background: #05019B;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 3px 8px rgba(0,0,0,.15);
+        }
+
+        .antrag-kontakt {
+            margin-top: 26px;
+            padding-top: 18px;
+            border-top: 1px solid #dfe3e7;
+        }
+
+        .antrag-kontakt h4 {
+            margin: 0 0 7px;
+            color: #05019B;
+            font-size: 17px;
+        }
+
+        .antrag-kontakt p {
+            margin: 0;
+            line-height: 1.55;
+            font-size: 15px;
+        }
+
+        @media (max-width: 700px) {
+            .mitglied-werden-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .antrag-vorschau {
+                align-items: center;
+            }
+
+            .antrag-vorschau img {
+                width: 145px;
+                height: 190px;
+            }
+
+            .antrag-kontakt p {
+                font-size: 14px;
+            }
+        }
+
         @media (max-width: 700px) {
             .mitgliedschaft-text {
                 padding: 24px 20px 26px;
@@ -817,15 +923,69 @@
 
                     <div class="more">Mach mit – wir leben die Legende!</div>
                 </div>
-            </a>            <a class="card-link" href="#">
-                <div class="card">
-                    <h3>Beiträge &amp; Formalitäten</h3>
-                    <p>
-                        Hier werden später die Informationen zu Beiträgen,
-                        Aufnahme und weiteren organisatorischen Formalitäten
-                        zusammengestellt.
-                    </p>
-                    <div class="more">Mehr erfahren →</div>
+            </a>
+
+            <!-- =====================================================
+                 GEMEINSAME INFORMATIONEN ZUM BEITRITT
+                 ===================================================== -->
+            <a class="card-link mitglied-werden-link"
+               href="https://cdn.website-editor.net/s/9f648947c3414c618c52aeeb5e3c379e/files/uploaded/Aufnahmeantrag-4f2c64b1.pdf?Expires=1791658739&amp;Signature=S72udz-dAHapYQUMOn6Y3RidCFCfryaqY0aptYI63Bw1kDxEHI9IwEkDBtSojfbfFnupYZRCNkn0hoFZuMew2O9DdYam~Fjq1ojEX~mxRUcD0kvSeQsTTgSzKODcA~jhE009GF~fF9M4V~-1p-Z1Yx8oDq7OCn6k1idkm1VT7yyBnSGy1qKEjTPy8Ahd62EDnZxO3dCBrm9fz43julCNbJVho4PvmuQLY2j62UODE6n-eBy5Vtttys1axDKByPc25GpogbAk4OUPLOiX4TGOtAeXYaWn1z57E58BOSz4gG0Ah~ghxC4cBTXoXRsO-Tr-t6Tjn5pSz6NT1GbzDeJ0wQ__&amp;Key-Pair-Id=K2NXBXLF010TJW"
+               target="_blank" rel="noopener noreferrer">
+                <div class="card mitglied-werden-card">
+                    <h3>Mitglied werden</h3>
+
+                    <div class="mitglied-werden-layout">
+
+                        <div class="antrag-vorschau">
+                            <img src="../images/thn_der_club/thn_aufnahmeantrag.jpg"
+                                 alt="Vorschau des Aufnahmeantrags">
+                            <span>Vorschau Aufnahmeantrag</span>
+                        </div>
+
+                        <div class="antrag-inhalt">
+                            <p>
+                                Du möchtest Teil des Capri Club Westerholt e.V. werden?
+                                Dann freuen wir uns über Deinen Antrag!
+                            </p>
+
+                            <p>
+                                Unabhängig davon, für welche unserer drei Mitgliedschaftsvarianten
+                                Du Dich entscheidest, kannst Du hier den <strong>Aufnahmeantrag</strong>
+                                herunterladen. Bitte fülle den Antrag vollständig aus und unterschreibe ihn.
+                                Anschließend kannst Du ihn <strong>per Post oder E-Mail</strong> an uns senden.
+                            </p>
+
+                            <p><strong>So einfach geht's:</strong></p>
+
+                            <ol>
+                                <li>Aufnahmeantrag herunterladen</li>
+                                <li>Antrag vollständig ausfüllen und unterschreiben</li>
+                                <li>Per Post oder E-Mail an uns senden</li>
+                                <li>Ersten Mitgliedsbeitrag bezahlen</li>
+                            </ol>
+
+                            <p>
+                                Die Mitgliedschaft beginnt mit dem <strong>Eingang des ersten Mitgliedsbeitrages</strong>.
+                            </p>
+
+                            <p>
+                                Die Mitgliedschaft kann jederzeit <strong>schriftlich und ohne Angabe von Gründen</strong>
+                                beendet werden.
+                            </p>
+
+                            <div class="antrag-button">Zum Aufnahmeantrag →</div>
+                        </div>
+                    </div>
+
+                    <div class="antrag-kontakt">
+                        <h4>Dein Ansprechpartner für die Mitgliedschaft</h4>
+                        <p>
+                            <strong>Dirk Zentara</strong><br>
+                            Akkoallee 58 · 45659 Recklinghausen<br>
+                            Tel.: 02361 / 182339 · Mobil: 0178 / 8289142 · Fax: 02361 / 183858<br>
+                            E-Mail: dirk.zentara@freenet.de
+                        </p>
+                    </div>
                 </div>
             </a>
 
