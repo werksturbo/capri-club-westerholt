@@ -54,8 +54,8 @@
 
         .link-eintrag {
             display:grid;
-            grid-template-columns:78px minmax(0,1fr);
-            gap:16px;
+            grid-template-columns:120px minmax(0,1fr);
+            gap:18px;
             align-items:center;
             padding:13px;
             border:1px solid #e1e5e9;
@@ -73,8 +73,8 @@
         }
 
         .link-logo {
-            width:78px;
-            height:64px;
+            width:120px;
+            height:70px;
             display:flex;
             align-items:center;
             justify-content:center;
@@ -85,16 +85,14 @@
 
         .link-logo img {
             display:block;
-            max-width:100%;
-            max-height:100%;
-            width:auto;
-            height:auto;
+            width:100%;
+            height:100%;
             object-fit:contain;
         }
 
         .link-ohne-logo {
-            width:78px;
-            height:64px;
+            width:120px;
+            height:70px;
             display:flex;
             align-items:center;
             justify-content:center;
@@ -154,15 +152,15 @@
 
         @media (max-width:460px) {
             .link-eintrag {
-                grid-template-columns:62px minmax(0,1fr);
+                grid-template-columns:90px minmax(0,1fr);
                 gap:12px;
                 padding:10px;
             }
 
             .link-logo,
             .link-ohne-logo {
-                width:62px;
-                height:56px;
+                width:90px;
+                height:60px;
             }
 
             .link-text h4 {
@@ -452,4 +450,3 @@ ladeLinks();
 
 </body>
 </html>
-
