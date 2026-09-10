@@ -6,15 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNGK21YQH9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PNGK21YQH9');
-</script>
 
     <title>Capri Club Westerholt | Wir leben die Legende</title>
 
@@ -174,7 +165,7 @@
 
                 box-sizing: border-box !important;
 
-                background: #0b4f78 !important;
+                background: #05019B !important;
 
                 box-shadow: 0 8px 20px rgba(0,0,0,.28) !important;
             }
@@ -296,8 +287,9 @@
             margin: 0;
             padding: 12px 14px;
             background: transparent;
-            color: inherit;
+            color: white;
             font: inherit;
+            font-weight: 600;
             font-size: 16px;
             line-height: 1.2;
             cursor: pointer;
@@ -325,7 +317,7 @@
             margin: 0;
             padding: 6px 0;
             list-style: none;
-            background: #0b4f78;
+            background: #05019B;
             box-shadow: 0 8px 20px rgba(0,0,0,.28);
         }
 
@@ -409,7 +401,7 @@
 
             <a href="index.html">
 
-                <img src="images/logo-ccw.png"
+                <img src="images/Logo_CCW.jpg"
                      alt="Capri Club Westerholt">
 
             </a>
@@ -435,10 +427,10 @@
 
         </button>
 
-
-        <!-- =========================
-             HAUPTNAVIGATION
-             ========================= -->
+            <!-- ============================================================================================================= -->
+            <!-- HAUPTNAVIGATION                    MENUE     MENUE                                                            -->
+            <!-- ============================================================================================================= -->
+  
 
         <nav id="mainNavigation" aria-label="Hauptnavigation">
     <ul>
@@ -501,7 +493,18 @@
                 Capri Literatur <span class="arrow">▾</span>
             </button>
             <ul class="submenu" id="submenu-literatur">
-                <li><a href="pages/literatur.html">Capri Literatur</a></li>
+                <li>
+                    <a href="pages/werbung.html">Werbung</a>
+                </li>
+                <li>
+                    <a href="https://www.capri-club-westerholt.de/literatur">Testberichte</a>
+                </li>
+                <li>
+                    <a href="https://www.capri-club-westerholt.de/literatur">Poster</a>
+                </li>
+                <li>
+                    <a href="https://www.capri-club-westerholt.de/literatur">CCW Clubzeitung</a>
+                </li>
             </ul>
         </li>
 
@@ -523,30 +526,91 @@
     </header>
 
 
-    <!-- ========================= -->
-<!-- CCW STARTSEITE – GRUNDGERÜST -->
-<!-- ========================= -->
+    <!-- ============================================================================================================= -->
+    <!-- CCW STARTSEITE – GRUNDGERÜST -->
+    <!-- ============================================================================================================= -->
 
 <main>
 
-    <section class="hero ccw-hero">
-        <div class="hero-overlay">
-            <h1>Capri Club Westerholt</h1>
-            <h2>Wir leben die Legende</h2>
-        </div>
-    </section>
 
-    <section class="welcome">
-        <div class="container">
-            <h2>Willkommen beim Capri Club Westerholt</h2>
-            <p>
-                Dies ist das neue Grundgerüst der CCW-Homepage.
-                Die bisherigen Inhalte werden Schritt für Schritt übernommen
-                und in das neue Kachellayout übertragen.
-            </p>
-        </div>
-    </section>
+    <!-- ============================================================================================================= -->
+    <!-- Bild des Monats                                                                                               -->
+    <!-- ============================================================================================================= -->
 
+    
+<section class="bild-des-monats">
+
+    <div class="container">
+
+        <div class="bild-des-monats-inhalt">
+
+            <div class="bild-des-monats-bild">
+                <img src="bild_des_monats/bild_des_monats.jpg"
+                     alt="Bild des Monats">
+            </div>
+
+            <div class="bild-des-monats-text">
+
+                <h3>Erneut mit Pokal nach Hause</h3>
+
+                <p>
+                    Der weiße Capri von Janina war zum zweiten Mal bei einem
+                    Ford Capri Treffen dabei – und auch diesmal kam er nicht
+                    ohne Pokal nach Hause.
+                </p>
+
+                <p>
+                    Eine schöne Auszeichnung und ein schönes Beispiel dafür, 
+                    dass unsere Leidenschaft Generationen verbindet.
+                </p>
+
+                <p>
+                    <b>
+                        <i>
+                    Capri mehr als ein Auto
+                        </i>
+                    </b>    
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- ============================================================================================================= -->
+    <!-- Willkommen                                                                                                    -->
+    <!-- ============================================================================================================= -->
+
+
+    
+<section class="welcome">
+    <div class="container">
+
+        <h2>Willkommen beim Capri Club Westerholt</h2>
+
+        <p>
+                <B>
+                    Schön, dass Du hier bist! 
+                </B>  
+            
+                Der Capri Club Westerholt ist eine Gemeinschaft von Enthusiasten, 
+                die die Faszination für den Ford Capri verbindet und die Begeisterung für dieses besondere 
+                Fahrzeug gemeinsam lebt.
+        </p>
+
+    </div>
+</section>
+
+
+    <!-- ============================================================================================================= -->
+    <!-- Karten                                                                                                        -->
+    <!-- ============================================================================================================= -->
+
+    
     <section class="cards ccw-cards">
 
         <a class="card-link" href="pages/club-update.html">
@@ -619,10 +683,171 @@
 
 
     <!-- =========================================================
-         MOBILE MENU JAVASCRIPT
+         CCW MENU JAVASCRIPT
+         Mobile Menü + Dropdown-Submenüs
          ========================================================= -->
+    <script>
+        (function () {
 
-    <script src="js/menu.js"></script>
+            const header = document.querySelector("header");
+            const toggle = document.getElementById("mobileMenuToggle");
+            const nav = document.getElementById("mainNavigation");
+
+            if (!header || !toggle || !nav) {
+                return;
+            }
+
+            /* ==========================================
+               MOBILES MENÜ
+               ========================================== */
+
+            function closeMobileMenu() {
+                header.classList.remove("nav-open");
+
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.setAttribute("aria-label", "Menü öffnen");
+            }
+
+            toggle.addEventListener("click", function (event) {
+                event.stopPropagation();
+
+                const open = header.classList.toggle("nav-open");
+
+                toggle.setAttribute(
+                    "aria-expanded",
+                    open ? "true" : "false"
+                );
+
+                toggle.setAttribute(
+                    "aria-label",
+                    open ? "Menü schließen" : "Menü öffnen"
+                );
+            });
+
+
+            /* ==========================================
+               DROPDOWN-SUBMENÜS
+               ========================================== */
+
+            const submenuItems =
+                nav.querySelectorAll(".has-submenu");
+
+            function closeAllSubmenus(except) {
+                submenuItems.forEach(function (item) {
+
+                    if (item !== except) {
+                        item.classList.remove("submenu-open");
+
+                        const button =
+                            item.querySelector(".submenu-toggle");
+
+                        if (button) {
+                            button.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+                        }
+                    }
+                });
+            }
+
+            submenuItems.forEach(function (item) {
+
+                const button =
+                    item.querySelector(".submenu-toggle");
+
+                const submenu =
+                    item.querySelector(".submenu");
+
+                if (!button || !submenu) {
+                    return;
+                }
+
+                button.addEventListener("click", function (event) {
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const isOpen =
+                        item.classList.contains("submenu-open");
+
+                    closeAllSubmenus(item);
+
+                    if (isOpen) {
+                        item.classList.remove("submenu-open");
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    } else {
+                        item.classList.add("submenu-open");
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+                    }
+                });
+
+            });
+
+
+            /* ==========================================
+               LINKS
+               ========================================== */
+
+            nav.querySelectorAll("a").forEach(function (link) {
+
+                link.addEventListener("click", function () {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                });
+
+            });
+
+
+            /* ==========================================
+               KLICK AUSSERHALB
+               ========================================== */
+
+            document.addEventListener("click", function (event) {
+
+                if (!header.contains(event.target)) {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                }
+
+            });
+
+
+            /* ==========================================
+               ESCAPE
+               ========================================== */
+
+            document.addEventListener("keydown", function (event) {
+
+                if (event.key === "Escape") {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                }
+
+            });
+
+
+            /* ==========================================
+               BEIM WECHSEL AUF DESKTOP
+               ========================================== */
+
+            window.addEventListener("resize", function () {
+
+                if (window.innerWidth > 900) {
+                    closeMobileMenu();
+                }
+
+            });
+
+        })();
+    </script>
+
 
 </body>
 
