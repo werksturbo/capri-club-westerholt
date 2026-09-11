@@ -8,6 +8,181 @@
 <link href="../css/home.css" rel="stylesheet"/>
 <link href="../images/Logo_CCW.jpg" rel="icon"/>
 <style>
+/* =========================================================
+   CCW HEADER / MOBILE NAVIGATION
+   ========================================================= */
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    header {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 74px !important;
+        height: auto !important;
+        padding: 8px 14px !important;
+        box-sizing: border-box !important;
+    }
+
+    header .logo {
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    header .logo img {
+        display: block !important;
+        width: auto !important;
+        max-width: min(72vw, 300px) !important;
+        max-height: 58px !important;
+        margin: 0 !important;
+    }
+
+    .mobile-menu-toggle {
+        position: absolute !important;
+        left: 14px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 48px !important;
+        height: 48px !important;
+        margin: 0 !important;
+        padding: 9px 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        border: 1px solid rgba(255,255,255,.35) !important;
+        border-radius: 8px !important;
+        background: rgba(255,255,255,.10) !important;
+        color: white !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+        z-index: 10001 !important;
+    }
+
+    .mobile-menu-toggle span {
+        display: block !important;
+        width: 25px !important;
+        height: 3px !important;
+        border-radius: 3px !important;
+        background: currentColor !important;
+    }
+
+    header nav {
+        display: none !important;
+        position: absolute !important;
+        z-index: 10000 !important;
+        top: calc(100% - 1px) !important;
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
+        height: auto !important;
+        max-height: calc(100vh - 90px) !important;
+        overflow-y: auto !important;
+        margin: 0 !important;
+        padding: 6px 0 !important;
+        border-radius: 0 0 10px 10px !important;
+        box-sizing: border-box !important;
+        background: #05019B !important;
+        box-shadow: 0 8px 20px rgba(0,0,0,.28) !important;
+    }
+
+    header.nav-open nav {
+        display: block !important;
+    }
+
+    header nav ul {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        gap: 0 !important;
+    }
+
+    header nav li {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    header nav li a {
+        display: block !important;
+        width: 100% !important;
+        min-height: 45px !important;
+        padding: 11px 18px !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        font-size: 17px !important;
+        line-height: 1.3 !important;
+        white-space: normal !important;
+        border-radius: 0 !important;
+    }
+
+    header nav li a.active {
+        background: rgba(255,255,255,.16) !important;
+    }
+
+    header nav li.has-submenu {
+        display: block !important;
+    }
+
+    .submenu-toggle {
+        display: block !important;
+        width: 100% !important;
+        min-height: 45px !important;
+        padding: 11px 18px !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        font-size: 17px !important;
+        line-height: 1.3 !important;
+        white-space: normal !important;
+    }
+
+    header nav ul.submenu {
+        position: static !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: rgba(0,0,0,.12) !important;
+    }
+
+    header nav ul.submenu a {
+        padding: 10px 18px 10px 34px !important;
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    header {
+        min-height: 66px !important;
+        padding: 6px 10px !important;
+    }
+
+    header .logo img {
+        max-width: 68vw !important;
+        max-height: 52px !important;
+    }
+
+    .mobile-menu-toggle {
+        left: 10px !important;
+        width: 44px !important;
+        height: 44px !important;
+    }
+}
+</style>
+<style>
         /* =========================================================
            FOTOALBUM
            ========================================================= */
@@ -106,52 +281,67 @@
 </head>
 <body>
 <header>
-<div class="header-inner">
-<a class="logo" href="../index.html">
+<div class="logo">
+<a href="../index.html">
 <img alt="Capri Club Westerholt" src="../images/Logo_CCW.jpg"/>
 </a>
-<button aria-controls="mainNavigation" aria-expanded="false" aria-label="Menü öffnen" class="mobile-menu-toggle" id="mobileMenuToggle" type="button">
-            ☰
-        </button>
-<nav id="mainNavigation">
+</div>
+
+<button aria-controls="mainNavigation" aria-expanded="false"
+        aria-label="Menü öffnen" class="mobile-menu-toggle"
+        id="mobileMenuToggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<nav aria-label="Hauptnavigation" id="mainNavigation">
 <ul>
 <li><a href="../index.html">Home</a></li>
+
 <li class="has-submenu">
-<button aria-expanded="false" class="submenu-toggle" type="button">
-                        Der Club <span>▾</span>
+<button aria-controls="submenu-club" aria-expanded="false"
+        class="submenu-toggle" type="button">
+Der Club <span class="arrow">▾</span>
 </button>
-<ul class="submenu">
+<ul class="submenu" id="submenu-club">
 <li><a href="stunde-null.html">Stunde Null</a></li>
 <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
 </ul>
 </li>
+
 <li><a href="club-update.html">Club-Update</a></li>
 <li><a href="fahrzeuge.html">Die Fahrzeuge</a></li>
 <li><a href="termine.html">Termine</a></li>
+
 <li class="has-submenu">
-<button aria-expanded="false" class="submenu-toggle" type="button">
-                        Jahresrückblicke <span>▾</span>
+<button aria-controls="submenu-jahre" aria-expanded="false"
+        class="submenu-toggle" type="button">
+Jahresrückblicke <span class="arrow">▾</span>
 </button>
-<ul class="submenu"></ul>
+<ul class="submenu" id="submenu-jahre"></ul>
 </li>
+
 <li><a class="active" href="fotoalbum.html">Fotoalbum</a></li>
+
 <li class="has-submenu">
-<button aria-expanded="false" class="submenu-toggle" type="button">
-                        Capri Literatur <span>▾</span>
+<button aria-controls="submenu-literatur" aria-expanded="false"
+        class="submenu-toggle" type="button">
+Capri Literatur <span class="arrow">▾</span>
 </button>
-<ul class="submenu">
+<ul class="submenu" id="submenu-literatur">
 <li><a href="werbung.html">Werbung</a></li>
 <li><a href="testberichte.html">Testberichte</a></li>
 <li><a href="poster.html">Poster</a></li>
 <li><a href="clubzeitung.html">CCW Clubzeitung</a></li>
 </ul>
 </li>
+
 <li><a href="links.html">Links</a></li>
 <li><a href="members-only.html">Members only</a></li>
 <li><a href="kontakt.html">Kontakt</a></li>
 </ul>
 </nav>
-</div>
 </header>
 <main>
 <section class="page-header">
