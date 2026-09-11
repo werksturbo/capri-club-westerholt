@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Fotoalbum – Capri Club Westerholt</title>
+
     <link rel="stylesheet" href="../css/home.css">
     <link rel="icon" href="../images/Logo_CCW.jpg">
+
     <style>
-        /* Fotoalbum */
+        /* =========================================================
+           FOTOALBUM
+           ========================================================= */
+
         .fotoalbum-kacheln {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 28px 24px;
-            margin-top: 24px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 24px;
+            margin-top: 28px;
         }
 
         .fotoalbum-kachel {
@@ -20,13 +26,20 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            min-height: 190px;
-            padding: 18px 12px 14px;
-            background: #fff;
+
+            min-height: 175px;
+            padding: 16px 10px 14px;
+
+            background: #ffffff;
             border-radius: 10px;
+
             box-shadow: 0 4px 14px rgba(0,0,0,.12);
+
             text-decoration: none;
-            transition: transform .2s ease, box-shadow .2s ease;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
         }
 
         .fotoalbum-kachel:hover {
@@ -36,34 +49,59 @@
 
         .fotoalbum-kachel img {
             display: block;
-            width: 150px;
-            height: 110px;
+
+            width: 140px;
+            height: 105px;
+
             object-fit: contain;
-            margin: 0 auto 12px;
+
+            margin: 0 auto 10px;
         }
 
         .fotoalbum-kachel span {
             display: block;
+
             color: #05019B;
-            font-size: 19px;
+
+            font-size: 18px;
             font-weight: 700;
+
             text-align: center;
+            line-height: 1.2;
         }
 
-        @media (max-width: 1000px) {
+
+        /* =========================================================
+           TABLET
+           ========================================================= */
+
+        @media (max-width: 1100px) {
+
             .fotoalbum-kacheln {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .fotoalbum-kachel img {
+                width: 130px;
+                height: 100px;
             }
         }
 
-        @media (max-width: 650px) {
+
+        /* =========================================================
+           HANDY
+           ========================================================= */
+
+        @media (max-width: 700px) {
+
             .fotoalbum-kacheln {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 18px;
+                gap: 16px;
             }
 
             .fotoalbum-kachel {
-                min-height: 165px;
+                min-height: 160px;
                 padding: 14px 8px 12px;
             }
 
@@ -77,214 +115,1059 @@
             }
         }
 
+
         @media (max-width: 420px) {
+
             .fotoalbum-kacheln {
                 grid-template-columns: 1fr;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================================================
+     HEADER / MENÜ
+     ========================================================= -->
+
 <header>
+
     <div class="header-inner">
+
         <a class="logo" href="../index.html">
-            <img src="../images/Logo_CCW.jpg" alt="Capri Club Westerholt">
+            <img
+                src="../images/Logo_CCW.jpg"
+                alt="Capri Club Westerholt">
         </a>
 
-        <button id="mobileMenuToggle"
-                class="mobile-menu-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="mainNavigation"
-                aria-label="Menü öffnen">
+
+        <button
+            id="mobileMenuToggle"
+            class="mobile-menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mainNavigation"
+            aria-label="Menü öffnen">
+
             ☰
+
         </button>
 
+
         <nav id="mainNavigation">
+
             <ul>
-                <li><a href="../index.html">Home</a></li>
+
+                <li>
+                    <a href="../index.html">
+                        Home
+                    </a>
+                </li>
+
+
+                <!-- DER CLUB -->
 
                 <li class="has-submenu">
-                    <button class="submenu-toggle" type="button" aria-expanded="false">
+
+                    <button
+                        class="submenu-toggle"
+                        type="button"
+                        aria-expanded="false">
+
                         Der Club <span>▾</span>
+
                     </button>
+
+
                     <ul class="submenu">
-                        <li><a href="stunde-null.html">Stunde Null</a></li>
-                        <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+
+                        <li>
+                            <a href="stunde-null.html">
+                                Stunde Null
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="mitgliedschaft.html">
+                                Mitgliedschaft
+                            </a>
+                        </li>
+
                     </ul>
+
                 </li>
 
-                <li><a href="club-update.html">Club-Update</a></li>
-                <li><a href="fahrzeuge.html">Die Fahrzeuge</a></li>
-                <li><a href="termine.html">Termine</a></li>
+
+                <li>
+                    <a href="club-update.html">
+                        Club-Update
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="fahrzeuge.html">
+                        Die Fahrzeuge
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="termine.html">
+                        Termine
+                    </a>
+                </li>
+
+
+                <!-- JAHRESRÜCKBLICKE -->
 
                 <li class="has-submenu">
-                    <button class="submenu-toggle" type="button" aria-expanded="false">
+
+                    <button
+                        class="submenu-toggle"
+                        type="button"
+                        aria-expanded="false">
+
                         Jahresrückblicke <span>▾</span>
+
                     </button>
-                    <ul class="submenu"></ul>
+
+
+                    <ul class="submenu">
+                    </ul>
+
                 </li>
 
-                <li><a class="active" href="fotoalbum.html">Fotoalbum</a></li>
+
+                <!-- FOTOALBUM -->
+
+                <li>
+                    <a
+                        class="active"
+                        href="fotoalbum.html">
+
+                        Fotoalbum
+
+                    </a>
+                </li>
+
+
+                <!-- CAPRI LITERATUR -->
 
                 <li class="has-submenu">
-                    <button class="submenu-toggle" type="button" aria-expanded="false">
+
+                    <button
+                        class="submenu-toggle"
+                        type="button"
+                        aria-expanded="false">
+
                         Capri Literatur <span>▾</span>
+
                     </button>
+
+
                     <ul class="submenu">
-                        <li><a href="werbung.html">Werbung</a></li>
-                        <li><a href="testberichte.html">Testberichte</a></li>
-                        <li><a href="poster.html">Poster</a></li>
-                        <li><a href="clubzeitung.html">CCW Clubzeitung</a></li>
+
+                        <li>
+                            <a href="werbung.html">
+                                Werbung
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="testberichte.html">
+                                Testberichte
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="poster.html">
+                                Poster
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="clubzeitung.html">
+                                CCW Clubzeitung
+                            </a>
+                        </li>
+
                     </ul>
+
                 </li>
 
-                <li><a href="links.html">Links</a></li>
-                <li><a href="members-only.html">Members only</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
+
+                <li>
+                    <a href="links.html">
+                        Links
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="members-only.html">
+                        Members only
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="kontakt.html">
+                        Kontakt
+                    </a>
+                </li>
+
             </ul>
+
         </nav>
+
     </div>
+
 </header>
 
+
+
+<!-- =========================================================
+     INHALT
+     ========================================================= -->
+
 <main>
+
+
+    <!-- Seitenüberschrift -->
+
     <section class="page-header">
+
         <div class="container">
-            <h1>Fotoalbum</h1>
+
+            <h1>
+                Fotoalbum
+            </h1>
+
         </div>
+
     </section>
 
+
+
+    <!-- Fotoalbum -->
+
     <section class="page-section">
+
         <div class="container">
 
+
             <div class="card card-wide">
-                <h2>Foto Album 2002 – 2019</h2>
+
+
+                <h2>
+                    Foto Album 2002 – 2019
+                </h2>
+
 
                 <p>
+
                     Eine Zeitreise durch die Geschichte des Capri Club Westerholt.
                     Hier findest Du unsere Fotos aus vielen Jahren gemeinsamer Treffen,
                     Ausfahrten und Veranstaltungen.
+
                 </p>
+
+
+
+                <!-- =================================================
+                     FOTOALBUM-KACHELN
+
+                     6 Kacheln pro Zeile
+                     2002 befindet sich unten rechts
+                     ================================================= -->
+
 
                 <div class="fotoalbum-kacheln">
 
-                    <a class="fotoalbum-kachel" href="../data/fotoalbum/2002.html">
-                        <img src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
-                             alt="Fotoalbum 2002">
-                        <span>Fotos 2002</span>
+
+                    <!-- 2026 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2026.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2026">
+
+                        <span>
+                            Fotos 2026
+                        </span>
+
                     </a>
 
-                    <a class="fotoalbum-kachel" href="../data/fotoalbum/2003.html">
-                        <img src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
-                             alt="Fotoalbum 2003">
-                        <span>Fotos 2003</span>
+
+
+                    <!-- 2025 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2025.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2025">
+
+                        <span>
+                            Fotos 2025
+                        </span>
+
                     </a>
+
+
+
+                    <!-- 2024 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2024.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2024">
+
+                        <span>
+                            Fotos 2024
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2023 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2023.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2023">
+
+                        <span>
+                            Fotos 2023
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2022 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2022.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2022">
+
+                        <span>
+                            Fotos 2022
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2021 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2021.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2021">
+
+                        <span>
+                            Fotos 2021
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2020 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2020.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2020">
+
+                        <span>
+                            Fotos 2020
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2019 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2019.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2019">
+
+                        <span>
+                            Fotos 2019
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2018 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2018.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2018">
+
+                        <span>
+                            Fotos 2018
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2017 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2017.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2017">
+
+                        <span>
+                            Fotos 2017
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2016 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2016.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2016">
+
+                        <span>
+                            Fotos 2016
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2015 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2015.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2015">
+
+                        <span>
+                            Fotos 2015
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2014 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2014.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2014">
+
+                        <span>
+                            Fotos 2014
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2013 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2013.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2013">
+
+                        <span>
+                            Fotos 2013
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2012 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2012.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2012">
+
+                        <span>
+                            Fotos 2012
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2011 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2011.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2011">
+
+                        <span>
+                            Fotos 2011
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2010 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2010.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2010">
+
+                        <span>
+                            Fotos 2010
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2009 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2009.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2009">
+
+                        <span>
+                            Fotos 2009
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2008 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2008.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2008">
+
+                        <span>
+                            Fotos 2008
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2007 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2007.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2007">
+
+                        <span>
+                            Fotos 2007
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2006 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2006.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2006">
+
+                        <span>
+                            Fotos 2006
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2005 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2005.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2005">
+
+                        <span>
+                            Fotos 2005
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2004 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2004.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2004">
+
+                        <span>
+                            Fotos 2004
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2003 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2003.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2003">
+
+                        <span>
+                            Fotos 2003
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- 2002 -->
+
+                    <a
+                        class="fotoalbum-kachel"
+                        href="../data/fotoalbum/2002.html">
+
+                        <img
+                            src="../images/thn_fotoalbum/thn_fotoalbum.jpg"
+                            alt="Fotoalbum 2002">
+
+                        <span>
+                            Fotos 2002
+                        </span>
+
+                    </a>
+
 
                 </div>
+
             </div>
 
         </div>
+
     </section>
+
 </main>
 
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer>
+
     <div class="footer-content">
+
         <div>
-            <strong>Capri Club Westerholt</strong>
+            <strong>
+                Capri Club Westerholt
+            </strong>
         </div>
+
+
         <div class="footer-links">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
-            <a href="kontakt.html">Kontakt</a>
+
+            <a href="impressum.html">
+                Impressum
+            </a>
+
+            <a href="datenschutz.html">
+                Datenschutz
+            </a>
+
+            <a href="kontakt.html">
+                Kontakt
+            </a>
+
         </div>
+
+
         <div>
             © 2026 Capri Club Westerholt
         </div>
+
     </div>
+
 </footer>
 
+
+
+<!-- =========================================================
+     MENÜ-JAVASCRIPT
+     ========================================================= -->
+
 <script>
+
 (function () {
-    const header = document.querySelector("header");
-    const toggle = document.getElementById("mobileMenuToggle");
-    const nav = document.getElementById("mainNavigation");
-    if (!header || !toggle || !nav) return;
+
+    const header =
+        document.querySelector("header");
+
+    const toggle =
+        document.getElementById("mobileMenuToggle");
+
+    const nav =
+        document.getElementById("mainNavigation");
+
+
+    if (!header || !toggle || !nav) {
+        return;
+    }
+
+
+
+    /* ---------------------------------------------------------
+       Mobiles Menü schließen
+       --------------------------------------------------------- */
 
     function closeMobileMenu() {
+
         header.classList.remove("nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Menü öffnen");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            "Menü öffnen"
+        );
+
     }
 
-    toggle.addEventListener("click", function (event) {
-        event.stopPropagation();
-        const open = header.classList.toggle("nav-open");
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
-    });
 
-    const submenuItems = nav.querySelectorAll(".has-submenu");
 
-    function closeAllSubmenus(except) {
-        submenuItems.forEach(function (item) {
-            if (item !== except) {
-                item.classList.remove("submenu-open");
-                const button = item.querySelector(".submenu-toggle");
-                if (button) button.setAttribute("aria-expanded", "false");
-            }
-        });
-    }
+    /* ---------------------------------------------------------
+       Mobiles Menü öffnen / schließen
+       --------------------------------------------------------- */
 
-    submenuItems.forEach(function (item) {
-        const button = item.querySelector(".submenu-toggle");
-        const submenu = item.querySelector(".submenu");
-        if (!button || !submenu) return;
+    toggle.addEventListener(
+        "click",
+        function (event) {
 
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
             event.stopPropagation();
 
-            const isOpen = item.classList.contains("submenu-open");
-            closeAllSubmenus(item);
+            const open =
+                header.classList.toggle("nav-open");
 
-            if (isOpen) {
-                item.classList.remove("submenu-open");
-                button.setAttribute("aria-expanded", "false");
-            } else {
-                item.classList.add("submenu-open");
-                button.setAttribute("aria-expanded", "true");
+
+            toggle.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+
+
+            toggle.setAttribute(
+                "aria-label",
+                open
+                    ? "Menü schließen"
+                    : "Menü öffnen"
+            );
+
+        }
+    );
+
+
+
+    /* ---------------------------------------------------------
+       Untermenüs
+       --------------------------------------------------------- */
+
+    const submenuItems =
+        nav.querySelectorAll(".has-submenu");
+
+
+
+    function closeAllSubmenus(except) {
+
+        submenuItems.forEach(
+            function (item) {
+
+                if (item !== except) {
+
+                    item.classList.remove(
+                        "submenu-open"
+                    );
+
+
+                    const button =
+                        item.querySelector(
+                            ".submenu-toggle"
+                        );
+
+
+                    if (button) {
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+
             }
-        });
-    });
+        );
 
-    nav.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            closeAllSubmenus();
-            closeMobileMenu();
-        });
-    });
+    }
 
-    document.addEventListener("click", function (event) {
-        if (!header.contains(event.target)) {
-            closeAllSubmenus();
-            closeMobileMenu();
+
+
+    submenuItems.forEach(
+        function (item) {
+
+            const button =
+                item.querySelector(
+                    ".submenu-toggle"
+                );
+
+            const submenu =
+                item.querySelector(
+                    ".submenu"
+                );
+
+
+            if (!button || !submenu) {
+                return;
+            }
+
+
+
+            button.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+
+                    const isOpen =
+                        item.classList.contains(
+                            "submenu-open"
+                        );
+
+
+                    closeAllSubmenus(item);
+
+
+                    if (isOpen) {
+
+                        item.classList.remove(
+                            "submenu-open"
+                        );
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    } else {
+
+                        item.classList.add(
+                            "submenu-open"
+                        );
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+
+                    }
+
+                }
+            );
+
         }
-    });
+    );
 
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            closeAllSubmenus();
-            closeMobileMenu();
+
+
+    /* ---------------------------------------------------------
+       Links schließen Menü
+       --------------------------------------------------------- */
+
+    nav.querySelectorAll("a").forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    closeAllSubmenus();
+                    closeMobileMenu();
+
+                }
+            );
+
         }
-    });
+    );
 
-    window.addEventListener("resize", function () {
-        if (window.innerWidth > 900) closeMobileMenu();
-    });
+
+
+    /* ---------------------------------------------------------
+       Klick außerhalb
+       --------------------------------------------------------- */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (!header.contains(event.target)) {
+
+                closeAllSubmenus();
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+
+    /* ---------------------------------------------------------
+       ESC schließt Menü
+       --------------------------------------------------------- */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeAllSubmenus();
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+
+    /* ---------------------------------------------------------
+       Bei größerem Bildschirm mobiles Menü schließen
+       --------------------------------------------------------- */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth > 900) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
 })();
+
 </script>
+
 
 </body>
 </html>
