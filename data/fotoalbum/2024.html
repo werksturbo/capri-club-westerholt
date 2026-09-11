@@ -545,7 +545,7 @@
 <!-- ========================= -->
 <header>
 <div class="logo">
-<a href="index.html">
+<a href="../../index.html">
 <img alt="Capri Club Westerholt" src="../../images/Logo_CCW.jpg"/>
 </a>
 </div>
@@ -707,6 +707,12 @@
          CCW MENU JAVASCRIPT
          Mobile Menü + Dropdown-Submenüs
          ========================================================= -->
+<div aria-hidden="true" class="lightbox-2024" id="lightbox2024">
+<button aria-label="Schließen" class="close" type="button">×</button>
+<button aria-label="Vorheriges Foto" class="prev" type="button">‹</button>
+<img alt="" id="lightbox2024Image" src=""/>
+<button aria-label="Nächstes Foto" class="next" type="button">›</button>
+</div>
 <script>
 (function () {
     const imageNames = [
@@ -771,6 +777,10 @@
             img.src = src;
             img.alt = "Foto " + (index + 1) + " – Ereignis " + twoDigit;
             img.loading = "lazy";
+
+            img.addEventListener("error", function () {
+                link.remove();
+            });
 
             link.appendChild(img);
             gallery.appendChild(link);
@@ -1084,11 +1094,6 @@
 
     </script>
 
-<div aria-hidden="true" class="lightbox-2024" id="lightbox2024">
-<button aria-label="Schließen" class="close" type="button">×</button>
-<button aria-label="Vorheriges Foto" class="prev" type="button">‹</button>
-<img alt="" id="lightbox2024Image" src=""/>
-<button aria-label="Nächstes Foto" class="next" type="button">›</button>
-</div>
+
 </body>
 </html>
