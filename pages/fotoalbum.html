@@ -399,7 +399,96 @@
 
         }
 
-    </style>
+    
+
+        /* =========================================================
+           FOTOALBUM – eingebettete externe Seite
+           ========================================================= */
+
+        .fotoalbum-intro {
+            max-width: 1300px;
+            margin: 0 auto 18px;
+            text-align: center;
+        }
+
+        .fotoalbum-intro p {
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .fotoalbum-card {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .fotoalbum-card h3 {
+            margin: 0 0 18px;
+            color: #05019B;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        .fotoalbum-frame-wrap {
+            width: 100%;
+            min-height: 850px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #05019B;
+        }
+
+        .fotoalbum-frame-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 850px;
+            border: 0;
+            background: #05019B;
+        }
+
+        .fotoalbum-fallback {
+            margin: 14px 0 0;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .fotoalbum-fallback a {
+            color: #05019B;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .fotoalbum-frame-wrap {
+                min-height: 700px;
+            }
+
+            .fotoalbum-frame-wrap iframe {
+                height: 700px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .fotoalbum-intro p {
+                font-size: 16px;
+            }
+
+            .fotoalbum-card h3 {
+                font-size: 22px;
+            }
+
+            .fotoalbum-frame-wrap {
+                min-height: 650px;
+            }
+
+            .fotoalbum-frame-wrap iframe {
+                height: 650px;
+            }
+        }
+</style>
 
 </head>
 
@@ -550,28 +639,52 @@
                      ========================================================= -->
 
                 <li>
-                    <a class="active" href="fotoalbum.html">Fotoalbum</a>
-                </li>
+                    <a class="active" href="fotoalbum.html">Foto    <!-- ========================= -->
+    <!-- FOTOALBUM -->
+    <!-- ========================= -->
+
+    <main>
+
+        <section class="page-header">
+            <h2>Fotoalbum</h2>
+        </section>
+
+        <section class="page-section">
+
+            <div class="fotoalbum-intro">
+                <p>
+                    Eine Zeitreise durch die Geschichte des Capri Club Westerholt.
+                    Hier findest Du unsere Fotos aus den Jahren 2002 bis 2019 und kannst in unseren Erinnerungen stöbern.
+                </p>
+            </div>
+
+            <div class="card card-wide fotoalbum-card">
+
+                <h3>Foto Album 2002 – 2019</h3>
+
+                <div class="fotoalbum-frame-wrap">
+                    <iframe
+                        src="https://ccw.bplaced.net/Fotoalbum/"
+                        title="Fotoalbum des Capri Club Westerholt"
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <p class="fotoalbum-fallback">
+                    Sollte das Fotoalbum hier nicht angezeigt werden, kannst Du es
+                    <a href="https://ccw.bplaced.net/Fotoalbum/" target="_blank" rel="noopener noreferrer">
+                        direkt in einem neuen Fenster öffnen.
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
 
 
-                <!-- =========================================================
-                     CAPRI LITERATUR
-                     ========================================================= -->
-
-                <li class="has-submenu">
-
-                    <button
-                        class="submenu-toggle"
-                        type="button"
-                        aria-expanded="false"
-                        aria-controls="submenu-literatur">
-
-                        Capri Literatur <span class="arrow">▾</span>
-
-                    </button>
-
-
-                    <ul class="submenu" id="submenu-literatur">
+"submenu-literatur">
 
                         <li>
                             <a href="werbung.html">
