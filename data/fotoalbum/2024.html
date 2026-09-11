@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fotoalbum 2024 – Capri Club Westerholt</title>
+<link href="../css/home.css" rel="stylesheet"/>
+<link href="../images/Logo_CCW.jpg" rel="icon"/>
+<style>
+        /* =========================================================
+           FOTOALBUM 2024 – EREIGNISSE UND GALERIEN
+           ========================================================= */
+
+        .fotoalbum-card {
+            width: 100%;
+            max-width: none;
+            box-sizing: border-box;
+        }
+
+        .jahr-einleitung {
+            max-width: 1050px;
+            margin: 0 auto 28px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .ereignisse {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .ereignis {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 22px 24px 24px;
+            box-shadow: 0 4px 14px rgba(0,0,0,.12);
+            border-top: 4px solid #05019B;
+        }
+
+        .ereignis h2 {
+            margin: 0 0 12px;
+            color: #05019B;
+            font-size: 24px;
+            line-height: 1.3;
+        }
+
+        .ereignis-beschreibung {
+            margin: 0 0 20px;
+            color: #444;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .galerie {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .galerie a {
+            display: block;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f1f3f5;
+            aspect-ratio: 4 / 3;
+            box-shadow: 0 2px 8px rgba(0,0,0,.12);
+        }
+
+        .galerie img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .2s ease;
+        }
+
+        .galerie a:hover img {
+            transform: scale(1.04);
+        }
+
+        .galerie-status {
+            margin: 0;
+            padding: 14px;
+            text-align: center;
+            color: #666;
+            background: #f4f6f8;
+            border-radius: 8px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 20000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: rgba(0,0,0,.88);
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 88vh;
+            object-fit: contain;
+            box-shadow: 0 10px 40px rgba(0,0,0,.5);
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            z-index: 20001;
+            border: 0;
+            color: #fff;
+            background: rgba(0,0,0,.45);
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            top: 18px;
+            right: 22px;
+            width: 44px;
+            height: 44px;
+            font-size: 28px;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 60px;
+            font-size: 32px;
+        }
+
+        .lightbox-prev { left: 18px; }
+        .lightbox-next { right: 18px; }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(0,0,0,.7);
+        }
+
+        @media (max-width: 1050px) {
+            .galerie {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .ereignis {
+                padding: 18px 16px 20px;
+            }
+
+            .ereignis h2 {
+                font-size: 21px;
+            }
+
+            .galerie {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .lightbox {
+                padding: 15px;
+            }
+        }
+</style>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<a class="logo" href="../index.html">
+<img alt="Capri Club Westerholt" src="../images/Logo_CCW.jpg"/>
+</a>
+<button aria-controls="mainNavigation" aria-expanded="false" aria-label="Menü öffnen" class="mobile-menu-toggle" id="mobileMenuToggle" type="button">
+            ☰
+        </button>
+<nav id="mainNavigation">
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li class="has-submenu">
+<button aria-expanded="false" class="submenu-toggle" type="button">
+                        Der Club <span>▾</span>
+</button>
+<ul class="submenu">
+<li><a href="stunde-null.html">Stunde Null</a></li>
+<li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+</ul>
+</li>
+<li><a href="club-update.html">Club-Update</a></li>
+<li><a href="fahrzeuge.html">Die Fahrzeuge</a></li>
+<li><a href="termine.html">Termine</a></li>
+<li class="has-submenu">
+<button aria-expanded="false" class="submenu-toggle" type="button">
+                        Jahresrückblicke <span>▾</span>
+</button>
+<ul class="submenu"></ul>
+</li>
+<li><a class="active" href="fotoalbum.html">Fotoalbum</a></li>
+<li class="has-submenu">
+<button aria-expanded="false" class="submenu-toggle" type="button">
+                        Capri Literatur <span>▾</span>
+</button>
+<ul class="submenu">
+<li><a href="werbung.html">Werbung</a></li>
+<li><a href="testberichte.html">Testberichte</a></li>
+<li><a href="poster.html">Poster</a></li>
+<li><a href="clubzeitung.html">CCW Clubzeitung</a></li>
+</ul>
+</li>
+<li><a href="links.html">Links</a></li>
+<li><a href="members-only.html">Members only</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main>
+<section class="page-header">
+<div class="container">
+<h1>Fotoalbum</h1>
+</div>
+</section>
+<section class="page-section">
+<div class="container">
+<div class="card fotoalbum-card card fotoalbum-card"><h2>Fotoalbum 2024</h2><p class="jahr-einleitung">Das Jahr 2024 war für den Capri Club Westerholt wieder voller gemeinsamer Erlebnisse, Treffen und Aktionen. Hier findest Du die Ereignisse chronologisch geordnet – das jüngste Ereignis zuerst.</p><div class="ereignisse"><article class="ereignis"><h2>30. November 2024 – Der Turbo ist verstummt!</h2><p class="ereignis-beschreibung">Unser Freund und langjähriges Vereinsmitglied Dirk Trapka ist am 30.11.2024 nach langer Krankheit verstorben.<br/>Mit ihm ist ein Mensch von uns gegangen, der immer hilfsbereit gewesen ist und sich aufrichtig in die Gemeinschaft eingebracht hat. Sein weißer Turbo war sein Stolz, gern ist er damit mit uns zusammen zu Treffen gefahren, um mit der ganzen Capri Gemeinde in lockerer Runde schöne Stunden zu verbringen.<br/>Unvergessen ist bei unseren Grillfesten und dem Teilemarkt der Einsatz seines legendären „Würstchenklebers“.<br/>Seiner Tochter Nicole und seinem schnellen Joel wünschen wir viel Kraft in dieser Zeit.<br/>„Trabbels“ – Flügelmann – nun bist Du aufgebrochen zu Deiner letzten Fahrt und bist wieder mit Bärbel vereint.<br/>Ruhe in Frieden alter Freund!</p><div class="galerie" data-event="ereignis_01" id="galerie-01"><p class="galerie-status">Fotos werden geladen …</p></div></article><article class="ereignis"><h2>November 2024</h2><p class="ereignis-beschreibung">Der 2.8i Capri von unserem Fördermitglied Manfred F. aus Alfter wurde bei unserem Haus &amp; Hof Lackierer Harald H. in Herten ausgebessert.</p><div class="galerie" data-event="ereignis_02" id="galerie-02"><p class="galerie-status">Fotos werden geladen …</p></div></article><article class="ereignis"><h2>01. September 2024 – Das Autokino in Köln schließt</h2><p class="ereignis-beschreibung">Seit kurzem ist bekannt, dass das Autokino in Köln schließen wird. Der letzte Tag wird der 31.10.2024 sein, vorher treffen sich noch einmal zwei Autokinos der goldenen Kinosära, „Capri meets Manta“. Die Vorführung ist am 26.10.2024 um 17 Uhr.<br/>Reservierte Plätze gibt es in den ersten Reihen für möglichst viele Ford Capri und Opel Manta. In der Marke getrennt, doch im Kult vereint, begegnet man sich zu Benzingesprächen bei ausgewählter Musik und leckeren Snacks. Ab 19 Uhr werden dann im Double Feature die Filme „Manta Manta“ und „Bang Boom Bang“ gezeigt. Andere Oldtimer und Fahrzeuge sind ebenfalls willkommen.</p><div class="galerie" data-event="ereignis_03" id="galerie-03"><p class="galerie-status">Fotos werden geladen …</p></div></article><article class="ereignis"><h2>28. Juni 2024 – Zeitreise durch die Linse: Eine alte Kamera fängt den Charme klassischer Autos ein</h2><p class="ereignis-beschreibung">Bei einem besonderen Fototermin wurden alte Capris und eine nostalgische Kamera zu einer faszinierenden Einheit. Die Kamera, mit ihrem klassischen Design und der Handwerkskunst vergangener Zeiten, fängt die Schönheit der Vintage-Fahrzeuge perfekt ein. Mit jedem Klick der Kamera wurden die glänzenden Karosserien und die Details der Autos, die Geschichten aus längst vergangenen Jahrzehnten erzählen, in atemberaubenden Bildern festgehalten. Der Fototermin bot nicht nur eine Zeitreise zu den historischen Autos, sondern auch zu der Kameratechnik von damals.<br/>Unser Dank geht an den Fotografen: Joaquinix</p><div class="galerie" data-event="ereignis_04" id="galerie-04"><p class="galerie-status">Fotos werden geladen …</p></div></article><article class="ereignis"><h2>05. März 2024 – Neue Radläufe braucht der Capri</h2><p class="ereignis-beschreibung">Der Vorbesitzer des weißen Capri 1 Sonderedition „Fussel“ war nicht nur ein Elektro-Genie, sondern auch bildender Künstler.<br/>Früh am Anfang des Jahres, lange vor den Schneeglöckchen, blühten beide hinteren Radläufe prächtig auf. Als Ausklang der Winterpause wurde dann entschieden die Radläufe noch mal eben schnell zu erneuern, entgegen aller Erwartungen kam nur wenig Rost zu Tage da einfach kein Stahlblech mehr vorhanden war, allerdings ein in mehrere Reparaturbleche zerteilt und eingeleitetes Nummernschild (RE ?? 93, TÜV-Plakette leider abgelaufen) sowie zentimeterdicker Spachtel. Noch eine Sitzung, dann bestehen beide Seiten wieder aus Stahlblech und der Capri kann zum Lackierer.</p><div class="galerie" data-event="ereignis_05" id="galerie-05"><p class="galerie-status">Fotos werden geladen …</p></div></article><article class="ereignis"><h2>05. Januar 2024 – Die erste Clubsitzung im neuen Jahr</h2><p class="ereignis-beschreibung">Ein frohes neues Jahr 2024 wünscht der CCW allen Lesern unserer Internetseite.<br/>Wir haben uns zu Beginn des Jahres getroffen, um schonmal einige Themen zu besprechen. Capri und Oldtimertreffen, unser Teilemarkt, eine Ausfahrt, Anschaffungen und vieles mehr. Es entstanden viele interessante Gespräche und Überlegungen für das neue Jahr. Es soll zum Beispiel ein neuer Satz Jacken gekauft werden, der bei besonderen Wetterlagen eingesetzt werden kann. Speyer findet dieses Jahr ebenfalls wieder statt und wir planten schonmal grob was wir dort alles machen möchten. Für unsere Mitglieder aus anderen Bundesländern wurde eine Videoübertragung zur Sitzung eingerichtet, diese bekamen leider nichts von unserem leckeren Buffet mit, was vorbereitet wurde.</p><div class="galerie" data-event="ereignis_06" id="galerie-06"><p class="galerie-status">Fotos werden geladen …</p></div></article></div></div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-content">
+<div>
+<strong>Capri Club Westerholt</strong>
+</div>
+<div class="footer-links">
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+<a href="kontakt.html">Kontakt</a>
+</div>
+<div>
+            © 2026 Capri Club Westerholt
+        </div>
+</div>
+</footer>
+<script>
+(async function () {
+    const repo = "werksturbo/capri-club-westerholt";
+    const baseApi = "https://api.github.com/repos/" + repo + "/contents/images/fotoalbum_2024";
+    const rawBase = "https://raw.githubusercontent.com/" + repo + "/main/images/fotoalbum_2024";
+
+    async function loadGallery(number) {
+        const gallery = document.getElementById("galerie-" + String(number).padStart(2, "0"));
+        if (!gallery) return;
+
+        const folder = "ereignis_" + String(number).padStart(2, "0");
+
+        try {
+            const response = await fetch(baseApi + "/" + folder);
+
+            if (!response.ok) {
+                throw new Error("Ordner nicht erreichbar");
+            }
+
+            const files = await response.json();
+
+            const images = files.filter(file =>
+                file.type === "file" &&
+                /\.(jpe?g|png|gif|webp)$/i.test(file.name)
+            );
+
+            gallery.innerHTML = "";
+
+            if (!images.length) {
+                const status = document.createElement("p");
+                status.className = "galerie-status";
+                status.textContent = "Für dieses Ereignis sind noch keine Fotos hinterlegt.";
+                gallery.appendChild(status);
+                return;
+            }
+
+            images.sort((a, b) => a.name.localeCompare(b.name, undefined, {
+                numeric: true,
+                sensitivity: "base"
+            }));
+
+            images.forEach((file, index) => {
+                const link = document.createElement("a");
+                link.href = file.download_url || (rawBase + "/" + folder + "/" + encodeURIComponent(file.name));
+                link.dataset.index = index;
+
+                const img = document.createElement("img");
+                img.src = link.href;
+                img.alt = "Foto " + (index + 1) + " – " + folder;
+                img.loading = "lazy";
+
+                link.appendChild(img);
+                gallery.appendChild(link);
+            });
+
+            gallery.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    openLightbox(gallery, Number(this.dataset.index));
+                });
+            });
+
+        } catch (error) {
+            gallery.innerHTML = "";
+            const status = document.createElement("p");
+            status.className = "galerie-status";
+            status.textContent = "Die Fotos konnten momentan nicht geladen werden.";
+            gallery.appendChild(status);
+            console.warn("Galerie " + folder + ":", error);
+        }
+    }
+
+    for (let i = 1; i <= 6; i++) {
+        await loadGallery(i);
+    }
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    let currentGallery = null;
+    let currentIndex = 0;
+
+    window.openLightbox = function (gallery, index) {
+        currentGallery = gallery;
+        currentIndex = index;
+        showLightboxImage();
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    };
+
+    function showLightboxImage() {
+        if (!currentGallery) return;
+        const links = currentGallery.querySelectorAll("a");
+        if (!links.length) return;
+
+        if (currentIndex < 0) currentIndex = links.length - 1;
+        if (currentIndex >= links.length) currentIndex = 0;
+
+        const img = links[currentIndex].querySelector("img");
+        lightboxImage.src = links[currentIndex].href;
+        lightboxImage.alt = img ? img.alt : "Foto";
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        document.body.style.overflow = "";
+    }
+
+    document.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+
+    document.querySelector(".lightbox-prev").addEventListener("click", function () {
+        currentIndex--;
+        showLightboxImage();
+    });
+
+    document.querySelector(".lightbox-next").addEventListener("click", function () {
+        currentIndex++;
+        showLightboxImage();
+    });
+
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (!lightbox.classList.contains("open")) return;
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        } else if (event.key === "ArrowLeft") {
+            currentIndex--;
+            showLightboxImage();
+        } else if (event.key === "ArrowRight") {
+            currentIndex++;
+            showLightboxImage();
+        }
+    });
+})();
+</script><script>
+(function () {
+    const header = document.querySelector("header");
+    const toggle = document.getElementById("mobileMenuToggle");
+    const nav = document.getElementById("mainNavigation");
+    if (!header || !toggle || !nav) return;
+
+    function closeMobileMenu() {
+        header.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+    }
+
+    toggle.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const open = header.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    });
+
+    const submenuItems = nav.querySelectorAll(".has-submenu");
+
+    function closeAllSubmenus(except) {
+        submenuItems.forEach(function (item) {
+            if (item !== except) {
+                item.classList.remove("submenu-open");
+                const button = item.querySelector(".submenu-toggle");
+                if (button) button.setAttribute("aria-expanded", "false");
+            }
+        });
+    }
+
+    submenuItems.forEach(function (item) {
+        const button = item.querySelector(".submenu-toggle");
+        const submenu = item.querySelector(".submenu");
+        if (!button || !submenu) return;
+
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const isOpen = item.classList.contains("submenu-open");
+            closeAllSubmenus(item);
+
+            if (isOpen) {
+                item.classList.remove("submenu-open");
+                button.setAttribute("aria-expanded", "false");
+            } else {
+                item.classList.add("submenu-open");
+                button.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            closeAllSubmenus();
+            closeMobileMenu();
+        });
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!header.contains(event.target)) {
+            closeAllSubmenus();
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeAllSubmenus();
+            closeMobileMenu();
+        }
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 900) closeMobileMenu();
+    });
+})();
+</script>
+
+<div aria-hidden="true" class="lightbox" id="lightbox">
+<button aria-label="Schließen" class="lightbox-close" type="button">×</button>
+<button aria-label="Vorheriges Foto" class="lightbox-prev" type="button">‹</button>
+<img alt="" id="lightboxImage" src=""/>
+<button aria-label="Nächstes Foto" class="lightbox-next" type="button">›</button>
+</div>
+</body>
+</html>
