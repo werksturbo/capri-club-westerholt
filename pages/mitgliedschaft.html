@@ -491,12 +491,12 @@
             max-width: none;
             margin: 0;
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: 1fr;
             gap: 24px;
             align-items: stretch;
         }
 
-        /* Die vierte Kachel steht unter den drei Mitgliedschaftsarten
+        /* Die vierte Kachel folgt unter den drei Mitgliedschaftsarten
            und nutzt die gesamte verfügbare Breite. */
         .mitgliedschaft-karten .card-link:nth-child(4) {
             grid-column: 1 / -1;
