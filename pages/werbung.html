@@ -445,6 +445,18 @@
     .werbung-titel h2{font-size:19px}
 }
 </style>
+
+<style>
+/* Aktiver Hauptmenüpunkt für den Bereich Capri Literatur */
+.submenu-toggle.active{
+    background:var(--white);
+    color:var(--primary);
+    padding:10px 18px;
+    border-radius:6px;
+    font-weight:bold;
+}
+</style>
+
 </head>
 
 
@@ -494,6 +506,7 @@
   
 
         <nav id="mainNavigation" aria-label="Hauptnavigation">
+
     <ul>
 
         <li>
@@ -501,87 +514,139 @@
         </li>
 
         <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-club">
+
+            <button
+                class="submenu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="submenu-club">
+
                 Der Club <span class="arrow">▾</span>
+
             </button>
+
             <ul class="submenu" id="submenu-club">
-                <!-- Unterseiten des Clubs werden im nächsten Schritt ergänzt -->
+
+                <li>
+                    <a href="stunde-null.html">
+                        Stunde Null
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mitgliedschaft.html">
+                        Mitgliedschaft
+                    </a>
+                </li>
+
             </ul>
+
         </li>
 
         <li>
-            <a href="pages/club-update.html">Club-Update</a>
+            <a href="club-update.html">
+                Club-Update
+            </a>
         </li>
 
         <li>
-            <a href="pages/fahrzeuge.html">Die Fahrzeuge</a>
+            <a href="fahrzeuge.html">
+                Die Fahrzeuge
+            </a>
+        </li>
+
+        <li>
+            <a href="termine.html">
+                Termine
+            </a>
         </li>
 
         <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-schrauberbude">
-                Schrauberbude <span class="arrow">▾</span>
-            </button>
-            <ul class="submenu" id="submenu-schrauberbude">
-                <!-- Unterseiten der Schrauberbude werden im nächsten Schritt ergänzt -->
-            </ul>
-        </li>
 
-        <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-jahre">
+            <button
+                class="submenu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="submenu-jahre">
+
                 Jahresrückblicke <span class="arrow">▾</span>
+
             </button>
+
             <ul class="submenu" id="submenu-jahre">
-                <!-- Jahresrückblicke werden im nächsten Schritt ergänzt -->
+                <!-- Jahresrückblicke werden später ergänzt -->
             </ul>
+
+        </li>
+
+        <li>
+            <a href="fotoalbum.html">
+                Fotoalbum
+            </a>
         </li>
 
         <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-fotoalbum">
-                Fotoalbum <span class="arrow">▾</span>
-            </button>
-            <ul class="submenu" id="submenu-fotoalbum">
-                <!-- Fotoalben werden im nächsten Schritt ergänzt -->
-            </ul>
-        </li>
 
-        <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-literatur">
+            <button
+                class="submenu-toggle active"
+                type="button"
+                aria-expanded="false"
+                aria-controls="submenu-literatur">
+
                 Capri Literatur <span class="arrow">▾</span>
+
             </button>
+
             <ul class="submenu" id="submenu-literatur">
+
                 <li>
-                    <a class="active" href="werbung.html">Werbung</a>
+                    <a class="active" href="werbung.html">
+                        Werbung
+                    </a>
                 </li>
+
                 <li>
-                    <a href="https://www.capri-club-westerholt.de/literatur">Testberichte</a>
+                    <a href="https://www.capri-club-westerholt.de/literatur">
+                        Testberichte
+                    </a>
                 </li>
+
                 <li>
-                    <a href="https://www.capri-club-westerholt.de/literatur">Poster</a>
+                    <a href="https://www.capri-club-westerholt.de/literatur">
+                        Poster
+                    </a>
                 </li>
+
                 <li>
-                    <a href="https://www.capri-club-westerholt.de/literatur">CCW Clubzeitung</a>
+                    <a href="https://www.capri-club-westerholt.de/literatur">
+                        CCW Clubzeitung
+                    </a>
                 </li>
+
             </ul>
+
         </li>
 
         <li>
-            <a href="pages/links.html">Links</a>
+            <a href="links.html">
+                Links
+            </a>
         </li>
 
         <li>
-            <a href="pages/members-only.html">Members only</a>
+            <a href="members-only.html">
+                Members only
+            </a>
         </li>
 
         <li>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="kontakt.html">
+                Kontakt
+            </a>
         </li>
 
     </ul>
+
 </nav>
 
     </header>
@@ -909,8 +974,83 @@
                 <div class="werbung-titel">
                     <h2>Werbung für den Capri `78 aus diversen Zeitungen</h2>
                 </div>
-                <div class="werbung-galerie">
-                    <div class="werbung-platzhalter">Werbebild</div>
+                <div class="werbung-galerie fuenf-spalten">
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_01.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_01.jpg" alt="Capri III Werbung 1" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_02.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_02.jpg" alt="Capri III Werbung 2" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_03.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_03.jpg" alt="Capri III Werbung 3" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_04.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_04.jpg" alt="Capri III Werbung 4" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_05.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_05.jpg" alt="Capri III Werbung 5" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_06.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_06.jpg" alt="Capri III Werbung 6" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_07.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_07.jpg" alt="Capri III Werbung 7" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_08.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_08.jpg" alt="Capri III Werbung 8" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_09.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_09.jpg" alt="Capri III Werbung 9" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_10.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_10.jpg" alt="Capri III Werbung 10" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_11.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_11.jpg" alt="Capri III Werbung 11" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_12.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_12.jpg" alt="Capri III Werbung 12" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_13.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_13.jpg" alt="Capri III Werbung 13" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_14.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_14.jpg" alt="Capri III Werbung 14" loading="lazy">
+    </a>
+</div>
+<div class="werbung-thumbnail">
+    <a href="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_15.jpg" target="_blank" rel="noopener">
+        <img src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_15.jpg" alt="Capri III Werbung 15" loading="lazy">
+    </a>
+</div>
+                </div>
                     <div class="werbung-platzhalter">Werbebild</div>
                     <div class="werbung-platzhalter">Werbebild</div>
                     <div class="werbung-platzhalter">Werbebild</div>
@@ -923,8 +1063,97 @@
                 <div class="werbung-titel">
                     <h2>Produktwerbung mit dem Capri</h2>
                 </div>
-                <div class="werbung-galerie">
-                    <div class="werbung-platzhalter">Werbebild</div>
+                <div class="werbung-galerie fuenf-spalten">
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_01.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_01.jpg"
+                             alt="Produktwerbung mit dem Capri 1"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_02.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_02.jpg"
+                             alt="Produktwerbung mit dem Capri 2"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_03.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_03.jpg"
+                             alt="Produktwerbung mit dem Capri 3"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_04.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_04.jpg"
+                             alt="Produktwerbung mit dem Capri 4"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_05.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_05.jpg"
+                             alt="Produktwerbung mit dem Capri 5"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_06.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_06.jpg"
+                             alt="Produktwerbung mit dem Capri 6"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_07.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_07.jpg"
+                             alt="Produktwerbung mit dem Capri 7"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_08.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_08.jpg"
+                             alt="Produktwerbung mit dem Capri 8"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_09.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_09.jpg"
+                             alt="Produktwerbung mit dem Capri 9"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_10.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_10.jpg"
+                             alt="Produktwerbung mit dem Capri 10"
+                             loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_11.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_11.jpg"
+                             alt="Produktwerbung mit dem Capri 11"
+                             loading="lazy">
+                    </a>
+
+                </div>
                     <div class="werbung-platzhalter">Werbebild</div>
                     <div class="werbung-platzhalter">Werbebild</div>
                     <div class="werbung-platzhalter">Werbebild</div>
