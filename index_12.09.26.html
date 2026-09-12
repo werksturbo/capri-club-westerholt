@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <title>Capri Club Westerholt | Wir leben die Legende</title>
 
     <meta name="description" content="Capri Club Westerholt – Informationen, Fahrzeuge, Treffen, Bilder, Rückblicke und Geschichte des Clubs.">
@@ -272,14 +271,17 @@
             align-items: center;
         }
 
+
         header nav li {
             position: relative;
         }
+
 
         header nav li.has-submenu {
             display: flex;
             align-items: stretch;
         }
+
 
         .submenu-toggle {
             appearance: none;
@@ -296,6 +298,7 @@
             white-space: nowrap;
         }
 
+
         .submenu-toggle .arrow {
             display: inline-block;
             margin-left: 5px;
@@ -303,9 +306,11 @@
             transition: transform .18s ease;
         }
 
+
         .has-submenu.submenu-open .submenu-toggle .arrow {
             transform: rotate(180deg);
         }
+
 
         header nav ul.submenu {
             display: none;
@@ -321,14 +326,17 @@
             box-shadow: 0 8px 20px rgba(0,0,0,.28);
         }
 
+
         .has-submenu.submenu-open > ul.submenu {
             display: block;
         }
+
 
         header nav ul.submenu li {
             display: block;
             width: 100%;
         }
+
 
         header nav ul.submenu a {
             display: block;
@@ -341,20 +349,26 @@
             border-radius: 0;
         }
 
+
         /* Leere Dropdowns bleiben zunächst unsichtbar – sie dienen als
            Platzhalter, bis wir die echten Unterseiten übernehmen. */
+
         header nav ul.submenu:empty {
             display: none !important;
         }
 
+
         @media (max-width: 900px) {
+
             header nav ul {
                 align-items: stretch;
             }
 
+
             header nav li.has-submenu {
                 display: block;
             }
+
 
             .submenu-toggle {
                 display: block;
@@ -368,6 +382,7 @@
                 white-space: normal;
             }
 
+
             header nav ul.submenu {
                 position: static;
                 min-width: 0;
@@ -376,10 +391,12 @@
                 background: rgba(0,0,0,.12);
             }
 
+
             header nav ul.submenu a {
                 padding: 10px 18px 10px 34px;
                 font-size: 16px;
             }
+
         }
 
     </style>
@@ -427,216 +444,380 @@
 
         </button>
 
-            <!-- ============================================================================================================= -->
-            <!-- HAUPTNAVIGATION                    MENUE     MENUE                                                            -->
-            <!-- ============================================================================================================= -->
-  
+
+        <!-- ============================================================================================================= -->
+        <!-- HAUPTNAVIGATION -->
+        <!-- ============================================================================================================= -->
+
 
         <nav id="mainNavigation" aria-label="Hauptnavigation">
-    <ul>
 
-        <li>
-            <a class="active" href="index.html">Home</a>
-        </li>
+            <ul>
 
-        <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-club">
-                Der Club <span class="arrow">▾</span>
-            </button>
-            <ul class="submenu" id="submenu-club">
-                <!-- Unterseiten des Clubs werden im nächsten Schritt ergänzt -->
+                <li>
+                    <a class="active" href="index.html">Home</a>
+                </li>
+
+
+                <!-- =========================================================
+                     DER CLUB
+                     ========================================================= -->
+
+                <li class="has-submenu">
+
+                    <button
+                        class="submenu-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="submenu-club">
+
+                        Der Club <span class="arrow">▾</span>
+
+                    </button>
+
+
+                    <ul class="submenu" id="submenu-club">
+
+                        <li>
+                            <a href="pages/stunde-null.html">
+                                Stunde Null
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="pages/mitgliedschaft.html">
+                                Mitgliedschaft
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li>
+                    <a href="pages/club-update.html">
+                        Club-Update
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="pages/fahrzeuge.html">
+                        Die Fahrzeuge
+                    </a>
+                </li>
+
+
+                <!-- =========================================================
+                     TERMINE
+                     ========================================================= -->
+
+                <li>
+                    <a href="pages/termine.html">
+                        Termine
+                    </a>
+                </li>
+
+
+                <!-- =========================================================
+                     JAHRESRÜCKBLICKE
+                     ========================================================= -->
+
+                <li class="has-submenu">
+
+                    <button
+                        class="submenu-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="submenu-jahre">
+
+                        Jahresrückblicke <span class="arrow">▾</span>
+
+                    </button>
+
+
+                    <ul class="submenu" id="submenu-jahre">
+
+                        <!-- Jahresrückblicke werden später ergänzt -->
+
+                    </ul>
+
+                </li>
+
+
+                <!-- =========================================================
+                     FOTOALBUM
+                     ========================================================= -->
+
+                <li>
+                    <a href="pages/fotoalbum.html">
+                        Fotoalbum
+                    </a>
+                </li>
+
+
+                <!-- =========================================================
+                     CAPRI LITERATUR
+                     ========================================================= -->
+
+                <li class="has-submenu">
+
+                    <button
+                        class="submenu-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="submenu-literatur">
+
+                        Capri Literatur <span class="arrow">▾</span>
+
+                    </button>
+
+
+                    <ul class="submenu" id="submenu-literatur">
+
+                        <li>
+                            <a href="pages/werbung.html">
+                                Werbung
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.capri-club-westerholt.de/literatur">
+                                Testberichte
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.capri-club-westerholt.de/literatur">
+                                Poster
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.capri-club-westerholt.de/literatur">
+                                CCW Clubzeitung
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li>
+                    <a href="pages/links.html">
+                        Links
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="pages/members-only.html">
+                        Members only
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="pages/kontakt.html">
+                        Kontakt
+                    </a>
+                </li>
+
+
             </ul>
-        </li>
 
-        <li>
-            <a href="pages/club-update.html">Club-Update</a>
-        </li>
-
-        <li>
-            <a href="pages/fahrzeuge.html">Die Fahrzeuge</a>
-        </li>
-
-        <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-schrauberbude">
-                Schrauberbude <span class="arrow">▾</span>
-            </button>
-            <ul class="submenu" id="submenu-schrauberbude">
-                <!-- Unterseiten der Schrauberbude werden im nächsten Schritt ergänzt -->
-            </ul>
-        </li>
-
-        <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-jahre">
-                Jahresrückblicke <span class="arrow">▾</span>
-            </button>
-            <ul class="submenu" id="submenu-jahre">
-                <!-- Jahresrückblicke werden im nächsten Schritt ergänzt -->
-            </ul>
-        </li>
-
-        <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-fotoalbum">
-                Fotoalbum <span class="arrow">▾</span>
-            </button>
-            <ul class="submenu" id="submenu-fotoalbum">
-                <!-- Fotoalben werden im nächsten Schritt ergänzt -->
-            </ul>
-        </li>
-
-        <li class="has-submenu">
-            <button class="submenu-toggle" type="button"
-                    aria-expanded="false" aria-controls="submenu-literatur">
-                Capri Literatur <span class="arrow">▾</span>
-            </button>
-            <ul class="submenu" id="submenu-literatur">
-                <!-- Literatur-Unterseiten werden im nächsten Schritt ergänzt -->
-            </ul>
-        </li>
-
-        <li>
-            <a href="pages/links.html">Links</a>
-        </li>
-
-        <li>
-            <a href="pages/members-only.html">Members only</a>
-        </li>
-
-        <li>
-            <a href="pages/kontakt.html">Kontakt</a>
-        </li>
-
-    </ul>
-</nav>
+        </nav>
 
     </header>
 
 
     <!-- ============================================================================================================= -->
-    <!-- CCW STARTSEITE – GRUNDGERÜST -->
+    <!-- CCW STARTSEITE -->
     <!-- ============================================================================================================= -->
 
-<main>
+    <main>
 
 
-    <!-- ============================================================================================================= -->
-    <!-- Bild des Monats                                                                                               -->
-    <!-- ============================================================================================================= -->
+        <!-- ============================================================================================================= -->
+        <!-- Bild des Monats -->
+        <!-- ============================================================================================================= -->
 
-    
-<section class="bild-des-monats">
 
-    <div class="container">
+        <section class="bild-des-monats">
 
-        <div class="bild-des-monats-inhalt">
+            <div class="container">
 
-            <div class="bild-des-monats-bild">
-                <img src="bild_des_monats/bild_des_monats.jpg"
-                     alt="Bild des Monats">
+                <div class="bild-des-monats-inhalt">
+
+
+                    <div class="bild-des-monats-bild">
+
+                        <img
+                            src="bild_des_monats/bild_des_monats.jpg"
+                            alt="Bild des Monats">
+
+                    </div>
+
+
+                    <div class="bild-des-monats-text">
+
+                        <h3>
+                            Erneut mit Pokal nach Hause
+                        </h3>
+
+
+                        <p>
+                            Der weiße Capri von Janina war zum zweiten Mal bei einem
+                            Ford Capri Treffen dabei – und auch diesmal kam er nicht
+                            ohne Pokal nach Hause.
+                        </p>
+
+
+                        <p>
+                            Eine schöne Auszeichnung und ein schönes Beispiel dafür,
+                            dass unsere Leidenschaft Generationen verbindet.
+                        </p>
+
+
+                        <p>
+
+                            <b>
+                                <i>
+                                    Capri mehr als ein Auto
+                                </i>
+                            </b>
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="bild-des-monats-text">
+        </section>
 
-                <h3>Erneut mit Pokal nach Hause</h3>
+
+        <!-- ============================================================================================================= -->
+        <!-- Willkommen -->
+        <!-- ============================================================================================================= -->
+
+
+        <section class="welcome">
+
+            <div class="container">
+
+                <h2>
+                    Willkommen beim Capri Club Westerholt
+                </h2>
+
 
                 <p>
-                    Der weiße Capri von Janina war zum zweiten Mal bei einem
-                    Ford Capri Treffen dabei – und auch diesmal kam er nicht
-                    ohne Pokal nach Hause.
-                </p>
 
-                <p>
-                    Eine schöne Auszeichnung und ein schönes Beispiel dafür, 
-                    dass unsere Leidenschaft Generationen verbindet.
-                </p>
-
-                <p>
                     <b>
-                        <i>
-                    Capri mehr als ein Auto
-                        </i>
-                    </b>    
+                        Schön, dass Du hier bist!
+                    </b>
+
+                    Der Capri Club Westerholt ist eine Gemeinschaft von Enthusiasten,
+                    die die Faszination für den Ford Capri verbindet und die Begeisterung
+                    für dieses besondere Fahrzeug gemeinsam lebt.
+
                 </p>
 
             </div>
 
-        </div>
-
-    </div>
-
-</section>
+        </section>
 
 
-    <!-- ============================================================================================================= -->
-    <!-- Willkommen                                                                                                    -->
-    <!-- ============================================================================================================= -->
+        <!-- ============================================================================================================= -->
+        <!-- Karten -->
+        <!-- ============================================================================================================= -->
 
 
-    
-<section class="welcome">
-    <div class="container">
-
-        <h2>Willkommen beim Capri Club Westerholt</h2>
-
-        <p>
-                <B>
-                    Schön, dass Du hier bist! 
-                </B>  
-            
-                Der Capri Club Westerholt ist eine Gemeinschaft von Enthusiasten, 
-                die die Faszination für den Ford Capri verbindet und die Begeisterung für dieses besondere 
-                Fahrzeug gemeinsam lebt.
-        </p>
-
-    </div>
-</section>
+        <section class="cards ccw-cards">
 
 
-    <!-- ============================================================================================================= -->
-    <!-- Karten                                                                                                        -->
-    <!-- ============================================================================================================= -->
+            <a class="card-link" href="pages/club-update.html">
 
-    
-    <section class="cards ccw-cards">
+                <div class="card">
 
-        <a class="card-link" href="pages/club-update.html">
-            <div class="card">
-                <h3>Club-Update</h3>
-                <p>Neuigkeiten und aktuelle Informationen aus dem CCW.</p>
-                <div class="more">Weiterlesen →</div>
-            </div>
-        </a>
+                    <h3>
+                        Club-Update
+                    </h3>
 
-        <a class="card-link" href="pages/fahrzeuge.html">
-            <div class="card">
-                <h3>Die Fahrzeuge</h3>
-                <p>Unsere Capris und die Fahrzeuge unserer Clubmitglieder.</p>
-                <div class="more">Mehr erfahren →</div>
-            </div>
-        </a>
+                    <p>
+                        Neuigkeiten und aktuelle Informationen aus dem CCW.
+                    </p>
 
-        <a class="card-link" href="pages/treffen.html">
-            <div class="card">
-                <h3>Capri Treffen</h3>
-                <p>Treffen, Termine und gemeinsame Veranstaltungen.</p>
-                <div class="more">Zu den Treffen →</div>
-            </div>
-        </a>
+                    <div class="more">
+                        Weiterlesen →
+                    </div>
 
-    </section>
+                </div>
 
-</main>
+            </a>
 
-<!-- ========================= -->
-<!-- FOOTER -->
+
+            <a class="card-link" href="pages/fahrzeuge.html">
+
+                <div class="card">
+
+                    <h3>
+                        Die Fahrzeuge
+                    </h3>
+
+                    <p>
+                        Unsere Capris und die Fahrzeuge unserer Clubmitglieder.
+                    </p>
+
+                    <div class="more">
+                        Mehr erfahren →
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <a class="card-link" href="pages/treffen.html">
+
+                <div class="card">
+
+                    <h3>
+                        Capri Treffen
+                    </h3>
+
+                    <p>
+                        Treffen, Termine und gemeinsame Veranstaltungen.
+                    </p>
+
+                    <div class="more">
+                        Zu den Treffen →
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
     <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
 
     <footer>
 
         <div class="footer-content">
+
 
             <h3>
                 Capri Club Westerholt
@@ -666,24 +847,30 @@
 
             </div>
 
+
         </div>
 
     </footer>
 
 
     <!-- =========================================================
-         MOBILE MENU JAVASCRIPT
+         CCW MENU JAVASCRIPT
+         Mobile Menü + Dropdown-Submenüs
          ========================================================= -->
+
 
     <script>
 
         (function () {
 
+
             const header =
                 document.querySelector("header");
 
+
             const toggle =
                 document.getElementById("mobileMenuToggle");
+
 
             const nav =
                 document.getElementById("mainNavigation");
@@ -694,9 +881,12 @@
             }
 
 
-            /* Menü schließen */
+            /* ==========================================
+               MOBILES MENÜ
+               ========================================== */
 
-            function closeMenu() {
+
+            function closeMobileMenu() {
 
                 header.classList.remove("nav-open");
 
@@ -713,11 +903,12 @@
             }
 
 
-            /* Hamburger anklicken */
-
             toggle.addEventListener(
                 "click",
-                function () {
+                function (event) {
+
+                    event.stopPropagation();
+
 
                     const open =
                         header.classList.toggle("nav-open");
@@ -740,23 +931,147 @@
             );
 
 
-            /* Menü schließen,
-               wenn ein Link angeklickt wird */
+            /* ==========================================
+               DROPDOWN-SUBMENÜS
+               ========================================== */
 
-            nav.querySelectorAll("a").forEach(
-                function (link) {
 
-                    link.addEventListener(
+            const submenuItems =
+                nav.querySelectorAll(".has-submenu");
+
+
+            function closeAllSubmenus(except) {
+
+                submenuItems.forEach(
+                    function (item) {
+
+                        if (item !== except) {
+
+                            item.classList.remove(
+                                "submenu-open"
+                            );
+
+
+                            const button =
+                                item.querySelector(
+                                    ".submenu-toggle"
+                                );
+
+
+                            if (button) {
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            submenuItems.forEach(
+                function (item) {
+
+
+                    const button =
+                        item.querySelector(
+                            ".submenu-toggle"
+                        );
+
+
+                    const submenu =
+                        item.querySelector(
+                            ".submenu"
+                        );
+
+
+                    if (!button || !submenu) {
+                        return;
+                    }
+
+
+                    button.addEventListener(
                         "click",
-                        closeMenu
+                        function (event) {
+
+                            event.preventDefault();
+                            event.stopPropagation();
+
+
+                            const isOpen =
+                                item.classList.contains(
+                                    "submenu-open"
+                                );
+
+
+                            closeAllSubmenus(item);
+
+
+                            if (isOpen) {
+
+                                item.classList.remove(
+                                    "submenu-open"
+                                );
+
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                            } else {
+
+                                item.classList.add(
+                                    "submenu-open"
+                                );
+
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    "true"
+                                );
+
+                            }
+
+                        }
                     );
 
                 }
             );
 
 
-            /* Menü schließen,
-               wenn außerhalb geklickt wird */
+            /* ==========================================
+               LINKS
+               ========================================== */
+
+
+            nav.querySelectorAll("a").forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            closeAllSubmenus();
+                            closeMobileMenu();
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* ==========================================
+               KLICK AUSSERHALB
+               ========================================== */
+
 
             document.addEventListener(
                 "click",
@@ -764,7 +1079,8 @@
 
                     if (!header.contains(event.target)) {
 
-                        closeMenu();
+                        closeAllSubmenus();
+                        closeMobileMenu();
 
                     }
 
@@ -772,21 +1088,42 @@
             );
 
 
-            /* Bei Wechsel auf Desktop
-               Menü automatisch schließen */
+            /* ==========================================
+               ESCAPE
+               ========================================== */
+
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (event.key === "Escape") {
+
+                        closeAllSubmenus();
+                        closeMobileMenu();
+
+                    }
+
+                }
+            );
+
+
+            /* ==========================================
+               BEIM WECHSEL AUF DESKTOP
+               ========================================== */
+
 
             window.addEventListener(
                 "resize",
                 function () {
 
                     if (window.innerWidth > 900) {
-
-                        closeMenu();
-
+                        closeMobileMenu();
                     }
 
                 }
             );
+
 
         })();
 
