@@ -404,14 +404,43 @@
     display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
     gap:16px;padding:18px
 }
+.werbung-galerie.fuenf-spalten{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+}
+
+.werbung-thumbnail{
+    display:block;
+    aspect-ratio:4 / 3;
+    overflow:hidden;
+    border-radius:8px;
+    background:#f4f6f8;
+    border:1px solid #e1e5e9;
+}
+
+.werbung-thumbnail img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    transition:transform .2s ease;
+}
+
+.werbung-thumbnail:hover img{
+    transform:scale(1.04);
+}
+
 .werbung-platzhalter{
     min-height:230px;display:flex;align-items:center;justify-content:center;
     border:1px dashed #aeb7c2;border-radius:8px;background:#f4f6f8;
     color:#6b7280;font-size:14px
 }
-@media (max-width:900px){.werbung-galerie{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){
+    .werbung-galerie{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .werbung-galerie.fuenf-spalten{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 @media (max-width:600px){
     .werbung-galerie{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}
+    .werbung-galerie.fuenf-spalten{grid-template-columns:repeat(2,minmax(0,1fr))}
     .werbung-platzhalter{min-height:180px}
     .werbung-titel h2{font-size:19px}
 }
@@ -589,11 +618,43 @@
                 <div class="werbung-titel">
                     <h2>Werbung für den Capri I (b)</h2>
                 </div>
-                <div class="werbung-galerie">
-                    <div class="werbung-platzhalter">Werbebild</div>
-                    <div class="werbung-platzhalter">Werbebild</div>
-                    <div class="werbung-platzhalter">Werbebild</div>
-                    <div class="werbung-platzhalter">Werbebild</div>
+                <div class="werbung-galerie fuenf-spalten">
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_01.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_01.jpg"
+                             alt="Capri I Werbung 1" loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_02.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_02.jpg"
+                             alt="Capri I Werbung 2" loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_03.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_03.jpg"
+                             alt="Capri I Werbung 3" loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_04.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_04.jpg"
+                             alt="Capri I Werbung 4" loading="lazy">
+                    </a>
+
+                    <a class="werbung-thumbnail"
+                       href="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_05.jpg"
+                       target="_blank" rel="noopener">
+                        <img src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_05.jpg"
+                             alt="Capri I Werbung 5" loading="lazy">
+                    </a>
+
                 </div>
             </section>
 
