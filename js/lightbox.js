@@ -1,6 +1,19 @@
 /* =========================================================
    CCW LIGHTBOX
-   Zentrale Bildanzeige mit Zoom und einfachem Kopierschutz
+   Zentrale Bildanzeige mit Zoom und Kopierschutz
+
+   Funktionen:
+   - Lightbox
+   - Galerie-Navigation
+   - Zoom 100 % bis 400 %
+   - Mausrad-Zoom
+   - Bild verschieben bei Zoom
+   - Doppelklick 100 % / 200 %
+   - Smartphone Pinch-Zoom
+   - Smartphone Wischgesten
+   - ESC / Pfeiltasten
+   - Kopierschutz innerhalb der Lightbox
+   - Anzeige des ORIGINAL-DATEINAMENS
    ========================================================= */
 
 (function () {
@@ -165,7 +178,7 @@
             </div>
 
 
-            <!-- Bildbeschriftung -->
+            <!-- Dateiname -->
 
             <div
                 class="ccw-lightbox-caption">
@@ -252,12 +265,16 @@
         }
 
 
-        if (element.matches("a")) {
+        if (
+            element.matches("a")
+        ) {
             return element;
         }
 
 
-        return element.querySelector("a");
+        return element.querySelector(
+            "a"
+        );
     }
 
 
@@ -265,7 +282,9 @@
        GALERIE ERMITTELN
        ========================================================= */
 
-    function getGalleryItems(clickedElement) {
+    function getGalleryItems(
+        clickedElement
+    ) {
 
         const wrapper =
             clickedElement.closest(
@@ -339,6 +358,70 @@
 
 
     /* =========================================================
+       DATEINAMEN ERMITTELN
+       ========================================================= */
+
+    function getFileNameFromUrl(
+        url
+    ) {
+
+        try {
+
+            /*
+             * URL sauber auswerten.
+             */
+
+            const parsedUrl =
+                new URL(
+                    url,
+                    window.location.href
+                );
+
+
+            /*
+             * Letzten Teil des Pfades holen.
+             */
+
+            let fileName =
+                decodeURIComponent(
+                    parsedUrl.pathname
+                        .split("/")
+                        .pop()
+                );
+
+
+            /*
+             * Dateiendung entfernen.
+             *
+             * jpg
+             * jpeg
+             * png
+             * webp
+             * gif
+             */
+
+            fileName =
+                fileName.replace(
+                    /\.(jpg|jpeg|png|webp|gif)$/i,
+                    ""
+                );
+
+
+            return fileName;
+
+        } catch (error) {
+
+            /*
+             * Falls etwas mit der URL nicht stimmt,
+             * bleibt die Beschriftung einfach leer.
+             */
+
+            return "";
+        }
+    }
+
+
+    /* =========================================================
        ZOOM
        ========================================================= */
 
@@ -379,6 +462,10 @@
     }
 
 
+    /* =========================================================
+       ZOOM ZURÜCKSETZEN
+       ========================================================= */
+
     function resetZoom() {
 
         zoomLevel = 1;
@@ -390,7 +477,13 @@
     }
 
 
-    function setZoom(newZoom) {
+    /* =========================================================
+       ZOOM SETZEN
+       ========================================================= */
+
+    function setZoom(
+        newZoom
+    ) {
 
         zoomLevel =
             Math.max(
@@ -402,7 +495,9 @@
             );
 
 
-        if (zoomLevel === 1) {
+        if (
+            zoomLevel === 1
+        ) {
 
             panX = 0;
             panY = 0;
@@ -413,10 +508,15 @@
     }
 
 
+    /* =========================================================
+       ZOOM + / -
+       ========================================================= */
+
     function zoomIn() {
 
         setZoom(
-            zoomLevel + zoomStep
+            zoomLevel +
+            zoomStep
         );
     }
 
@@ -424,13 +524,14 @@
     function zoomOut() {
 
         setZoom(
-            zoomLevel - zoomStep
+            zoomLevel -
+            zoomStep
         );
     }
 
 
     /* =========================================================
-       NAVIGATION
+       NAVIGATION AKTUALISIEREN
        ========================================================= */
 
     function updateNavigation() {
@@ -462,7 +563,9 @@
        BILD ANZEIGEN
        ========================================================= */
 
-    function showImage(index) {
+    function showImage(
+        index
+    ) {
 
         if (!items.length) {
             return;
@@ -481,26 +584,30 @@
             items[currentIndex];
 
 
-        const thumbnailImage =
-            link.querySelector(
-                "img"
-            );
-
-
         /*
-         * Beim Bildwechsel
-         * Zoom zurücksetzen.
+         * Beim Wechsel auf ein anderes Bild
+         * Zoom auf 100 % zurücksetzen.
          */
 
         resetZoom();
 
 
         /*
-         * Originalbild laden
+         * ORIGINALBILD laden
          */
 
         image.src =
             link.href;
+
+
+        /*
+         * ALT-TEXT für Barrierefreiheit
+         */
+
+        const thumbnailImage =
+            link.querySelector(
+                "img"
+            );
 
 
         image.alt =
@@ -509,10 +616,17 @@
                 : "";
 
 
+        /*
+         * DATEINAME anzeigen
+         *
+         * Der Dateiname wird direkt aus
+         * dem Original-Link gelesen.
+         */
+
         caption.textContent =
-            thumbnailImage
-                ? thumbnailImage.alt
-                : "";
+            getFileNameFromUrl(
+                link.href
+            );
 
 
         updateNavigation();
@@ -523,7 +637,9 @@
        LIGHTBOX ÖFFNEN
        ========================================================= */
 
-    function openLightbox(clickedElement) {
+    function openLightbox(
+        clickedElement
+    ) {
 
         items =
             getGalleryItems(
@@ -790,7 +906,6 @@
        KOPIERSCHUTZ
        ========================================================= */
 
-
     /*
      * Rechtsklick innerhalb der Lightbox verhindern.
      */
@@ -800,14 +915,14 @@
         function (event) {
 
             event.preventDefault();
-            event.stopPropagation();
 
+            event.stopPropagation();
         }
     );
 
 
     /*
-     * Direktes Ziehen des Bildes verhindern.
+     * Direktes Ziehen verhindern.
      */
 
     lightbox.addEventListener(
@@ -815,14 +930,14 @@
         function (event) {
 
             event.preventDefault();
-            event.stopPropagation();
 
+            event.stopPropagation();
         }
     );
 
 
     /*
-     * Markieren / Kopieren des Bildes verhindern.
+     * Bild markieren verhindern.
      */
 
     image.addEventListener(
@@ -830,14 +945,12 @@
         function (event) {
 
             event.preventDefault();
-
         }
     );
 
 
     /*
-     * Zusätzliche Sicherheit für das eigentliche
-     * Bild.
+     * Zusätzlicher Schutz auf dem Bild.
      */
 
     image.addEventListener(
@@ -845,7 +958,6 @@
         function (event) {
 
             event.preventDefault();
-
         }
     );
 
@@ -855,24 +967,18 @@
         function (event) {
 
             event.preventDefault();
-
         }
     );
 
 
     /*
-     * Browser-Gesten bzw. Speichern über
-     * bestimmte Mausaktionen erschweren.
+     * Mittlere Maustaste / Sonderfälle
+     * nicht als normalen Link behandeln.
      */
 
     image.addEventListener(
         "mousedown",
         function (event) {
-
-            /*
-             * Mittlere Maustaste / Sonderfälle
-             * nicht als Link öffnen lassen.
-             */
 
             if (
                 event.button !== 0
@@ -880,7 +986,6 @@
 
                 event.preventDefault();
             }
-
         }
     );
 
@@ -1395,6 +1500,7 @@
 
             /*
              * -
+
              */
 
             if (
