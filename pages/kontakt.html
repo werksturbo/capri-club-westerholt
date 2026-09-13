@@ -366,33 +366,61 @@
 
     <style>
         /* =========================================================
-           KONTAKTSEITE – EINHEITLICHES CCW-KACHELDESIGN
+           KONTAKTSEITE – WERBUNG-INSPIRED KACHELDESIGN
            ========================================================= */
+
+        .page-header {
+            max-width: 1300px;
+            margin: 24px auto 0;
+            padding: 0;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            box-shadow: 0 8px 20px rgba(0,0,0,.10);
+        }
+
+        .page-header h2 {
+            margin: 0;
+            padding: 13px 20px 14px;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .page-section {
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .kontakt-kacheln {
             display: grid;
             grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-            align-items: stretch;
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #eef1f5;
+            border-radius: 0 0 12px 12px;
         }
 
         .kontakt-kacheln .card {
             box-sizing: border-box;
             background: #ffffff;
             color: #243746;
-            border-radius: 12px;
-            border-top: 5px solid #05019B;
-            box-shadow: 0 8px 20px rgba(0,0,0,.10);
-            padding: 26px 28px 28px;
+            border-radius: 10px;
+            box-shadow: 0 5px 14px rgba(0,0,0,.12);
+            padding: 0 26px 28px;
+            overflow: hidden;
         }
 
         .kontakt-kacheln .card h3 {
-            margin: 0 0 20px;
-            color: #243746;
-            font-size: 25px;
-            line-height: 1.2;
+            margin: 0 -26px 22px;
+            padding: 12px 20px 13px;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            color: #ffffff;
+            font-size: 21px;
+            line-height: 1.25;
             font-weight: 700;
         }
 
@@ -403,9 +431,17 @@
             line-height: 1.55;
         }
 
-        .kontakt-kacheln .card p:last-child { margin-bottom: 0; }
+        .kontakt-kacheln .card p:last-child {
+            margin-bottom: 0;
+        }
 
-        .kontakt-formular form { margin: 0; }
+        .kontakt-kacheln .card strong {
+            color: #05019B;
+        }
+
+        .kontakt-formular form {
+            margin: 0;
+        }
 
         .kontakt-formular label {
             display: block;
@@ -433,23 +469,20 @@
             transition: border-color .18s ease, box-shadow .18s ease;
         }
 
-        .kontakt-formular input { min-height: 44px; }
-        .kontakt-formular textarea { min-height: 120px; resize: vertical; }
+        .kontakt-formular input {
+            min-height: 44px;
+        }
+
+        .kontakt-formular textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
 
         .kontakt-formular input:focus,
         .kontakt-formular textarea:focus {
-            border-color: #05019B;
-            box-shadow: 0 0 0 3px rgba(5,1,155,.12);
+            border-color: #1d7fc3;
+            box-shadow: 0 0 0 3px rgba(29,127,195,.12);
         }
-
-        /* Formspree AJAX – Statusmeldungen */
-        .kontakt-formular .form-status { margin: 0 0 18px; padding: 14px 16px; border-radius: 8px; font-size: 15px; line-height: 1.45; }
-        .kontakt-formular .form-success { background: #f1f6fb; border-left: 4px solid #05019B; color: #243746; }
-        .kontakt-formular .form-success h4 { margin: 0 0 8px; color: #05019B; font-size: 22px; }
-        .kontakt-formular .form-success p { margin: 0 0 8px; color: #243746; }
-        .kontakt-formular .form-success p:last-child { margin-bottom: 0; }
-        .kontakt-formular .form-error { margin: 0 0 14px; padding: 10px 12px; border-radius: 6px; background: #fff2f2; color: #a00000; font-size: 14px; }
-        .kontakt-formular [data-fs-error] { display: block; margin: -10px 0 12px; color: #a00000; font-size: 13px; }
 
         .kontakt-formular button {
             display: inline-block;
@@ -472,18 +505,96 @@
             transform: translateY(-2px);
         }
 
-        .kontakt-formular button:active { transform: translateY(0); }
-        .kontakt-kacheln .card strong { color: #243746; }
+        .kontakt-formular button:active {
+            transform: translateY(0);
+        }
+
+        .kontakt-formular .form-status {
+            margin: 0 0 18px;
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        .kontakt-formular .form-success {
+            background: #f1f6fb;
+            border-left: 4px solid #05019B;
+        }
+
+        .kontakt-formular .form-success p:last-child {
+            margin-bottom: 0;
+        }
+
+        .kontakt-formular .form-error {
+            margin: 0 0 14px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            background: #fff2f2;
+            color: #a00000;
+            font-size: 14px;
+        }
+
+        .kontakt-formular [data-fs-error] {
+            display: block;
+            margin: -10px 0 12px;
+            color: #a00000;
+            font-size: 13px;
+        }
 
         @media (max-width: 800px) {
+
+            .page-header {
+                margin-top: 16px;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .page-header h2 {
+                padding: 12px 16px;
+                font-size: 22px;
+            }
+
             .kontakt-kacheln {
                 grid-template-columns: 1fr;
-                gap: 20px;
-                max-width: 100%;
+                gap: 16px;
+                padding: 16px;
+                border-radius: 0 0 10px 10px;
             }
-            .kontakt-kacheln .card { padding: 22px 20px 24px; }
-            .kontakt-kacheln .card h3 { font-size: 23px; }
+
+            .kontakt-kacheln .card {
+                padding: 0 20px 24px;
+            }
+
+            .kontakt-kacheln .card h3 {
+                margin-left: -20px;
+                margin-right: -20px;
+                margin-bottom: 20px;
+                font-size: 20px;
+                padding: 11px 16px 12px;
+            }
         }
+
+        @media (max-width: 420px) {
+
+            .page-header h2 {
+                font-size: 20px;
+            }
+
+            .kontakt-kacheln {
+                padding: 12px;
+            }
+
+            .kontakt-kacheln .card {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .kontakt-kacheln .card h3 {
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+        }
+
     </style>
 
 </head>
@@ -533,7 +644,7 @@
             <ul>
 
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="../index.html">Home</a>
                 </li>
 
 
