@@ -400,7 +400,7 @@
         .links-liste {
             display:flex;
             flex-direction:column;
-            gap:3px;
+            gap:7px;
         }
 
         .link-eintrag {
@@ -1062,6 +1062,123 @@
         })();
 
     
+
+function csvZeilen(text) {
+    return text.trim().split(/\r?\n/).filter(Boolean).map(function (zeile) {
+        const teile = [];
+        let feld = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < zeile.length; i++) {
+            const c = zeile[i];
+
+            if (c === '"') {
+                if (inQuotes && zeile[i + 1] === '"') {
+                    feld += '"';
+                    i++;
+                } else {
+                    inQuotes = !inQuotes;
+                }
+            } else if (c === ';' && !inQuotes) {
+                teile.push(feld.trim());
+                feld = "";
+            } else {
+                feld += c;
+            }
+        }
+
+        teile.push(feld.trim());
+        return teile;
+    });
+}
+
+function zeigeLinks(csvText, containerId) {
+    const container = document.getElementById(containerId);
+    const zeilen = csvZeilen(csvText);
+
+    if (zeilen.length <= 1) {
+        container.innerHTML = '<p class="links-leer">Noch keine Links eingetragen.</p>';
+        return;
+    }
+
+    const eintraege = zeilen.slice(1);
+
+    container.innerHTML = "";
+
+    eintraege.forEach(function (daten) {
+        const name = daten[0] || "";
+        const url = daten[1] || "#";
+        const logo = daten[2] || "";
+        const beschreibung = daten[3] || "";
+
+        if (!name) return;
+
+        const a = document.createElement("a");
+        a.className = "link-eintrag";
+        a.href = url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+
+        const logoBox = document.createElement("div");
+        logoBox.className = logo ? "link-logo" : "link-ohne-logo";
+
+        if (logo) {
+            const img = document.createElement("img");
+            img.src = "../" + logo;
+            img.alt = "Logo " + name;
+            img.loading = "lazy";
+            logoBox.appendChild(img);
+        } else {
+            logoBox.textContent = "LOGO";
+        }
+
+        const textBox = document.createElement("div");
+        textBox.className = "link-text";
+
+        const h4 = document.createElement("h4");
+        h4.textContent = name;
+
+        const p = document.createElement("p");
+        p.textContent = beschreibung;
+
+        textBox.appendChild(h4);
+        textBox.appendChild(p);
+
+        a.appendChild(logoBox);
+        a.appendChild(textBox);
+        container.appendChild(a);
+    });
+}
+
+async function ladeLinks() {
+    try {
+        const [clubsAntwort, firmenAntwort] = await Promise.all([
+            fetch("../data/clubs.csv"),
+            fetch("../data/firmen.csv")
+        ]);
+
+        if (!clubsAntwort.ok || !firmenAntwort.ok) {
+            throw new Error("CSV-Dateien konnten nicht geladen werden.");
+        }
+
+        const clubsText = await clubsAntwort.text();
+        const firmenText = await firmenAntwort.text();
+
+        zeigeLinks(clubsText, "clubs-liste");
+        zeigeLinks(firmenText, "firmen-liste");
+
+    } catch (fehler) {
+        document.getElementById("clubs-liste").innerHTML =
+            '<p class="links-fehler">Die Club-Links konnten momentan nicht geladen werden.</p>';
+
+        document.getElementById("firmen-liste").innerHTML =
+            '<p class="links-fehler">Die Partner-Links konnten momentan nicht geladen werden.</p>';
+
+        console.error(fehler);
+    }
+}
+
+ladeLinks();
     </script>
 
 </body>
