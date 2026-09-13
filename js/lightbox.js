@@ -1,188 +1,648 @@
-
 /* =========================================================
    CCW LIGHTBOX
    Zentrale Bildanzeige für alle CCW-Seiten
    ========================================================= */
 
-.ccw-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 20000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    box-sizing: border-box;
-    background: rgba(0,0,0,.88);
-}
+(function () {
+    "use strict";
 
-.ccw-lightbox.is-open {
-    display: flex;
-}
+    let items = [];
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
 
-.ccw-lightbox-content {
-    position: relative;
-    width: min(94vw, 1500px);
-    height: min(92vh, 1000px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.ccw-lightbox-image {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 4px;
-    box-shadow: 0 12px 40px rgba(0,0,0,.45);
-}
+    /* ---------------------------------------------------------
+       Lightbox erzeugen
+       --------------------------------------------------------- */
 
-.ccw-lightbox-close,
-.ccw-lightbox-prev,
-.ccw-lightbox-next {
-    position: absolute;
-    z-index: 2;
-    border: 0;
-    color: #fff;
-    background: rgba(0,0,0,.55);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background .2s ease, transform .2s ease;
-}
+    const lightbox = document.createElement("div");
 
-.ccw-lightbox-close:hover,
-.ccw-lightbox-prev:hover,
-.ccw-lightbox-next:hover {
-    background: rgba(5,1,155,.92);
-}
+    lightbox.className = "ccw-lightbox";
+    lightbox.setAttribute("aria-hidden", "true");
 
-.ccw-lightbox-close {
-    top: 10px;
-    right: 10px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    font-size: 30px;
-    line-height: 1;
-}
+    lightbox.innerHTML = `
+        <div class="ccw-lightbox-content"
+             role="dialog"
+             aria-modal="true"
+             aria-label="Bildansicht">
 
-.ccw-lightbox-prev,
-.ccw-lightbox-next {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 64px;
-    border-radius: 8px;
-    font-size: 34px;
-    line-height: 1;
-}
+            <button class="ccw-lightbox-close"
+                    type="button"
+                    aria-label="Bildansicht schließen">×</button>
 
-.ccw-lightbox-prev {
-    left: -70px;
-}
+            <button class="ccw-lightbox-prev"
+                    type="button"
+                    aria-label="Vorheriges Bild">‹</button>
 
-.ccw-lightbox-next {
-    right: -70px;
-}
+            <img class="ccw-lightbox-image" alt="">
 
-.ccw-lightbox-prev:hover,
-.ccw-lightbox-next:hover {
-    transform: translateY(-50%) scale(1.05);
-}
+            <button class="ccw-lightbox-next"
+                    type="button"
+                    aria-label="Nächstes Bild">›</button>
 
-.ccw-lightbox-caption {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -34px;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.3;
-    text-shadow: 0 1px 3px rgba(0,0,0,.8);
-}
+            <div class="ccw-lightbox-counter"></div>
 
-.ccw-lightbox-counter {
-    position: absolute;
-    top: -34px;
-    left: 0;
-    color: #fff;
-    font-size: 14px;
-    text-shadow: 0 1px 3px rgba(0,0,0,.8);
-}
+            <div class="ccw-lightbox-caption"></div>
 
-/* Verhindert Scrollen der Seite, solange die Lightbox offen ist */
-body.ccw-lightbox-open {
-    overflow: hidden;
-}
+        </div>
+    `;
 
-@media (max-width: 900px) {
-    .ccw-lightbox {
-        padding: 14px;
+
+    document.body.appendChild(lightbox);
+
+
+    const image =
+        lightbox.querySelector(".ccw-lightbox-image");
+
+    const closeButton =
+        lightbox.querySelector(".ccw-lightbox-close");
+
+    const prevButton =
+        lightbox.querySelector(".ccw-lightbox-prev");
+
+    const nextButton =
+        lightbox.querySelector(".ccw-lightbox-next");
+
+    const counter =
+        lightbox.querySelector(".ccw-lightbox-counter");
+
+    const caption =
+        lightbox.querySelector(".ccw-lightbox-caption");
+
+
+    /* ---------------------------------------------------------
+       Hilfsfunktion:
+       Link innerhalb des angeklickten Elements finden
+       --------------------------------------------------------- */
+
+    function getAnchor(element) {
+
+        if (!element) {
+            return null;
+        }
+
+        if (element.matches("a")) {
+            return element;
+        }
+
+        return element.querySelector("a");
     }
 
-    .ccw-lightbox-content {
-        width: 100%;
-        height: 88vh;
+
+    /* ---------------------------------------------------------
+       Galerie bestimmen
+       --------------------------------------------------------- */
+
+    function getGalleryItems(clickedElement) {
+
+        const wrapper =
+            clickedElement.closest(
+                ".werbung-thumbnail, a.lightbox"
+            );
+
+
+        if (!wrapper) {
+            return [];
+        }
+
+
+        /*
+         * Zukünftige Möglichkeit:
+         *
+         * data-lightbox-group="name"
+         *
+         * Alle Bilder derselben Gruppe gehören
+         * automatisch zusammen.
+         */
+
+        const group =
+            wrapper.getAttribute(
+                "data-lightbox-group"
+            );
+
+
+        if (group) {
+
+            return Array.from(
+                document.querySelectorAll(
+                    '[data-lightbox-group="' +
+                    CSS.escape(group) +
+                    '"]'
+                )
+            )
+            .map(getAnchor)
+            .filter(Boolean);
+        }
+
+
+        /*
+         * Auf der Werbung-Seite bildet jeder
+         * .werbung-bereich eine eigene Galerie.
+         */
+
+        const section =
+            wrapper.closest(".werbung-bereich");
+
+
+        if (section) {
+
+            return Array.from(
+                section.querySelectorAll(
+                    ".werbung-thumbnail"
+                )
+            )
+            .map(getAnchor)
+            .filter(Boolean);
+        }
+
+
+        /*
+         * Einzelnes Bild
+         */
+
+        return [
+            getAnchor(wrapper)
+        ].filter(Boolean);
     }
 
-    .ccw-lightbox-prev,
-    .ccw-lightbox-next {
-        width: 42px;
-        height: 54px;
-        font-size: 28px;
+
+    /* ---------------------------------------------------------
+       Navigation aktualisieren
+       --------------------------------------------------------- */
+
+    function updateNavigation() {
+
+        const multiple =
+            items.length > 1;
+
+
+        prevButton.style.display =
+            multiple ? "flex" : "none";
+
+
+        nextButton.style.display =
+            multiple ? "flex" : "none";
+
+
+        counter.textContent =
+            multiple
+                ? `${currentIndex + 1} / ${items.length}`
+                : "";
     }
 
-    .ccw-lightbox-prev {
-        left: 4px;
+
+    /* ---------------------------------------------------------
+       Bild anzeigen
+       --------------------------------------------------------- */
+
+    function showImage(index) {
+
+        if (!items.length) {
+            return;
+        }
+
+
+        currentIndex =
+            (index + items.length) %
+            items.length;
+
+
+        const link =
+            items[currentIndex];
+
+
+        const thumbnailImage =
+            link.querySelector("img");
+
+
+        /*
+         * Hier wird das ORIGINALBILD geladen.
+         */
+
+        image.src =
+            link.href;
+
+
+        image.alt =
+            thumbnailImage
+                ? thumbnailImage.alt
+                : "";
+
+
+        caption.textContent =
+            thumbnailImage
+                ? thumbnailImage.alt
+                : "";
+
+
+        updateNavigation();
     }
 
-    .ccw-lightbox-next {
-        right: 4px;
+
+    /* ---------------------------------------------------------
+       Lightbox öffnen
+       --------------------------------------------------------- */
+
+    function openLightbox(clickedElement) {
+
+        items =
+            getGalleryItems(clickedElement);
+
+
+        const clickedAnchor =
+            getAnchor(clickedElement);
+
+
+        if (
+            !items.length ||
+            !clickedAnchor
+        ) {
+            return;
+        }
+
+
+        currentIndex =
+            items.indexOf(clickedAnchor);
+
+
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        }
+
+
+        showImage(currentIndex);
+
+
+        lightbox.classList.add(
+            "is-open"
+        );
+
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        document.body.classList.add(
+            "ccw-lightbox-open"
+        );
+
+
+        closeButton.focus();
     }
 
-    .ccw-lightbox-close {
-        top: 4px;
-        right: 4px;
-        width: 40px;
-        height: 40px;
-        font-size: 27px;
+
+    /* ---------------------------------------------------------
+       Lightbox schließen
+       --------------------------------------------------------- */
+
+    function closeLightbox() {
+
+        lightbox.classList.remove(
+            "is-open"
+        );
+
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+
+        document.body.classList.remove(
+            "ccw-lightbox-open"
+        );
+
+
+        image.removeAttribute(
+            "src"
+        );
+
+
+        image.alt = "";
+
+
+        caption.textContent = "";
+
+
+        counter.textContent = "";
+
+
+        items = [];
+
+
+        currentIndex = 0;
     }
 
-    .ccw-lightbox-counter {
-        top: -26px;
+
+    /* ---------------------------------------------------------
+       Vorheriges Bild
+       --------------------------------------------------------- */
+
+    function previousImage() {
+
+        if (items.length > 1) {
+
+            showImage(
+                currentIndex - 1
+            );
+        }
     }
 
-    .ccw-lightbox-caption {
-        bottom: -30px;
-        padding: 0 44px;
-        box-sizing: border-box;
-    }
-}
 
-@media (max-width: 600px) {
-    .ccw-lightbox {
-        padding: 8px;
-    }
+    /* ---------------------------------------------------------
+       Nächstes Bild
+       --------------------------------------------------------- */
 
-    .ccw-lightbox-content {
-        height: 86vh;
-    }
+    function nextImage() {
 
-    .ccw-lightbox-prev,
-    .ccw-lightbox-next {
-        width: 36px;
-        height: 48px;
-        font-size: 24px;
-        border-radius: 6px;
+        if (items.length > 1) {
+
+            showImage(
+                currentIndex + 1
+            );
+        }
     }
 
-    .ccw-lightbox-caption {
-        font-size: 12px;
-    }
-}
+
+    /* =========================================================
+       BILDER ÖFFNEN
+
+       WICHTIG:
+
+       Der Event-Handler läuft in der CAPTURE-PHASE.
+
+       Dadurch wird der Klick abgefangen,
+       BEVOR der normale Link mit
+
+           target="_blank"
+
+       ausgeführt werden kann.
+       ========================================================= */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            const trigger =
+                event.target.closest(
+                    ".werbung-thumbnail, a.lightbox"
+                );
+
+
+            if (!trigger) {
+                return;
+            }
+
+
+            const anchor =
+                getAnchor(trigger);
+
+
+            if (!anchor) {
+                return;
+            }
+
+
+            /*
+             * Normale Link-Aktion verhindern.
+             */
+
+            event.preventDefault();
+
+
+            event.stopPropagation();
+
+
+            /*
+             * Lightbox öffnen.
+             */
+
+            openLightbox(trigger);
+
+        },
+        true
+    );
+
+
+    /* ---------------------------------------------------------
+       Schließen-Button
+       --------------------------------------------------------- */
+
+    closeButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            closeLightbox();
+        }
+    );
+
+
+    /* ---------------------------------------------------------
+       Vorheriger Button
+       --------------------------------------------------------- */
+
+    prevButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            previousImage();
+        }
+    );
+
+
+    /* ---------------------------------------------------------
+       Nächster Button
+       --------------------------------------------------------- */
+
+    nextButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            nextImage();
+        }
+    );
+
+
+    /* ---------------------------------------------------------
+       Klick auf dunklen Hintergrund
+       --------------------------------------------------------- */
+
+    lightbox.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === lightbox
+            ) {
+
+                closeLightbox();
+            }
+        }
+    );
+
+
+    /* =========================================================
+       TASTATURSTEUERUNG
+       ========================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                !lightbox.classList.contains(
+                    "is-open"
+                )
+            ) {
+                return;
+            }
+
+
+            /*
+             * ESC = schließen
+             */
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                event.preventDefault();
+
+                closeLightbox();
+            }
+
+
+            /*
+             * Pfeil links
+             */
+
+            if (
+                event.key === "ArrowLeft"
+            ) {
+
+                event.preventDefault();
+
+                previousImage();
+            }
+
+
+            /*
+             * Pfeil rechts
+             */
+
+            if (
+                event.key === "ArrowRight"
+            ) {
+
+                event.preventDefault();
+
+                nextImage();
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       SMARTPHONE – WISCHGESTEN
+       ========================================================= */
+
+    lightbox.addEventListener(
+        "touchstart",
+        function (event) {
+
+            if (
+                !event.touches.length
+            ) {
+                return;
+            }
+
+
+            touchStartX =
+                event.touches[0].clientX;
+
+
+            touchStartY =
+                event.touches[0].clientY;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    lightbox.addEventListener(
+        "touchend",
+        function (event) {
+
+            if (
+                !event.changedTouches.length
+            ) {
+                return;
+            }
+
+
+            const touchEndX =
+                event.changedTouches[0].clientX;
+
+
+            const touchEndY =
+                event.changedTouches[0].clientY;
+
+
+            const deltaX =
+                touchEndX -
+                touchStartX;
+
+
+            const deltaY =
+                touchEndY -
+                touchStartY;
+
+
+            /*
+             * Nur deutlich horizontale
+             * Wischbewegungen berücksichtigen.
+             */
+
+            if (
+                Math.abs(deltaX) < 50 ||
+                Math.abs(deltaX) <=
+                Math.abs(deltaY)
+            ) {
+                return;
+            }
+
+
+            if (deltaX < 0) {
+
+                nextImage();
+
+            } else {
+
+                previousImage();
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+})();
