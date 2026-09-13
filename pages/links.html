@@ -1116,10 +1116,10 @@ function zeigeLinks(csvText, containerId) {
     container.innerHTML = "";
 
     eintraege.forEach(function (daten) {
-        const name = daten[0] || "";
-        const url = daten[1] || "#";
-        const logo = daten[2] || "";
-        const beschreibung = daten[3] || "";
+        const name = (daten[0] || "").trim();
+        const url = (daten[1] || "").trim();
+        const logo = (daten[2] || "").trim();
+        const beschreibung = (daten[3] || "").trim();
 
         if (!name) return;
 
