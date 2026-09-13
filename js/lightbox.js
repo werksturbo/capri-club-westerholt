@@ -1,6 +1,6 @@
 /* =========================================================
    CCW LIGHTBOX
-   Zentrale Bildanzeige mit Zoom
+   Zentrale Bildanzeige mit Zoom und einfachem Kopierschutz
    ========================================================= */
 
 (function () {
@@ -95,7 +95,8 @@
 
                 <img
                     class="ccw-lightbox-image"
-                    alt="">
+                    alt=""
+                    draggable="false">
 
             </div>
 
@@ -251,16 +252,12 @@
         }
 
 
-        if (
-            element.matches("a")
-        ) {
+        if (element.matches("a")) {
             return element;
         }
 
 
-        return element.querySelector(
-            "a"
-        );
+        return element.querySelector("a");
     }
 
 
@@ -268,9 +265,7 @@
        GALERIE ERMITTELN
        ========================================================= */
 
-    function getGalleryItems(
-        clickedElement
-    ) {
+    function getGalleryItems(clickedElement) {
 
         const wrapper =
             clickedElement.closest(
@@ -344,7 +339,7 @@
 
 
     /* =========================================================
-       ZOOM ANWENDEN
+       ZOOM
        ========================================================= */
 
     function updateZoomDisplay() {
@@ -384,10 +379,6 @@
     }
 
 
-    /* =========================================================
-       ZOOM ZURÜCKSETZEN
-       ========================================================= */
-
     function resetZoom() {
 
         zoomLevel = 1;
@@ -399,13 +390,7 @@
     }
 
 
-    /* =========================================================
-       ZOOM SETZEN
-       ========================================================= */
-
-    function setZoom(
-        newZoom
-    ) {
+    function setZoom(newZoom) {
 
         zoomLevel =
             Math.max(
@@ -417,9 +402,7 @@
             );
 
 
-        if (
-            zoomLevel === 1
-        ) {
+        if (zoomLevel === 1) {
 
             panX = 0;
             panY = 0;
@@ -430,15 +413,10 @@
     }
 
 
-    /* =========================================================
-       ZOOM + / -
-       ========================================================= */
-
     function zoomIn() {
 
         setZoom(
-            zoomLevel +
-            zoomStep
+            zoomLevel + zoomStep
         );
     }
 
@@ -446,14 +424,13 @@
     function zoomOut() {
 
         setZoom(
-            zoomLevel -
-            zoomStep
+            zoomLevel - zoomStep
         );
     }
 
 
     /* =========================================================
-       NAVIGATION AKTUALISIEREN
+       NAVIGATION
        ========================================================= */
 
     function updateNavigation() {
@@ -485,9 +462,7 @@
        BILD ANZEIGEN
        ========================================================= */
 
-    function showImage(
-        index
-    ) {
+    function showImage(index) {
 
         if (!items.length) {
             return;
@@ -513,17 +488,15 @@
 
 
         /*
-         * Beim Wechsel auf ein anderes Bild
-         * Zoom wieder auf 100 % setzen.
+         * Beim Bildwechsel
+         * Zoom zurücksetzen.
          */
 
         resetZoom();
 
 
         /*
-         * WICHTIG:
-         *
-         * link.href ist das ORIGINALBILD.
+         * Originalbild laden
          */
 
         image.src =
@@ -550,9 +523,7 @@
        LIGHTBOX ÖFFNEN
        ========================================================= */
 
-    function openLightbox(
-        clickedElement
-    ) {
+    function openLightbox(clickedElement) {
 
         items =
             getGalleryItems(
@@ -658,7 +629,7 @@
 
 
     /* =========================================================
-       VORHERIGES BILD
+       VORHERIGES / NÄCHSTES BILD
        ========================================================= */
 
     function previousImage() {
@@ -673,10 +644,6 @@
         }
     }
 
-
-    /* =========================================================
-       NÄCHSTES BILD
-       ========================================================= */
 
     function nextImage() {
 
@@ -820,6 +787,105 @@
 
 
     /* =========================================================
+       KOPIERSCHUTZ
+       ========================================================= */
+
+
+    /*
+     * Rechtsklick innerhalb der Lightbox verhindern.
+     */
+
+    lightbox.addEventListener(
+        "contextmenu",
+        function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+        }
+    );
+
+
+    /*
+     * Direktes Ziehen des Bildes verhindern.
+     */
+
+    lightbox.addEventListener(
+        "dragstart",
+        function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+        }
+    );
+
+
+    /*
+     * Markieren / Kopieren des Bildes verhindern.
+     */
+
+    image.addEventListener(
+        "selectstart",
+        function (event) {
+
+            event.preventDefault();
+
+        }
+    );
+
+
+    /*
+     * Zusätzliche Sicherheit für das eigentliche
+     * Bild.
+     */
+
+    image.addEventListener(
+        "contextmenu",
+        function (event) {
+
+            event.preventDefault();
+
+        }
+    );
+
+
+    image.addEventListener(
+        "dragstart",
+        function (event) {
+
+            event.preventDefault();
+
+        }
+    );
+
+
+    /*
+     * Browser-Gesten bzw. Speichern über
+     * bestimmte Mausaktionen erschweren.
+     */
+
+    image.addEventListener(
+        "mousedown",
+        function (event) {
+
+            /*
+             * Mittlere Maustaste / Sonderfälle
+             * nicht als Link öffnen lassen.
+             */
+
+            if (
+                event.button !== 0
+            ) {
+
+                event.preventDefault();
+            }
+
+        }
+    );
+
+
+    /* =========================================================
        HINTERGRUND KLICK
        ========================================================= */
 
@@ -884,6 +950,7 @@
 
             dragging = true;
 
+
             imageWrap.classList.add(
                 "is-dragging"
             );
@@ -945,6 +1012,7 @@
         function () {
 
             dragging = false;
+
 
             imageWrap.classList.remove(
                 "is-dragging"
@@ -1309,8 +1377,7 @@
 
 
             /*
-             * + oder =
-             * Zoom hinein
+             * +
              */
 
             if (
@@ -1328,7 +1395,6 @@
 
             /*
              * -
-             * Zoom heraus
              */
 
             if (
