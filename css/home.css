@@ -1274,3 +1274,55 @@ header nav ul.submenu a:hover {
     margin:0;
     padding:0;
 }
+
+/* ==========================================================
+   CCW KACHEL-DESIGN V2
+   Gemeinsames Design für alle Seiten mit .card
+   ========================================================== */
+
+.card{
+    background:linear-gradient(to bottom, #ffffff 0%, #fffefd 100%);
+    border:1px solid #dfe5ec;
+    border-top:4px solid var(--primary);
+    border-radius:14px;
+    padding:25px;
+    box-shadow:
+        0 5px 14px rgba(0,0,0,.08),
+        0 1px 3px rgba(0,0,0,.05);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-top-color:var(--primary-light);
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.14),
+        0 3px 8px rgba(0,0,0,.06);
+}
+
+.card img{
+    border:1px solid #e1e6eb;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:var(--headline);
+}
+
+.card .more{
+    position:relative;
+    display:inline-block;
+}
+
+.card .more::after{
+    content:" →";
+    transition:padding-left .2s ease;
+}
+
+.card:hover .more::after{
+    padding-left:4px;
+}
+
