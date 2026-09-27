@@ -1025,7 +1025,8 @@
                         </td>
                         <td class="termin-datum">${escapeHtml(datum)}</td>
                         <td class="termin-name">${escapeHtml(name)}</td>
-                        <td class="termin-adresse">${escapeHtml(adresse)}</td>
+                        const adresseHtml = escapeHtml(adresse).replace(/,\s*/g, "<br>");
+                        <td class="termin-adresse">${adresseHtml}</td>
                         <td class="termin-beschreibung">${escapeHtml(beschreibung)}</td>
                     </tr>
                 `;
