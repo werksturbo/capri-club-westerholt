@@ -12,6 +12,7 @@
     <meta name="keywords" content="Capri Club Westerholt, CCW, Ford Capri, Capri Treffen, Capri Club">
 
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/teilemarkt.css">
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon"
@@ -1006,7 +1007,15 @@ Also: Wenn Ihr etwas wisst, immer her damit!</p>
                 const thumbnailUrl = thumbnail
                     ? new URL(thumbnail, csvLocation).href
                     : "";
-                const targetUrl = targetFile
+                /*
+                 * Sonderwert aus der CSV:
+                 * TEILEMARKT_POPUP öffnet das wiederverwendbare Popup
+                 * anstatt auf eine normale HTML-Datei zu verlinken.
+                 */
+                const isTeilemarktPopup =
+                    targetFile.trim().toUpperCase() === "TEILEMARKT_POPUP";
+
+                const targetUrl = (!isTeilemarktPopup && targetFile)
                     ? new URL(targetFile, csvLocation).href
                     : "";
 
@@ -1016,8 +1025,11 @@ Also: Wenn Ihr etwas wisst, immer her damit!</p>
                 return `
                     <tr>
                         <td class="termin-bild">
-                            ${thumbnailUrl && targetUrl ? `
-                                <a href="${escapeHtml(targetUrl)}">
+                            ${thumbnailUrl && (targetUrl || isTeilemarktPopup) ? `
+                                <a href="${isTeilemarktPopup ? "#" : escapeHtml(targetUrl)}"
+                                   ${isTeilemarktPopup
+                                       ? 'onclick="openTeilemarktPopup(); return false;"'
+                                       : ''}>
                                     <img src="${escapeHtml(thumbnailUrl)}"
                                          alt="${escapeHtml(name || "Terminbild")}">
                                 </a>
@@ -1038,6 +1050,11 @@ Also: Wenn Ihr etwas wisst, immer her damit!</p>
         });
 })();
 </script>
+
+<!-- ==========================================
+     WIEDERVERWENDBARES TEILEMARKT-POPUP
+     ========================================== -->
+<script src="../js/popups.js"></script>
 
 </body>
 </html>
