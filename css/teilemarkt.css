@@ -1,0 +1,242 @@
+/* ==========================================
+   POPUP CAPRI-TEILEMARKT 2026
+   ========================================== */
+
+.teilemarkt-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.teilemarkt-overlay.aktiv {
+    display: block;
+}
+
+.teilemarkt-popup {
+    position: relative;
+    width: 100%;
+    max-width: 1240px;
+    margin: 20px auto;
+    background: #e9edf2;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.teilemarkt-header {
+    position: relative;
+    margin: 0;
+    padding: 14px 50px 14px 25px;
+    background: linear-gradient(90deg, #0800a8 0%, #1879bd 100%);
+    color: white;
+}
+
+.teilemarkt-header h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.teilemarkt-close {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.teilemarkt-close:hover {
+    background: rgba(255,255,255,0.30);
+}
+
+.teilemarkt-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.teilemarkt-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+.teilemarkt-card h3 {
+    margin: 0;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, #0800a8 0%, #1879bd 100%);
+    color: white;
+    font-size: 21px;
+}
+
+.teilemarkt-text {
+    padding: 18px 25px 25px 25px;
+    color: #073268;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.teilemarkt-text p {
+    margin: 0 0 17px 0;
+}
+
+.teilemarkt-hinweis {
+    margin-top: 25px !important;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.teilemarkt-card form {
+    padding: 20px 25px 25px 25px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #073268;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd2da;
+    border-radius: 5px;
+    background: white;
+    color: #073268;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.form-group input {
+    height: 48px;
+}
+
+.form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1879bd;
+    box-shadow: 0 0 0 2px rgba(24, 121, 189, 0.15);
+}
+
+.teilemarkt-checkbox {
+    margin-top: 22px;
+    color: #073268;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.teilemarkt-checkbox label {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    cursor: pointer;
+}
+
+.teilemarkt-checkbox input {
+    margin-top: 3px;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+.teilemarkt-submit {
+    margin-top: 22px;
+    text-align: right;
+}
+
+.teilemarkt-submit button {
+    padding: 11px 22px;
+    border: none;
+    border-radius: 7px;
+    background: #0800a8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.20);
+}
+
+.teilemarkt-submit button:hover {
+    background: #1879bd;
+}
+
+.teilemarkt-erfolg {
+    padding: 25px;
+    color: #073268;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    .teilemarkt-overlay {
+        padding: 10px;
+    }
+
+    .teilemarkt-popup {
+        margin: 5px auto;
+    }
+
+    .teilemarkt-header {
+        padding: 13px 50px 13px 15px;
+    }
+
+    .teilemarkt-header h2 {
+        font-size: 21px;
+    }
+
+    .teilemarkt-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 12px;
+    }
+
+    .teilemarkt-card h3 {
+        font-size: 19px;
+    }
+
+    .teilemarkt-text {
+        padding: 17px 18px 20px 18px;
+    }
+
+    .teilemarkt-card form {
+        padding: 18px;
+    }
+
+    .teilemarkt-submit {
+        text-align: center;
+    }
+
+    .teilemarkt-submit button {
+        width: 100%;
+    }
+}
