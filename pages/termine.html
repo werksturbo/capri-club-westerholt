@@ -785,12 +785,13 @@
                         <th class="termin-bild">Thumbnail</th>
                         <th class="termin-datum">Datum</th>
                         <th class="termin-name">Name</th>
+                        <th class="termin-adresse">Adresse</th>
                         <th class="termin-beschreibung">Beschreibung</th>
                     </tr>
                 </thead>
                 <tbody id="termine-tabelle-body">
                     <tr>
-                        <td colspan="4">Termine werden geladen …</td>
+                        <td colspan="5">Termine werden geladen …</td>
                     </tr>
                 </tbody>
             </table>
@@ -990,11 +991,12 @@
             }
 
             tbody.innerHTML = rows.slice(1).map(row => {
-                const thumbnail = row[0] || "";
-                const targetFile = row[1] || "";
-                const datum = row[2] || "";
-                const name = row[3] || "";
-                const beschreibung = row[4] || "";
+                        const thumbnail = row[0] || "";
+                        const targetFile = row[1] || "";
+                        const datum = row[2] || "";
+                        const name = row[3] || "";
+                        const adresse = row[4] || "";
+                        const beschreibung = row[5] || "";
 
                 // Both paths are relative to data/termine/.
                 const thumbnailUrl = thumbnail
@@ -1017,6 +1019,7 @@
                         </td>
                         <td class="termin-datum">${escapeHtml(datum)}</td>
                         <td class="termin-name">${escapeHtml(name)}</td>
+                        <td class="termin-adresse">${escapeHtml(adresse)}</td>
                         <td class="termin-beschreibung">${escapeHtml(beschreibung)}</td>
                     </tr>
                 `;
@@ -1025,7 +1028,7 @@
         .catch(error => {
             console.error(error);
             tbody.innerHTML =
-                '<tr><td colspan="4">Die Termine konnten leider nicht geladen werden.</td></tr>';
+                '<tr><td colspan="5">Die Termine konnten leider nicht geladen werden.</td></tr>';
         });
 })();
 </script>
