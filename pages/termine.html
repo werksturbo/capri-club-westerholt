@@ -485,7 +485,7 @@
     display: block;
     width: 143px;
     height: 75px;
-    object-fit: cover;
+    object-fit: contain;
     margin: auto;
     border-radius: 6px;
     box-shadow: 0 2px 7px rgba(0,0,0,.18);
@@ -758,7 +758,7 @@
 
 
                 <li>
-                    <a href="kontakt.html">
+                    <a class="active" href="kontakt.html">
                         Kontakt
                     </a>
                 </li>
@@ -773,7 +773,7 @@
 <main>
 
     <section class="page-header">
-        <h2>Eigene und weitere Termine rund um den Ford Capri und aus der Szene</h2>
+        <h2>Termine</h2>
     </section>
 
     <section class="termine-info">
@@ -952,18 +952,14 @@
                 i++;
             } else if (c === '"') {
                 quoted = !quoted;
-            } else if (c === ";" && !quoted) {
+            } else if (c === ';' && !quoted) {
                 row.push(cell);
                 cell = "";
-            } else if ((c === "\n" || c === "\r") && !quoted) {
-                if (c === "\r" && next === "\n") i++;
+            } else if ((c === '\n' || c === '\r') && !quoted) {
+                if (c === '\r' && next === '\n') i++;
                 row.push(cell);
                 cell = "";
-
-                if (row.some(value => value.trim() !== "")) {
-                    rows.push(row);
-                }
-
+                if (row.some(value => value.trim() !== "")) rows.push(row);
                 row = [];
             } else {
                 cell += c;
@@ -1004,28 +1000,37 @@
                 const adresse = row[4] || "";
                 const beschreibung = row[5] || "";
 
+                const csvLocation = new URL(csvUrl, window.location.href);
+                const thumbnailUrl = thumbnail
+                    ? new URL(thumbnail, csvLocation).href
+                    : "";
+                const targetUrl = targetFile
+                    ? new URL(targetFile, csvLocation).href
+                    : "";
+
+                // Commas in the address become line breaks.
                 const adresseHtml = escapeHtml(adresse).replace(/,\s*/g, "<br>");
 
-            return `
-            <tr>
-                <td class="termin-bild">
-                    ${thumbnailUrl && targetUrl ? `
-                        <a href="${escapeHtml(targetUrl)}">
-                            <img src="${escapeHtml(thumbnailUrl)}"
-                                    alt="${escapeHtml(name || "Terminbild")}">
-                        </a>
-            `     : ""}
-                </td>
-                <td class="termin-datum">${escapeHtml(datum)}</td>
-                <td class="termin-name">${escapeHtml(name)}</td>
-                <td class="termin-adresse">${adresseHtml}</td>
-                <td class="termin-beschreibung">${escapeHtml(beschreibung)}</td>
-            </tr>
-`;
+                return `
+                    <tr>
+                        <td class="termin-bild">
+                            ${thumbnailUrl && targetUrl ? `
+                                <a href="${escapeHtml(targetUrl)}">
+                                    <img src="${escapeHtml(thumbnailUrl)}"
+                                         alt="${escapeHtml(name || "Terminbild")}">
+                                </a>
+                            ` : ""}
+                        </td>
+                        <td class="termin-datum">${escapeHtml(datum)}</td>
+                        <td class="termin-name">${escapeHtml(name)}</td>
+                        <td class="termin-adresse">${adresseHtml}</td>
+                        <td class="termin-beschreibung">${escapeHtml(beschreibung)}</td>
+                    </tr>
+                `;
             }).join("");
         })
         .catch(error => {
-            console.error(error);
+            console.error("Fehler beim Laden der Termine:", error);
             tbody.innerHTML =
                 '<tr><td colspan="5">Die Termine konnten leider nicht geladen werden.</td></tr>';
         });
