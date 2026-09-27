@@ -997,39 +997,31 @@
             }
 
             tbody.innerHTML = rows.slice(1).map(row => {
-                        const thumbnail = row[0] || "";
-                        const targetFile = row[1] || "";
-                        const datum = row[2] || "";
-                        const name = row[3] || "";
-                        const adresse = row[4] || "";
-                        const beschreibung = row[5] || "";
+                const thumbnail = row[0] || "";
+                const targetFile = row[1] || "";
+                const datum = row[2] || "";
+                const name = row[3] || "";
+                const adresse = row[4] || "";
+                const beschreibung = row[5] || "";
 
-                // Both paths are relative to data/termine/.
-                const thumbnailUrl = thumbnail
-                    ? new URL(thumbnail, new URL(csvUrl, window.location.href)).href
-                    : "";
+                const adresseHtml = escapeHtml(adresse).replace(/,\s*/g, "<br>");
 
-                const targetUrl = targetFile
-                    ? new URL(targetFile, new URL(csvUrl, window.location.href)).href
-                    : "";
-
-                return `
-                    <tr>
-                        <td class="termin-bild">
-                            ${thumbnailUrl && targetUrl ? `
-                                <a href="${escapeHtml(targetUrl)}">
-                                    <img src="${escapeHtml(thumbnailUrl)}"
-                                         alt="${escapeHtml(name || "Terminbild")}">
-                                </a>
-                            ` : ""}
-                        </td>
-                        <td class="termin-datum">${escapeHtml(datum)}</td>
-                        <td class="termin-name">${escapeHtml(name)}</td>
-                        const adresseHtml = escapeHtml(adresse).replace(/,\s*/g, "<br>");
-                        <td class="termin-adresse">${adresseHtml}</td>
-                        <td class="termin-beschreibung">${escapeHtml(beschreibung)}</td>
-                    </tr>
-                `;
+            return `
+            <tr>
+                <td class="termin-bild">
+                    ${thumbnailUrl && targetUrl ? `
+                        <a href="${escapeHtml(targetUrl)}">
+                            <img src="${escapeHtml(thumbnailUrl)}"
+                                    alt="${escapeHtml(name || "Terminbild")}">
+                        </a>
+            `     : ""}
+                </td>
+                <td class="termin-datum">${escapeHtml(datum)}</td>
+                <td class="termin-name">${escapeHtml(name)}</td>
+                <td class="termin-adresse">${adresseHtml}</td>
+                <td class="termin-beschreibung">${escapeHtml(beschreibung)}</td>
+            </tr>
+`;
             }).join("");
         })
         .catch(error => {
