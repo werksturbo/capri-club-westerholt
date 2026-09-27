@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
 
     <meta charset="UTF-8">
@@ -403,6 +402,10 @@
 
 
 <style>
+/* =========================================================
+   TERMINE
+   ========================================================= */
+
 .termine-info {
     max-width: 1300px;
     margin: 24px auto 20px;
@@ -411,31 +414,37 @@
     box-shadow: 0 5px 14px rgba(0,0,0,.12);
     overflow: hidden;
 }
+
 .termine-info h3 {
     margin: 0;
     padding: 13px 20px 14px;
     background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
-    color: #fff;
+    color: #ffffff;
     font-size: 21px;
+    line-height: 1.25;
 }
+
 .termine-info-text {
     padding: 20px 24px 22px;
     color: #243746;
     font-size: 16px;
     line-height: 1.55;
 }
+
 .termine-tabelle-wrap {
     max-width: 1300px;
     margin: 0 auto 24px;
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 .termine-tabelle-scroll {
     overflow-x: auto;
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 14px rgba(0,0,0,.12);
 }
+
 .termine-tabelle {
     width: 100%;
     border-collapse: collapse;
@@ -443,21 +452,35 @@
     color: #243746;
     font-size: 15px;
 }
+
 .termine-tabelle th {
     padding: 12px 14px;
     text-align: left;
     background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
-    color: #fff;
+    color: #ffffff;
+    font-weight: 700;
     white-space: nowrap;
 }
+
 .termine-tabelle td {
     padding: 10px 14px;
     border-bottom: 1px solid #e1e5e9;
     vertical-align: middle;
 }
-.termine-tabelle tbody tr:nth-child(even) { background: #f5f7f9; }
-.termine-tabelle tbody tr:hover { background: #eef3f8; }
-.termin-bild { width: 95px; text-align: center; }
+
+.termine-tabelle tbody tr:nth-child(even) {
+    background: #f5f7f9;
+}
+
+.termine-tabelle tbody tr:hover {
+    background: #eef3f8;
+}
+
+.termin-bild {
+    width: 95px;
+    text-align: center;
+}
+
 .termin-bild img {
     display: block;
     width: 75px;
@@ -468,36 +491,62 @@
     box-shadow: 0 2px 7px rgba(0,0,0,.18);
     transition: transform .18s ease, box-shadow .18s ease;
 }
+
 .termin-bild a:hover img {
     transform: scale(1.04);
     box-shadow: 0 4px 12px rgba(0,0,0,.25);
 }
-.termin-datum { width: 120px; white-space: nowrap; }
-.termin-name { width: 190px; font-weight: 700; white-space: nowrap; }
-.termin-beschreibung { min-width: 320px; }
-@media (max-width: 800px) {
-    .termine-info { margin: 16px 16px; border-radius: 10px; }
-    .termine-info h3 { padding: 11px 16px 12px; font-size: 20px; }
-    .termine-info-text { padding: 16px 18px; }
-    .termine-tabelle-wrap { padding: 0 16px; }
+
+.termin-datum {
+    width: 120px;
+    white-space: nowrap;
 }
+
+.termin-name {
+    width: 190px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.termin-beschreibung {
+    min-width: 320px;
+}
+
+@media (max-width: 800px) {
+    .termine-info {
+        margin: 16px 16px;
+        border-radius: 10px;
+    }
+
+    .termine-info h3 {
+        padding: 11px 16px 12px;
+        font-size: 20px;
+    }
+
+    .termine-info-text {
+        padding: 16px 18px;
+    }
+
+    .termine-tabelle-wrap {
+        padding: 0 16px;
+    }
+}
+
 @media (max-width: 420px) {
-    .termine-info { margin-left: 12px; margin-right: 12px; }
-    .termine-tabelle-wrap { padding: 0 12px; }
+    .termine-info {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .termine-tabelle-wrap {
+        padding: 0 12px;
+    }
 }
 </style>
 
 </head>
-
-
 <body>
-
-
-    <!-- ========================= -->
-    <!-- HEADER -->
-    <!-- ========================= -->
-
-    <header>
+<header>
 
 
         <div class="logo">
@@ -715,11 +764,8 @@
 
     </header>
 
-
-    <!-- ============================================================================================================= -->
-    <!-- CCW STARTSEITE -->
-    <!-- ===================================================================    
 <main>
+
     <section class="page-header">
         <h2>Termine</h2>
     </section>
@@ -743,27 +789,17 @@
                     </tr>
                 </thead>
                 <tbody id="termine-tabelle-body">
-                    <tr><td colspan="4">Termine werden geladen …</td></tr>
+                    <tr>
+                        <td colspan="4">Termine werden geladen …</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </section>
+
 </main>
-         </a>
 
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ========================= -->
-    <!-- FOOTER -->
-    <!-- ========================= -->
-
-
-    <footer>
+<footer>
 
         <div class="footer-content">
 
@@ -801,284 +837,84 @@
 
     </footer>
 
+<script>
+(function () {
+    const header = document.querySelector("header");
+    const toggle = document.getElementById("mobileMenuToggle");
+    const nav = document.getElementById("mainNavigation");
 
-    <!-- =========================================================
-         CCW MENU JAVASCRIPT
-         Mobile Menü + Dropdown-Submenüs
-         ========================================================= -->
+    if (!header || !toggle || !nav) return;
 
+    function closeMobileMenu() {
+        header.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+    }
 
-    <script>
-
-        (function () {
-
-
-            const header =
-                document.querySelector("header");
-
-
-            const toggle =
-                document.getElementById("mobileMenuToggle");
-
-
-            const nav =
-                document.getElementById("mainNavigation");
-
-
-            if (!header || !toggle || !nav) {
-                return;
+    function closeAllSubmenus(except) {
+        nav.querySelectorAll(".has-submenu").forEach(function (item) {
+            if (item !== except) {
+                item.classList.remove("submenu-open");
+                const button = item.querySelector(".submenu-toggle");
+                if (button) button.setAttribute("aria-expanded", "false");
             }
+        });
+    }
 
+    toggle.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const open = header.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    });
 
-            /* ==========================================
-               MOBILES MENÜ
-               ========================================== */
+    nav.querySelectorAll(".has-submenu").forEach(function (item) {
+        const button = item.querySelector(".submenu-toggle");
+        if (!button) return;
 
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
 
-            function closeMobileMenu() {
+            const isOpen = item.classList.contains("submenu-open");
+            closeAllSubmenus(item);
 
-                header.classList.remove("nav-open");
-
-                toggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                toggle.setAttribute(
-                    "aria-label",
-                    "Menü öffnen"
-                );
-
+            if (isOpen) {
+                item.classList.remove("submenu-open");
+                button.setAttribute("aria-expanded", "false");
+            } else {
+                item.classList.add("submenu-open");
+                button.setAttribute("aria-expanded", "true");
             }
-
-
-            toggle.addEventListener(
-                "click",
-                function (event) {
-
-                    event.stopPropagation();
-
-
-                    const open =
-                        header.classList.toggle("nav-open");
-
-
-                    toggle.setAttribute(
-                        "aria-expanded",
-                        open ? "true" : "false"
-                    );
-
-
-                    toggle.setAttribute(
-                        "aria-label",
-                        open
-                            ? "Menü schließen"
-                            : "Menü öffnen"
-                    );
-
-                }
-            );
-
-
-            /* ==========================================
-               DROPDOWN-SUBMENÜS
-               ========================================== */
-
-
-            const submenuItems =
-                nav.querySelectorAll(".has-submenu");
-
-
-            function closeAllSubmenus(except) {
-
-                submenuItems.forEach(
-                    function (item) {
-
-                        if (item !== except) {
-
-                            item.classList.remove(
-                                "submenu-open"
-                            );
-
-
-                            const button =
-                                item.querySelector(
-                                    ".submenu-toggle"
-                                );
-
-
-                            if (button) {
-
-                                button.setAttribute(
-                                    "aria-expanded",
-                                    "false"
-                                );
-
-                            }
-
-                        }
-
-                    }
-                );
-
-            }
-
-
-            submenuItems.forEach(
-                function (item) {
-
-
-                    const button =
-                        item.querySelector(
-                            ".submenu-toggle"
-                        );
-
-
-                    const submenu =
-                        item.querySelector(
-                            ".submenu"
-                        );
-
-
-                    if (!button || !submenu) {
-                        return;
-                    }
-
-
-                    button.addEventListener(
-                        "click",
-                        function (event) {
-
-                            event.preventDefault();
-                            event.stopPropagation();
-
-
-                            const isOpen =
-                                item.classList.contains(
-                                    "submenu-open"
-                                );
-
-
-                            closeAllSubmenus(item);
-
-
-                            if (isOpen) {
-
-                                item.classList.remove(
-                                    "submenu-open"
-                                );
-
-
-                                button.setAttribute(
-                                    "aria-expanded",
-                                    "false"
-                                );
-
-                            } else {
-
-                                item.classList.add(
-                                    "submenu-open"
-                                );
-
-
-                                button.setAttribute(
-                                    "aria-expanded",
-                                    "true"
-                                );
-
-                            }
-
-                        }
-                    );
-
-                }
-            );
-
-
-            /* ==========================================
-               LINKS
-               ========================================== */
-
-
-            nav.querySelectorAll("a").forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        function () {
-
-                            closeAllSubmenus();
-                            closeMobileMenu();
-
-                        }
-                    );
-
-                }
-            );
-
-
-            /* ==========================================
-               KLICK AUSSERHALB
-               ========================================== */
-
-
-            document.addEventListener(
-                "click",
-                function (event) {
-
-                    if (!header.contains(event.target)) {
-
-                        closeAllSubmenus();
-                        closeMobileMenu();
-
-                    }
-
-                }
-            );
-
-
-            /* ==========================================
-               ESCAPE
-               ========================================== */
-
-
-            document.addEventListener(
-                "keydown",
-                function (event) {
-
-                    if (event.key === "Escape") {
-
-                        closeAllSubmenus();
-                        closeMobileMenu();
-
-                    }
-
-                }
-            );
-
-
-            /* ==========================================
-               BEIM WECHSEL AUF DESKTOP
-               ========================================== */
-
-
-            window.addEventListener(
-                "resize",
-                function () {
-
-                    if (window.innerWidth > 900) {
-                        closeMobileMenu();
-                    }
-
-                }
-            );
-
-
-        })();
-
-    </script>
-
-
+        });
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            closeAllSubmenus();
+            closeMobileMenu();
+        });
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!header.contains(event.target)) {
+            closeAllSubmenus();
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeAllSubmenus();
+            closeMobileMenu();
+        }
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 900) closeMobileMenu();
+    });
+})();
+</script>
 
 <script>
 (function () {
@@ -1096,21 +932,31 @@
 
     function parseCSV(text) {
         const rows = [];
-        let row = [], cell = "", quoted = false;
+        let row = [];
+        let cell = "";
+        let quoted = false;
 
         for (let i = 0; i < text.length; i++) {
-            const c = text[i], next = text[i + 1];
+            const c = text[i];
+            const next = text[i + 1];
 
             if (c === '"' && quoted && next === '"') {
-                cell += '"'; i++;
+                cell += '"';
+                i++;
             } else if (c === '"') {
                 quoted = !quoted;
-            } else if (c === ';' && !quoted) {
-                row.push(cell); cell = "";
-            } else if ((c === '\n' || c === '\r') && !quoted) {
-                if (c === '\r' && next === '\n') i++;
-                row.push(cell); cell = "";
-                if (row.some(v => v.trim() !== "")) rows.push(row);
+            } else if (c === ";" && !quoted) {
+                row.push(cell);
+                cell = "";
+            } else if ((c === "\n" || c === "\r") && !quoted) {
+                if (c === "\r" && next === "\n") i++;
+                row.push(cell);
+                cell = "";
+
+                if (row.some(value => value.trim() !== "")) {
+                    rows.push(row);
+                }
+
                 row = [];
             } else {
                 cell += c;
@@ -1119,14 +965,19 @@
 
         if (cell !== "" || row.length) {
             row.push(cell);
-            if (row.some(v => v.trim() !== "")) rows.push(row);
+            if (row.some(value => value.trim() !== "")) rows.push(row);
         }
+
         return rows;
     }
 
-    fetch("../data/termine/termine.csv")
+    const csvUrl = "../data/termine/termine.csv";
+
+    fetch(csvUrl)
         .then(response => {
-            if (!response.ok) throw new Error("CSV konnte nicht geladen werden.");
+            if (!response.ok) {
+                throw new Error("CSV-Datei konnte nicht geladen werden.");
+            }
             return response.text();
         })
         .then(csv => {
@@ -1140,17 +991,26 @@
 
             tbody.innerHTML = rows.slice(1).map(row => {
                 const thumbnail = row[0] || "";
-                const ziel = row[1] || "";
+                const targetFile = row[1] || "";
                 const datum = row[2] || "";
                 const name = row[3] || "";
                 const beschreibung = row[4] || "";
 
+                // Both paths are relative to data/termine/.
+                const thumbnailUrl = thumbnail
+                    ? new URL(thumbnail, new URL(csvUrl, window.location.href)).href
+                    : "";
+
+                const targetUrl = targetFile
+                    ? new URL(targetFile, new URL(csvUrl, window.location.href)).href
+                    : "";
+
                 return `
                     <tr>
                         <td class="termin-bild">
-                            ${thumbnail && ziel ? `
-                                <a href="${escapeHtml(ziel)}">
-                                    <img src="${escapeHtml(thumbnail)}"
+                            ${thumbnailUrl && targetUrl ? `
+                                <a href="${escapeHtml(targetUrl)}">
+                                    <img src="${escapeHtml(thumbnailUrl)}"
                                          alt="${escapeHtml(name || "Terminbild")}">
                                 </a>
                             ` : ""}
@@ -1158,7 +1018,8 @@
                         <td class="termin-datum">${escapeHtml(datum)}</td>
                         <td class="termin-name">${escapeHtml(name)}</td>
                         <td class="termin-beschreibung">${escapeHtml(beschreibung)}</td>
-                    </tr>`;
+                    </tr>
+                `;
             }).join("");
         })
         .catch(error => {
@@ -1170,6 +1031,4 @@
 </script>
 
 </body>
-
 </html>
-
