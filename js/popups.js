@@ -1,5 +1,450 @@
 /* ==========================================
    CCW POPUP - TEILEMARKT
+   Zentrale Popup-Funktion
+   ========================================== */
+
+(function () {
+
+    "use strict";
+
+
+    /* =========================================================
+       POPUP-PFAD ERMITTELN
+       ========================================================= */
+
+    const scriptElement =
+        document.currentScript;
+
+
+    const scriptUrl =
+        scriptElement
+            ? new URL(
+                scriptElement.src,
+                document.baseURI
+              )
+            : new URL(
+                "js/popups.js",
+                document.baseURI
+              );
+
+
+    /*
+     * popups.js befindet sich in:
+     *
+     * /js/popups.js
+     *
+     * Daher liegen die benötigten Dateien eine Ebene höher:
+     *
+     * /popups/popup-teilemarkt.html
+     * /css/teilemarkt.css
+     */
+
+    const popupDatei =
+        new URL(
+            "../popups/popup-teilemarkt.html",
+            scriptUrl
+        ).href;
+
+
+    const popupCssDatei =
+        new URL(
+            "../css/teilemarkt.css",
+            scriptUrl
+        ).href;
+
+
+    console.log(
+        "CCW Popup:",
+        popupDatei
+    );
+
+
+    let popupGeladen =
+        false;
+
+
+    /* =========================================================
+       POPUP-CSS LADEN
+       ========================================================= */
+
+    function ladePopupCSS() {
+
+        const cssUrl =
+            popupCssDatei;
+
+
+        const bereitsGeladen =
+            Array.from(
+                document.querySelectorAll(
+                    'link[rel="stylesheet"]'
+                )
+            ).some(
+                function (link) {
+
+                    return (
+                        link.href === cssUrl
+                    );
+
+                }
+            );
+
+
+        if (
+            bereitsGeladen
+        ) {
+
+            return;
+        }
+
+
+        const link =
+            document.createElement(
+                "link"
+            );
+
+
+        link.rel =
+            "stylesheet";
+
+
+        link.href =
+            cssUrl;
+
+
+        document.head.appendChild(
+            link
+        );
+    }
+
+
+    /* =========================================================
+       POPUP ÖFFNEN
+       ========================================================= */
+
+    window.openTeilemarktPopup =
+        async function () {
+
+
+        /*
+         * CSS laden
+         */
+
+        ladePopupCSS();
+
+
+        /*
+         * Popup beim ersten Aufruf laden
+         */
+
+        if (
+            !popupGeladen
+        ) {
+
+            try {
+
+
+                console.log(
+                    "Lade:",
+                    popupDatei
+                );
+
+
+                const antwort =
+                    await fetch(
+                        popupDatei,
+                        {
+                            cache:
+                                "no-cache"
+                        }
+                    );
+
+
+                if (
+                    !antwort.ok
+                ) {
+
+                    throw new Error(
+                        "HTTP " +
+                        antwort.status +
+                        " – " +
+                        popupDatei
+                    );
+                }
+
+
+                const html =
+                    await antwort.text();
+
+
+                /*
+                 * Sicherheitsprüfung
+                 */
+
+                if (
+                    !html.includes(
+                        'id="teilemarktPopup"'
+                    )
+                ) {
+
+                    throw new Error(
+                        "Das Popup-Element " +
+                        "#teilemarktPopup " +
+                        "wurde nicht gefunden."
+                    );
+                }
+
+
+                /*
+                 * HTML einsetzen
+                 */
+
+                const container =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                container.id =
+                    "teilemarktPopupContainer";
+
+
+                container.innerHTML =
+                    html;
+
+
+                document.body.appendChild(
+                    container
+                );
+
+
+                popupGeladen =
+                    true;
+
+
+                setupTeilemarktPopup();
+
+
+            } catch (fehler) {
+
+
+                console.error(
+                    "CCW Teilemarkt-Popup:",
+                    fehler
+                );
+
+
+                alert(
+                    "Die Anmeldung zum Teilemarkt " +
+                    "konnte nicht geladen werden.\n\n" +
+
+                    "Gesuchte Datei:\n" +
+
+                    popupDatei
+                );
+
+
+                return;
+            }
+        }
+
+
+        /* =====================================================
+           POPUP ANZEIGEN
+           ===================================================== */
+
+        const popup =
+            document.getElementById(
+                "teilemarktPopup"
+            );
+
+
+        if (
+            !popup
+        ) {
+
+            console.error(
+                "CCW Popup: " +
+                "#teilemarktPopup nicht gefunden."
+            );
+
+            return;
+        }
+
+
+        popup.classList.add(
+            "aktiv"
+        );
+
+
+        popup.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        document.body.style.overflow =
+            "hidden";
+
+
+        /*
+         * Cursor ins Namensfeld
+         */
+
+        const nameField =
+            document.getElementById(
+                "teilemarktName"
+            );
+
+
+        if (
+            nameField
+        ) {
+
+            setTimeout(
+                function () {
+
+                    nameField.focus();
+
+                },
+                100
+            );
+        }
+
+    };
+
+
+    /* =========================================================
+       POPUP SCHLIESSEN
+       ========================================================= */
+
+    window.closeTeilemarktPopup =
+        function () {
+
+
+        const popup =
+            document.getElementById(
+                "teilemarktPopup"
+            );
+
+
+        if (
+            popup
+        ) {
+
+            popup.classList.remove(
+                "aktiv"
+            );
+
+
+            popup.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+        }
+
+
+        document.body.style.overflow =
+            "";
+
+    };
+
+
+    /* =========================================================
+       POPUP EINRICHTEN
+       ========================================================= */
+
+    function setupTeilemarktPopup() {
+
+
+        const popup =
+            document.getElementById(
+                "teilemarktPopup"
+            );
+
+
+        if (
+            !popup
+        ) {
+
+            return;
+        }
+
+
+        /*
+         * Klick auf dunklen Hintergrund
+         */
+
+        popup.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    popup
+                ) {
+
+                    closeTeilemarktPopup();
+                }
+
+            }
+        );
+
+
+        /*
+         * Formular
+         */
+
+        const form =
+            document.getElementById(
+                "teilemarktForm"
+            );
+
+
+        if (
+            form
+        ) {
+
+            form.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    alert(
+                        "Vielen Dank für Deine Anmeldung " +
+                        "zum Capri-Teilemarkt!"
+                    );
+
+                }
+            );
+        }
+
+    };
+
+
+    /* =========================================================
+       ESC = SCHLIESSEN
+       ========================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key ===
+                "Escape"
+            ) {
+
+                closeTeilemarktPopup();
+            }
+
+        }
+    );
+
+
+})();/* ==========================================
+   CCW POPUP - TEILEMARKT
    Zentrale Popup-Funktion für alle CCW-Seiten
    ========================================== */
 
