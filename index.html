@@ -403,23 +403,16 @@
 
 
     <style id="ccw-home-cards-layout-fix">
-        /* =========================================================
-           CCW STARTSEITE – KACHELLAYOUT
-           Drei Kacheln nebeneinander bis 700px.
-           Erst darunter wird auf eine Spalte umgestellt.
-           ========================================================= */
-
         .ccw-cards{
             display:grid !important;
             grid-template-columns:repeat(3,minmax(0,1fr)) !important;
-            grid-auto-flow:row !important;
             gap:24px !important;
             width:100% !important;
             max-width:1300px !important;
-            margin-left:auto !important;
-            margin-right:auto !important;
+            margin:25px auto 40px !important;
+            padding:0 20px !important;
+            box-sizing:border-box !important;
             align-items:start !important;
-            justify-items:stretch !important;
         }
 
         .ccw-cards > .card-link{
@@ -429,14 +422,10 @@
             max-width:none !important;
             margin:0 !important;
             padding:0 !important;
-            grid-column:auto !important;
-            grid-row:auto !important;
-            flex:none !important;
             box-sizing:border-box !important;
         }
 
         .ccw-cards > .card-link > .card{
-            display:block !important;
             width:100% !important;
             min-width:0 !important;
             max-width:none !important;
@@ -811,7 +800,7 @@
             </a>
 
 
-            <a class="card-link" href="pages/fahrzeuge.html">
+            <div class="card-link">
 
                 <div class="card">
 
@@ -860,7 +849,7 @@
 
                 </div>
 
-            </a>
+            </div>
 
 
             <a class="card-link" href="pages/treffen.html">
