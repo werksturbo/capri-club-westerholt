@@ -401,6 +401,46 @@
 
     </style>
 
+
+    <style id="ccw-home-cards-layout-fix">
+        /* =========================================================
+           CCW STARTSEITE – KACHELN
+           Desktop: 3 Kacheln nebeneinander
+           Tablet: 2 Kacheln
+           Smartphone: 1 Kachel
+           ========================================================= */
+
+        .ccw-cards{
+            display:grid !important;
+            grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+            gap:24px !important;
+            align-items:start !important;
+        }
+
+        .ccw-cards > .card-link{
+            display:block !important;
+            min-width:0 !important;
+            width:100% !important;
+        }
+
+        .ccw-cards > .card-link .card{
+            width:100% !important;
+            box-sizing:border-box !important;
+        }
+
+        @media (max-width:1100px){
+            .ccw-cards{
+                grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+            }
+        }
+
+        @media (max-width:900px){
+            .ccw-cards{
+                grid-template-columns:1fr !important;
+            }
+        }
+    </style>
+
 </head>
 
 
