@@ -4,12 +4,25 @@
    neuen Look & Feel.
    ========================================================== */
 
+/* ----------------------------------------------------------
+   Seitenüberschrift – neuer Look & Feel
+   ---------------------------------------------------------- */
 .fahrzeug-header {
-    margin-top: 24px;
+    max-width: 1300px;
+    margin: 22px auto 0;
+    background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
 }
 
-.fahrzeug-header h2 {
-    text-align: center;
+.fahrzeug-header h1 {
+    margin: 0;
+    padding: 14px 20px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: left;
 }
 
 .fahrzeug-section {
