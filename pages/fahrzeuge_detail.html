@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrzeug | Capri Club Westerholt e.V.</title>
+    <meta name="description" content="Fahrzeugvorstellung des Capri Club Westerholt e.V.">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/fahrzeuge.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../images/Logo_CCW.jpg" alt="Capri Club Westerholt">
+        </a>
+    </div>
+
+    <button class="mobile-menu-toggle"
+            id="mobileMenuToggle"
+            type="button"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+            aria-controls="mainNavigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav id="mainNavigation" aria-label="Hauptnavigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-club">
+                    Der Club <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-club">
+                    <li><a href="../pages/stunde-null.html">Stunde Null</a></li>
+                    <li><a href="../pages/mitgliedschaft.html">Mitgliedschaft</a></li>
+                </ul>
+            </li>
+
+            <li><a href="../pages/club-update.html">Club-Update</a></li>
+            <li><a class="active" href="../pages/fahrzeuge.html">Die Fahrzeuge</a></li>
+            <li><a href="../pages/termine.html">Termine</a></li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-jahre">
+                    Jahresrückblicke <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-jahre"></ul>
+            </li>
+
+            <li><a href="../pages/fotoalbum.html">Fotoalbum</a></li>
+
+            <li class="has-submenu">
+                <button class="submenu-toggle" type="button"
+                        aria-expanded="false" aria-controls="submenu-literatur">
+                    Capri Literatur <span class="arrow">▾</span>
+                </button>
+                <ul class="submenu" id="submenu-literatur">
+                    <li><a href="../pages/werbung.html">Werbung</a></li>
+                    <li><a href="../pages/testberichte.html">Testberichte</a></li>
+                    <li><a href="../pages/poster.html">Poster</a></li>
+                    <li><a href="../pages/clubzeitschrift.html">CCW Clubzeitung</a></li>
+                </ul>
+            </li>
+
+            <li><a href="../pages/links.html">Links</a></li>
+            <li><a href="../pages/members-only.html">Members only</a></li>
+            <li><a href="../pages/kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header fahrzeug-header">
+        <h2 id="fahrzeug-titel">Fahrzeug wird geladen …</h2>
+    </section>
+
+    <section class="fahrzeug-section">
+
+        <div class="fahrzeug-card">
+
+            <a id="hauptbild-link"
+               class="hauptbild-link"
+               href="#"
+               aria-label="Hauptbild vergrößern">
+                <img id="hauptbild" src="" alt="">
+            </a>
+
+            <div class="fahrzeugdaten">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Typ</th>
+                            <td id="typ"></td>
+                        </tr>
+                        <tr>
+                            <th>Baujahr</th>
+                            <td id="baujahr"></td>
+                        </tr>
+                        <tr>
+                            <th>Motor / Zyl. / PS</th>
+                            <td id="motor"></td>
+                        </tr>
+                        <tr>
+                            <th>Eigentümer</th>
+                            <td id="eigentümer"></td>
+                        </tr>
+                        <tr>
+                            <th>Sonstiges</th>
+                            <td id="sonstiges"></td>
+                        </tr>
+                        <tr>
+                            <th>2016</th>
+                            <td id="geschichte"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <section class="fahrzeug-galerie">
+                <h3>Fahrzeugbilder</h3>
+                <div id="galerie" class="galerie"></div>
+                <p id="keine-bilder" class="keine-bilder">
+                    Die weiteren Fahrzeugbilder werden später ergänzt.
+                </p>
+            </section>
+
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <h3>Capri Club Westerholt</h3>
+
+        <div class="footer-nav">
+            <a href="../pages/impressum.html">Impressum</a>
+            <a href="../pages/datenschutz.html">Datenschutz</a>
+            <a href="../pages/kontakt.html">Kontakt</a>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Capri Club Westerholt
+        </div>
+    </div>
+</footer>
+
+<script src="../js/lightbox.js"></script>
+<script src="../js/fahrzeuge.js"></script>
+
+</body>
+</html>
