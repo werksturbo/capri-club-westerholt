@@ -4,21 +4,6 @@
    neuen Look & Feel.
    ========================================================== */
 
-/* ==========================================================
-   Lightbox – Fahrzeuggalerie
-   Pfeile innerhalb des sichtbaren Bereichs
-   ========================================================== */
-
-.ccw-lightbox-prev {
-    left: 10px;
-}
-
-.ccw-lightbox-next {
-    right: 10px;
-}
-
-
-
 /* ----------------------------------------------------------
    Seitenüberschrift – neuer Look & Feel
    ---------------------------------------------------------- */
@@ -61,7 +46,6 @@
 /* ----------------------------------------------------------
    Hauptbild
    ---------------------------------------------------------- */
-
 .hauptbild-link {
     display: block;
     width: 100%;
@@ -82,7 +66,6 @@
 /* ----------------------------------------------------------
    Fahrzeugdaten
    ---------------------------------------------------------- */
-
 .fahrzeugdaten {
     margin-top: 20px;
 }
@@ -117,7 +100,6 @@
 /* ----------------------------------------------------------
    Galerie
    ---------------------------------------------------------- */
-
 .fahrzeug-galerie {
     margin-top: 24px;
 }
@@ -172,9 +154,23 @@
 }
 
 /* ----------------------------------------------------------
-   Mobile
+   Lightbox – Fahrzeuggalerie
+   Die vorhandene zentrale CCW-Lightbox bleibt unverändert.
+   Die Pfeile werden auf der Fahrzeugseite innerhalb des
+   sichtbaren Lightbox-Bereichs positioniert.
    ---------------------------------------------------------- */
 
+.ccw-lightbox .ccw-lightbox-prev {
+    left: 10px !important;
+}
+
+.ccw-lightbox .ccw-lightbox-next {
+    right: 10px !important;
+}
+
+/* ----------------------------------------------------------
+   Mobile
+   ---------------------------------------------------------- */
 @media (max-width: 800px) {
 
     .fahrzeug-header {
@@ -196,6 +192,14 @@
 
     .galerie {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .ccw-lightbox .ccw-lightbox-prev {
+        left: 4px !important;
+    }
+
+    .ccw-lightbox .ccw-lightbox-next {
+        right: 4px !important;
     }
 }
 
