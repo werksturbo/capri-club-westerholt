@@ -1,0 +1,202 @@
+/* =========================================================
+   CCW LIGHTBOX
+   Gemeinsame Lightbox für Fahrzeugseiten
+   Ohne Download-Funktion
+   ========================================================= */
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 24px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.90);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.20s ease, visibility 0.20s ease;
+}
+
+#lightbox.show {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+#lightboxImage {
+    display: none;
+
+    max-width: calc(100vw - 150px);
+    max-height: calc(100vh - 130px);
+
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    border-radius: 5px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+
+    z-index: 100001;
+}
+
+#closeLightbox {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.60);
+
+    font-size: 31px;
+    line-height: 1;
+    cursor: pointer;
+
+    z-index: 100004;
+}
+
+#closeLightbox:hover {
+    background: #05019B;
+}
+
+.lightboxNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 54px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.58);
+
+    font-size: 35px;
+    line-height: 1;
+    cursor: pointer;
+
+    z-index: 100003;
+}
+
+.lightboxNav:hover {
+    background: #05019B;
+}
+
+#prevImage { left: 22px; }
+#nextImage { right: 22px; }
+
+#lightboxLoader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 42px;
+    height: 42px;
+    margin: -21px 0 0 -21px;
+
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+
+    animation: ccwLightboxSpin 0.8s linear infinite;
+    display: none;
+
+    z-index: 100002;
+}
+
+@keyframes ccwLightboxSpin {
+    to { transform: rotate(360deg); }
+}
+
+#lightboxInfo {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 26px;
+
+    max-width: calc(100vw - 40px);
+    padding: 9px 17px;
+    box-sizing: border-box;
+
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.72);
+    border-radius: 7px;
+
+    font-size: 14px;
+    line-height: 1.35;
+    text-align: center;
+    white-space: nowrap;
+
+    z-index: 100004;
+}
+
+#lightboxInfo strong {
+    color: #8fd3ff;
+}
+
+@media (max-width: 800px) {
+    #lightbox { padding: 12px; }
+
+    #lightboxImage {
+        max-width: calc(100vw - 80px);
+        max-height: calc(100vh - 125px);
+    }
+
+    .lightboxNav {
+        width: 42px;
+        height: 54px;
+        font-size: 28px;
+    }
+
+    #prevImage { left: 4px; }
+    #nextImage { right: 4px; }
+
+    #closeLightbox {
+        top: 8px;
+        right: 8px;
+    }
+
+    #lightboxInfo {
+        bottom: 8px;
+        gap: 12px;
+        font-size: 12px;
+        white-space: normal;
+    }
+}
