@@ -12,7 +12,6 @@
         "bildordner": "unsere_1er/arthur_porfetye",
         "maxBilder": 30
     },
-
     {
         "id": "02",
         "titel": "Unsere 1er – Capri I(a) GT XLR",
@@ -26,8 +25,6 @@
         "bildordner": "unsere_1er/benjamin_rot",
         "maxBilder": 30
     },
-  
-    
     {
         "id": "03",
         "titel": "Unsere 1er – Capri 1(b)",
@@ -41,8 +38,7 @@
         "bildordner": "unsere_1er/benjamin_orange",
         "maxBilder": 30
     },
- 
-     {
+    {
         "id": "04",
         "titel": "Unsere 1er – Capri 1 (b)",
         "typ": "Ford Capri 1 (b)",
@@ -54,8 +50,7 @@
         "geschichte": "",
         "bildordner": "unsere_1er/heiko_blau",
         "maxBilder": 30
-    }, 
-    
+    },
     {
         "id": "05",
         "titel": "Unsere 1er – Capri (1a)",
@@ -69,9 +64,6 @@
         "bildordner": "unsere_1er/janina_weiss",
         "maxBilder": 30
     },
-
-
-
     {
         "id": "06",
         "titel": "Unsere 1er – Capri Ib",
@@ -85,7 +77,6 @@
         "bildordner": "unsere_1er/markus_gelb",
         "maxBilder": 30
     },
-
     {
         "id": "07",
         "titel": "Unsere 1er – Capri (1b) US-Reimport",
