@@ -1,6 +1,93 @@
 [
     {
         "id": "01",
+        "titel": "Unsere 1er – Capri 1a 1.7 GT",
+        "typ": "Ford Capri 1a 1.7 GT",
+        "baujahr": "1971",
+        "motor": "1.7 L HC V4 / 75 PS",
+        "eigentuemer": "Arthur Porfetye",
+        "sonstiges": "Plüsch im Innenraum und viele HiFi Boxen",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "bis 2018: Dornrößchenschlaf in Gladbeck.\n\n2019: Erste Schritte des Wiedererweckens. Ölwechsel, Kühlflüssigkeit, Benzinpumpe gereinigt, frisches Benzin und Filter. Neue Scheibenwischer. Bremsen und Fahrwerksgummis werden natürlich auch noch gemacht.\n\n2020: Schweißarbeiten, Felgen restauriert.\n\n2021: Unterboden lackiert, Stoßdämpfer erneuert, DEKRA-Hauptabnahme, Zulassung :) Testfahrten, E-Lüfter erneuert.",
+        "bildordner": "unsere_1er/arthur_porfetye",
+        "maxBilder": 30
+    },
+
+    {
+        "id": "02",
+        "titel": "Unsere 1er – Capri I(a) GT XLR",
+        "typ": "Ford Capri I(a) GT XLR",
+        "baujahr": "1971",
+        "motor": "2,6 Liter / V6 / 125 PS",
+        "eigentuemer": "Benjamin Dressler",
+        "sonstiges": "Ex Ford Fischer Vorführwagen",
+        "geschichteLabel": "Restauration",
+        "geschichte": "Vollrestauration incl. Schweller, Radläufe und Rost an allen Capri typischen Stellen.",
+        "bildordner": "unsere_1er/benjamin_rot",
+        "maxBilder": 30
+    },
+  
+    
+    {
+        "id": "03",
+        "titel": "Unsere 1er – Capri 1(b)",
+        "typ": "Ford Capri 1(b)",
+        "baujahr": "1974",
+        "motor": "2.8 L / V6 / PS",
+        "eigentuemer": "Benjamin Dressler",
+        "sonstiges": "Unser erster Ami-Capri von Benjamin, direkt aus den USA geholt, mit einer fast rostfreien Karosserie.",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "",
+        "bildordner": "unsere_1er/benjamin_orange",
+        "maxBilder": 30
+    },
+ 
+     {
+        "id": "04",
+        "titel": "Unsere 1er – Capri 1 (b)",
+        "typ": "Ford Capri 1 (b)",
+        "baujahr": "1973",
+        "motor": "2.8 L / V6 / 1xx",
+        "eigentuemer": "Heiko",
+        "sonstiges": "Fahrzeug komplett neu aufgebaut\n2.8 L Motor mit 3 Doppelvergaser\nsiehe Fotos",
+        "geschichteLabel": "Weitere Angaben",
+        "geschichte": "",
+        "bildordner": "unsere_1er/heiko_blau",
+        "maxBilder": 30
+    }, 
+    
+    {
+        "id": "05",
+        "titel": "Unsere 1er – Capri (1a)",
+        "typ": "Ford Capri (1a)",
+        "baujahr": "1969",
+        "motor": "1500 ccm / 4 Zylinder V-Motor / 60 PS",
+        "eigentuemer": "Janina Berger / Dirk Zentara",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "Die Geschichte über die „Schrauber-Bude“ unseres CCW in der Fachzeitschrift Oldtimer-Markt im September 2004 hatte Folgen.\n\nPer Mail wurde uns ein „brauchbarer“ Capri 1 aus dem Frankfurter Raum angeboten. Reagiert haben wir zunächst nicht – Skepsis ob des möglichen Preises stand da im Raum.\n\nWie sich zeigte unbegründet. Andreas Berger und Dirk Zentara einte die Sehnsucht nach dem „Ur-Capri“. Hingefahren – und für 550 Euro mitgenommen. Nun gehört die 69er Langnase den Beiden. Diese braucht zwar einige Schweißarbeiten, ist aber komplett und ohne „Totaloperation“ wieder reaktivierbar.\n\nSchon 2005 wollten Andreas und Dirk mit ihrer Neuerwerbung „cruisen“. Aber aus mal eben schnell „TÜV fertig machen“ wurde dann doch eine komplette sorgfältige Restaurierung.",
+        "bildordner": "unsere_1er/janina_weiss",
+        "maxBilder": 30
+    },
+
+
+
+    {
+        "id": "06",
+        "titel": "Unsere 1er – Capri Ib",
+        "typ": "Ford Capri Ib",
+        "baujahr": "1973",
+        "motor": "2,3 L V6 / 108 PS",
+        "eigentuemer": "Markus Schulte Rebbelmund",
+        "sonstiges": "..der erste Capri von Taunus Fahrer Markus...",
+        "geschichteLabel": "Weitere Angaben",
+        "geschichte": "19xx: Karosserie komplett neu aufgebaut\n2xx:",
+        "bildordner": "unsere_1er/markus_gelb",
+        "maxBilder": 30
+    },
+
+    {
+        "id": "07",
         "titel": "Unsere 1er – Capri (1b) US-Reimport",
         "typ": "Ford Capri (1b) US Reimport",
         "baujahr": "1973",
@@ -10,6 +97,19 @@
         "geschichteLabel": "2016",
         "geschichte": "Seit 2016 hat Stefan Glowatz den 1er übernommen und die Restauration nach eigenen Vorstellungen fortgesetzt.",
         "bildordner": "unsere_1er/stefan_silber",
+        "maxBilder": 30
+    },
+    {
+        "id": "08",
+        "titel": "Ein May turbo aus Tschechien",
+        "typ": "",
+        "baujahr": "",
+        "motor": "",
+        "eigentuemer": "",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "",
+        "bildordner": "unsere_1er/leon_blau",
         "maxBilder": 30
     }
 ]
