@@ -1,0 +1,201 @@
+/* ==========================================================
+   CCW – Fahrzeugseite
+   Ergänzt die bestehende home.css und übernimmt deren
+   neuen Look & Feel.
+   ========================================================== */
+
+.fahrzeug-header {
+    margin-top: 24px;
+}
+
+.fahrzeug-header h2 {
+    text-align: center;
+}
+
+.fahrzeug-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: #eef1f5;
+    padding: 20px;
+    border-radius: 0 0 12px 12px;
+}
+
+.fahrzeug-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    color: #243746;
+    border-radius: 10px;
+    box-shadow: 0 5px 14px rgba(0,0,0,.12);
+    padding: 20px;
+}
+
+/* ----------------------------------------------------------
+   Hauptbild
+   ---------------------------------------------------------- */
+
+.hauptbild-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f4f6f8;
+}
+
+.hauptbild-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: cover;
+}
+
+/* ----------------------------------------------------------
+   Fahrzeugdaten
+   ---------------------------------------------------------- */
+
+.fahrzeugdaten {
+    margin-top: 20px;
+}
+
+.fahrzeugdaten table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.fahrzeugdaten th,
+.fahrzeugdaten td {
+    border: 1px solid #d9dee4;
+    padding: 9px 11px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.4;
+}
+
+.fahrzeugdaten th {
+    width: 180px;
+    background: #f4f6f8;
+    color: #05019B;
+    font-weight: 700;
+}
+
+.fahrzeugdaten td {
+    background: #ffffff;
+    color: #243746;
+}
+
+/* ----------------------------------------------------------
+   Galerie
+   ---------------------------------------------------------- */
+
+.fahrzeug-galerie {
+    margin-top: 24px;
+}
+
+.fahrzeug-galerie h3 {
+    margin: 0 0 14px;
+    padding: 11px 15px 12px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.25;
+}
+
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.galerie a {
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    background: #f4f6f8;
+    text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.galerie a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(0,0,0,.12);
+}
+
+.galerie img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.keine-bilder {
+    margin: 0;
+    padding: 13px;
+    border-radius: 8px;
+    background: #f4f6f8;
+    color: #66727d;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ----------------------------------------------------------
+   Mobile
+   ---------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+    .fahrzeug-header {
+        margin-top: 16px;
+    }
+
+    .fahrzeug-section {
+        padding: 16px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .fahrzeug-card {
+        padding: 16px;
+    }
+
+    .fahrzeugdaten th {
+        width: 145px;
+    }
+
+    .galerie {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 460px) {
+
+    .fahrzeug-section {
+        padding: 12px;
+    }
+
+    .fahrzeug-card {
+        padding: 14px;
+    }
+
+    .fahrzeugdaten table {
+        font-size: 14px;
+    }
+
+    .fahrzeugdaten th,
+    .fahrzeugdaten td {
+        padding: 7px 8px;
+    }
+
+    .fahrzeugdaten th {
+        width: 105px;
+    }
+
+    .galerie {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+}
