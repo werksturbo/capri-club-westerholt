@@ -171,6 +171,210 @@
     </div>
 </footer>
 
+<footer>
+    <div class="footer-content">
+        <h3>Capri Club Westerholt</h3>
+
+        <div class="footer-nav">
+            <a href="../pages/impressum.html">Impressum</a>
+            <a href="../pages/datenschutz.html">Datenschutz</a>
+            <a href="../pages/kontakt.html">Kontakt</a>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Capri Club Westerholt
+        </div>
+    </div>
+</footer>
+
+
+<!-- =========================================================
+     CCW MENU JAVASCRIPT
+     Mobile Menü + Dropdown-Submenüs
+     ========================================================= -->
+<script>
+(function () {
+
+    const header = document.querySelector("header");
+    const toggle = document.getElementById("mobileMenuToggle");
+    const nav = document.getElementById("mainNavigation");
+
+    if (!header || !toggle || !nav) {
+        return;
+    }
+
+    /* ==========================================
+       MOBILES MENÜ
+       ========================================== */
+
+    function closeMobileMenu() {
+        header.classList.remove("nav-open");
+
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+    }
+
+    toggle.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        const open = header.classList.toggle("nav-open");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            open ? "true" : "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            open ? "Menü schließen" : "Menü öffnen"
+        );
+    });
+
+
+    /* ==========================================
+       DROPDOWN-SUBMENÜS
+       ========================================== */
+
+    const submenuItems =
+        nav.querySelectorAll(".has-submenu");
+
+
+    function closeAllSubmenus(except) {
+
+        submenuItems.forEach(function (item) {
+
+            if (item !== except) {
+
+                item.classList.remove("submenu-open");
+
+                const button =
+                    item.querySelector(".submenu-toggle");
+
+                if (button) {
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+            }
+        });
+    }
+
+
+    submenuItems.forEach(function (item) {
+
+        const button =
+            item.querySelector(".submenu-toggle");
+
+        const submenu =
+            item.querySelector(".submenu");
+
+        if (!button || !submenu) {
+            return;
+        }
+
+
+        button.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const isOpen =
+                item.classList.contains("submenu-open");
+
+            closeAllSubmenus(item);
+
+
+            if (isOpen) {
+
+                item.classList.remove("submenu-open");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            } else {
+
+                item.classList.add("submenu-open");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+            }
+        });
+
+    });
+
+
+    /* ==========================================
+       LINKS
+       ========================================== */
+
+    nav.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            closeAllSubmenus();
+            closeMobileMenu();
+
+        });
+
+    });
+
+
+    /* ==========================================
+       KLICK AUSSERHALB
+       ========================================== */
+
+    document.addEventListener("click", function (event) {
+
+        if (!header.contains(event.target)) {
+
+            closeAllSubmenus();
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    /* ==========================================
+       ESCAPE
+       ========================================== */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            closeAllSubmenus();
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    /* ==========================================
+       BEIM WECHSEL AUF DESKTOP
+       ========================================== */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
+        }
+
+    });
+
+})();
+</script>
+
+
+  
 <script src="../js/lightbox.js"></script>
 <script src="../js/fahrzeuge.js"></script>
 
