@@ -113,7 +113,7 @@
         "sonstiges": "Das Fahrzeug befindet sich im Originalzustand.",
         "geschichteLabel": "Weitere Angaben",
         "geschichte": "",
-        "bildordner": "",
+        "bildordner": "unsere_2er/andreas_silber",
         "maxBilder": 30
     },
     {
@@ -126,7 +126,7 @@
         "sonstiges": "Guter originaler Zustand",
         "geschichteLabel": "Weitere Angaben",
         "geschichte": "",
-        "bildordner": "",
+        "bildordner": "unsere_2er/benjamin_rot",
         "maxBilder": 30
     },
     {
@@ -139,7 +139,7 @@
         "sonstiges": "Gründungsfahrzeug des CCW\nSuche Frontspoiler, RS-Heckspoiler, Seitenschweller, 1\" Tiefer, Koni-Fahrwerk, GFK-Türen - Motorhaube - Kotflügel",
         "geschichteLabel": "Weitere Angaben",
         "geschichte": "",
-        "bildordner": "",
+        "bildordner": "unsere_2er/dirk_blau",
         "maxBilder": 30
     },
     {
@@ -152,7 +152,7 @@
         "sonstiges": "Motor:\nV6 ca. 3,1 l (Eichberg), Dreistoff-Kurbelwellen-Pleuel- u. Nockenwellenlager, 288 Grad Nockenwelle, erweiterte Ein- u. Auslaßkanäle, polierte Ventile, DGAS 38 RS1-Vergaser, Hochleistungsöl-u.wasserpumpe, spez. Thermostat für Kühlwasser, 2 Ölkühler je 16 Reihen mit Thermostat, Schwungscheibe erleichtert u. mit bearbeiteter Kurbelwelle feingewuchtet, Eigenbau Luftfilter (in Chrom), verstärkte Kupplung (bis 400 Nm), E-Lüfter 360mm mit Eigenbau Thermosteuerung.\n\nGetriebe:\n4-Gang-Getriebe mit verstärkten Lagern.\n\nFahrwerk:\nVorderachse: Bilstein-Gasdruck-Federbeine aus ehem. „Gruppe 5“, 50mm Spezielfedern, Cortina-Stützlager (kugelgelagert), alle Gummilager in verstärkter Ausführung, Bausatz RS-Stabilisator (Durchmesser 26mm).\nHinterachse: Differenzialsperre 40%, Einblattfedern 36kN tiefgesprengt, Stoßdämpfer Koni gelb (Gasdruck) 6fach-verstellbar, Stabilisator Durchmesser 14mm (einstellbar), alle Gummiaufhängungen verstärkt.\n\nAuspuffanlage:\nmodifizierter Fächerkrümmer (Eichberg), CSC Komplettanlage mit 2 runden Endrohren (65mm).\n\nBremsen:\nVorderachse: innenbelüftete Bremsscheiben mit Durchmesser 248mm und Scheibenstärke 24mm, Bremssättel aus Ford Granada 2.8i Combi, Spritzbleche mit Lufteinlässen aus Capri I 2.6 RS, Hochleistungsbremsbeläge.\nHinterachse: Trommelbremse mit Durchmesser 230mm / Backenbreite 56mm = Bremsfläche von 803 cm², Bremskraftregler 80% vorne u. 20% hinten.\n\nFelgen / Reifen:\nrundum Ford RS-Felge 7j x 13 E5 mit 205/60-13 V Bridgestone.\n\nKarosserie:\nvon Firma Suhe Front- u. Heckspoiler, 2 Lufteinlässe in der Motorhaube, li/re. seitliche Entlüftung der vorderen Kotflügel, Eigenbau Seitenschweller mit Heckverlängerung u. Heckschürze, Eigenbau Corvette-Style Lufthutze, Scheinwerfergrill von Steppan mit 4 Rechteckscheinwerfern, vordere Stoßstange modifiziert mit Blinkern, Lufteinlässe in der Frontschürze zu den Ölkühlern.\n\nInterieur:\nkomplette Innenausstattung in weiß/blau teils Leder, teils Kunstleder gehalten, Eigenbau Mittelkonsole, Tacho bis 260 km/h, VDO Zusatzinstrumente in Armaturentafel integriert, E-Fensterheber, Scheiben Bronze getönt, Windschutzscheibe mit Blaukeil, hintere Scheiben mit Tönungsfolie in tiefschwarz, Himmel aus weißem Kunstleder (Eigenbau), 360er Momo Sportlenkrad.",
         "geschichteLabel": "Weitere Angaben",
         "geschichte": "",
-        "bildordner": "",
+        "bildordner": "unsere_2er/lothar_weiss",
         "maxBilder": 30
     },
     {
@@ -165,7 +165,7 @@
         "sonstiges": "",
         "geschichteLabel": "Weitere Angaben",
         "geschichte": "",
-        "bildordner": "",
+        "bildordner": "unsere_2er/stefan_gruen",
         "maxBilder": 30
     },
     {
@@ -178,7 +178,7 @@
         "sonstiges": "",
         "geschichteLabel": "Weitere Angaben",
         "geschichte": "",
-        "bildordner": "",
+        "bildordner": "unsere_2er/joerg_orange",
         "maxBilder": 30
     }
 ]
