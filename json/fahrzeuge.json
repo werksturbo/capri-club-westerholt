@@ -427,5 +427,83 @@
         "geschichte": "1998/99: Karosserie komplett neu aufgebaut\n2008: Umrüstung auf dreiteilige BBS (vorne 8\" x 13 hinten 9\" x 13) und 235 / 50 R13 Yokohama\n2012: Motor komplett überholt",
         "bildordner": "unsere_3er/dirk_werksturbo",
         "maxBilder": 30
+    },
+    {
+        "id": "80",
+        "titel": "Unsere Exoten – Triumph Spitfire",
+        "typ": "Triumph Spitfire",
+        "baujahr": "1973",
+        "motor": "1,5 Liter 4-Zyl. mit 86 PS",
+        "eigentuemer": "Helge Jentsch",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "Wenn ein Caprifahrer ein Cabrio suchen entscheiden sie sich wohl oft für einen Spitfire.\n\nEs handelt sich hierbei um einen Triumph Spitfire der vierten Baureihe, mit einen 1500ccm Motorumbau von M.M.T., der für bleifreies Benzin umgerüstet wurde. Zusätzlich besitzt er eine 123 Zündung, ein T9 Fünfganggetriebe mit Aluglocke, einen Hochleistungskühler und einen Ölkühler um das Motoröl noch einmal zusätzlich zu kühlen. Die Bremsen und die Achsen stammen vom Triumph GT6, zudem ist eine Rotoflexachse mit Schubstrebe verbaut. Für den nötigen Grip sorgen die 6x13 Revolution Felgen.",
+        "bildordner": "unsere_exoten/helge_spitfire",
+        "maxBilder": 30
+    },
+    {
+        "id": "81",
+        "titel": "Unsere Exoten – Reliant Scimitar GTE SE5a",
+        "typ": "Reliant Scimitar GTE SE5a",
+        "baujahr": "1973",
+        "motor": "3.0L Essex V6 / 138PS",
+        "eigentuemer": "Arthur Porfetye",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "Sein Design gilt als wegweisend. Inspiriert vom Lamborghini Espada zeichnete Tom Karen den Entwurf des Scimitar GTE, welcher 1968 vorgestellt wurde - damit ein Jahr früher als Volvos P1800ES \"Schneewittchensarg\". Kombiheck, abfallende Dachlinie und hochgezogene Gürtellinie, diese Elemente findet man heute in vielen Autos wieder. Andererseits ist das ja nicht unbedingt ein Maßstab für gelungenes Karosseriedesign...\n\nGekauft unter dem Eindruck, dass nur wenig gemacht werden muss. Nach 2 Jahren auf der Bühne war ein wenig gemacht worden. Achsgummis durch PU-Buchsen ersetzt, Bremsanlage, Kühlerschläuche, der Fächerkrümmer wurde getauscht...",
+        "bildordner": "unsere_exoten/arthur_scimitar",
+        "maxBilder": 30
+    },
+    {
+        "id": "82",
+        "titel": "Unsere Exoten – Piaggio Vespa SI",
+        "typ": "Piaggio Vespa SI",
+        "baujahr": "1992",
+        "motor": "50 ccm/12V. Zweitaktmotor",
+        "eigentuemer": "Leon Stier",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "Die Mofa hat einen Preßstahlrahmen, 16Zoll Vierspeichen-Gußräder und eine Fliehkraft-Automatikkupplung. Die Mofa habe ich mit 14 Jahren gekauft und sie ist mein erstes motorisiertes Fahrzeug.",
+        "bildordner": "unsere_exoten/leon_vespa",
+        "maxBilder": 30
+    },
+    {
+        "id": "83",
+        "titel": "Unsere Exoten – Triumph Spitfire Mk3",
+        "typ": "Triumph Spitfire Mk3",
+        "baujahr": "1969",
+        "motor": "1300 ccm / R4 / 75 bhp",
+        "eigentuemer": "Arthur Porfetye",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "Der Spitfire ist mein erster Oldtimer, gekauft 2012 vom Angesparten des ersten \"richtigen\" Gehalt nach dem Studium. Eine fahrende Baustelle, immer was zu tun... ähm, lernen. Zuverlässiger als vom Vater geunkt, aber unzuverlässiger als von mir gelobt, hat mich der Spitfire trotz allem bis zur Cote d'Azur gebracht - und immerhin wieder bis zum Bodensee zurück (Schleifkohlen in der Bosch-Lichtmaschine, DAS kann ja nun wirklich keiner sehen). Zwei Wochen vor Weihnachten 2017 hat dann der kaputte Anlasser mich dazu überredet dem Spitfire 'ne bis heute andauernde Winterpause zu gönnen und einen Alltagswagen zu kaufen, einen MG TF (BJ 2004) - ist es sinnvoll von einem Engländer zum anderen zu wechseln?",
+        "bildordner": "unsere_exoten/arthur_spitfire_mk3",
+        "maxBilder": 30
+    },
+    {
+        "id": "84",
+        "titel": "Unsere Exoten – Honda CB 100",
+        "typ": "Honda CB 100",
+        "baujahr": "1972",
+        "motor": "100 ccm Einzylinder, Viertaktmotor",
+        "eigentuemer": "Luca Gerstmann",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "Das Moped ist ein wahrer Garagenfund, der seit einigen Jahrzehnten in einer Garagenecke stand und restauriert werden sollte. Luca nahm sich dem Moped an und wird es nun komplett restaurieren.\nDie Leistung beträgt 11,5 PS bei 11.000 U/min, welche über den 100 ccm Motor erreicht wird.\nDie Höchstgeschwindigkeit liegt bei 120 km/h, je nach zustand des Mopeds.",
+        "bildordner": "unsere_exoten/luca_honda_cb100",
+        "maxBilder": 30
+    },
+    {
+        "id": "85",
+        "titel": "Unsere Exoten – Kart ILO",
+        "typ": "Kart ILO",
+        "baujahr": "1967",
+        "motor": "100 ccm Einzylinder, Zweitaktmotor",
+        "eigentuemer": "Robin Stier",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "Das Kart ist von der Firma ILO-Motorenwerke und hat einen 98 ccm ILO Motor mit 4,3 PS.\nDie Gebrüder Ihle betrieben von 1960 bis in die 80ger Jahre erfolgreich Kartsport und bauten zusätzlich noch Karts. Zurzeit befindet sich das Kart noch in der Umbauphase, bzw wird es wieder zeitgenössisch aufgebaut, es besitzt nämlich eine Anhängerkupplung, Abblenlicht und ein Alpha Romeo Lenkrad.",
+        "bildordner": "unsere_exoten/robin_kart_ilo",
+        "maxBilder": 30
     }
 ]
