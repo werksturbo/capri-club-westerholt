@@ -997,19 +997,20 @@
 
     </main>
 
-    <!-- =============================================================================
-                     footer        footer
-    ============================================================================= -->
-   
-                <div id="footer"></div>
+    <!-- =========================================================
+    FOOTER                FOOTER
+         ========================================================= -->
 
-                <script>
-                        fetch('../includes/footer.html')
-                        .then(response => response.text())
-                        .then(data => {
-                                        document.getElementById('footer').innerHTML = data;
-                                      });
-                </script>
+       
+            <div id="footer"></div>
+
+            <script>
+                fetch('includes/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                               });
+            </script>
 
 
     <!-- =========================================================
