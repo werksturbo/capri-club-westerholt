@@ -183,19 +183,33 @@
     },
     {
         "id": "40",
-        "titel": "Unsere 3er – Ford Capri GT",
-        "typ": "Ford Capri GT",
-        "baujahr": "",
-        "motor": "1.6 L / 4 Zyl. / 86 PS",
-        "eigentuemer": "Robin Stier",
+        "titel": "Unsere 3er – Capri III 2.0 GT",
+        "typ": "Capri III 2.0 GT",
+        "baujahr": "1984",
+        "motor": "2,0 L / 4 Zyl. / 101 PS",
+        "eigentuemer": "Andreas Berger",
         "sonstiges": "",
-        "geschichteLabel": "2025",
-        "geschichte": "Kauf durch Robin Stier",
-        "bildordner": "unsere_3er/robin_gt",
+        "geschichteLabel": "Sonstiges",
+        "geschichte": "Original Zustand mit 7\" Ford-RS Felgen und 205er Bereifung",
+        "bildordner": "unsere_3er/andreas_antrhzit",
         "maxBilder": 30
     },
     {
         "id": "41",
+        "titel": "Unsere 3er – Ford Capri 2.0 GL",
+        "typ": "Ford Capri 2.0 GL",
+        "baujahr": "1984",
+        "motor": "2,0 L / 4 Zyl. / 101 PS",
+        "eigentuemer": "Andreas Berger",
+        "sonstiges": "",
+        "geschichteLabel": "Sonstiges",
+        "geschichte": "Originaler Capri, echte 35.000 km gelaufen",
+        "bildordner": "unsere_3er/andreas_blau",
+        "maxBilder": 30
+    },
+    
+    {
+        "id": "410",
         "titel": "Unsere 3er – Ford Capri III GL",
         "typ": "Ford Capri III GL",
         "baujahr": "1981",
@@ -217,7 +231,7 @@
         "sonstiges": "",
         "geschichteLabel": "Sonstiges",
         "geschichte": "",
-        "bildordner": "unsere_3er/guido_20",
+        "bildordner": "unsere_3er/guido_schwarz",
         "maxBilder": 30
     },
     {
@@ -230,33 +244,7 @@
         "sonstiges": "",
         "geschichteLabel": "Sonstiges",
         "geschichte": "Frontspoiler Zastrow. 1\" tiefer. Bereifung: Vorn 205/50R15 Hinten 225/50R15 auf Rimstock 7Jx15. Wird zur Zeit restauriert.",
-        "bildordner": "unsere_3er/frank_20s",
-        "maxBilder": 30
-    },
-    {
-        "id": "44",
-        "titel": "Unsere 3er – Capri III 2.0 GT",
-        "typ": "Capri III 2.0 GT",
-        "baujahr": "1984",
-        "motor": "2,0 L / 4 Zyl. / 101 PS",
-        "eigentuemer": "Andreas Berger",
-        "sonstiges": "",
-        "geschichteLabel": "Sonstiges",
-        "geschichte": "Original Zustand mit 7\" Ford-RS Felgen und 205er Bereifung",
-        "bildordner": "unsere_3er/andreas_20gt",
-        "maxBilder": 30
-    },
-    {
-        "id": "45",
-        "titel": "Unsere 3er – Ford Capri 2.0 GL",
-        "typ": "Ford Capri 2.0 GL",
-        "baujahr": "1984",
-        "motor": "2,0 L / 4 Zyl. / 101 PS",
-        "eigentuemer": "Andreas Berger",
-        "sonstiges": "",
-        "geschichteLabel": "Sonstiges",
-        "geschichte": "Originaler Capri, echte 35.000 km gelaufen",
-        "bildordner": "unsere_3er/andreas_20gl",
+        "bildordner": "unsere_3er/frank_schwarz",
         "maxBilder": 30
     },
     {
@@ -285,8 +273,23 @@
         "bildordner": "unsere_3er/holger_20s",
         "maxBilder": 30
     },
+    
     {
         "id": "48",
+        "titel": "Unsere 3er – Ford Capri GT",
+        "typ": "Ford Capri GT",
+        "baujahr": "",
+        "motor": "1.6 L / 4 Zyl. / 86 PS",
+        "eigentuemer": "Robin Stier",
+        "sonstiges": "",
+        "geschichteLabel": "2025",
+        "geschichte": "Kauf in 2025 durch Robin Stier von Rüdiger ",
+        "bildordner": "unsere_3er/robin_gruen",
+        "maxBilder": 30
+    },
+    
+    {
+        "id": "100",
         "titel": "Unsere 3er – Ford Capri III 2.0 Super GT",
         "typ": "Ford Capri III 2.0 Super GT",
         "baujahr": "1984",
