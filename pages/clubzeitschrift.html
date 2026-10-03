@@ -791,46 +791,21 @@
         </div>
     </section>
 </main>
-
-<!-- ========================= -->
-<!-- FOOTER -->
-    <!-- ========================= -->
-
-    <footer>
-
-        <div class="footer-content">
-
-            <h3>
-                Capri Club Westerholt
-            </h3>
+                <!-- =============================================================================
+                     footer        footer
+                     ============================================================================= -->
 
 
-            <div class="footer-nav">
+    
+                <div id="footer"></div>
 
-                <a href="impressum.html">
-                    Impressum
-                </a>
-
-                <a href="datenschutz.html">
-                    Datenschutz
-                </a>
-
-                <a href="kontakt.html">
-                    Kontakt
-                </a>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                © 2026 Capri Club Westerholt
-
-            </div>
-
-        </div>
-
-    </footer>
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
 
 
     <!-- =========================================================
