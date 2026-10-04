@@ -247,6 +247,19 @@
         "bildordner": "unsere_3er/frank_schwarz",
         "maxBilder": 30
     },
+        {
+        "id": "44",
+        "titel": "Unsere 3er – Ford Capri III 2.0 S",
+        "typ": "Ford Capri III 2.0 S",
+        "baujahr": "1982",
+        "motor": "2,0 L / 4 Zyl. / 101 PS",
+        "eigentuemer": "Holger Stier",
+        "sonstiges": "",
+        "geschichteLabel": "Sonstiges",
+        "geschichte": "Farbe Lichtblau metallic. Felgen 6x13 Ronal RS. Gestreifte Recaro S Sitze. Wurde nur von unten restauriert. Das Fahrzeug befindet sich im Originalzustand",
+        "bildordner": "unsere_3er/holger_20s",
+        "maxBilder": 30
+    },
     {
         "id": "46",
         "titel": "Unsere 3er – Ford Capri III 2.0 GT",
@@ -262,18 +275,17 @@
     },
     {
         "id": "47",
-        "titel": "Unsere 3er – Ford Capri III 2.0 S",
-        "typ": "Ford Capri III 2.0 S",
-        "baujahr": "1982",
-        "motor": "2,0 L / 4 Zyl. / 101 PS",
-        "eigentuemer": "Holger Stier",
+        "titel": "Unsere 3er – Ford Capri III Super GT",
+        "typ": "Ford Capri III Super GT",
+        "baujahr": "1984",
+        "motor": "2,1 L / 4 Zyl. / 160 PS",
+        "eigentuemer": "Robin Stier",
         "sonstiges": "",
         "geschichteLabel": "Sonstiges",
-        "geschichte": "Farbe Lichtblau metallic. Felgen 6x13 Ronal RS. Gestreifte Recaro S Sitze. Wurde nur von unten restauriert. Das Fahrzeug befindet sich im Originalzustand",
-        "bildordner": "unsere_3er/holger_20s",
+        "geschichte": "Motortuning RS 2000, Bausatz Tuningstufe Gruppe 1, mit zwei 44 idf Doppelvergaser und Eichbergbedüsung.\n\nGetriebe: 5 Gang Schaltung, mit Schaltwegverkürzung.\n\nHöhe 1270mm (2\" Tieferlegung).\n\n7J x 13 Leichtmetallfelgen.\n\nRS-Krümmer mit zwei-flutigen Hosenrohr - Grp. 1 Doppelrohr Abgasanlage.\n\nEinblattfedern, Bilstein Stoßdämpfer Vorder- und Hinterachse",
+        "bildordner": "unsere_3er/robin_supergt",
         "maxBilder": 30
-    },
-    
+    },    
     {
         "id": "48",
         "titel": "Unsere 3er – Ford Capri GT",
@@ -301,19 +313,7 @@
         "bildordner": "unsere_3er/stefan_supergt",
         "maxBilder": 30
     },
-    {
-        "id": "49",
-        "titel": "Unsere 3er – Ford Capri III Super GT",
-        "typ": "Ford Capri III Super GT",
-        "baujahr": "1984",
-        "motor": "2,1 L / 4 Zyl. / 160 PS",
-        "eigentuemer": "Robin Stier",
-        "sonstiges": "",
-        "geschichteLabel": "Sonstiges",
-        "geschichte": "Motortuning RS 2000, Bausatz Tuningstufe Gruppe 1, mit zwei 44 idf Doppelvergaser und Eichbergbedüsung.\n\nGetriebe: 5 Gang Schaltung, mit Schaltwegverkürzung.\n\nHöhe 1270mm (2\" Tieferlegung).\n\n7J x 13 Leichtmetallfelgen.\n\nRS-Krümmer mit zwei-flutigen Hosenrohr - Grp. 1 Doppelrohr Abgasanlage.\n\nEinblattfedern, Bilstein Stoßdämpfer Vorder- und Hinterachse",
-        "bildordner": "unsere_3er/robin_supergt",
-        "maxBilder": 30
-    },
+
     {
         "id": "50",
         "titel": "Unsere 3er – Ford Capri III Ghia",
