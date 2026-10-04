@@ -326,9 +326,8 @@
         "bildordner": "unsere_3er/stephan_rot",
         "maxBilder": 30
     },
-
     {
-        "id": "50",
+        "id": "49",
         "titel": "Unsere 3er – Ford Capri III Ghia",
         "typ": "Ford Capri III Ghia",
         "baujahr": "1981",
@@ -341,7 +340,7 @@
         "maxBilder": 30
     },
     {
-        "id": "51",
+        "id": "50",
         "titel": "Unsere 3er – Ford Capri 3.0 Suhe",
         "typ": "Ford Capri 3.0 Suhe",
         "baujahr": "1979",
@@ -354,16 +353,29 @@
         "maxBilder": 30
     },
     {
-        "id": "52",
-        "titel": "Unsere 3er – Ford Capri III 2.8i injection",
-        "typ": "Ford Capri III 2.8i injection",
+        "id": "51",
+        "titel": "Unsere 3er – Ford Capri III 2.8i",
+        "typ": "Ford Capri III 2.8i",
         "baujahr": "1981",
-        "motor": "2.8 L / 6 Zyl. / 160 PS",
-        "eigentuemer": "Manfred Fischer",
-        "sonstiges": "",
+        "motor": "2,8 L / 6 Zyl. / 160 PS",
+        "eigentuemer": "Benjamin Dressler",
+        "sonstiges": "Originalzustand",
         "geschichteLabel": "Sonstiges",
         "geschichte": "",
-        "bildordner": "unsere_3er/manfred_gruen",
+        "bildordner": "unsere_3er/benjamin_blau",
+        "maxBilder": 30
+    },
+        {
+        "id": "52",
+        "titel": "Unsere 3er – Ford Capri III 2.8i",
+        "typ": "Ford Capri III 2.8i",
+        "baujahr": "1983",
+        "motor": "2,8i / 6 Zyl. / 160 PS",
+        "eigentuemer": "Gregor Maxner",
+        "sonstiges": "Dunkel grau metallic; Haubenairbrush; Wolfracefelgen; dezente Rundumverspoilerung",
+        "geschichteLabel": "Sonstiges",
+        "geschichte": "",
+        "bildordner": "unsere_3er/gregor_grau",
         "maxBilder": 30
     },
     {
@@ -383,19 +395,6 @@
         "id": "54",
         "titel": "Unsere 3er – Ford Capri III 2.8i",
         "typ": "Ford Capri III 2.8i",
-        "baujahr": "1983",
-        "motor": "2,8i / 6 Zyl. / 160 PS",
-        "eigentuemer": "Gregor Maxner",
-        "sonstiges": "Dunkel grau metallic; Haubenairbrush; Wolfracefelgen; dezente Rundumverspoilerung",
-        "geschichteLabel": "Sonstiges",
-        "geschichte": "",
-        "bildordner": "unsere_3er/gregor_grau",
-        "maxBilder": 30
-    },
-    {
-        "id": "55",
-        "titel": "Unsere 3er – Ford Capri III 2.8i",
-        "typ": "Ford Capri III 2.8i",
         "baujahr": "1981",
         "motor": "2.8i / 6 Zyl. / 160 PS",
         "eigentuemer": "Helge Jentsch",
@@ -405,17 +404,17 @@
         "bildordner": "unsere_3er/helge_rot",
         "maxBilder": 30
     },
-    {
-        "id": "56",
-        "titel": "Unsere 3er – Ford Capri III 2.8i",
-        "typ": "Ford Capri III 2.8i",
+        {
+        "id": "55",
+        "titel": "Unsere 3er – Ford Capri III 2.8i injection",
+        "typ": "Ford Capri III 2.8i injection",
         "baujahr": "1981",
-        "motor": "2,8 L / 6 Zyl. / 160 PS",
-        "eigentuemer": "Benjamin Dressler",
-        "sonstiges": "Originalzustand",
+        "motor": "2.8 L / 6 Zyl. / 160 PS",
+        "eigentuemer": "Manfred Fischer",
+        "sonstiges": "",
         "geschichteLabel": "Sonstiges",
         "geschichte": "",
-        "bildordner": "unsere_3er/benjamin_blau",
+        "bildordner": "unsere_3er/manfred_gruen",
         "maxBilder": 30
     },
     {
