@@ -13,31 +13,16 @@
     <meta name="keywords" content="Capri Club Westerholt, CCW, Ford Capri, Capri Treffen, Capri Club">
 
     <link rel="stylesheet" href="css/home.css">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon"
-          href="images/favicon_set/favicon.ico">
-
-    <link rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="images/favicon_set/favicon-32x32.png">
-
-    <link rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="images/favicon_set/favicon-16x16.png">
-
-    <link rel="apple-touch-icon"
-          sizes="180x180"
-          href="images/favicon_set/apple-touch-icon.png">
-
-    <link rel="manifest"
-          href="images/favicon_set/site.webmanifest">
-
-    <meta name="theme-color" content="#000000">
-
-    <meta name="msapplication-config"
+    <!-- =========================================================
+         CCW FAVICON
+         Dateien liegen im Verzeichnis /favicon/
+         ========================================================= -->
+    <link rel="icon" type="image/x-icon" href="favicon/favicon_ccw.ico">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon/favicon_ccw_512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon_ccw_32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon_ccw_16.png">
+    <meta name="theme-color" content="#05019B">
+<meta name="msapplication-config"
           content="images/favicon_set/browserconfig.xml">
 
     <meta name="msapplication-config" content="/browserconfig.xml">
@@ -401,6 +386,179 @@
 
     </style>
 
+
+    
+
+
+    <style id="ccw-home-look-and-feel">
+        /* =========================================================
+           CCW STARTSEITE – LOOK & FEEL WIE DIE NEUEN UNTERSEITEN
+           Grundlage: Gestaltung der Links-Seite
+           ========================================================= */
+
+        /* Willkommen bleibt als eigener weißer Bereich */
+        .welcome{
+            background:#ffffff !important;
+            padding:12px 0 10px !important;
+        }
+
+        .welcome h2{
+            margin:0 0 8px !important;
+            color:#05019B !important;
+            text-align:center !important;
+            font-size:30px !important;
+            line-height:1.2 !important;
+            font-weight:700 !important;
+        }
+
+        .welcome p{
+            max-width:1300px !important;
+            margin:0 auto !important;
+            color:#243746 !important;
+            text-align:center !important;
+            font-size:16px !important;
+            line-height:1.35 !important;
+        }
+
+        /* Kartenbereich wie bei der Links-Seite */
+        .ccw-cards{
+            display:grid !important;
+            grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+            gap:20px !important;
+
+            max-width:1300px !important;
+            margin:0 auto 40px !important;
+            padding:20px !important;
+
+            box-sizing:border-box !important;
+
+            background:#eef1f5 !important;
+            border-radius:0 0 12px 12px !important;
+
+            align-items:start !important;
+        }
+
+        /* Jede Kachel */
+        .ccw-cards > .card-link{
+            display:block !important;
+            width:100% !important;
+            min-width:0 !important;
+            max-width:none !important;
+            margin:0 !important;
+            padding:0 !important;
+            box-sizing:border-box !important;
+            color:inherit !important;
+            text-decoration:none !important;
+        }
+
+        .ccw-cards > .card-link > .card{
+            width:100% !important;
+            min-width:0 !important;
+            max-width:none !important;
+            margin:0 !important;
+            padding:0 20px 22px !important;
+
+            box-sizing:border-box !important;
+
+            background:#ffffff !important;
+            color:#243746 !important;
+
+            border:0 !important;
+            border-radius:10px !important;
+
+            box-shadow:0 5px 14px rgba(0,0,0,.12) !important;
+
+            overflow:hidden !important;
+        }
+
+        /* Kachelüberschrift = Farbverlauf wie auf den Unterseiten */
+        .ccw-cards .card h3{
+            margin:0 -20px 16px !important;
+            padding:12px 18px 13px !important;
+
+            background:linear-gradient(
+                90deg,
+                #05019B 0%,
+                #1d7fc3 100%
+            ) !important;
+
+            color:#ffffff !important;
+
+            font-size:21px !important;
+            line-height:1.25 !important;
+            font-weight:700 !important;
+        }
+
+        /* Kacheltext */
+        .ccw-cards .card p{
+            margin:0 0 16px !important;
+            color:#243746 !important;
+            font-size:15px !important;
+            line-height:1.5 !important;
+        }
+
+        /* Links innerhalb der Kachel */
+        .ccw-cards .card a{
+            color:#05019B !important;
+        }
+
+        /* Weiterlesen / Zu den Treffen */
+        .ccw-cards .card .more{
+            margin-top:18px !important;
+            padding-top:0 !important;
+            color:#05019B !important;
+            font-weight:700 !important;
+            font-size:15px !important;
+        }
+
+        /* Die lange Teilemarkt-Kachel darf höher werden,
+           die beiden anderen bleiben unabhängig davon. */
+        .ccw-cards{
+            align-items:start !important;
+        }
+
+        @media (max-width:1050px){
+            .ccw-cards{
+                grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+            }
+        }
+
+        @media (max-width:800px){
+            .ccw-cards{
+                grid-template-columns:1fr !important;
+                gap:16px !important;
+                padding:16px !important;
+            }
+
+            .ccw-cards > .card-link > .card{
+                padding:0 18px 20px !important;
+            }
+
+            .ccw-cards .card h3{
+                margin-left:-18px !important;
+                margin-right:-18px !important;
+                padding:11px 16px 12px !important;
+                font-size:20px !important;
+            }
+        }
+
+        @media (max-width:460px){
+            .ccw-cards{
+                padding:12px !important;
+            }
+
+            .ccw-cards > .card-link > .card{
+                padding-left:14px !important;
+                padding-right:14px !important;
+            }
+
+            .ccw-cards .card h3{
+                margin-left:-14px !important;
+                margin-right:-14px !important;
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -463,7 +621,7 @@
                      DER CLUB
                      ========================================================= -->
 
-                <li class="has-submenu">
+                               <li class="has-submenu">
 
                     <button
                         class="submenu-toggle"
@@ -510,28 +668,13 @@
 
 
                 <!-- =========================================================
-                     SCHRAUBERBUDE
+                     TERMINE
                      ========================================================= -->
 
-                <li class="has-submenu">
-
-                    <button
-                        class="submenu-toggle"
-                        type="button"
-                        aria-expanded="false"
-                        aria-controls="submenu-schrauberbude">
-
-                        Schrauberbude <span class="arrow">▾</span>
-
-                    </button>
-
-
-                    <ul class="submenu" id="submenu-schrauberbude">
-
-                        <!-- Unterseiten der Schrauberbude werden später ergänzt -->
-
-                    </ul>
-
+                <li>
+                    <a href="pages/termine.html">
+                        Termine
+                    </a>
                 </li>
 
 
@@ -565,25 +708,10 @@
                      FOTOALBUM
                      ========================================================= -->
 
-                <li class="has-submenu">
-
-                    <button
-                        class="submenu-toggle"
-                        type="button"
-                        aria-expanded="false"
-                        aria-controls="submenu-fotoalbum">
-
-                        Fotoalbum <span class="arrow">▾</span>
-
-                    </button>
-
-
-                    <ul class="submenu" id="submenu-fotoalbum">
-
-                        <!-- Fotoalben werden später ergänzt -->
-
-                    </ul>
-
+                <li>
+                    <a href="pages/fotoalbum.html">
+                        Fotoalbum
+                    </a>
                 </li>
 
 
@@ -613,19 +741,19 @@
                         </li>
 
                         <li>
-                            <a href="https://www.capri-club-westerholt.de/literatur">
+                            <a href="pages/testberichte.html">
                                 Testberichte
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://www.capri-club-westerholt.de/literatur">
+                            <a href="pages/poster.html">
                                 Poster
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://www.capri-club-westerholt.de/literatur">
+                            <a href="pages/clubzeitschrift.html">
                                 CCW Clubzeitung
                             </a>
                         </li>
@@ -791,25 +919,56 @@
             </a>
 
 
-            <a class="card-link" href="pages/fahrzeuge.html">
+            <div class="card-link">
 
                 <div class="card">
 
-                    <h3>
-                        Die Fahrzeuge
-                    </h3>
+<h3>Teilemarkt für alle Capri-Fans!</h3>
 
-                    <p>
-                        Unsere Capris und die Fahrzeuge unserer Clubmitglieder.
-                    </p>
+<p>
+    <strong>Zum zweiten Mal in Herne!</strong><br>
+    <strong>24.04.2027</strong>
+</p>
 
-                    <div class="more">
-                        Mehr erfahren →
-                    </div>
+<p>
+    Am 24. April heißt es wieder:
+    <strong>Teile suchen, Schnäppchen machen und über alles reden,
+    was vier Räder und einen Capri-Schriftzug hat.</strong>
+</p>
+
+<p>
+    Ob seltenes Originalteil, lange gesuchtes Schnäppchen oder einfach
+    ein bisschen Capri-Schnack – hier trifft sich die Szene zum
+    gemeinsamen Start in die neue Saison.
+</p>
+
+<p>
+    <strong>Für Besucher ist der Teilemarkt kostenlos</strong>,
+    Händler zahlen lediglich einen kleinen Obolus.
+</p>
+
+<p>
+    Für <strong>Speisen und Getränke sorgt wie immer der CCW.</strong> 🌭🍺
+</p>
+
+<p>
+    <strong>Du möchtest selbst Teile anbieten?</strong><br>
+    Dann melde Dich einfach ab dem 01.01.27 über das
+    <a href="#"
+       onclick="openTeilemarktPopup(); return false;">
+        Anmeldeformular
+    </a>
+    an.
+</p>
+
+<p>
+    <strong>Wir freuen uns auf Euch – auf alte Bekannte,
+    neue Gesichter und natürlich jede Menge Benzingespräche! 😎</strong>
+</p>
 
                 </div>
 
-            </a>
+            </div>
 
 
             <a class="card-link" href="pages/treffen.html">
@@ -838,49 +997,20 @@
 
     </main>
 
+    <!-- =========================================================
+    FOOTER                FOOTER
+         ========================================================= -->
 
-    <!-- ========================= -->
-    <!-- FOOTER -->
-    <!-- ========================= -->
+       
+            <div id="footer"></div>
 
-
-    <footer>
-
-        <div class="footer-content">
-
-
-            <h3>
-                Capri Club Westerholt
-            </h3>
-
-
-            <div class="footer-nav">
-
-                <a href="pages/impressum.html">
-                    Impressum
-                </a>
-
-                <a href="pages/datenschutz.html">
-                    Datenschutz
-                </a>
-
-                <a href="pages/kontakt.html">
-                    Kontakt
-                </a>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                © 2026 Capri Club Westerholt
-
-            </div>
-
-
-        </div>
-
-    </footer>
+            <script>
+                fetch('includes/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                               });
+            </script>
 
 
     <!-- =========================================================
@@ -1159,6 +1289,10 @@
 
     </script>
 
+    <!-- ==========================================
+         WIEDERVERWENDBARES TEILEMARKT-POPUP
+         ========================================== -->
+    <script src="js/popups.js"></script>
 
 </body>
 
