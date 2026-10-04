@@ -260,6 +260,19 @@
         "bildordner": "unsere_3er/holger_blau",
         "maxBilder": 30
     },
+        {
+        "id": "45",
+        "titel": "Unsere 3er – Ford Capri III 2.0 GL",
+        "typ": "Ford Capri III 2.0 GL",
+        "baujahr": "1981",
+        "motor": "2,0 L / 4 Zyl. / 101 PS",
+        "eigentuemer": "Holger Stier",
+        "sonstiges": "",
+        "geschichteLabel": "Sonstiges",
+        "geschichte": "Irgendwann kommt auch dieser Capri von Holger wieder auf die Straße",
+        "bildordner": "unsere_3er/holger_schwarz",
+        "maxBilder": 30
+    },
     {
         "id": "46",
         "titel": "Unsere 3er – Ford Capri III 2.0 GT",
