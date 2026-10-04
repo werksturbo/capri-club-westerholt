@@ -207,31 +207,17 @@
         "bildordner": "unsere_3er/andreas_blau",
         "maxBilder": 30
     },
-    
-    {
-        "id": "410",
-        "titel": "Unsere 3er – Ford Capri III GL",
-        "typ": "Ford Capri III GL",
-        "baujahr": "1981",
-        "motor": "1,6 L / 4 Zyl. / 73 PS",
-        "eigentuemer": "Holger Stier",
-        "sonstiges": "",
-        "geschichteLabel": "Weitere Angaben",
-        "geschichte": "2.0 OHC Umbau, von 73 PS auf 101 PS\nWeber 44 IDF Doppelvergaseranlage, mit RS Abgasanlage.\n360mm Raid Lenkrad, 1\" Tieferlegung und 7x13 ATS Felgen.\nGeplant als 2.8 V6 Breitbau. Der Capri ist seit 30 Jahren im Besitz. Er wurde 1996 zur Hochzeit vom Capri Club TÜV fertig gemacht und seit dem nicht wieder angemeldet. Seitdem steht er in der Garage im Elternhaus.",
-        "bildordner": "unsere_3er/holger_gl",
-        "maxBilder": 30
-    },
     {
         "id": "42",
-        "titel": "Unsere 3er – Capri III 2.0",
-        "typ": "Capri III 2.0",
+        "titel": "Unsere 3er – Ford Capri III 2.0 GT",
+        "typ": "Ford Capri III 2.0 GT",
         "baujahr": "1984",
-        "motor": "2.0 L / 4 Zyl. / 101 PS",
-        "eigentuemer": "Guido Heise",
+        "motor": "2,0 L / 4 Zyl. / 101 PS",
+        "eigentuemer": "Frank Pachan",
         "sonstiges": "",
         "geschichteLabel": "Sonstiges",
-        "geschichte": "",
-        "bildordner": "unsere_3er/guido_schwarz",
+        "geschichte": "Die Geschichte über die Schrauber-Bude unseres CCW in der Fachzeitschrift Oldtimer-Markt im September 2004 hatte Folgen. Fast \"Ablösefrei\" wechselte dieses Fahrzeug zum Capri-Club-Westerholt.",
+        "bildordner": "unsere_3er/frank_rot",
         "maxBilder": 30
     },
     {
@@ -273,17 +259,17 @@
         "bildordner": "unsere_3er/holger_schwarz",
         "maxBilder": 30
     },
-    {
+       {
         "id": "46",
-        "titel": "Unsere 3er – Ford Capri III 2.0 GT",
-        "typ": "Ford Capri III 2.0 GT",
+        "titel": "Unsere 3er – Capri III 2.0",
+        "typ": "Capri III 2.0",
         "baujahr": "1984",
-        "motor": "2,0 L / 4 Zyl. / 101 PS",
-        "eigentuemer": "Frank Pachan",
+        "motor": "2.0 L / 4 Zyl. / 101 PS",
+        "eigentuemer": "Guido Heise",
         "sonstiges": "",
         "geschichteLabel": "Sonstiges",
-        "geschichte": "Die Geschichte über die Schrauber-Bude unseres CCW in der Fachzeitschrift Oldtimer-Markt im September 2004 hatte Folgen. Fast \"Ablösefrei\" wechselte dieses Fahrzeug zum Capri-Club-Westerholt.",
-        "bildordner": "unsere_3er/frank_rot",
+        "geschichte": "",
+        "bildordner": "unsere_3er/guido_schwarz",
         "maxBilder": 30
     },
     {
@@ -326,7 +312,7 @@
         "maxBilder": 30
     },
     {
-        "id": "100",
+        "id": "50",
         "titel": "Unsere 3er – Ford Capri III Ghia",
         "typ": "Ford Capri III Ghia",
         "baujahr": "1981",
@@ -338,8 +324,21 @@
         "bildordner": "unsere_3er/hubert_gold",
         "maxBilder": 30
     },
+        {
+        "id": "51",
+        "titel": "Unsere 3er – Ford Capri III",
+        "typ": "Ford Capri III",
+        "baujahr": "1981",
+        "motor": "2,3 L / 6 Zyl. / 114 PS",
+        "eigentuemer": "Oliver Auspuff",
+        "sonstiges": "",
+        "geschichteLabel": "Sonstiges",
+        "geschichte": "Interrad Frontspoiler, Seitenschweller und Heckschürze\n\nEhemaliges Fahrzeug von unserem verstorbenen Clubmitglied Erich Lutz\n\nHat den Weg zurück gefunden.",
+        "bildordner": "unsere_3er/oli_blau",
+        "maxBilder": 30
+    },
     {
-        "id": "50",
+        "id": "52",
         "titel": "Unsere 3er – Ford Capri 3.0 Suhe",
         "typ": "Ford Capri 3.0 Suhe",
         "baujahr": "1979",
@@ -352,7 +351,7 @@
         "maxBilder": 30
     },
     {
-        "id": "51",
+        "id": "53",
         "titel": "Unsere 3er – Ford Capri III 2.8i",
         "typ": "Ford Capri III 2.8i",
         "baujahr": "1981",
@@ -365,7 +364,7 @@
         "maxBilder": 30
     },
         {
-        "id": "52",
+        "id": "54",
         "titel": "Unsere 3er – Ford Capri III 2.8i",
         "typ": "Ford Capri III 2.8i",
         "baujahr": "1983",
@@ -378,7 +377,7 @@
         "maxBilder": 30
     },
     {
-        "id": "53",
+        "id": "55",
         "titel": "Unsere 3er – Ford Capri III 2.8i",
         "typ": "Ford Capri III 2.8i",
         "baujahr": "1981",
@@ -391,7 +390,7 @@
         "maxBilder": 30
     },
     {
-        "id": "54",
+        "id": "56",
         "titel": "Unsere 3er – Ford Capri III 2.8i",
         "typ": "Ford Capri III 2.8i",
         "baujahr": "1981",
@@ -404,7 +403,7 @@
         "maxBilder": 30
     },
         {
-        "id": "55",
+        "id": "57",
         "titel": "Unsere 3er – Ford Capri III 2.8i injection",
         "typ": "Ford Capri III 2.8i injection",
         "baujahr": "1981",
@@ -417,7 +416,7 @@
         "maxBilder": 30
     },
     {
-        "id": "57",
+        "id": "58",
         "titel": "Unsere 3er – Ford Capri 2.8 Werksturbo",
         "typ": "Ford Capri 2.8 Werksturbo",
         "baujahr": "1981",
@@ -430,7 +429,7 @@
         "maxBilder": 30
     },
     {
-        "id": "58",
+        "id": "59",
         "titel": "Unsere 3er – Ford Capri Werksturbo",
         "typ": "Ford Capri Werksturbo",
         "baujahr": "",
