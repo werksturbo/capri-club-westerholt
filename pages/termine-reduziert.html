@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Termine | Capri Club Westerholt</title>
+
+    <meta name="description" content="Capri Club Westerholt – Informationen, Fahrzeuge, Treffen, Bilder, Rückblicke und Geschichte des Clubs.">
+
+    <meta name="keywords" content="Capri Club Westerholt, CCW, Ford Capri, Capri Treffen, Capri Club">
+
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/teilemarkt.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon"
+          href="../images/favicon_set/favicon.ico">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="../images/favicon_set/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="../images/favicon_set/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="../images/favicon_set/apple-touch-icon.png">
+
+    <link rel="manifest"
+          href="../images/favicon_set/site.webmanifest">
+
+    <meta name="theme-color" content="#000000">
+
+    <meta name="msapplication-config"
+          content="images/favicon_set/browserconfig.xml">
+
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="theme-color" content="#000000">
+
+<style>
+/* =========================================================
+   TERMINE
+   ========================================================= */
+
+.termine-info {
+    max-width: 1300px;
+    margin: 24px auto 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 14px rgba(0,0,0,.12);
+    overflow: hidden;
+}
+
+.termine-info h3 {
+    margin: 0;
+    padding: 13px 20px 14px;
+    background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+.termine-info-text {
+    padding: 20px 24px 22px;
+    color: #243746;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.termine-tabelle-wrap {
+    max-width: 1300px;
+    margin: 0 auto 24px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.termine-tabelle-scroll {
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 14px rgba(0,0,0,.12);
+}
+
+.termine-tabelle {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+    color: #243746;
+    font-size: 15px;
+}
+
+.termine-tabelle th {
+    padding: 12px 14px;
+    text-align: left;
+    background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+    color: #ffffff;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.termine-tabelle td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e1e5e9;
+    vertical-align: middle;
+}
+
+.termine-tabelle tbody tr:nth-child(even) {
+    background: #f5f7f9;
+}
+
+.termine-tabelle tbody tr:hover {
+    background: #eef3f8;
+}
+
+.termin-bild {
+    width: 165px;
+    text-align: center;
+}
+
+.termin-bild img {
+    display: block;
+    width: 143px;
+    height: 75px;
+    object-fit: contain;
+    margin: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 7px rgba(0,0,0,.18);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.termin-bild a:hover img {
+    transform: scale(1.04);
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+.termin-datum {
+    width: 120px;
+    white-space: nowrap;
+}
+
+.termin-name {
+    width: 190px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+    
+.termin-adresse {
+    width: 220px;
+    min-width: 180px;
+}
+   
+.termin-beschreibung {
+    min-width: 320px;
+}
+
+@media (max-width: 800px) {
+    .termine-info {
+        margin: 16px 16px;
+        border-radius: 10px;
+    }
+
+    .termine-info h3 {
+        padding: 11px 16px 12px;
+        font-size: 20px;
+    }
+
+    .termine-info-text {
+        padding: 16px 18px;
+    }
+
+    .termine-tabelle-wrap {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 420px) {
+    .termine-info {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .termine-tabelle-wrap {
+        padding: 0 12px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+    <!-- ZENTRALER HEADER -->
+    <div id="header"></div>
+
+    <script>
+    fetch('../includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+
+            const currentPage =
+                window.location.pathname.split('/').pop() || 'home.html';
+
+            document.querySelectorAll('#mainNavigation a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            const header = document.querySelector('#header header');
+            const toggle = document.getElementById('mobileMenuToggle');
+            const nav = document.getElementById('mainNavigation');
+
+            if (!header || !toggle || !nav) return;
+
+            function closeMobileMenu() {
+                header.classList.remove('nav-open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Menü öffnen');
+            }
+
+            function closeAllSubmenus(except) {
+                nav.querySelectorAll('.has-submenu').forEach(item => {
+                    if (item !== except) {
+                        item.classList.remove('submenu-open');
+                        const button = item.querySelector('.submenu-toggle');
+                        if (button) button.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            toggle.addEventListener('click', function(event) {
+                event.stopPropagation();
+                const open = header.classList.toggle('nav-open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+            });
+
+            nav.querySelectorAll('.has-submenu').forEach(item => {
+                const button = item.querySelector('.submenu-toggle');
+                if (!button) return;
+
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const isOpen = item.classList.contains('submenu-open');
+                    closeAllSubmenus(item);
+
+                    item.classList.toggle('submenu-open', !isOpen);
+                    button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+                });
+            });
+
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                });
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!header.contains(event.target)) {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 900) closeMobileMenu();
+            });
+        })
+        .catch(error => console.error('Fehler beim Laden des Headers:', error));
+    </script>
+
+
+<main>
+
+    <section class="termine-info">
+        <h3>Termine rund um die Capri Szene</h3>
+        <div class="termine-info-text">
+                <p>
+                    Hier findet Ihr alle Termine, die rund um den Ford Capri und die Capri-Szene so anstehen. 
+                </p>
+                <p>
+                    Euer Termin fehlt noch? Kein Problem – gebt uns einfach kurz Bescheid!
+                </p>
+                <p>
+                    Wir nehmen ihn gerne mit auf und teilen ihn mit der Capri-Gemeinschaft.
+                </p> 
+                <p>
+                    Also: Wenn Ihr etwas wisst, immer her damit!
+                </p>
+
+            
+        </div>
+    </section>
+
+    <section class="termine-tabelle-wrap">
+        <div class="termine-tabelle-scroll">
+            <table class="termine-tabelle">
+                <thead>
+                    <tr>
+                        <th class="termin-bild">Thumbnail</th>
+                        <th class="termin-datum">Datum</th>
+                        <th class="termin-name">Name</th>
+                        <th class="termin-adresse">Adresse</th>
+                        <th class="termin-beschreibung">Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody id="termine-tabelle-body">
+                    <tr>
+                        <td colspan="5">Termine werden geladen …</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+    <!-- =============================================================================
+                     footer        footer
+    ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+    <!-- =============================================================================
+                     
+    ============================================================================= -->
+
+<script>
+(function () {
+    const tbody = document.getElementById("termine-tabelle-body");
+    if (!tbody) return;
+
+    function escapeHtml(value) {
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    function parseCSV(text) {
+        const rows = [];
+        let row = [];
+        let cell = "";
+        let quoted = false;
+
+        for (let i = 0; i < text.length; i++) {
+            const c = text[i];
+            const next = text[i + 1];
+
+            if (c === '"' && quoted && next === '"') {
+                cell += '"';
+                i++;
+            } else if (c === '"') {
+                quoted = !quoted;
+            } else if (c === ';' && !quoted) {
+                row.push(cell);
+                cell = "";
+            } else if ((c === '\n' || c === '\r') && !quoted) {
+                if (c === '\r' && next === '\n') i++;
+                row.push(cell);
+                cell = "";
+                if (row.some(value => value.trim() !== "")) rows.push(row);
+                row = [];
+            } else {
+                cell += c;
+            }
+        }
+
+        if (cell !== "" || row.length) {
+            row.push(cell);
+            if (row.some(value => value.trim() !== "")) rows.push(row);
+        }
+
+        return rows;
+    }
+
+    const csvUrl = "../data/termine/termine.csv";
+
+    fetch(csvUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("CSV-Datei konnte nicht geladen werden.");
+            }
+            return response.text();
+        })
+        .then(csv => {
+            const rows = parseCSV(csv);
+
+            if (rows.length <= 1) {
+                tbody.innerHTML =
+                    '<tr><td colspan="5">Noch keine Termine vorhanden.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = rows.slice(1).map(row => {
+                const thumbnail = row[0] || "";
+                const targetFile = row[1] || "";
+                const datum = row[2] || "";
+                const name = row[3] || "";
+                const adresse = row[4] || "";
+                const beschreibung = row[5] || "";
+
+                const csvLocation = new URL(csvUrl, window.location.href);
+                const thumbnailUrl = thumbnail
+                    ? new URL(thumbnail, csvLocation).href
+                    : "";
+                /*
+                 * Sonderwert aus der CSV:
+                 * TEILEMARKT_POPUP öffnet das wiederverwendbare Popup
+                 * anstatt auf eine normale HTML-Datei zu verlinken.
+                 */
+                const isTeilemarktPopup =
+                    targetFile.trim().toUpperCase() === "TEILEMARKT_POPUP";
+
+                const targetUrl = (!isTeilemarktPopup && targetFile)
+                    ? new URL(targetFile, csvLocation).href
+                    : "";
+
+                // Commas in the address become line breaks.
+                const adresseHtml = escapeHtml(adresse).replace(/,\s*/g, "<br>");
+
+                return `
+                    <tr>
+                        <td class="termin-bild">
+                            ${thumbnailUrl && (targetUrl || isTeilemarktPopup) ? `
+                                <a href="${isTeilemarktPopup ? "#" : escapeHtml(targetUrl)}"
+                                   ${isTeilemarktPopup
+                                       ? 'onclick="openTeilemarktPopup(); return false;"'
+                                       : ''}>
+                                    <img src="${escapeHtml(thumbnailUrl)}"
+                                         alt="${escapeHtml(name || "Terminbild")}">
+                                </a>
+                            ` : ""}
+                        </td>
+                        <td class="termin-datum">${escapeHtml(datum)}</td>
+                        <td class="termin-name">${escapeHtml(name)}</td>
+                        <td class="termin-adresse">${adresseHtml}</td>
+                        <td class="termin-beschreibung">${escapeHtml(beschreibung)}</td>
+                    </tr>
+                `;
+            }).join("");
+        })
+        .catch(error => {
+            console.error("Fehler beim Laden der Termine:", error);
+            tbody.innerHTML =
+                '<tr><td colspan="5">Die Termine konnten leider nicht geladen werden.</td></tr>';
+        });
+})();
+</script>
+
+<!-- ==========================================
+     WIEDERVERWENDBARES TEILEMARKT-POPUP
+     ========================================== -->
+<script src="../js/popups.js"></script>
+
+</body>
+</html>
