@@ -1,0 +1,1025 @@
+    <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Fahrzeuge | Capri Club Westerholt</title>
+    <meta name="description" content="Die Fahrzeuge des Capri Club Westerholt – Capri MK I, MK II und besondere Exoten.">
+    <meta name="keywords" content="Capri Club Westerholt, CCW, Ford Capri, Capri MK I, Capri MK II, Oldtimer">
+
+    <link rel="stylesheet" href="../css/home.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon_set/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon_set/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon_set/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon_set/apple-touch-icon.png">
+    <link rel="manifest" href="../images/favicon_set/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-config" content="../images/favicon_set/browserconfig.xml">
+
+
+<style>
+/* =========================================================
+   FAHRZEUGE – CCW / NEUES KACHEL-DESIGN
+   Optisch an die neue Links-/Archiv-Gestaltung angepasst.
+   ========================================================= */
+
+.fahrzeuge-page{
+    max-width:1300px;
+    margin:0 auto;
+    padding:24px 0 40px;
+}
+
+.fahrzeuge-page .container{
+    width:100%;
+    max-width:none;
+    margin:0;
+}
+
+/* Seitentitel wie bei der neuen Links-Seite */
+.fahrzeuge-header{
+    position:relative;
+    background:linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+    color:#ffffff;
+    border-radius:12px 12px 0 0;
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+    padding:0;
+    margin:0;
+    text-align:left;
+    overflow:hidden;
+}
+
+.fahrzeuge-header h1{
+    margin:0;
+    padding:13px 20px 14px;
+    color:#ffffff;
+    font-size:24px;
+    line-height:1.25;
+    font-weight:700;
+}
+
+/* Beschreibung als eigene weiße Karte */
+.fahrzeuge-header > p{
+    margin:0;
+    padding:20px 24px 18px;
+    background:#ffffff;
+    color:#243746;
+    border-radius:0;
+    font-size:15px;
+    line-height:1.5;
+    text-align:center;
+}
+
+/* Die mehrfach vorhandenen p-Tags im vorhandenen HTML */
+.fahrzeuge-header > p > p{
+    margin:0 0 10px;
+}
+
+.fahrzeuge-header > p > p:last-child{
+    margin-bottom:0;
+}
+
+/* Hintergrund der Kachelfläche */
+.fahrzeuge-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+    padding:20px;
+    box-sizing:border-box;
+    background:#eef1f5;
+    border-radius:0 0 12px 12px;
+    align-items:stretch;
+}
+
+/* Fahrzeug-Karten */
+.fahrzeug-kachel{
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    background:#ffffff;
+    color:#243746;
+    border-radius:10px;
+    box-shadow:0 5px 14px rgba(0,0,0,.12);
+    overflow:hidden;
+}
+
+/* Blauer Verlauf wie bei den neuen Seiten */
+.fahrzeug-kachel-titel{
+    background:linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+    color:#ffffff;
+    padding:12px 18px 13px;
+}
+
+.fahrzeug-kachel-titel h2{
+    margin:0;
+    color:#ffffff;
+    font-size:21px;
+    line-height:1.25;
+    font-weight:700;
+}
+
+/* Inhalt der Fahrzeugkarte */
+.fahrzeug-inhalt{
+    padding:18px;
+    flex:1;
+}
+
+/* Vorschaubilder */
+.fahrzeug-thumbnails{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px;
+}
+
+.fahrzeug-thumbnail{
+    position:relative;
+    display:block;
+    aspect-ratio:4 / 3;
+    overflow:hidden;
+    border-radius:8px;
+    background:#f4f6f8;
+    border:1px solid #e1e5e9;
+    text-decoration:none;
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
+}
+
+.fahrzeug-thumbnail:hover{
+    transform:translateY(-2px);
+    border-color:rgba(5,1,155,.35);
+    box-shadow:0 5px 14px rgba(0,0,0,.10);
+}
+
+.fahrzeug-thumbnail img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .2s ease;
+}
+
+.fahrzeug-thumbnail:hover img{
+    transform:scale(1.04);
+}
+
+.fahrzeug-hinweis{
+    margin:12px 0 0;
+    text-align:center;
+    color:#5f6872;
+    font-size:14px;
+    line-height:1.4;
+}
+
+.fahrzeug-placeholder{
+    min-height:190px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border:1px dashed #aeb7c2;
+    border-radius:8px;
+    background:#f4f6f8;
+    color:#6b7280;
+    font-size:15px;
+    line-height:1.45;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+/* Tablet */
+@media (max-width:900px){
+
+    .fahrzeuge-page{
+        padding:16px 0 30px;
+    }
+
+    .fahrzeuge-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+        padding:16px;
+    }
+
+    .fahrzeuge-header{
+        border-radius:10px 10px 0 0;
+    }
+
+    .fahrzeuge-header h1{
+        padding:12px 16px;
+        font-size:22px;
+    }
+
+    .fahrzeuge-header > p{
+        padding:16px;
+    }
+
+    .fahrzeug-thumbnails{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+}
+
+/* Smartphone */
+@media (max-width:600px){
+
+    .fahrzeuge-page{
+        padding:12px 0 24px;
+    }
+
+    .fahrzeuge-grid{
+        padding:12px;
+        gap:14px;
+        border-radius:0 0 10px 10px;
+    }
+
+    .fahrzeuge-header h1{
+        font-size:21px;
+    }
+
+    .fahrzeuge-header > p{
+        padding:14px;
+        font-size:14px;
+        line-height:1.45;
+    }
+
+    .fahrzeug-kachel-titel{
+        padding:11px 15px 12px;
+    }
+
+    .fahrzeug-kachel-titel h2{
+        font-size:19px;
+    }
+
+    .fahrzeug-inhalt{
+        padding:12px;
+    }
+
+    .fahrzeug-thumbnails{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:9px;
+    }
+
+    .fahrzeug-hinweis{
+        margin-top:10px;
+        font-size:13px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        // Aktive Seite automatisch markieren
+        const currentPage = window.location.pathname.split('/').pop() || 'home.html';
+        document.querySelectorAll('#mainNavigation a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPage) link.classList.add('active');
+        });
+
+        // Menü initialisieren
+        const header = document.querySelector('#header header');
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNavigation');
+        if (!header || !toggle || !nav) return;
+
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+
+        toggle.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+
+        const submenuItems = nav.querySelectorAll('.has-submenu');
+        function closeAllSubmenus(except) {
+            submenuItems.forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        submenuItems.forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            const submenu = item.querySelector('.submenu');
+            if (!button || !submenu) return;
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                closeAllSubmenus();
+                closeMobileMenu();
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 900) closeMobileMenu();
+        });
+    })
+    .catch(error => console.error(error));
+</script>
+
+
+<main>
+    <section class="fahrzeuge-page">
+        <div class="container">
+
+            <div class="fahrzeuge-header">
+                <h1>Unsere Club Fahrzeuge</h1>
+                <p>
+                    Die Mitglieder des <strong>Capri Club Westerholt e.V.</strong> verfügen derzeit gemeinsam über
+                    <strong>34 Ford Capris</strong>. Die Fahrzeuge decken nahezu die gesamte Bauzeit des Capri von
+                    <strong>1969 bis 1984</strong> ab und sind mit Motoren von <strong>1.300 bis 3.000 ccm</strong> ausgestattet.
+                    <br><br>
+                    Das Leistungsspektrum reicht dabei von <strong>53 PS bis hin zu 188 PS</strong> – letzteres leisten die beiden
+                    <strong>Capri 2.8 Werksturbos</strong>. Wer die Leistung lieber in kW betrachtet, darf sich die Werte
+                    natürlich gerne selbst umrechnen. 😉
+                    <br><br>
+                    Dabei ist die Vielfalt groß: In unserem Fahrzeugpark finden sich sowohl
+                    <strong>originalgetreu erhaltene bzw. restaurierte Fahrzeuge als auch individuell getunte und umgebaute Modelle</strong>
+                    – ganz nach dem persönlichen Geschmack ihrer Besitzer.
+                    <br><br>
+                    Auf dieser Seite präsentieren wir eine umfangreiche Auswahl an <strong>Fotos unserer Fahrzeuge</strong>
+                    und geben damit einen kleinen Einblick in die Vielfalt und Leidenschaft, die unseren Fahrzeugpark ausmacht.
+                </p>
+            </div>
+
+            <div class="fahrzeuge-grid">
+
+                <!-- =====================================================
+                     KACHEL 1 – CAPRI MK I
+                     ===================================================== -->
+                <section class="fahrzeug-kachel">
+                    <div class="fahrzeug-kachel-titel">
+                        <h2>Unsere Capri MK I</h2>
+                    </div>
+
+                    <div class="fahrzeug-inhalt">
+                        <div class="fahrzeug-thumbnails">
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=01">
+                                <img src="../images/fahrzeuge/capri_1/thumbnails/thn_1er_arthur.jpg"
+                                     alt="Capri MK I – Arthur"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=02">
+                                <img src="../images/fahrzeuge/capri_1/thumbnails/thn_1er_benjamin.jpg"
+                                     alt="Capri MK I – Benjamin"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=03">
+                                <img src="../images/fahrzeuge/capri_1/thumbnails/thn_1er_benjaminII.jpg"
+                                     alt="Capri MK I – Benjamin II"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=04">
+                                <img src="../images/fahrzeuge/capri_1/thumbnails/thn_1er_heiko.jpg"
+                                     alt="Capri MK I – Heiko"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=05">
+                               <img src="../images/fahrzeuge/capri_1/thumbnails/thn_1er_janina.jpg"
+                                     alt="Capri MK I – Janina"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                                href="fahrzeuge_detail.html?id=06">
+                                <img src="../images/fahrzeuge/capri_1/thumbnails/thn_1er_markus.jpg"
+                                     alt="Capri MK I – Markus"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                                   href="fahrzeuge_detail.html?id=07">
+                                   <img src="../images/fahrzeuge/capri_1/thumbnails/thn_1er_stefan.jpg"
+                                         alt="Capri MK I(b) – Stefan"
+                                         loading="lazy">
+
+                                </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=08">
+                                <img src="../images/fahrzeuge/capri_1/thumbnails/thn_1er_leon.jpg"
+                                     alt="Capri MK I – Leon"
+                                     loading="lazy">
+                            </a>
+
+                            
+                        </div>
+
+                        <p class="fahrzeug-hinweis">
+                            Unsere Capri MK I im Überblick.
+                        </p>
+                    </div>
+                </section>
+
+
+                <!-- =====================================================
+                     KACHEL 2   Capri MK II
+                     ===================================================== -->
+                <section class="fahrzeug-kachel">
+                    <div class="fahrzeug-kachel-titel">
+                        <h2>Unsere Capri MK II</h2>
+                    </div>
+
+                    <div class="fahrzeug-inhalt">
+                        <div class="fahrzeug-thumbnails">
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=20">
+                                <img src="../images/fahrzeuge/capri_2/thumbnails/thn_2er_andreas.jpg"
+                                     alt="Capri MK II – Andreas"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=21">
+                                <img src="../images/fahrzeuge/capri_2/thumbnails/thn_2er_benjamin.jpg"
+                                     alt="Capri MK II – Benjamin"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=25">
+                                <img src="../images/fahrzeuge/capri_2/thumbnails/thn_2er_joerg.jpg"
+                                     alt="Capri MK II – Joerg"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=23">
+                                <img src="../images/fahrzeuge/capri_2/thumbnails/thn_2er_lothar.jpg"
+                                     alt="Capri MK II – Lothar"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=24">
+                                <img src="../images/fahrzeuge/capri_2/thumbnails/thn_2er_stefan.jpg"
+                                     alt="Capri MK II – Stefan"
+                                     loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=22">
+                                <img src="../images/fahrzeuge/capri_2/thumbnails/thn_2er_zenti.jpg"
+                                     alt="Capri MK II – Zenti"
+                                     loading="lazy">
+                            </a>
+
+                        </div>
+
+                        <p class="fahrzeug-hinweis">
+                            Unsere Capri MK II im Überblick.
+                        </p>
+                    </div>
+                </section>
+
+
+                <!-- =================================================================================================================
+                     KACHEL 3   Capri MK 3    Capri MK 3
+                     ================================================================================================================ -->
+                <section class="fahrzeug-kachel">
+                    <div class="fahrzeug-kachel-titel">
+                        <h2>Unsere Capri MK III</h2>
+                    </div>
+
+                    <div class="fahrzeug-inhalt">
+                        <div class="fahrzeug-thumbnails">
+
+                           
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=40">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_andreas_antrazit.jpg" 
+                                alt="Capri MK III Andreas anthrazit" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail"
+                                href="fahrzeuge_detail.html?id=41">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_andreas_blau.jpg" 
+                                alt="Capri MK III Andreas blau" loading="lazy">
+                            </a>   
+                            
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=42">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_frank_rot.jpg" 
+                                alt="Capri MK III Frank rot" loading="lazy">
+                            </a>
+                            
+                            <a class="fahrzeug-thumbnail"
+                                 href="fahrzeuge_detail.html?id=43">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_frank.jpg" 
+                                alt="Capri MK III Frank schwarz" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=44">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_holger.jpg" 
+                                alt="Capri MK III Holger blau" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=45">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_holger_sw.jpg" 
+                                alt="Capri MK III Holger schwarz" loading="lazy">
+                            </a>
+                            
+                            <a class="fahrzeug-thumbnail"
+                                href="fahrzeuge_detail.html?id=46">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_guido.jpg"
+                                alt="Capri MK III Guido schwarz" loading="lazy">
+                            </a>
+                            
+
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=47">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_robin_sw.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+                            
+                            <a class="fahrzeug-thumbnail"
+                               href="fahrzeuge_detail.html?id=48">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_robin_gruen.jpg" 
+                                alt="Robin gruen" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=49">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_steph.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>                            
+
+                            <a class="fahrzeug-thumbnail" 
+                                 href="fahrzeuge_detail.html?id=50"> 
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_hubert_gold.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=51"> 
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_nn.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=52"> 
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_hansi.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>                        
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=53"> 
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_benni.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>                   
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=54">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_gregor.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+                            
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=55">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_dirk.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=56">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_helge.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+                            
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=57">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_manni.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+                  
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=58">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_andreas_t.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+                            
+                            <a class="fahrzeug-thumbnail" 
+                                href="fahrzeuge_detail.html?id=59">
+                                <img src="../images/fahrzeuge/capri_3/thumbnails/thn_3er_zenti_t.jpg" 
+                                alt="Capri MK III" loading="lazy">
+                            </a>
+
+                        </div>
+                        <p class="fahrzeug-hinweis">
+                            Unsere Capri MK III im Überblick.
+                        </p>
+                    </div>
+                </section>
+
+
+                <!-- =====================================================
+                     KACHEL 4
+                     ===================================================== -->
+                <section class="fahrzeug-kachel">
+                    <div class="fahrzeug-kachel-titel">
+                        <h2>Unsere Exoten</h2>
+                    </div>
+
+                    <div class="fahrzeug-inhalt">
+                        <div class="fahrzeug-thumbnails">
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_arthur_sci.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_arthur_sci.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_arthur_tri.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_arthur_tri.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_benni.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_benni.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_helge.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_helge.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_hubert.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_hubert.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_joerg.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_joerg.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_leon.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_leon.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_luca.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_luca.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                            <a class="fahrzeug-thumbnail" href="../images/fahrzeuge/exoten/thumbnails/thn_ex_robin.jpg" target="_blank" rel="noopener">
+                                <img src="../images/fahrzeuge/exoten/thumbnails/thn_ex_robin.jpg" alt="Exoten" loading="lazy">
+                            </a>
+
+                        </div>
+                        <p class="fahrzeug-hinweis">
+                            Unsere besonderen Fahrzeuge und Exoten im Überblick....
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+
+                <!-- =============================================================================
+                     footer        footer
+                     ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+
+
+
+
+    
+<script>
+
+        (function () {
+
+
+            const header =
+                document.querySelector("header");
+
+
+            const toggle =
+                document.getElementById("mobileMenuToggle");
+
+
+            const nav =
+                document.getElementById("mainNavigation");
+
+
+            if (!header || !toggle || !nav) {
+                return;
+            }
+
+
+            /* ==========================================
+               MOBILES MENÜ
+               ========================================== */
+
+
+            function closeMobileMenu() {
+
+                header.classList.remove("nav-open");
+
+                toggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                toggle.setAttribute(
+                    "aria-label",
+                    "Menü öffnen"
+                );
+
+            }
+
+
+            toggle.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+
+                    const open =
+                        header.classList.toggle("nav-open");
+
+
+                    toggle.setAttribute(
+                        "aria-expanded",
+                        open ? "true" : "false"
+                    );
+
+
+                    toggle.setAttribute(
+                        "aria-label",
+                        open
+                            ? "Menü schließen"
+                            : "Menü öffnen"
+                    );
+
+                }
+            );
+
+
+            /* ==========================================
+               DROPDOWN-SUBMENÜS
+               ========================================== */
+
+
+            const submenuItems =
+                nav.querySelectorAll(".has-submenu");
+
+
+            function closeAllSubmenus(except) {
+
+                submenuItems.forEach(
+                    function (item) {
+
+                        if (item !== except) {
+
+                            item.classList.remove(
+                                "submenu-open"
+                            );
+
+
+                            const button =
+                                item.querySelector(
+                                    ".submenu-toggle"
+                                );
+
+
+                            if (button) {
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            submenuItems.forEach(
+                function (item) {
+
+
+                    const button =
+                        item.querySelector(
+                            ".submenu-toggle"
+                        );
+
+
+                    const submenu =
+                        item.querySelector(
+                            ".submenu"
+                        );
+
+
+                    if (!button || !submenu) {
+                        return;
+                    }
+
+
+                    button.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.preventDefault();
+                            event.stopPropagation();
+
+
+                            const isOpen =
+                                item.classList.contains(
+                                    "submenu-open"
+                                );
+
+
+                            closeAllSubmenus(item);
+
+
+                            if (isOpen) {
+
+                                item.classList.remove(
+                                    "submenu-open"
+                                );
+
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                            } else {
+
+                                item.classList.add(
+                                    "submenu-open"
+                                );
+
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    "true"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* ==========================================
+               LINKS
+               ========================================== */
+
+
+            nav.querySelectorAll("a").forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            closeAllSubmenus();
+                            closeMobileMenu();
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* ==========================================
+               KLICK AUSSERHALB
+               ========================================== */
+
+
+            document.addEventListener(
+                "click",
+                function (event) {
+
+                    if (!header.contains(event.target)) {
+
+                        closeAllSubmenus();
+                        closeMobileMenu();
+
+                    }
+
+                }
+            );
+
+
+            /* ==========================================
+               ESCAPE
+               ========================================== */
+
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (event.key === "Escape") {
+
+                        closeAllSubmenus();
+                        closeMobileMenu();
+
+                    }
+
+                }
+            );
+
+
+            /* ==========================================
+               BEIM WECHSEL AUF DESKTOP
+               ========================================== */
+
+
+            window.addEventListener(
+                "resize",
+                function () {
+
+                    if (window.innerWidth > 900) {
+                        closeMobileMenu();
+                    }
+
+                }
+            );
+
+
+        })();
+
+    </script>
+
+</body>
+</html>
