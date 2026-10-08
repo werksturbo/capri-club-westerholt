@@ -1,0 +1,2296 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Werbung | Capri Club Westerholt</title>
+
+    <meta name="description"
+          content="Historische Werbung rund um den Ford Capri – Capri Club Westerholt.">
+
+    <meta name="keywords"
+          content="Ford Capri, Capri Werbung, Capri I, Capri II, Capri III, Capri Club Westerholt">
+
+    <!-- =========================================================
+         CSS
+         ========================================================= -->
+
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+
+
+    <!-- =========================================================
+         FAVICONS
+         ========================================================= -->
+
+    <link rel="icon"
+          type="image/x-icon"
+          href="../images/favicon_set/favicon.ico">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="../images/favicon_set/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="../images/favicon_set/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="../images/favicon_set/apple-touch-icon.png">
+
+    <link rel="manifest"
+          href="../images/favicon_set/site.webmanifest">
+
+
+    <!-- =========================================================
+         SEITENSPEZIFISCHES DESIGN
+         ========================================================= -->
+
+    <style>
+
+        /* =====================================================
+           MOBILE NAVIGATION
+           ===================================================== */
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+
+            header {
+                position: relative !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+
+                min-height: 74px !important;
+                height: auto !important;
+
+                padding: 8px 14px !important;
+                box-sizing: border-box !important;
+            }
+
+            header .logo {
+                flex: 0 1 auto !important;
+                min-width: 0 !important;
+
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+
+            header .logo img {
+                display: block !important;
+
+                width: auto !important;
+                max-width: min(72vw, 300px) !important;
+                max-height: 58px !important;
+
+                margin: 0 !important;
+            }
+
+            .mobile-menu-toggle {
+
+                position: absolute !important;
+
+                left: 14px !important;
+                top: 50% !important;
+
+                transform: translateY(-50%) !important;
+
+                width: 48px !important;
+                height: 48px !important;
+
+                margin: 0 !important;
+                padding: 9px 8px !important;
+
+                display: flex !important;
+
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+
+                gap: 5px !important;
+
+                border: 1px solid rgba(255,255,255,.35) !important;
+                border-radius: 8px !important;
+
+                background: rgba(255,255,255,.10) !important;
+
+                color: inherit !important;
+
+                cursor: pointer !important;
+
+                box-sizing: border-box !important;
+
+                z-index: 10001 !important;
+            }
+
+            .mobile-menu-toggle span {
+
+                display: block !important;
+
+                width: 25px !important;
+                height: 3px !important;
+
+                border-radius: 3px !important;
+
+                background: currentColor !important;
+            }
+
+            header nav {
+
+                display: none !important;
+
+                position: absolute !important;
+
+                z-index: 10000 !important;
+
+                top: calc(100% - 1px) !important;
+
+                left: 10px !important;
+                right: 10px !important;
+
+                width: auto !important;
+
+                max-height: calc(100vh - 90px) !important;
+
+                overflow-y: auto !important;
+
+                margin: 0 !important;
+                padding: 6px 0 !important;
+
+                border-radius: 0 0 10px 10px !important;
+
+                background: #05019B !important;
+
+                box-shadow: 0 8px 20px rgba(0,0,0,.28) !important;
+            }
+
+            header.nav-open nav {
+                display: block !important;
+            }
+
+            header nav ul {
+
+                display: flex !important;
+
+                flex-direction: column !important;
+                align-items: stretch !important;
+
+                width: 100% !important;
+
+                margin: 0 !important;
+                padding: 0 !important;
+
+                list-style: none !important;
+
+                gap: 0 !important;
+            }
+
+            header nav li {
+
+                display: block !important;
+
+                width: 100% !important;
+
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            header nav li a {
+
+                display: block !important;
+
+                width: 100% !important;
+
+                min-height: 45px !important;
+
+                padding: 11px 18px !important;
+
+                box-sizing: border-box !important;
+
+                text-align: left !important;
+
+                font-size: 17px !important;
+
+                line-height: 1.3 !important;
+
+                border-radius: 0 !important;
+            }
+
+            .submenu-toggle {
+
+                display: block !important;
+
+                width: 100% !important;
+
+                min-height: 45px !important;
+
+                padding: 11px 18px !important;
+
+                box-sizing: border-box !important;
+
+                text-align: left !important;
+
+                font-size: 17px !important;
+            }
+
+            header nav ul.submenu {
+
+                position: static !important;
+
+                min-width: 0 !important;
+
+                padding: 0 !important;
+
+                box-shadow: none !important;
+
+                background: rgba(0,0,0,.12) !important;
+            }
+
+            header nav ul.submenu a {
+
+                padding: 10px 18px 10px 34px !important;
+
+                font-size: 16px !important;
+            }
+        }
+
+
+        /* =====================================================
+           DROPDOWN MENÜ
+           ===================================================== */
+
+        header nav ul {
+            align-items: center;
+        }
+
+        header nav li {
+            position: relative;
+        }
+
+        header nav li.has-submenu {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .submenu-toggle {
+
+            appearance: none;
+
+            border: 0;
+
+            margin: 0;
+
+            padding: 12px 14px;
+
+            background: transparent;
+
+            color: white;
+
+            font: inherit;
+
+            font-weight: 600;
+
+            font-size: 16px;
+
+            line-height: 1.2;
+
+            cursor: pointer;
+
+            white-space: nowrap;
+        }
+
+        .submenu-toggle .arrow {
+
+            display: inline-block;
+
+            margin-left: 5px;
+
+            font-size: 12px;
+
+            transition: transform .18s ease;
+        }
+
+        .has-submenu.submenu-open .submenu-toggle .arrow {
+            transform: rotate(180deg);
+        }
+
+        header nav ul.submenu {
+
+            display: none;
+
+            position: absolute;
+
+            top: 100%;
+            left: 0;
+
+            z-index: 10002;
+
+            min-width: 220px;
+
+            margin: 0;
+
+            padding: 6px 0;
+
+            list-style: none;
+
+            background: #05019B;
+
+            box-shadow: 0 8px 20px rgba(0,0,0,.28);
+        }
+
+        .has-submenu.submenu-open > ul.submenu {
+            display: block;
+        }
+
+        header nav ul.submenu li {
+
+            display: block;
+
+            width: 100%;
+        }
+
+        header nav ul.submenu a {
+
+            display: block;
+
+            width: 100%;
+
+            min-height: auto;
+
+            padding: 10px 16px;
+
+            box-sizing: border-box;
+
+            text-align: left;
+
+            white-space: normal;
+
+            border-radius: 0;
+        }
+
+        header nav ul.submenu:empty {
+            display: none !important;
+        }
+
+
+        /* =====================================================
+           WERBUNGSSEITE
+           ===================================================== */
+
+        .werbung-page {
+
+            padding: 32px 0 50px;
+        }
+
+
+        /* =====================================================
+           SEITENÜBERSCHRIFT
+           ===================================================== */
+
+        .werbung-header {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #05019B 0%,
+                    #1d7fc3 100%
+                );
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,.10);
+
+            padding: 14px 20px;
+
+            margin-bottom: 20px;
+
+            color: #ffffff;
+
+            overflow: hidden;
+        }
+
+        .werbung-header h1 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 24px;
+
+            line-height: 1.25;
+
+            font-weight: 700;
+        }
+
+        .werbung-header p {
+
+            margin: 5px 0 0;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            line-height: 1.4;
+        }
+
+
+        /* =====================================================
+           BEREICH
+           ===================================================== */
+
+        .werbung-bereich {
+
+            background: rgba(255,255,255,.92);
+
+            border: 1px solid #dfe5ec;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 7px 18px rgba(0,0,0,.07),
+                0 1px 3px rgba(0,0,0,.04);
+
+            margin-bottom: 24px;
+
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           BEREICHSÜBERSCHRIFT
+           ===================================================== */
+
+        .werbung-titel {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #05019B 0%,
+                    #1d7fc3 100%
+                );
+
+            color: #ffffff;
+
+            padding: 12px 18px;
+
+            box-shadow:
+                0 2px 7px rgba(0,0,0,.12);
+        }
+
+        .werbung-titel h2 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 20px;
+
+            line-height: 1.3;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           GALERIE
+           ===================================================== */
+
+        .werbung-galerie {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, minmax(0,1fr));
+
+            gap: 18px;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #f7f9fb 0%,
+                    #f2f5f8 100%
+                );
+        }
+
+
+        /* =====================================================
+           THUMBNAIL
+           ===================================================== */
+
+        .werbung-thumbnail {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            aspect-ratio: 143 / 75;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            border: 1px solid #d8e0e8;
+
+            box-shadow:
+                0 4px 10px rgba(0,0,0,.07),
+                0 1px 2px rgba(0,0,0,.04);
+
+            cursor: pointer;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease;
+        }
+
+        .werbung-thumbnail:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(5,1,155,.42);
+
+            box-shadow:
+                0 12px 24px rgba(0,0,0,.14),
+                0 3px 7px rgba(5,1,155,.10);
+        }
+
+        .werbung-thumbnail img {
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            transition:
+                transform .3s ease;
+        }
+
+        .werbung-thumbnail:hover img {
+
+            transform:
+                scale(1.035);
+        }
+
+
+        /* =====================================================
+           LIGHTBOX-HINWEIS
+           ===================================================== */
+
+        .werbung-thumbnail::after {
+
+            content: "↗";
+
+            position: absolute;
+
+            right: 8px;
+            bottom: 8px;
+
+            width: 27px;
+            height: 27px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.94);
+
+            color: #05019B;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 2px 7px rgba(0,0,0,.16);
+
+            opacity: 0;
+
+            transform:
+                scale(.85);
+
+            transition:
+                opacity .2s ease,
+                transform .2s ease;
+        }
+
+        .werbung-thumbnail:hover::after {
+
+            opacity: 1;
+
+            transform:
+                scale(1);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width:1100px) {
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(4,minmax(0,1fr));
+            }
+        }
+
+        @media (max-width:900px) {
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(3,minmax(0,1fr));
+            }
+        }
+
+        @media (max-width:600px) {
+
+            .werbung-page {
+
+                padding: 20px 0 35px;
+            }
+
+            .werbung-header {
+
+                padding: 15px;
+            }
+
+            .werbung-header h1 {
+
+                font-size: 22px;
+            }
+
+            .werbung-titel {
+
+                padding: 11px 14px;
+            }
+
+            .werbung-titel h2 {
+
+                font-size: 18px;
+            }
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+
+                gap: 12px;
+
+                padding: 14px;
+            }
+
+            .werbung-thumbnail {
+
+                border-radius: 8px;
+            }
+
+            .werbung-thumbnail::after {
+
+                width: 23px;
+                height: 23px;
+
+                right: 6px;
+                bottom: 6px;
+
+                font-size: 14px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+    <div class="logo">
+
+        <a href="../index.html">
+
+            <img
+                src="../images/Logo_CCW.jpg"
+                alt="Capri Club Westerholt">
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE HAMBURGER
+         ===================================================== -->
+
+    <button
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="mainNavigation">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <!-- =====================================================
+         HAUPTNAVIGATION
+         ===================================================== -->
+
+    <nav
+        id="mainNavigation"
+        aria-label="Hauptnavigation">
+
+        <ul>
+
+            <li>
+                <a href="../index.html">
+                    Home
+                </a>
+            </li>
+
+
+            <li class="has-submenu">
+
+                <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-club">
+
+                    Der Club
+                    <span class="arrow">▾</span>
+
+                </button>
+
+                <ul
+                    class="submenu"
+                    id="submenu-club">
+
+                    <li>
+                        <a href="stunde-null.html">
+                            Stunde Null
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mitgliedschaft.html">
+                            Mitgliedschaft
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+            <li>
+
+                <a href="club-update.html">
+                    Club-Update
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="fahrzeuge.html">
+                    Die Fahrzeuge
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="termine.html">
+                    Termine
+                </a>
+
+            </li>
+
+
+            <li class="has-submenu">
+
+                <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-jahre">
+
+                    Jahresrückblicke
+                    <span class="arrow">▾</span>
+
+                </button>
+
+                <ul
+                    class="submenu"
+                    id="submenu-jahre">
+                </ul>
+
+            </li>
+
+
+            <li>
+
+                <a href="fotoalbum.html">
+                    Fotoalbum
+                </a>
+
+            </li>
+
+
+            <!-- =================================================
+                 CAPRI LITERATUR
+                 ================================================= -->
+
+            <li class="has-submenu">
+
+                <button
+                    class="submenu-toggle active"
+                    type="button"
+                    aria-expanded="true"
+                    aria-controls="submenu-literatur">
+
+                    Capri Literatur
+                    <span class="arrow">▾</span>
+
+                </button>
+
+
+                <ul
+                    class="submenu"
+                    id="submenu-literatur">
+
+                    <li>
+
+                        <a
+                            class="active"
+                            href="werbung.html">
+
+                            Werbung
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="testberichte.html">
+                            Testberichte
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="poster.html">
+                            Poster
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="clubzeitschrift.html">
+                            CCW Clubzeitung
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+            <li>
+
+                <a href="links.html">
+                    Links
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="members-only.html">
+                    Members only
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="kontakt.html">
+                    Kontakt
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     HAUPTINHALT
+     ========================================================= -->
+
+<main>
+
+<section class="werbung-page">
+
+<div class="container">
+
+
+    <!-- =====================================================
+         SEITENÜBERSCHRIFT
+         ===================================================== -->
+
+    <div class="werbung-header">
+
+        <h1>
+            Capri Werbung
+        </h1>
+
+        <p>
+            Eine Sammlung historischer Werbung rund um den Ford Capri.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         CAPRI I A
+         ===================================================== -->
+
+    <section
+        class="werbung-bereich"
+        data-lightbox-title="Werbung für den Capri I (a)">
+
+        <div class="werbung-titel">
+
+            <h2>
+                Werbung für den Capri I (a)
+            </h2>
+
+        </div>
+
+
+        <div class="werbung-galerie">
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_01.jpg"
+                    alt="Capri I Werbung 1"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/02_Ford Capri 1300 XL - Diese außergewöhnliche Auto hat Platz für 4 macht viel Spaß und kostet nur DM 6993.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_02.jpg"
+                    alt="Capri I Werbung 2"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/03_Fard Capri 1 a - Stolzer Capri 1970.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_03.jpg"
+                    alt="Capri I Werbung 3"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/04_Ford Capri - Mit jedem neuen Capri fällt ein altes Vorurteil.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_04.jpg"
+                    alt="Capri I Werbung 4"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/05_Ford Capri - Stil ist eine Frage der Persönlichkeit.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_05.jpg"
+                    alt="Capri I Werbung 5"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/06_Ford Capri I - Aus diesem Auto sieht die Welt ganz anders aus..jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_06.jpg"
+                    alt="Capri I Werbung 6"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/07_Ford Capri 2300 GT Automatic - Die beste Art schnell zu schalten 1971.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_07.jpg"
+                    alt="Capri I Werbung 7"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/08_Capri 1700 GT Capri 1500 - Die einmaligen. Einmalig ausgestattet einmalig imPreis. Sie sparen DM 520.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_08.jpg"
+                    alt="Capri I Werbung 8"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/09_Ford Capri 2600 GT - Einem Zweisitzer hat er zwei Sitze voraus.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_09.jpg"
+                    alt="Capri I Werbung 9"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/10_Ford Capri 1300 XL - Der solide zuverlässige praktische wirtschaftliche aufregend sportlice Wagen.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_10.jpg"
+                    alt="Capri I Werbung 10"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/11_Ford Capri - Fahren Sie dem Altag davon.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_11.jpg"
+                    alt="Capri I Werbung 11"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/12_Ford Capri 1300 L - Kein anderer Wagen macht soviel Spaß.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_12.jpg"
+                    alt="Capri I Werbung 12"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/13_Ford Capri 2.6 Liter. 125 PS. GT XLR. Capri ist eine Klasse für sich..jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_13.jpg"
+                    alt="Capri I Werbung 13"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/14_Ford Capri 2.6 Liter. 125 PS. GT XLR. Capri ist eine Klasse für sich. blau grau.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_14.jpg"
+                    alt="Capri I Werbung 14"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/15_Ford Capri 1500 XL - Ein Auto das Sie sich schon immer gewünscht haben 1 von 2.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_15.jpg"
+                    alt="Capri I Werbung 15"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/16_Ford Capri 1500 XL - Ein Auto das Sie sich schon immer gewünscht haben 2 von 2.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_16.jpg"
+                    alt="Capri I Werbung 16"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/20_2.6 RS Der neue Hochleistungscapri (2).jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_20.jpg"
+                    alt="Capri I Werbung 20"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/21_2.6 RS Der neue Hochleistungscapri.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_21.jpg"
+                    alt="Capri I Werbung 21"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/22_Ford Capri 2.6 RS - Der Capri für Fortgeschrittene 1971.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_22.jpg"
+                    alt="Capri I Werbung 22"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/23_Ford Capri 2.6 RS - xxxxxx.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_23.jpg"
+                    alt="Capri I Werbung 23"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/24_Ford Capri 2600 RS - Wo es sportlich zugeht mischt der Capri kräftig mit. 1972 AMS 1-1972.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1a/thn_werbung_capri.1a_24.jpg"
+                    alt="Capri I Werbung 24"
+                    loading="lazy">
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAPRI I B
+         ===================================================== -->
+
+    <section
+        class="werbung-bereich"
+        data-lightbox-title="Werbung für den Capri I (b)">
+
+        <div class="werbung-titel">
+
+            <h2>
+                Werbung für den Capri I (b)
+            </h2>
+
+        </div>
+
+
+        <div class="werbung-galerie">
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1b/Capri '73 Es gibt jetzt ein Auto das den Ford Capri übertrifft. 1972.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_01.jpg"
+                    alt="Capri I b Werbung 1"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1b/Capri '73 - Es gibt jetzt ein Auto das den Ford Capri übertrifft. AMS 20-1972.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_02.jpg"
+                    alt="Capri I b Werbung 2"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1b/Capri '73 Zeit zum Umsteigen in den neuen GT links.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_03.jpg"
+                    alt="Capri I b Werbung 3"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1b/Capri '73 Der schönste Grund, sich zu verändern.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_04.jpg"
+                    alt="Capri I b Werbung 4"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1b/Capri '73 Zeit zum Umsteigen in den neuen GT.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri1b/thn_werbung_capri_1b_05.jpg"
+                    alt="Capri I b Werbung 5"
+                    loading="lazy">
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAPRI II
+         ===================================================== -->
+
+    <section
+        class="werbung-bereich"
+        data-lightbox-title="Werbung für den Capri II">
+
+        <div class="werbung-titel">
+
+            <h2>
+                Werbung für den Capri II aus diversen Zeitungen
+            </h2>
+
+        </div>
+
+
+        <div class="werbung-galerie">
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/1_Ford Capri II - Der neue Ford Capri - Eine klare Linie der Vernunft. 1974 rot-sw.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_01.jpg"
+                    alt="Capri II Werbung 1"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/2_Capri II - Der neue Ford Capri - Eine klare Linie der Vernunft. 06-1974.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_02.jpg"
+                    alt="Capri II Werbung 2"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/3_Ford Capri II GT - Der neue Ford CApri. Eine klare Linie der Vernunft. Der Spiegel 10-1974.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_03.jpg"
+                    alt="Capri II Werbung 3"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/4_Ford Capri II - Windschnittige Schale. Praktischer Kern. 1976.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_04.jpg"
+                    alt="Capri II Werbung 4"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/5_Ford Capri II GT - Machen Sie sich einen Sport daraus vernpünftig zu sein 1974.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_05.jpg"
+                    alt="Capri II Werbung 5"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/6_Ford Capri II - Wie Sie der Vernunft die besten Seiten abgewinnen 1976.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri.2_06.jpg"
+                    alt="Capri II Werbung 6"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/7_Ford Capri II - Der schönste Gegenwert für 10.890 Mark - 1975.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri.2_07.jpg"
+                    alt="Capri II Werbung 7"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/8_Ford Capri II - Ford baut mehr Capri-Leistung ein.1976.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_08.jpg"
+                    alt="Capri II Werbung 8"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/9_Ford Capri Serie 76.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_09.jpg"
+                    alt="Capri II Werbung 9"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/10_Ford Capri Serie 76 - Die Mehrleistung - ADAC Motorwelt 06 - 1976.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_10.jpg"
+                    alt="Capri II Werbung 10"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/11_Ford Capri II - Leistung die sich nicht nur in PS ausdrückt - 04-1976.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_11.jpg"
+                    alt="Capri II Werbung 11"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/12_Ford Capri 3.0 - Unter 9sec von 0 auf 100 kosten woanders mindestens 12.000 Mark mehr. - 11-1976.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_12.jpg"
+                    alt="Capri II Werbung 12"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/13_Ford Capri II - Ford Capri Serie 76 Mehrleistung auf der ganzen Linie. 1976.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_13.jpg"
+                    alt="Capri II Werbung 13"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/14_Ford Capri II - Neu in der Ford Capri Serie 76  Der kultivierte Schub des 2 Liter Sechszylinders.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_14.jpg"
+                    alt="Capri II Werbung 14"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/15_Ford Capri 3.0 - Herausforderung zum Leistungsvergleich. - 13-1976.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_15.jpg"
+                    alt="Capri II Werbung 15"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/16_Ford Capri II - Spezial-Serie Schwarz-Gold . xx-19yy.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_16.jpg"
+                    alt="Capri II Werbung 16"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_2/17_Ford Capri S - Sportliche Werte statt sportliche Worte.  23-1977.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_capri_2/thn_werbung_capri.2_17.jpg"
+                    alt="Capri II Werbung 17"
+                    loading="lazy">
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAPRI III
+         ===================================================== -->
+
+    <section
+        class="werbung-bereich"
+        data-lightbox-title="Werbung für den Capri III">
+
+        <div class="werbung-titel">
+
+            <h2>
+                Werbung für den Capri '78 aus diversen Zeitungen
+            </h2>
+
+        </div>
+
+
+        <div class="werbung-galerie">
+
+
+            <a class="werbung-thumbnail"
+                href="../data/werbung/capri_3/01_Wenn Sie nicht nur fahren um von A nach B.jpg"> 
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_01.jpg"
+                    alt="Capri III Werbung Nr. 01"
+                    loading="lazy">
+           </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/02_Vernunft bringt gute Kontakte.jpg"> 
+               <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_02.jpg"
+                    alt="Capri III Werbung Nr. 02"
+                    loading="lazy">
+           </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/03_Ford Capri. Der Unterschied zwischen fahren und gefahren werden..jpg">  
+               <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_03.jpg"
+                    alt="Capri III Werbung Nr. 03"
+                    loading="lazy">
+           </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/04_Die Sport Sondersendung.jpg">
+               <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_04.jpg"
+                    alt="Capri III Werbung Nr. 04"
+                    loading="lazy">
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/05_Der neue Ford Capri (blau).jpg">
+               <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_05.jpg"
+                    alt="Capri III Werbung 5"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/06_Der neue Ford Capri.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_06.jpg"
+                    alt="Capri III Werbung 6"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/07_Der Unterschied zwischen fahre und gefahren werden.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_07.jpg"
+                    alt="Capri III Werbung 7"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/08_Ford Capri GT.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_08.jpg"
+                    alt="Capri III Werbung 8"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/09_Der Capri.NieBesser.Nie Preiswerter.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_09.jpg"
+                    alt="Capri III Werbung 9"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/10_Zum Glück ist er kein Traumwagen.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_10.jpg"
+                    alt="Capri III Werbung 10"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/11_Ein schnelles Auto.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_11.jpg"
+                    alt="Capri III Werbung 11"
+                    loading="lazy">
+
+            </a>    
+
+            
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/12_Ford Capri 2.3 S - VERNUNFT ZEIGT EIGENE KLASSE.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_12.jpg"
+                    alt="Capri III Werbung Ford Capri 2.3 S"
+                    loading="lazy">
+
+            </a>
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/13_Ford in Aktion.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_13.jpg"
+                    alt="Capri III Werbung 13"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/15_ein unverschämt starkes Stueck.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_14.jpg"
+                    alt="Capri III Werbung 14"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/15_ein unverschämt starkes Stueck.jpg">
+                <img
+                    src="../images/thn_werbung/thn_capri_3/thn_werbung_capri.3_15.jpg"
+                    alt="Capri III Werbung 15"
+                    loading="lazy">
+
+            </a>
+
+
+
+            
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRODUKTWERBUNG
+         ===================================================== -->
+
+    <section
+        class="werbung-bereich"
+        data-lightbox-title="Produktwerbung mit dem Capri">
+
+        <div class="werbung-titel">
+
+            <h2>
+                Produktwerbung mit dem Capri
+            </h2>
+
+        </div>
+
+
+        <div class="werbung-galerie">
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_01.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_01.jpg"
+                    alt="Produktwerbung mit dem Capri 1"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_02.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_02.jpg"
+                    alt="Produktwerbung mit dem Capri 2"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_03.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_03.jpg"
+                    alt="Produktwerbung mit dem Capri 3"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_04.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_04.jpg"
+                    alt="Produktwerbung mit dem Capri 4"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_05.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_05.jpg"
+                    alt="Produktwerbung mit dem Capri 5"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_06.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_06.jpg"
+                    alt="Produktwerbung mit dem Capri 6"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_07.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_07.jpg"
+                    alt="Produktwerbung mit dem Capri 7"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_08.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_08.jpg"
+                    alt="Produktwerbung mit dem Capri 8"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_09.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_09.jpg"
+                    alt="Produktwerbung mit dem Capri 9"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_10.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_10.jpg"
+                    alt="Produktwerbung mit dem Capri 10"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_11.jpg">
+
+                <img
+                    src="../images/thn_werbung/thn_mitwerbung/thn_werbung_mitcapri_11.jpg"
+                    alt="Produktwerbung mit dem Capri 11"
+                    loading="lazy">
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+    <!-- =============================================================================
+                     footer        footer
+    ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+
+<!-- =========================================================
+     LIGHTBOX
+     
+     Die Lightbox selbst wird von lightbox.js erzeugt.
+     ========================================================= -->
+
+
+<!-- =========================================================
+     JAVASCRIPT – MENÜ
+     ========================================================= -->
+
+<script>
+
+(function () {
+
+    "use strict";
+
+
+    const header =
+        document.querySelector("header");
+
+    const toggle =
+        document.getElementById("mobileMenuToggle");
+
+    const nav =
+        document.getElementById("mainNavigation");
+
+
+    if (!header || !toggle || !nav) {
+        return;
+    }
+
+
+    /* =====================================================
+       MOBILES MENÜ
+       ===================================================== */
+
+    function closeMobileMenu() {
+
+        header.classList.remove("nav-open");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            "Menü öffnen"
+        );
+    }
+
+
+    toggle.addEventListener(
+        "click",
+        function (event) {
+
+            event.stopPropagation();
+
+            const open =
+                header.classList.toggle("nav-open");
+
+
+            toggle.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+
+
+            toggle.setAttribute(
+                "aria-label",
+                open
+                    ? "Menü schließen"
+                    : "Menü öffnen"
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       DROPDOWN
+       ===================================================== */
+
+    const submenuItems =
+        nav.querySelectorAll(".has-submenu");
+
+
+    function closeAllSubmenus(except) {
+
+        submenuItems.forEach(
+            function (item) {
+
+                if (item !== except) {
+
+                    item.classList.remove(
+                        "submenu-open"
+                    );
+
+
+                    const button =
+                        item.querySelector(
+                            ".submenu-toggle"
+                        );
+
+
+                    if (button) {
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+
+                }
+
+            }
+        );
+    }
+
+
+    submenuItems.forEach(
+        function (item) {
+
+            const button =
+                item.querySelector(
+                    ".submenu-toggle"
+                );
+
+            const submenu =
+                item.querySelector(
+                    ".submenu"
+                );
+
+
+            if (!button || !submenu) {
+                return;
+            }
+
+
+            button.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+
+                    const isOpen =
+                        item.classList.contains(
+                            "submenu-open"
+                        );
+
+
+                    closeAllSubmenus(item);
+
+
+                    if (isOpen) {
+
+                        item.classList.remove(
+                            "submenu-open"
+                        );
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    } else {
+
+                        item.classList.add(
+                            "submenu-open"
+                        );
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       LINKS
+       ===================================================== */
+
+    nav.querySelectorAll("a").forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    closeAllSubmenus();
+
+                    closeMobileMenu();
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       KLICK AUSSERHALB
+       ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (!header.contains(event.target)) {
+
+                closeAllSubmenus();
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESCAPE
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeAllSubmenus();
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       DESKTOP
+       ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth > 900) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+})();
+
+</script>
+
+
+<!-- =========================================================
+     VORHANDENE CCW LIGHTBOX
+     ========================================================= -->
+
+<script src="../js/lightbox.js"></script>
+
+
+<!-- =========================================================
+     LIGHTBOX-ANBINDUNG FÜR WERBUNG
+     ========================================================= -->
+
+<script>
+
+(function () {
+
+    "use strict";
+
+
+    function initWerbungLightbox() {
+
+        if (
+            typeof window.Lightbox === "undefined"
+        ) {
+
+            console.error(
+                "CCW Lightbox wurde nicht geladen."
+            );
+
+            return;
+        }
+
+
+        const bereiche =
+            document.querySelectorAll(
+                ".werbung-bereich"
+            );
+
+
+        bereiche.forEach(
+            function (bereich) {
+
+                const bilder =
+                    Array.from(
+                        bereich.querySelectorAll(
+                            ".werbung-thumbnail"
+                        )
+                    );
+
+
+                if (!bilder.length) {
+                    return;
+                }
+
+
+                const bildListe =
+                    bilder.map(
+                        function (link) {
+
+                            return link.getAttribute(
+                                "href"
+                            );
+
+                        }
+                    );
+
+
+                const titel =
+                    bereich.dataset.lightboxTitle
+                    || "Capri Werbung";
+
+
+                bilder.forEach(
+                    function (link, index) {
+
+                        link.addEventListener(
+                            "click",
+                            function (event) {
+
+                                /*
+                                 * Wichtig:
+                                 * Das Bild darf NICHT mehr
+                                 * in einem neuen Fenster
+                                 * geöffnet werden.
+                                 */
+
+                                event.preventDefault();
+
+                                event.stopPropagation();
+
+
+                                window.Lightbox.open(
+                                    bildListe,
+                                    index,
+                                    titel
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    if (
+        document.readyState === "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initWerbungLightbox
+        );
+
+    } else {
+
+        initWerbungLightbox();
+
+    }
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
