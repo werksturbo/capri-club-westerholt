@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Testberichte | Capri Club Westerholt</title>
+
+    <meta name="description" content="Capri Club Westerholt – Informationen, Fahrzeuge, Treffen, Bilder, Rückblicke und Geschichte des Clubs.">
+
+    <meta name="keywords" content="Capri Club Westerholt, CCW, Ford Capri, Capri Treffen, Capri Club">
+
+    <link rel="stylesheet" href="../css/home.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon"
+          href="../images/favicon_set/favicon.ico">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="../images/favicon_set/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="../images/favicon_set/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="../images/favicon_set/apple-touch-icon.png">
+
+    <link rel="manifest"
+          href="../images/favicon_set/site.webmanifest">
+
+    <meta name="theme-color" content="#000000">
+
+    <meta name="msapplication-config"
+          content="images/favicon_set/browserconfig.xml">
+
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="theme-color" content="#000000">
+
+
+    <!-- =========================================================
+         MOBILE NAVIGATION
+         Bis 900px bleibt die Navigation auch im Querformat mobil.
+         ========================================================= -->
+
+    
+
+<style>
+.werbung-page{padding:28px 0 40px}
+.werbung-header{background:linear-gradient(90deg,#05019B 0%,#1d7fc3 100%);color:#fff;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.10);padding:18px 20px;margin-bottom:20px;text-align:left}
+.werbung-header h1{margin:0;color:#fff;font-size:24px;line-height:1.25;font-weight:700}
+.werbung-header p{margin:5px 0 0;color:#fff;font-size:15px;line-height:1.4}
+.werbung-bereich{background:rgba(255,255,255,.92);border:1px solid #dfe5ec;border-radius:12px;box-shadow:0 7px 18px rgba(0,0,0,.07),0 1px 3px rgba(0,0,0,.04);margin-bottom:24px;overflow:hidden}
+.werbung-titel{background:linear-gradient(90deg,#05019B 0%,#1d7fc3 100%);color:#fff;padding:12px 18px;box-shadow:0 2px 7px rgba(0,0,0,.12)}
+.werbung-titel h2{margin:0;color:#fff;font-size:20px;line-height:1.3;font-weight:700}
+.werbung-galerie{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;padding:20px;background:linear-gradient(to bottom,#f7f9fb 0%,#f2f5f8 100%)}
+.werbung-galerie.fuenf-spalten{grid-template-columns:repeat(5,minmax(0,1fr))}
+.werbung-thumbnail{display:flex;align-items:center;justify-content:center;aspect-ratio:143 / 75;overflow:hidden;border-radius:10px;background:#fff;border:1px solid #d8e0e8;box-shadow:0 4px 10px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.04);box-sizing:border-box;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.werbung-thumbnail:hover{transform:translateY(-3px);border-color:rgba(5,1,155,.42);box-shadow:0 10px 20px rgba(0,0,0,.12)}
+.werbung-dummy{border:1px dashed #aeb7c2;background:#f4f6f8;color:#6b7280;font-size:14px}
+.werbung-dummy span{text-align:center}
+@media(max-width:1100px){.werbung-galerie,.werbung-galerie.fuenf-spalten{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:900px){.werbung-galerie,.werbung-galerie.fuenf-spalten{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.werbung-page{padding:20px 0 35px}.werbung-header{padding:15px}.werbung-header h1{font-size:22px}.werbung-titel{padding:11px 14px}.werbung-titel h2{font-size:18px}.werbung-galerie,.werbung-galerie.fuenf-spalten{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px}.werbung-thumbnail{border-radius:8px}}
+</style>
+
+</head>
+
+
+<body>
+<!-- Zentraler Header -->
+<div id="header"></div>
+<script>
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+        const currentPage = window.location.pathname.split('/').pop() || 'home.html';
+        document.querySelectorAll('#mainNavigation a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) link.classList.add('active');
+        });
+        const header = document.querySelector('#header header');
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNavigation');
+        if (!header || !toggle || !nav) return;
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+        function closeAllSubmenus(except) {
+            nav.querySelectorAll('.has-submenu').forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+        toggle.addEventListener('click', event => {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+        nav.querySelectorAll('.has-submenu').forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            if (!button) return;
+            button.addEventListener('click', event => {
+                event.preventDefault(); event.stopPropagation();
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+        });
+        nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { closeAllSubmenus(); closeMobileMenu(); }));
+        document.addEventListener('click', event => { if (!header.contains(event.target)) { closeAllSubmenus(); closeMobileMenu(); } });
+        document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeAllSubmenus(); closeMobileMenu(); } });
+        window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMobileMenu(); });
+    })
+    .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+
+
+
+    
+
+
+    <!-- ============================================================================================================= -->
+    <!-- Werbungen
+    <!-- ============================================================================================================= -->
+
+<main>
+    <section class="werbung-page">
+        <div class="container">
+            <div class="werbung-header">
+                <h1>Unsere Clubzeitung – Erinnerungen von 2000 bis 2005</h1>
+                <p>Von 2000 bis 2005 entstand die Clubzeitung in Eigeninitiative und berichtete über das Clubgeschehen, Neuigkeiten aus der Capri-Szene und alles, was unsere Gemeinschaft bewegte. Sie sollte vor allem den damaligen Förderkreis mit dem Capri Club Westerholt verbinden und die Begeisterung für den Ford Capri lebendig halten. Auch heute laden die alten Ausgaben dazu ein, in Erinnerungen zu schwelgen und ein Stück unserer Clubgeschichte wiederzuentdecken.</p>
+            </div>
+            <section class="werbung-bereich">
+                <div class="werbung-titel"><h2>CCW Clubzeitung – Ein Stück Clubgeschichte</h2></div>
+                <div class="werbung-galerie fuenf-spalten">
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_21.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 21" style="display:flex;align-items:center;justify-content:center;color:#05019b;font-weight:700;font-size:18px;background:linear-gradient(135deg,#f4f7fb,#e3eaf3);text-decoration:none;">Ausgabe 21</a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_20.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 20" style="display:flex;align-items:center;justify-content:center;color:#05019b;font-weight:700;font-size:18px;background:linear-gradient(135deg,#f4f7fb,#e3eaf3);text-decoration:none;">Ausgabe 20</a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_19.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 19" style="display:flex;align-items:center;justify-content:center;color:#05019b;font-weight:700;font-size:18px;background:linear-gradient(135deg,#f4f7fb,#e3eaf3);text-decoration:none;">Ausgabe 19</a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_18.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 18"><img src="../images/thn_kurier/thn_kurier_18.jpg" alt="Clubzeitung Ausgabe 18" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_17.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 17"><img src="../images/thn_kurier/thn_kurier_17.jpg" alt="Clubzeitung Ausgabe 17" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_16.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 16"><img src="../images/thn_kurier/thn_kurier_16.jpg" alt="Clubzeitung Ausgabe 16" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_15.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 15"><img src="../images/thn_kurier/thn_kurier_15.jpg" alt="Clubzeitung Ausgabe 15" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_14.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 14"><img src="../images/thn_kurier/thn_kurier_14.jpg" alt="Clubzeitung Ausgabe 14" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_13.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 13"><img src="../images/thn_kurier/thn_kurier_13.jpg" alt="Clubzeitung Ausgabe 13" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_12.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 12"><img src="../images/thn_kurier/thn_kurier_12.jpg" alt="Clubzeitung Ausgabe 12" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_11.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 11"><img src="../images/thn_kurier/thn_kurier_11.jpg" alt="Clubzeitung Ausgabe 11" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_10.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 10"><img src="../images/thn_kurier/thn_kurier_10.jpg" alt="Clubzeitung Ausgabe 10" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_09.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 9"><img src="../images/thn_kurier/thn_kurier_09.jpg" alt="Clubzeitung Ausgabe 9" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_08.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 8"><img src="../images/thn_kurier/thn_kurier_08.jpg" alt="Clubzeitung Ausgabe 8" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_07.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 7"><img src="../images/thn_kurier/thn_kurier_07.jpg" alt="Clubzeitung Ausgabe 7" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_06.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 6"><img src="../images/thn_kurier/thn_kurier_06.jpg" alt="Clubzeitung Ausgabe 6" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_05.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 5"><img src="../images/thn_kurier/thn_kurier_05.jpg" alt="Clubzeitung Ausgabe 5" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_04.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 4"><img src="../images/thn_kurier/thn_kurier_04.jpg" alt="Clubzeitung Ausgabe 4" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_03.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 3"><img src="../images/thn_kurier/thn_kurier_03.jpg" alt="Clubzeitung Ausgabe 3" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_02.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 2"><img src="../images/thn_kurier/thn_kurier_02.jpg" alt="Clubzeitung Ausgabe 2" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                    <a class="werbung-thumbnail" href="../data/capri_kurier/capri_kurier_Nr_01.pdf" target="_blank" rel="noopener" aria-label="Clubzeitung Ausgabe 1"><img src="../images/thn_kurier/thn_kurier_01.jpg" alt="Clubzeitung Ausgabe 1" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></a>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
+
+                <!-- =============================================================================
+                     footer        footer
+                     ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+
+    <!-- =========================================================
+         CCW MENU JAVASCRIPT
+         Mobile Menü + Dropdown-Submenüs
+         ========================================================= -->
+    
+
+
+</body>
+
+</html>
