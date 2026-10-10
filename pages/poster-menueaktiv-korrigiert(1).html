@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Capri Poster | Capri Club Westerholt</title>
+
+    <meta name="description"
+          content="Historische Poster rund um den Ford Capri – Capri Club Westerholt.">
+
+    <meta name="keywords"
+          content="Ford Capri, Capri Werbung, Capri I, Capri II, Capri III, Capri Club Westerholt">
+
+    <!-- =========================================================
+         CSS
+         ========================================================= -->
+
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+
+
+    <!-- =========================================================
+         FAVICONS
+         ========================================================= -->
+
+    <link rel="icon"
+          type="image/x-icon"
+          href="../images/favicon_set/favicon.ico">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="../images/favicon_set/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="../images/favicon_set/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="../images/favicon_set/apple-touch-icon.png">
+
+    <link rel="manifest"
+          href="../images/favicon_set/site.webmanifest">
+
+
+    <!-- =========================================================
+         SEITENSPEZIFISCHES DESIGN
+         ========================================================= -->
+
+    <style>
+
+        /* =====================================================
+           WERBUNGSSEITE
+           ===================================================== */
+
+        .werbung-page {
+
+            padding: 32px 0 50px;
+        }
+
+
+        /* =====================================================
+           SEITENÜBERSCHRIFT
+           ===================================================== */
+
+        .werbung-header {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #05019B 0%,
+                    #1d7fc3 100%
+                );
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,.10);
+
+            padding: 14px 20px;
+
+            margin-bottom: 20px;
+
+            color: #ffffff;
+
+            overflow: hidden;
+        }
+
+        .werbung-header h1 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 24px;
+
+            line-height: 1.25;
+
+            font-weight: 700;
+        }
+
+        .werbung-header p {
+
+            margin: 5px 0 0;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            line-height: 1.4;
+        }
+
+
+        /* =====================================================
+           BEREICH
+           ===================================================== */
+
+        .werbung-bereich {
+
+            background: rgba(255,255,255,.92);
+
+            border: 1px solid #dfe5ec;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 7px 18px rgba(0,0,0,.07),
+                0 1px 3px rgba(0,0,0,.04);
+
+            margin-bottom: 24px;
+
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           BEREICHSÜBERSCHRIFT
+           ===================================================== */
+
+        .werbung-titel {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #05019B 0%,
+                    #1d7fc3 100%
+                );
+
+            color: #ffffff;
+
+            padding: 12px 18px;
+
+            box-shadow:
+                0 2px 7px rgba(0,0,0,.12);
+        }
+
+        .werbung-titel h2 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 20px;
+
+            line-height: 1.3;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           GALERIE
+           ===================================================== */
+
+        .werbung-galerie {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, minmax(0,1fr));
+
+            gap: 18px;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #f7f9fb 0%,
+                    #f2f5f8 100%
+                );
+        }
+
+
+        /* =====================================================
+           THUMBNAIL
+           ===================================================== */
+
+        .werbung-thumbnail {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            aspect-ratio: 143 / 75;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            border: 1px solid #d8e0e8;
+
+            box-shadow:
+                0 4px 10px rgba(0,0,0,.07),
+                0 1px 2px rgba(0,0,0,.04);
+
+            cursor: pointer;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease;
+        }
+
+        .werbung-thumbnail:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(5,1,155,.42);
+
+            box-shadow:
+                0 12px 24px rgba(0,0,0,.14),
+                0 3px 7px rgba(5,1,155,.10);
+        }
+
+        .werbung-thumbnail img {
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            transition:
+                transform .3s ease;
+        }
+
+        .werbung-thumbnail:hover img {
+
+            transform:
+                scale(1.035);
+        }
+
+
+        /* =====================================================
+           LIGHTBOX-HINWEIS
+           ===================================================== */
+
+        .werbung-thumbnail::after {
+
+            content: "↗";
+
+            position: absolute;
+
+            right: 8px;
+            bottom: 8px;
+
+            width: 27px;
+            height: 27px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.94);
+
+            color: #05019B;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 2px 7px rgba(0,0,0,.16);
+
+            opacity: 0;
+
+            transform:
+                scale(.85);
+
+            transition:
+                opacity .2s ease,
+                transform .2s ease;
+        }
+
+        .werbung-thumbnail:hover::after {
+
+            opacity: 1;
+
+            transform:
+                scale(1);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width:1100px) {
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(4,minmax(0,1fr));
+            }
+        }
+
+        @media (max-width:900px) {
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(3,minmax(0,1fr));
+            }
+        }
+
+        @media (max-width:600px) {
+
+            .werbung-page {
+
+                padding: 20px 0 35px;
+            }
+
+            .werbung-header {
+
+                padding: 15px;
+            }
+
+            .werbung-header h1 {
+
+                font-size: 22px;
+            }
+
+            .werbung-titel {
+
+                padding: 11px 14px;
+            }
+
+            .werbung-titel h2 {
+
+                font-size: 18px;
+            }
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+
+                gap: 12px;
+
+                padding: 14px;
+            }
+
+            .werbung-thumbnail {
+
+                border-radius: 8px;
+            }
+
+            .werbung-thumbnail::after {
+
+                width: 23px;
+                height: 23px;
+
+                right: 6px;
+                bottom: 6px;
+
+                font-size: 14px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     ZENTRALER HEADER
+     ========================================================= -->
+
+<div id="header"></div>
+
+<script>
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        /* =====================================================
+           AKTIVE MENÜSEITE ERMITTELN
+           Vorhandene Markierungen entfernen und anschließend
+           den aktuellen Unterpunkt samt Oberpunkt markieren.
+           Für poster.html wird damit "Poster" und "Capri Literatur"
+           aktiv hervorgehoben.
+           ===================================================== */
+
+        const currentPage =
+            (window.location.pathname.split('/').pop() || 'home.html').toLowerCase();
+
+        const navigation = document.getElementById('mainNavigation');
+
+        if (navigation) {
+            /* Alte Markierungen entfernen, z. B. bei "Die Fahrzeuge". */
+            navigation.querySelectorAll('a.active, .submenu-toggle.active').forEach(element => {
+                element.classList.remove('active');
+            });
+
+            /* Link über den Dateinamen finden, auch wenn href einen Pfad enthält. */
+            const currentLink = Array.from(navigation.querySelectorAll('a[href]')).find(link => {
+                const rawHref = link.getAttribute('href') || '';
+                const targetPage = rawHref.split(/[?#]/)[0].split('/').pop().toLowerCase();
+                return targetPage === currentPage;
+            });
+
+            if (currentLink) {
+                currentLink.classList.add('active');
+
+                /* Den zugehörigen Oberpunkt, hier "Capri Literatur", ebenfalls markieren. */
+                const parentSubmenu = currentLink.closest('.has-submenu');
+
+                if (parentSubmenu) {
+                    const parentButton = parentSubmenu.querySelector('.submenu-toggle');
+                    if (parentButton) {
+                        parentButton.classList.add('active');
+                    }
+                }
+            }
+        }
+
+        const header = document.querySelector('#header header');
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNavigation');
+
+        if (!header || !toggle || !nav) return;
+
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+
+        function closeAllSubmenus(except) {
+            nav.querySelectorAll('.has-submenu').forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        toggle.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+
+        nav.querySelectorAll('.has-submenu').forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            if (!button) return;
+
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                closeAllSubmenus();
+                closeMobileMenu();
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 900) closeMobileMenu();
+        });
+    })
+    .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+
+
+
+
+
+
+<!-- =========================================================
+     HAUPTINHALT
+     ========================================================= -->
+
+<main>
+
+<section class="werbung-page">
+
+<div class="container">
+
+
+    <!-- =====================================================
+         SEITENÜBERSCHRIFT
+         ===================================================== -->
+
+    <div class="werbung-header">
+
+        <h1>
+            Capri Poster
+        </h1>
+
+        <p>
+            Hier findest Du historische POster rund um den Ford Capri, wie sie damals in Zeitungen und Zeitschriften erschienen sind.
+            Sie zeigen, wie Ford den Capri in Szene setzte und spiegeln den Zeitgeist vergangener Jahrzehnte wider. 
+            Ein Stück Capri-Geschichte zum Entdecken und Erinnern.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         CAPRI I 
+         ===================================================== -->
+
+    <section
+        class="werbung-bereich"
+        data-lightbox-title="Werbung für den Capri I (a)">
+
+        <div class="werbung-titel">
+
+            <h2>
+                Poster vom Capri I
+            </h2>
+
+        </div>
+
+
+        <div class="werbung-galerie">
+
+
+            <a class="werbung-thumbnail"
+               href="../data/poster/Ford Capri RS - Salzburgring - Dieter Glemser.jpg">
+
+                <img
+                    src="../images/thn_poster/thn_poster_1.jpg"
+                    alt="Capri I Poster 1"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/poster/Ford Capri RS - Berühmte Renntourenwagen der letzten Jahre - 1973.jpg">
+
+                <img
+                    src="../images/thn_poster/thn_poster_2.jpg"
+                    alt="Capri I Poster 2"
+                    loading="lazy">
+
+            </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/poster/Ford Renncapri 75er Generation Jochen Maas.jpg">
+
+                <img
+                    src="../images/thn_poster/thn_poster_3.jpg"
+                    alt="Capri I Poster 3"
+                    loading="lazy">
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAPRI II
+         ===================================================== -->
+
+    <section
+        class="werbung-bereich"
+        data-lightbox-title="Werbung für den Capri II">
+
+        <div class="werbung-titel">
+
+            <h2>
+                Poster vom Capri II
+            </h2>
+
+        </div>
+
+
+        <div class="werbung-galerie">
+
+
+           
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAPRI III
+         ===================================================== -->
+
+    <section
+        class="werbung-bereich"
+        data-lightbox-title="Werbung für den Capri III">
+
+        <div class="werbung-titel">
+
+            <h2>
+                Poster vom Capri III 
+            </h2>
+
+        </div>
+
+
+        <div class="werbung-galerie">
+
+
+            <a class="werbung-thumbnail"
+                href="../data/poster/capri_3/01_Wenn Sie nicht nur fahren um von A nach B.jpg"> 
+                <img
+                    src="../images/thn_poster/thn_poster_4.jpg"
+                    alt="Capri III Poster 04"
+                    loading="lazy">
+           </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/02_Vernunft bringt gute Kontakte.jpg"> 
+               <img
+                    src="../images/thn_poster/thn_poster_5.jpg"
+                    alt="Capri III Poster 05"
+                    loading="lazy">
+           </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri_3/03_Ford Capri. Der Unterschied zwischen fahren und gefahren werden..jpg">  
+               <img
+                    src="../images/thn_poster/thn_poster_6.jpg"
+                    alt="Capri III Poster 06"
+                    loading="lazy">
+           </a>
+
+
+            <a class="werbung-thumbnail"
+               href="../data/werbung/capri1a/03_Fard Capri 1 a - Stolzer Capri 1970.jpg">
+
+                <img
+                    src="../images/thn_poster/thn_poster_6.jpg"
+                    alt="Capri I Poster 6"
+                    loading="lazy">
+
+            </a>
+
+
+            
+        </div>
+
+    </section>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+    <!-- =============================================================================
+                     footer        footer
+    ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+
+<!-- =========================================================
+     LIGHTBOX
+     
+     Die Lightbox selbst wird von lightbox.js erzeugt.
+     ========================================================= -->
+
+
+<!-- =========================================================
+     VORHANDENE CCW LIGHTBOX
+     ========================================================= -->
+
+<script src="../js/lightbox.js"></script>
+
+
+<!-- =========================================================
+     LIGHTBOX-ANBINDUNG FÜR WERBUNG
+     ========================================================= -->
+
+<script>
+
+(function () {
+
+    "use strict";
+
+
+    function initWerbungLightbox() {
+
+        if (
+            typeof window.Lightbox === "undefined"
+        ) {
+
+            console.error(
+                "CCW Lightbox wurde nicht geladen."
+            );
+
+            return;
+        }
+
+
+        const bereiche =
+            document.querySelectorAll(
+                ".werbung-bereich"
+            );
+
+
+        bereiche.forEach(
+            function (bereich) {
+
+                const bilder =
+                    Array.from(
+                        bereich.querySelectorAll(
+                            ".werbung-thumbnail"
+                        )
+                    );
+
+
+                if (!bilder.length) {
+                    return;
+                }
+
+
+                const bildListe =
+                    bilder.map(
+                        function (link) {
+
+                            return link.getAttribute(
+                                "href"
+                            );
+
+                        }
+                    );
+
+
+                const titel =
+                    bereich.dataset.lightboxTitle
+                    || "Capri Werbung";
+
+
+                bilder.forEach(
+                    function (link, index) {
+
+                        link.addEventListener(
+                            "click",
+                            function (event) {
+
+                                /*
+                                 * Wichtig:
+                                 * Das Bild darf NICHT mehr
+                                 * in einem neuen Fenster
+                                 * geöffnet werden.
+                                 */
+
+                                event.preventDefault();
+
+                                event.stopPropagation();
+
+
+                                window.Lightbox.open(
+                                    bildListe,
+                                    index,
+                                    titel
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    if (
+        document.readyState === "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initWerbungLightbox
+        );
+
+    } else {
+
+        initWerbungLightbox();
+
+    }
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
