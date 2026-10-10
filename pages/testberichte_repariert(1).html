@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testberichte | Capri Club Westerholt</title>
+    <meta name="description" content="Historische Testberichte rund um den Ford Capri – Capri Club Westerholt.">
+    <meta name="keywords" content="Ford Capri, Capri Testberichte, Capri I, Capri II, Capri III, Capri Club Westerholt">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon_set/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon_set/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon_set/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon_set/apple-touch-icon.png">
+    <link rel="manifest" href="../images/favicon_set/site.webmanifest">
+    <style>
+
+
+        /* =====================================================
+           WERBUNGSSEITE
+           ===================================================== */
+
+        .werbung-page {
+
+            padding: 32px 0 50px;
+        }
+
+
+        /* =====================================================
+           SEITENÜBERSCHRIFT
+           ===================================================== */
+
+        .werbung-header {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #05019B 0%,
+                    #1d7fc3 100%
+                );
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,.10);
+
+            padding: 14px 20px;
+
+            margin-bottom: 20px;
+
+            color: #ffffff;
+
+            overflow: hidden;
+        }
+
+        .werbung-header h1 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 24px;
+
+            line-height: 1.25;
+
+            font-weight: 700;
+        }
+
+        .werbung-header p {
+
+            margin: 5px 0 0;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            line-height: 1.4;
+        }
+
+
+        /* =====================================================
+           BEREICH
+           ===================================================== */
+
+        .werbung-bereich {
+
+            background: rgba(255,255,255,.92);
+
+            border: 1px solid #dfe5ec;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 7px 18px rgba(0,0,0,.07),
+                0 1px 3px rgba(0,0,0,.04);
+
+            margin-bottom: 24px;
+
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           BEREICHSÜBERSCHRIFT
+           ===================================================== */
+
+        .werbung-titel {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #05019B 0%,
+                    #1d7fc3 100%
+                );
+
+            color: #ffffff;
+
+            padding: 12px 18px;
+
+            box-shadow:
+                0 2px 7px rgba(0,0,0,.12);
+        }
+
+        .werbung-titel h2 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 20px;
+
+            line-height: 1.3;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           GALERIE
+           ===================================================== */
+
+        .werbung-galerie {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, minmax(0,1fr));
+
+            gap: 18px;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #f7f9fb 0%,
+                    #f2f5f8 100%
+                );
+        }
+
+
+        /* =====================================================
+           THUMBNAIL
+           ===================================================== */
+
+        .werbung-thumbnail {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            aspect-ratio: 143 / 75;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            border: 1px solid #d8e0e8;
+
+            box-shadow:
+                0 4px 10px rgba(0,0,0,.07),
+                0 1px 2px rgba(0,0,0,.04);
+
+            cursor: pointer;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease;
+        }
+
+        .werbung-thumbnail:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(5,1,155,.42);
+
+            box-shadow:
+                0 12px 24px rgba(0,0,0,.14),
+                0 3px 7px rgba(5,1,155,.10);
+        }
+
+        .werbung-thumbnail img {
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            transition:
+                transform .3s ease;
+        }
+
+        .werbung-thumbnail:hover img {
+
+            transform:
+                scale(1.035);
+        }
+
+
+        /* =====================================================
+           LIGHTBOX-HINWEIS
+           ===================================================== */
+
+        .werbung-thumbnail::after {
+
+            content: "↗";
+
+            position: absolute;
+
+            right: 8px;
+            bottom: 8px;
+
+            width: 27px;
+            height: 27px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.94);
+
+            color: #05019B;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 2px 7px rgba(0,0,0,.16);
+
+            opacity: 0;
+
+            transform:
+                scale(.85);
+
+            transition:
+                opacity .2s ease,
+                transform .2s ease;
+        }
+
+        .werbung-thumbnail:hover::after {
+
+            opacity: 1;
+
+            transform:
+                scale(1);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width:1100px) {
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(4,minmax(0,1fr));
+            }
+        }
+
+        @media (max-width:900px) {
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(3,minmax(0,1fr));
+            }
+        }
+
+        @media (max-width:600px) {
+
+            .werbung-page {
+
+                padding: 20px 0 35px;
+            }
+
+            .werbung-header {
+
+                padding: 15px;
+            }
+
+            .werbung-header h1 {
+
+                font-size: 22px;
+            }
+
+            .werbung-titel {
+
+                padding: 11px 14px;
+            }
+
+            .werbung-titel h2 {
+
+                font-size: 18px;
+            }
+
+            .werbung-galerie {
+
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+
+                gap: 12px;
+
+                padding: 14px;
+            }
+
+            .werbung-thumbnail {
+
+                border-radius: 8px;
+            }
+
+            .werbung-thumbnail::after {
+
+                width: 23px;
+                height: 23px;
+
+                right: 6px;
+                bottom: 6px;
+
+                font-size: 14px;
+            }
+        }
+
+    
+    </style>
+</head>
+<body>
+
+<!-- Zentraler Header aus includes/header.html -->
+<div id="header"></div>
+<script>
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        const currentPage = (window.location.pathname.split('/').pop() || 'home.html').toLowerCase();
+        const nav = document.getElementById('mainNavigation');
+
+        if (nav) {
+            nav.querySelectorAll('a.active, .submenu-toggle.active').forEach(el => el.classList.remove('active'));
+
+            const currentLink = Array.from(nav.querySelectorAll('a[href]')).find(link => {
+                const target = (link.getAttribute('href') || '').split(/[?#]/)[0].split('/').pop().toLowerCase();
+                return target === currentPage;
+            });
+
+            if (currentLink) {
+                currentLink.classList.add('active');
+                const parent = currentLink.closest('.has-submenu');
+                const parentButton = parent && parent.querySelector('.submenu-toggle');
+                if (parentButton) parentButton.classList.add('active');
+            }
+        }
+
+        const header = document.querySelector('#header header');
+        const toggle = document.getElementById('mobileMenuToggle');
+        if (!header || !toggle || !nav) return;
+
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+
+        function closeAllSubmenus(except) {
+            nav.querySelectorAll('.has-submenu').forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        toggle.addEventListener('click', event => {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+
+        nav.querySelectorAll('.has-submenu').forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            if (!button) return;
+            button.addEventListener('click', event => {
+                event.preventDefault();
+                event.stopPropagation();
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+        });
+
+        nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            closeAllSubmenus();
+            closeMobileMenu();
+        }));
+
+        document.addEventListener('click', event => {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) closeMobileMenu();
+        });
+    })
+    .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+
+<main>
+    <section class="werbung-page">
+        <div class="container">
+            <div class="werbung-header">
+    <h1>Capri Testberichte</h1>
+    <p>Eine Sammlung historischer Testberichte rund um den Ford Capri.</p>
+    <div class="einleitungstext">
+
+    <p>
+        Wie schlug sich der Ford Capri damals im Urteil der Fachpresse?
+        In unserer Sammlung findest Du historische Testberichte aus
+        vergangenen Jahrzehnten, die den Capri auf Herz und Nieren prüften.
+    </p>
+
+    <p>
+        Ob Fahrleistungen, Fahrverhalten, Alltagstauglichkeit oder der
+        Vergleich mit anderen Sportcoupés – die zeitgenössischen Berichte
+        vermitteln einen spannenden Eindruck davon, wie der Capri seinerzeit
+        von Journalisten und Autoenthusiasten bewertet wurde.
+    </p>
+
+    <p>
+        Blättere durch die Testberichte zum Capri I und Capri II und entdecke,
+        wie die Fachpresse den Mythos Capri erlebte.
+    </p>
+
+    <p>
+        <strong>
+            Automobilgeschichte zum Nachlesen – authentisch, informativ
+            und voller Capri-Leidenschaft.
+        </strong>
+    </p>
+    </div>
+</div>
+
+            <section class="werbung-bereich">
+                <div class="werbung-titel">
+                    <h2>Testberichte Capri I</h2>
+                </div>
+
+                
+          <div class="werbung-galerie">
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_I/test_capri_I_01.jpg"
+                        alt="Capri I Test 01"
+                        loading="lazy">
+                </a>
+              
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_I/test_capri_I_02.jpg"
+                        alt="Capri I Test 02"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">    
+                    <img
+                        src="../images/thn_test/thn_test_capri_I/test_capri_I_03.jpg"
+                        alt="Capri I Test 03"
+                        loading="lazy">
+                </a>   
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_I/test_capri_I_04.jpg"
+                        alt="Capri I Test 04"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">    
+                    <img
+                        src="../images/thn_test/thn_test_capri_I/test_capri_I_05.jpg"
+                        alt="Capri I Test 05"
+                        loading="lazy">
+                </a>   
+                    
+
+                </div>
+            </section>
+
+  <section class="werbung-bereich">
+                <div class="werbung-titel">
+                    <h2>Testberichte Capri II</h2>
+                </div>
+
+                
+          <div class="werbung-galerie">
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_01.jpg"
+                        alt="Capri II Test 01"
+                        loading="lazy">
+                </a>
+              
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_02.jpg"
+                        alt="Capri II Test 02"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_03.jpg"
+                        alt="Capri II Test 03"
+                        loading="lazy">
+                </a>   
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_04.jpg"
+                        alt="Capri II Test 04"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_05.jpg"
+                        alt="Capri II Test 05"
+                        loading="lazy">
+                </a>   
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_06.jpg"
+                        alt="Capri II Test 06"
+                        loading="lazy">
+                </a>   
+
+              
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_07.jpg"
+                        alt="Capri II Test 07"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_08.jpg"
+                        alt="Capri II Test 0"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_09.jpg"
+                        alt="Capri II Test 09"
+                        loading="lazy">
+                </a>
+
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_10.jpg"
+                        alt="Capri II Test 10"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_12.jpg"
+                        alt="Capri II Test 12"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_II/test_capri_II_13.jpg"
+                        alt="Capri II Test 13"
+                        loading="lazy">
+                </a>
+              
+              
+                </div>
+            </section>
+
+  <section class="werbung-bereich">
+                <div class="werbung-titel">
+                    <h2>Testberichte Capri III</h2>
+                </div>
+
+                
+          <div class="werbung-galerie">
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_III/test_capri_III_01.jpg"
+                        alt="Capri III Test 01"
+                        loading="lazy">
+                </a>
+              
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_III/test_capri_III_02.jpg"
+                        alt="Capri III Test 02"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_III/test_capri_III_03.jpg"
+                        alt="Capri III Test 03"
+                        loading="lazy">
+                </a>   
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_III/test_capri_III_04.jpg"
+                        alt="Capri III Test 04"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_III/test_capri_III_05.jpg"
+                        alt="Capri III Test 05"
+                        loading="lazy">
+                </a>   
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_III/test_capri_III_06.jpg"
+                        alt="Capri III Test 06"
+                        loading="lazy">
+                </a>   
+
+              
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_III/test_capri_III_07.jpg"
+                        alt="Capri III Test 07"
+                        loading="lazy">
+                </a>
+
+                <a class="werbung-thumbnail"
+                   href="../data/werbung/capri1a/01_Ford Capri 1300 L - Der Capri 6993.jpg">
+                    <img
+                        src="../images/thn_test/thn_test_capri_III/test_capri_III_08.jpg"
+                        alt="Capri III Test 08"
+                        loading="lazy">
+                </a>
+
+                        
+                </div>
+            </section>
+
+
+
+        </div>
+    </section>
+</main>
+
+<script>
+fetch('../includes/footer.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Footer konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        const footer = document.createElement('div');
+        footer.innerHTML = data;
+        document.body.appendChild(footer);
+    })
+    .catch(error => console.error('Fehler beim Laden des Footers:', error));
+</script>
+
+</body>
+</html>
