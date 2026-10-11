@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | Capri Club Westerholt e.V.</title>
+    <meta name="description" content="Interessante Links zu Capri Clubs, Partnern und Firmen des Capri Club Westerholt e.V.">
+    <link rel="stylesheet" href="../css/home.css">
+
+    <style>
+/* =========================================================
+           CCW LINKS – WERBUNG-INSPIRED KACHELDESIGN
+           ========================================================= */
+
+        .page-header {
+            max-width: 1300px;
+            margin: 24px auto 0;
+            padding: 0;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            box-shadow: 0 8px 20px rgba(0,0,0,.10);
+        }
+
+        .page-header h2 {
+            margin: 0;
+            padding: 13px 20px 14px;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .page-section {
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .links-kacheln {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #eef1f5;
+            border-radius: 0 0 12px 12px;
+            align-items: stretch;
+        }
+
+        .links-kachel {
+            box-sizing: border-box;
+            background: #ffffff;
+            color: #243746;
+            border-radius: 10px;
+            box-shadow: 0 5px 14px rgba(0,0,0,.12);
+            padding: 0 20px 22px;
+            overflow: hidden;
+        }
+
+        .links-kachel h3 {
+            margin: 0 -20px 16px;
+            padding: 12px 18px 13px;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            color: #ffffff;
+            font-size: 21px;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .links-kachel > p {
+            margin: 0 0 16px;
+            color: #243746;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .links-liste {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .link-eintrag {
+            display: grid;
+            grid-template-columns: 120px minmax(0, 1fr);
+            gap: 10px;
+            align-items: center;
+            padding: 3px;
+            border: 1px solid #e1e5e9;
+            border-radius: 9px;
+            background: #ffffff;
+            text-decoration: none;
+            color: inherit;
+            transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+        }
+
+        .link-eintrag:hover {
+            transform: translateY(-2px);
+            border-color: rgba(5,1,155,.35);
+            box-shadow: 0 5px 14px rgba(0,0,0,.10);
+        }
+
+        .link-ohne-url {
+            cursor: default;
+        }
+
+        .link-ohne-url:hover {
+            transform: none;
+            border-color: #e1e5e9;
+            box-shadow: none;
+        }
+
+        .link-logo,
+        .link-ohne-logo {
+            width: 100px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 7px;
+            background: #f4f6f8;
+        }
+
+        .link-logo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .link-ohne-logo {
+            color: #05019B;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .link-text h4 {
+            margin: 0 0 5px;
+            color: #05019B;
+            font-size: 16px;
+            line-height: 1.25;
+        }
+
+        .link-text p {
+            margin: 0;
+            color: #243746;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .links-leer,
+        .links-fehler {
+            margin: 0;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .links-leer {
+            background: #f4f6f8;
+            color: #66727d;
+            text-align: center;
+        }
+
+        .links-fehler {
+            background: #fff0f0;
+            color: #9b1c1c;
+        }
+
+        @media (max-width: 800px) {
+
+            .page-header {
+                margin-top: 16px;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .page-header h2 {
+                padding: 12px 16px;
+                font-size: 22px;
+            }
+
+            .links-kacheln {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 16px;
+                border-radius: 0 0 10px 10px;
+            }
+
+            .links-kachel {
+                padding: 0 18px 20px;
+            }
+
+            .links-kachel h3 {
+                margin-left: -18px;
+                margin-right: -18px;
+                margin-bottom: 16px;
+                padding: 11px 16px 12px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 460px) {
+
+            .links-kacheln {
+                padding: 12px;
+            }
+
+            .links-kachel {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .links-kachel h3 {
+                margin-left: -14px;
+                margin-right: -14px;
+            }
+
+            .link-eintrag {
+                grid-template-columns: 82px minmax(0, 1fr);
+                gap: 9px;
+                padding: 7px;
+            }
+
+            .link-logo,
+            .link-ohne-logo {
+                width: 82px;
+                height: 52px;
+            }
+
+            .link-text h4 {
+                font-size: 17px;
+            }
+
+            .link-text p {
+                font-size: 13px;
+            }
+        }
+
+    
+</style>
+</head>
+
+<body>
+
+<body>
+<!-- Zentraler Header aus includes/header.html -->
+<div id="header"></div>
+<script>
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+        const currentPage = (window.location.pathname.split('/').pop() || 'home.html').toLowerCase();
+        const nav = document.getElementById('mainNavigation');
+        if (nav) {
+            nav.querySelectorAll('a.active, .submenu-toggle.active').forEach(el => el.classList.remove('active'));
+            const currentLink = Array.from(nav.querySelectorAll('a[href]')).find(link => {
+                const target = (link.getAttribute('href') || '').split(/[?#]/)[0].split('/').pop().toLowerCase();
+                return target === currentPage;
+            });
+            if (currentLink) {
+                currentLink.classList.add('active');
+                const parent = currentLink.closest('.has-submenu');
+                const parentButton = parent && parent.querySelector('.submenu-toggle');
+                if (parentButton) parentButton.classList.add('active');
+            }
+        }
+        const header = document.querySelector('#header header');
+        const toggle = document.getElementById('mobileMenuToggle');
+        if (!header || !toggle || !nav) return;
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+        function closeAllSubmenus(except) {
+            nav.querySelectorAll('.has-submenu').forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+        toggle.addEventListener('click', event => {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+        nav.querySelectorAll('.has-submenu').forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            if (!button) return;
+            button.addEventListener('click', event => {
+                event.preventDefault();
+                event.stopPropagation();
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+        });
+        nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            closeAllSubmenus();
+            closeMobileMenu();
+        }));
+        document.addEventListener('click', event => {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) closeMobileMenu();
+        });
+    })
+    .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+
+<main>
+    <section class="page-header">
+        <h2>Interessante Links</h2>
+    </section>
+
+    <section class="page-section">
+        <div class="links-kacheln">
+
+            <div class="links-kachel">
+                <h3>Capri Clubs</h3>
+                <p>Interessante Capri Clubs und befreundete Clubs aus der Capri-Szene.</p>
+                <div class="links-liste" id="clubs-liste">
+                    <p class="links-leer">Links werden geladen …</p>
+                </div>
+            </div>
+
+            <div class="links-kachel">
+                <h3>Unsere Partner</h3>
+                <p>Firmen und Partner, mit denen wir rund um den Capri zusammenarbeiten.</p>
+                <div class="links-liste" id="firmen-liste">
+                    <p class="links-leer">Links werden geladen …</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+                <!-- =============================================================================
+                     footer        footer
+                     ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+<script>
+function csvZeilen(text) {
+    return text.trim().split(/\r?\n/).filter(Boolean).map(function (zeile) {
+        const teile = [];
+        let feld = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < zeile.length; i++) {
+            const c = zeile[i];
+
+            if (c === '"') {
+                if (inQuotes && zeile[i + 1] === '"') {
+                    feld += '"';
+                    i++;
+                } else {
+                    inQuotes = !inQuotes;
+                }
+            } else if (c === ';' && !inQuotes) {
+                teile.push(feld.trim());
+                feld = "";
+            } else {
+                feld += c;
+            }
+        }
+
+        teile.push(feld.trim());
+        return teile;
+    });
+}
+
+function zeigeLinks(csvText, containerId) {
+    const container = document.getElementById(containerId);
+    const zeilen = csvZeilen(csvText);
+
+    if (zeilen.length <= 1) {
+        container.innerHTML = '<p class="links-leer">Noch keine Links eingetragen.</p>';
+        return;
+    }
+
+    const eintraege = zeilen.slice(1);
+
+    container.innerHTML = "";
+
+    eintraege.forEach(function (daten) {
+        const name = (daten[0] || "").trim();
+        const url = (daten[1] || "").trim();
+        const logo = (daten[2] || "").trim();
+        const beschreibung = (daten[3] || "").trim();
+
+        if (!name) return;
+
+        const a = document.createElement(url ? "a" : "div");
+        a.className = "link-eintrag" + (url ? "" : " link-ohne-url");
+
+        if (url) {
+            a.href = url;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+        }
+
+        const logoBox = document.createElement("div");
+        logoBox.className = logo ? "link-logo" : "link-ohne-logo";
+
+        if (logo) {
+            const img = document.createElement("img");
+            img.src = "../" + logo;
+            img.alt = "Logo " + name;
+            img.loading = "lazy";
+            logoBox.appendChild(img);
+        } else {
+            logoBox.textContent = "LOGO";
+        }
+
+        const textBox = document.createElement("div");
+        textBox.className = "link-text";
+
+        const h4 = document.createElement("h4");
+        h4.textContent = name;
+
+        const p = document.createElement("p");
+        p.textContent = beschreibung;
+
+        textBox.appendChild(h4);
+        textBox.appendChild(p);
+
+        a.appendChild(logoBox);
+        a.appendChild(textBox);
+        container.appendChild(a);
+    });
+}
+
+async function ladeLinks() {
+    try {
+        const [clubsAntwort, firmenAntwort] = await Promise.all([
+            fetch("../data/clubs.csv"),
+            fetch("../data/firmen.csv")
+        ]);
+
+        if (!clubsAntwort.ok || !firmenAntwort.ok) {
+            throw new Error("CSV-Dateien konnten nicht geladen werden.");
+        }
+
+        const clubsText = await clubsAntwort.text();
+        const firmenText = await firmenAntwort.text();
+
+        zeigeLinks(clubsText, "clubs-liste");
+        zeigeLinks(firmenText, "firmen-liste");
+
+    } catch (fehler) {
+        document.getElementById("clubs-liste").innerHTML =
+            '<p class="links-fehler">Die Club-Links konnten momentan nicht geladen werden.</p>';
+
+        document.getElementById("firmen-liste").innerHTML =
+            '<p class="links-fehler">Die Partner-Links konnten momentan nicht geladen werden.</p>';
+
+        console.error(fehler);
+    }
+}
+
+ladeLinks();
+    </script>
+
+</body>
+</html>
