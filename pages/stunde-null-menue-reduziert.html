@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Capri Club Westerholt | Wir leben die Legende</title>
+
+    <meta name="description" content="Capri Club Westerholt – Informationen, Fahrzeuge, Treffen, Bilder, Rückblicke und Geschichte des Clubs.">
+
+    <meta name="keywords" content="Capri Club Westerholt, CCW, Ford Capri, Capri Treffen, Capri Club">
+
+    <link rel="stylesheet" href="../css/home.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon"
+          href="../images/favicon_set/favicon.ico">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="../images/favicon_set/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="../images/favicon_set/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="../images/favicon_set/apple-touch-icon.png">
+
+    <link rel="manifest"
+          href="../images/favicon_set/site.webmanifest">
+
+    <meta name="theme-color" content="#000000">
+
+    <meta name="msapplication-config"
+          content="images/favicon_set/browserconfig.xml">
+
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="theme-color" content="#000000">
+
+
+    <!-- =========================================================
+         MOBILE NAVIGATION
+         Bis 900px bleibt die Navigation auch im Querformat mobil.
+         ========================================================= -->
+
+    <style>
+
+        .text-content {
+            max-width: 1050px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 34px 42px 42px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,.10);
+            color: #243746;
+        }
+
+        .text-content h3 {
+            margin: 0 0 24px;
+            color: #05019B;
+            font-size: 28px;
+            line-height: 1.25;
+        }
+
+        .text-content p {
+            margin: 0 0 18px;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .text-content blockquote {
+            margin: 24px 0;
+            padding: 18px 24px;
+            border-left: 5px solid #05019B;
+            background: #f4f6f8;
+            color: #243746;
+            font-size: 16px;
+            line-height: 1.65;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 700px) {
+            .text-content {
+                padding: 24px 20px 30px;
+            }
+
+            .text-content h3 {
+                font-size: 24px;
+            }
+
+            .text-content p,
+            .text-content blockquote {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .text-content blockquote {
+                padding: 15px 18px;
+            }
+        }
+
+    
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Zentraler Header mit Navigation -->
+    <div id="site-header"></div>
+    <script>
+        fetch('../includes/header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+                return response.text();
+            })
+            .then(html => {
+                document.getElementById('site-header').innerHTML = html;
+
+                const header = document.querySelector('#site-header header');
+                const toggle = document.getElementById('mobileMenuToggle');
+                const nav = document.getElementById('mainNavigation');
+                if (!header || !nav) return;
+
+                // Aktuelle Seite im zentralen Menü markieren.
+                const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+                nav.querySelectorAll('a').forEach(link => {
+                    link.classList.remove('active');
+                    const targetPage = link.getAttribute('href')?.split('/').pop().toLowerCase();
+                    if (targetPage === currentPage) {
+                        link.classList.add('active');
+                        const parent = link.closest('.has-submenu');
+                        if (parent) {
+                            parent.classList.add('submenu-open');
+                            const button = parent.querySelector('.submenu-toggle');
+                            if (button) {
+                                button.classList.add('active');
+                                button.setAttribute('aria-expanded', 'true');
+                            }
+                        }
+                    }
+                });
+
+                const submenuItems = nav.querySelectorAll('.has-submenu');
+                function closeAllSubmenus(except) {
+                    submenuItems.forEach(item => {
+                        if (item !== except) {
+                            item.classList.remove('submenu-open');
+                            const button = item.querySelector('.submenu-toggle');
+                            if (button) button.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
+
+                submenuItems.forEach(item => {
+                    const button = item.querySelector('.submenu-toggle');
+                    if (!button) return;
+                    button.addEventListener('click', event => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        const wasOpen = item.classList.contains('submenu-open');
+                        closeAllSubmenus(item);
+                        item.classList.toggle('submenu-open', !wasOpen);
+                        button.setAttribute('aria-expanded', String(!wasOpen));
+                    });
+                });
+
+                if (toggle) {
+                    toggle.addEventListener('click', event => {
+                        event.stopPropagation();
+                        const open = header.classList.toggle('nav-open');
+                        toggle.setAttribute('aria-expanded', String(open));
+                        toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+                    });
+                }
+
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeAllSubmenus();
+                        header.classList.remove('nav-open');
+                        if (toggle) {
+                            toggle.setAttribute('aria-expanded', 'false');
+                            toggle.setAttribute('aria-label', 'Menü öffnen');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', event => {
+                    if (!header.contains(event.target)) {
+                        closeAllSubmenus();
+                        header.classList.remove('nav-open');
+                        if (toggle) {
+                            toggle.setAttribute('aria-expanded', 'false');
+                            toggle.setAttribute('aria-label', 'Menü öffnen');
+                        }
+                    }
+                });
+
+                document.addEventListener('keydown', event => {
+                    if (event.key === 'Escape') {
+                        closeAllSubmenus();
+                        header.classList.remove('nav-open');
+                        if (toggle) {
+                            toggle.setAttribute('aria-expanded', 'false');
+                            toggle.setAttribute('aria-label', 'Menü öffnen');
+                        }
+                    }
+                });
+
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 900) {
+                        header.classList.remove('nav-open');
+                        if (toggle) {
+                            toggle.setAttribute('aria-expanded', 'false');
+                            toggle.setAttribute('aria-label', 'Menü öffnen');
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+
+    <!-- ============================================================================================================= -->
+    <!-- CCW STARTSEITE – GRUNDGERÜST -->
+    <!-- ============================================================================================================= -->
+
+<main>
+
+    <section class="page-header">
+        <h2>Stunde Null</h2>
+    </section>
+
+    <section class="page-section">
+        <div class="text-content">
+
+            <h3>Die Männer der ersten Stunde</h3>
+
+            <p>
+                <strong>Dirk Z., Frank P. und Lothar D. – sie sind die Männer der ersten Stunde.</strong>
+            </p>
+
+            <p>
+                Ein Datum, das bis heute wie in Stein gemeißelt ist:
+                <strong>der 11. Juni 1988.</strong>
+            </p>
+
+            <p>
+                Auf einem Parkplatz in Westerholt fanden sich an diesem Tag zehn Capri-Fahrer ein,
+                die zuvor durch eine Flugblattaktion auf diesen Treffpunkt aufmerksam gemacht worden waren.
+                Einer der Initiatoren war Dirk Z.
+            </p>
+
+            <p>
+                Gemeinsam mit dem ebenfalls Capri-begeisterten Lothar D. hatte er in den Wochen zuvor
+                jedem Capri, den er zu Gesicht bekam – und zu dieser Zeit gab es davon noch eine ganze Menge –
+                einen Infozettel unter den Scheibenwischer gesteckt.
+            </p>
+
+            <p>
+                Unter Dirk's „Opfern“ befand sich auch ein Capri-Eigner namens Frank P.
+            </p>
+
+            <p>
+                <strong>
+                    Dirk Z. und Frank P. – sie gehören bis heute ohne Unterbrechung zum Capri Club Westerholt
+                    und sind dort aktiv.
+                </strong>
+                Der Club, der an jenem Junitag aus der Taufe gehoben wurde, sollte damit den Grundstein
+                für eine bis heute andauernde Geschichte legen.
+            </p>
+
+            <blockquote>
+                „Es begann damit, dass Lothar D. und ich gemeinsam unsere ersten Capri-Treffen besuchten“,
+                erinnert sich Dirk Z. „Dabei entstanden die ersten Kontakte zu verschiedenen Clubs und
+                Einzelfahrern. Irgendwann haben wir beide uns gefragt:
+                Warum nicht selbst einen Capri-Club ins Leben rufen?“
+            </blockquote>
+
+            <p>
+                Also zogen Dirk Z. und Lothar D. los und verteilten die erwähnten Flugblätter im Umkreis.
+                Schließlich trudelten insgesamt zehn Rückmeldungen von interessierten
+                <strong>„Langnasen-Besitzern“</strong> ein. Sie wurden für den 11. Juni auf den besagten
+                Parkplatz eingeladen.
+            </p>
+
+            <blockquote>
+                „Je näher der Tag rückte, umso unruhiger wurde ich. Tausend Fragen schwirrten mir durch den Kopf.
+                Kommt überhaupt jemand zu diesem Treffpunkt? Was sind das für Leute? Was erwarten die von mir?
+                Und hätte ich irgendetwas Weitergehendes organisieren müssen?“
+            </blockquote>
+
+            <p>
+                Es zeigte sich an diesem Nachmittag, dass „Dirk's“ Befürchtungen völlig unbegründet waren.
+                <strong>Alle zehn Capri-Fahrer hielten ihr Wort und rollten zum Treffpunkt an.</strong>
+            </p>
+
+            <p>
+                Um den Gedanken an die Gründung eines Clubs möglichst interessant zu gestalten,
+                hatte sich unser heutiger Vorsitzender gut vorbereitet. Gemeinsam mit Lothar D.
+                berichtete Dirk Z. nicht nur über die Atmosphäre bei den besuchten Treffen und die Idee,
+                einen eigenen Club ins Leben zu rufen.
+            </p>
+
+            <blockquote>
+                „Ich hatte einen ganzen Haufen Unterlagen mitgebracht, um auch den Leuten, die vor allem
+                zur Beantwortung von technischen oder baureihenbezogenen Fragen gekommen waren,
+                eine kompetente Antwort geben zu können. Außerdem haben Lothar D. und ich von den Vorteilen
+                gegenseitiger Hilfe geschwärmt sowie von der Möglichkeit der Herstellung eigener Kunststoffteile
+                berichtet.“
+            </blockquote>
+
+            <p>
+                Dabei ging es um Kopien von Originalteilen, Spoilern und Schwellern.
+                Weitere „Lockmittel“ der beiden Westerholter waren der Besitz eines eigenen (!) Schweißgerätes
+                sowie Bilder von den ersten eigenen Capri-Restaurationen.
+            </p>
+
+            <p>
+                <strong>
+                    Lothar D. und Dirk Z. zogen also alle Register der Überzeugungskunst –
+                    und wurden dafür belohnt.
+                </strong>
+            </p>
+
+            <p>
+                Die zehn erschienenen Gesinnungsgenossen waren angetan und den Plänen des Duos gegenüber
+                sehr aufgeschlossen. Mehr noch: Sie hatten sich bereits Gedanken über eine gemeinsame Zukunft gemacht.
+            </p>
+
+            <blockquote>
+                „Wir haben uns dann in einer Kneipe zusammengesetzt und sind gleich in die Beratungen eingestiegen.
+                Damit war der Capri Club Westerholt praktisch entstanden“, blickt Dirk Z. zurück.
+            </blockquote>
+
+            <p>
+                <strong>
+                    Dirk Z. und Frank P. – zwei Gründungsmitglieder, die stets an Bord blieben.
+                </strong>
+                Beide haben sich über all die Jahre intensiv um die Belange des Clubs bemüht:
+                Dirk Z. als inzwischen langjähriger Vorsitzender und Frank P. als Schriftführer des Clubs.
+            </p>
+
+        </div>
+    </section>
+
+</main>
+
+    <!-- =============================================================================
+                     footer        footer
+    ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+    <!-- =========================================================
+         CCW MENU JAVASCRIPT
+         Mobile Menü + Dropdown-Submenüs
+         ========================================================= -->
+    <script>
+        (function () {
+
+            const header = document.querySelector("header");
+            const toggle = document.getElementById("mobileMenuToggle");
+            const nav = document.getElementById("mainNavigation");
+
+            if (!header || !toggle || !nav) {
+                return;
+            }
+
+            /* ==========================================
+               MOBILES MENÜ
+               ========================================== */
+
+            function closeMobileMenu() {
+                header.classList.remove("nav-open");
+
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.setAttribute("aria-label", "Menü öffnen");
+            }
+
+            toggle.addEventListener("click", function (event) {
+                event.stopPropagation();
+
+                const open = header.classList.toggle("nav-open");
+
+                toggle.setAttribute(
+                    "aria-expanded",
+                    open ? "true" : "false"
+                );
+
+                toggle.setAttribute(
+                    "aria-label",
+                    open ? "Menü schließen" : "Menü öffnen"
+                );
+            });
+
+
+            /* ==========================================
+               DROPDOWN-SUBMENÜS
+               ========================================== */
+
+            const submenuItems =
+                nav.querySelectorAll(".has-submenu");
+
+            function closeAllSubmenus(except) {
+                submenuItems.forEach(function (item) {
+
+                    if (item !== except) {
+                        item.classList.remove("submenu-open");
+
+                        const button =
+                            item.querySelector(".submenu-toggle");
+
+                        if (button) {
+                            button.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+                        }
+                    }
+                });
+            }
+
+            submenuItems.forEach(function (item) {
+
+                const button =
+                    item.querySelector(".submenu-toggle");
+
+                const submenu =
+                    item.querySelector(".submenu");
+
+                if (!button || !submenu) {
+                    return;
+                }
+
+                button.addEventListener("click", function (event) {
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const isOpen =
+                        item.classList.contains("submenu-open");
+
+                    closeAllSubmenus(item);
+
+                    if (isOpen) {
+                        item.classList.remove("submenu-open");
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    } else {
+                        item.classList.add("submenu-open");
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+                    }
+                });
+
+            });
+
+
+            /* ==========================================
+               LINKS
+               ========================================== */
+
+            nav.querySelectorAll("a").forEach(function (link) {
+
+                link.addEventListener("click", function () {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                });
+
+            });
+
+
+            /* ==========================================
+               KLICK AUSSERHALB
+               ========================================== */
+
+            document.addEventListener("click", function (event) {
+
+                if (!header.contains(event.target)) {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                }
+
+            });
+
+
+            /* ==========================================
+               ESCAPE
+               ========================================== */
+
+            document.addEventListener("keydown", function (event) {
+
+                if (event.key === "Escape") {
+                    closeAllSubmenus();
+                    closeMobileMenu();
+                }
+
+            });
+
+
+            /* ==========================================
+               BEIM WECHSEL AUF DESKTOP
+               ========================================== */
+
+            window.addEventListener("resize", function () {
+
+                if (window.innerWidth > 900) {
+                    closeMobileMenu();
+                }
+
+            });
+
+        })();
+    </script>
+
+
+</body>
+
+</html>
