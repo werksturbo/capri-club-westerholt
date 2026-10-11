@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrzeug | Capri Club Westerholt e.V.</title>
+    <meta name="description" content="Fahrzeugvorstellung des Capri Club Westerholt e.V.">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/fahrzeuge.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+
+    <style>
+        /* Fahrzeug-Detailseite – Anpassung an das aktuelle CCW Look & Feel */
+        .fahrzeug-header {
+            text-align: left;
+        }
+
+        .fahrzeug-header h2 {
+            margin: 0;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-align: left;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<main>
+    <section class="page-header fahrzeug-header">
+        <h2 id="fahrzeug-titel">Fahrzeug wird geladen …</h2>
+    </section>
+
+    <section class="fahrzeug-section">
+
+        <div class="fahrzeug-card">
+
+            <a id="hauptbild-link"
+               class="hauptbild-link"
+               href="#"
+               aria-label="Hauptbild vergrößern">
+                <img id="hauptbild" src="" alt="">
+            </a>
+
+            <div class="fahrzeugdaten">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Typ</th>
+                            <td id="typ"></td>
+                        </tr>
+                        <tr>
+                            <th>Baujahr</th>
+                            <td id="baujahr"></td>
+                        </tr>
+                        <tr>
+                            <th>Motor / Zyl. / PS</th>
+                            <td id="motor"></td>
+                        </tr>
+                        <tr>
+                            <th>Eigentümer</th>
+                            <td id="eigentümer"></td>
+                        </tr>
+                        <tr>
+                            <th>Sonstiges</th>
+                            <td id="sonstiges"></td>
+                        </tr>
+                        <tr>
+                            <th>2016</th>
+                            <td id="geschichte"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <section class="fahrzeug-galerie">
+                <h3>Fahrzeugbilder</h3>
+                <div id="galerie" class="galerie"></div>
+                <p id="keine-bilder" class="keine-bilder">
+                    Die weiteren Fahrzeugbilder werden später ergänzt.
+                </p>
+            </section>
+
+        </div>
+
+    </section>
+</main>
+
+                <!-- =============================================================================
+                     footer        footer
+                     ============================================================================= -->
+
+
+    
+<script>
+/* Zentrale Kopfzeile und Navigation laden */
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Die Kopfzeile konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        const container = document.getElementById('site-header');
+        container.innerHTML = data;
+
+        const header = container.querySelector('header');
+        const toggle = container.querySelector('#mobileMenuToggle');
+        const nav = container.querySelector('#mainNavigation');
+
+        if (!header || !toggle || !nav) return;
+
+        // Die Fahrzeug-Detailseite gehört zum Menüpunkt „Die Fahrzeuge“.
+        const vehiclesLink = nav.querySelector('a[href="../pages/fahrzeuge.html"]');
+        if (vehiclesLink) vehiclesLink.classList.add('active');
+
+        const submenuItems = nav.querySelectorAll('.has-submenu');
+
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+
+        function closeAllSubmenus(except) {
+            submenuItems.forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        toggle.addEventListener('click', event => {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+
+        submenuItems.forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            const submenu = item.querySelector('.submenu');
+            if (!button || !submenu) return;
+
+            button.addEventListener('click', event => {
+                event.preventDefault();
+                event.stopPropagation();
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', String(!isOpen));
+            });
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                closeAllSubmenus();
+                closeMobileMenu();
+            });
+        });
+
+        document.addEventListener('click', event => {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) closeMobileMenu();
+        });
+    })
+    .catch(error => console.error(error));
+</script>
+
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+
+<script src="../js/lightbox.js"></script>
+<script src="../js/fahrzeuge.js"></script>
+
+</body>
+</html>
