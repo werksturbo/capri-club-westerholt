@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Impressum | Capri Club Westerholt e.V.</title>
+
+    <meta name="description"
+          content="Impressum des Capri Club Westerholt">
+
+    <link rel="stylesheet" href="../css/home.css">
+
+    
+    <style>
+        /* =====================================================
+           IMPRESSUM – GLEICHES LOOK & FEEL WIE POSTER / WERBUNG
+           ===================================================== */
+
+        .werbung-page {
+            padding: 32px 0 50px;
+        }
+
+        .werbung-header {
+            position: relative;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,.10);
+            padding: 14px 20px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .werbung-header h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .werbung-header p {
+            margin: 5px 0 0;
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .werbung-bereich {
+            background: rgba(255,255,255,.92);
+            border: 1px solid #dfe5ec;
+            border-radius: 12px;
+            box-shadow: 0 7px 18px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .werbung-titel {
+            position: relative;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            color: #ffffff;
+            padding: 12px 18px;
+            box-shadow: 0 2px 7px rgba(0,0,0,.12);
+        }
+
+        .werbung-titel h2 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .impressum-inhalt {
+            padding: 18px 22px;
+            background: linear-gradient(to bottom, #f7f9fb 0%, #f2f5f8 100%);
+        }
+
+        .impressum-inhalt p {
+            margin: 0 0 10px;
+            color: #243746;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .impressum-inhalt p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .werbung-page {
+                padding: 20px 0 35px;
+            }
+
+            .werbung-header {
+                padding: 15px;
+            }
+
+            .werbung-header h1 {
+                font-size: 22px;
+            }
+
+            .werbung-titel {
+                padding: 11px 14px;
+            }
+
+            .werbung-titel h2 {
+                font-size: 18px;
+            }
+
+            .impressum-inhalt {
+                padding: 15px;
+            }
+
+            .impressum-inhalt p {
+                font-size: 15px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        /* =====================================================
+           AKTIVE MENÜSEITE ERMITTELN
+           Alte aktive Markierungen zunächst entfernen, damit
+           nicht z. B. "Die Fahrzeuge" aktiv bleibt.
+           Danach den aktuellen Unterpunkt und dessen Obermenü
+           (z. B. Capri Literatur) markieren.
+           ===================================================== */
+
+        const currentPage =
+            (window.location.pathname.split('/').pop() || 'home.html').toLowerCase();
+
+        const navigation = document.getElementById('mainNavigation');
+
+        if (navigation) {
+
+            navigation.querySelectorAll('a.active, .submenu-toggle.active').forEach(element => {
+                element.classList.remove('active');
+            });
+
+            const currentLink = Array.from(navigation.querySelectorAll('a[href]')).find(link => {
+                const rawHref = link.getAttribute('href') || '';
+                const targetPage = rawHref.split(/[?#]/)[0].split('/').pop().toLowerCase();
+                return targetPage === currentPage;
+            });
+
+            if (currentLink) {
+                currentLink.classList.add('active');
+
+                const parentSubmenu = currentLink.closest('.has-submenu');
+                if (parentSubmenu) {
+                    const parentButton = parentSubmenu.querySelector('.submenu-toggle');
+                    if (parentButton) parentButton.classList.add('active');
+                }
+            }
+        }
+
+        const header = document.querySelector('#header header');
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNavigation');
+
+        if (!header || !toggle || !nav) return;
+
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+
+        function closeAllSubmenus(except) {
+            nav.querySelectorAll('.has-submenu').forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        toggle.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+
+        nav.querySelectorAll('.has-submenu').forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            if (!button) return;
+
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                closeAllSubmenus();
+                closeMobileMenu();
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 900) closeMobileMenu();
+        });
+    })
+    .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+
+<!-- ==========================================
+     SEITENKOPF
+=========================================== -->
+
+<main>
+    <section class="werbung-page">
+        <div class="container">
+            <div class="werbung-header">
+            <h1>Impressum</h1>
+            <p>Der Capri Club Westerholt widmet sich dem Erhalt, der Pflege und der Restauration der Ford Capri Baureihen von 1968 bis 1985.</p>
+            <p>Nachfolgend findest Du die gesetzlich vorgeschriebenen Angaben
+        zum Betreiber dieser Website.</p>
+        </div>
+
+
+<section class="werbung-bereich">
+            <div class="werbung-titel">
+                <h2>Angaben gemäß § 5 DDG</h2>
+            </div>
+            <div class="impressum-inhalt">
+                <p>
+            Name: Dirk Zentara
+        </p>
+
+        <p>
+            Anschrift: Akkoallee 58
+        </p>
+
+        <p>
+            PLZ / Ort: 45659 Recklinghausen
+        </p>
+            </div>
+        </section>
+
+
+<section class="werbung-bereich">
+            <div class="werbung-titel">
+                <h2>Kontakt</h2>
+            </div>
+            <div class="impressum-inhalt">
+                <p>
+            Telefon: ****** / *******
+        </p>
+
+        <p>
+            E-Mail: dirk.zentara@freenet.de
+        </p>
+            </div>
+        </section>
+
+
+<section class="werbung-bereich">
+            <div class="werbung-titel">
+                <h2>Verantwortlich für den Inhalt</h2>
+            </div>
+            <div class="impressum-inhalt">
+                <p>
+            Verantwortlich gemäß § 18 Abs. 2 MStV:
+        </p>
+
+        <p>
+            Name: Dirk Zentara
+        </p>
+
+        <p>
+            Anschrift: Akkoallee 58
+        </p>
+
+        <p>
+            PLZ / Ort: 45659 Recklinghausen
+        </p>
+            </div>
+        </section>
+
+
+<section class="werbung-bereich">
+            <div class="werbung-titel">
+                <h2>Haftung für Inhalte</h2>
+            </div>
+            <div class="impressum-inhalt">
+                <p>
+            Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt.
+            Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
+            kann jedoch keine Gewähr übernommen werden.
+        </p>
+            </div>
+        </section>
+
+
+<section class="werbung-bereich">
+            <div class="werbung-titel">
+                <h2>Haftung für Links</h2>
+            </div>
+            <div class="impressum-inhalt">
+                <p>
+            Diese Website enthält Links zu externen Webseiten Dritter.
+            Auf deren Inhalte besteht kein Einfluss.
+            Für die Inhalte der verlinkten Seiten ist stets
+            der jeweilige Anbieter oder Betreiber verantwortlich.
+        </p>
+            </div>
+        </section>
+
+
+<section class="werbung-bereich">
+            <div class="werbung-titel">
+                <h2>Urheberrecht</h2>
+            </div>
+            <div class="impressum-inhalt">
+                <p>
+            Die durch den Seitenbetreiber erstellten Inhalte und Werke
+            auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+            Beiträge Dritter sind als solche gekennzeichnet.
+        </p>
+            </div>
+        </section>
+
+
+<section class="werbung-bereich">
+            <div class="werbung-titel">
+                <h2>Bildnachweise</h2>
+            </div>
+            <div class="impressum-inhalt">
+                <p>
+            Soweit nicht anders angegeben,
+            stammen Bilder und Dokumente aus dem privaten Archiv
+            des Werksturbo Registers oder wurden mit Genehmigung
+            der jeweiligen Rechteinhaber verwendet.
+        </p>
+            </div>
+        </section>
+
+
+<section class="werbung-bereich">
+            <div class="werbung-titel">
+                <h2>Hinweis</h2>
+            </div>
+            <div class="impressum-inhalt">
+                <p>
+            Die Capri Club Westerholt Homepage ist ein privates,
+            nicht kommerzielles Informationsprojekt
+            für Liebhaber und Besitzer des
+            Ford Capri.
+        </p>
+
+        <p>
+            Diese Homepage informiert Clubmitglieder und Capri-Interessierte über 
+            die Geschichte des Capri Club Westerholt, seine Aktivitäten und das aktuelle 
+            Geschehen rund um den Ford Capri.
+        </p>
+            </div>
+        </section>
+        </div>
+    </section>
+</main>
+
+<!-- ==========================================
+     FOOTER
+=========================================== -->
+
+<div id="footer"></div>
+
+<script>
+    fetch('../includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Footer konnte nicht geladen werden.');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        })
+        .catch(error => console.error('Fehler beim Laden des Footers:', error));
+</script>
+
+</body>
+</html>
