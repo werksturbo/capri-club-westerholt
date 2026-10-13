@@ -6,7 +6,7 @@
 
     const params = new URLSearchParams(window.location.search);
     const fahrzeugId = params.get("id") || "01";
-    const MAX_BILDER = 30;
+    const MAX_BILDER = 100;
 
     const titelEl = document.getElementById("fahrzeug-titel");
     const hauptbild = document.getElementById("hauptbild");
