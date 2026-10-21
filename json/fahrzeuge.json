@@ -518,5 +518,44 @@
         "geschichte": "Das Kart ist von der Firma ILO-Motorenwerke und hat einen 98 ccm ILO Motor mit 4,3 PS.\nDie Gebrüder Ihle betrieben von 1960 bis in die 80ger Jahre erfolgreich Kartsport und bauten zusätzlich noch Karts. Zurzeit befindet sich das Kart noch in der Umbauphase, bzw wird es wieder zeitgenössisch aufgebaut, es besitzt nämlich eine Anhängerkupplung, Abblenlicht und ein Alpha Romeo Lenkrad.",
         "bildordner": "unsere_exoten/robin_kart_ilo",
         "maxBilder": 30
+    },
+        {
+        "id": "86",
+        "titel": "Unsere Exoten – Mustang",
+        "typ": "",
+        "baujahr": "19xx",
+        "motor": "",
+        "eigentuemer": "Benjamin Dressler",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "",
+        "bildordner": "unsere_exoten/mustang_benjamin",
+        "maxBilder": 30
+    },
+        {
+        "id": "87",
+        "titel": "Unsere Exoten – Ammi",
+        "typ": "Ammi",
+        "baujahr": "19xx",
+        "motor": "xxxxxxxxxxxxxx",
+        "eigentuemer": "Hubert Kappmann",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "",
+        "bildordner": "unsere_exoten/ami_hubert",
+        "maxBilder": 30
+    },
+        {
+        "id": "88",
+        "titel": "Unsere Exoten – Granada II Ghia",
+        "typ": "  ",
+        "baujahr": "198x",
+        "motor": "2.8 I, 150 PS, V6",
+        "eigentuemer": "Jörg Dinkeler",
+        "sonstiges": "",
+        "geschichteLabel": "Geschichte",
+        "geschichte": "xxxxxxxxxx",
+        "bildordner": "unsere_exoten/granada_jogi",
+        "maxBilder": 30
     }
 ]
