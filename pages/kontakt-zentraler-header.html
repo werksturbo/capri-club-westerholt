@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Capri Club Westerholt e.V.</title>
+    <meta name="description" content="Kontakt zum Capri Club Westerholt e.V.">
+    <link rel="stylesheet" href="../css/home.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon"
+          href="../images/favicon_set/favicon.ico">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="../images/favicon_set/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="../images/favicon_set/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="../images/favicon_set/apple-touch-icon.png">
+
+    <link rel="manifest"
+          href="../images/favicon_set/site.webmanifest">
+
+    <meta name="theme-color" content="#000000">
+
+<style>
+        /* =========================================================
+           KONTAKTSEITE – WERBUNG-INSPIRED KACHELDESIGN
+           ========================================================= */
+
+        .page-header {
+            max-width: 1300px;
+            margin: 24px auto 0;
+            padding: 0;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            box-shadow: 0 8px 20px rgba(0,0,0,.10);
+        }
+
+        .page-header h2 {
+            margin: 0;
+            padding: 13px 20px 14px;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .page-section {
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .kontakt-kacheln {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #eef1f5;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .kontakt-kacheln .card {
+            box-sizing: border-box;
+            background: #ffffff;
+            color: #243746;
+            border-radius: 10px;
+            box-shadow: 0 5px 14px rgba(0,0,0,.12);
+            padding: 0 26px 28px;
+            overflow: hidden;
+        }
+
+        .kontakt-kacheln .card h3 {
+            margin: 0 -26px 22px;
+            padding: 12px 20px 13px;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            color: #ffffff;
+            font-size: 21px;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .kontakt-kacheln .card p {
+            margin: 0 0 18px;
+            color: #243746;
+            font-size: 16px;
+            line-height: 1.55;
+        }
+
+        .kontakt-kacheln .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .kontakt-kacheln .card strong {
+            color: #05019B;
+        }
+
+        .kontakt-formular form {
+            margin: 0;
+        }
+
+        .kontakt-formular label {
+            display: block;
+            margin: 0 0 6px;
+            color: #243746;
+            font-size: 15px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .kontakt-formular input,
+        .kontakt-formular textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 0 16px;
+            padding: 11px 12px;
+            border: 1px solid #d0d5da;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #243746;
+            font: inherit;
+            font-size: 16px;
+            outline: none;
+            transition: border-color .18s ease, box-shadow .18s ease;
+        }
+
+        .kontakt-formular input {
+            min-height: 44px;
+        }
+
+        .kontakt-formular textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .kontakt-formular input:focus,
+        .kontakt-formular textarea:focus {
+            border-color: #1d7fc3;
+            box-shadow: 0 0 0 3px rgba(29,127,195,.12);
+        }
+
+        .kontakt-formular button {
+            display: inline-block;
+            width: auto;
+            min-width: 150px;
+            padding: 11px 24px;
+            border: 0;
+            border-radius: 7px;
+            background: #05019B;
+            color: #ffffff;
+            font: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .18s ease, transform .18s ease;
+        }
+
+        .kontakt-formular button:hover {
+            background: #1d7fc3;
+            transform: translateY(-2px);
+        }
+
+        .kontakt-formular button:active {
+            transform: translateY(0);
+        }
+
+        .kontakt-formular .form-status {
+            margin: 0 0 18px;
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        .kontakt-formular .form-success {
+            background: #f1f6fb;
+            border-left: 4px solid #05019B;
+        }
+
+        .kontakt-formular .form-success p:last-child {
+            margin-bottom: 0;
+        }
+
+        .kontakt-formular .form-error {
+            margin: 0 0 14px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            background: #fff2f2;
+            color: #a00000;
+            font-size: 14px;
+        }
+
+        .kontakt-formular [data-fs-error] {
+            display: block;
+            margin: -10px 0 12px;
+            color: #a00000;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+
+            .page-header {
+                margin-top: 16px;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .page-header h2 {
+                padding: 12px 16px;
+                font-size: 22px;
+            }
+
+            .kontakt-kacheln {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 16px;
+                border-radius: 0 0 10px 10px;
+            }
+
+            .kontakt-kacheln .card {
+                padding: 0 20px 24px;
+            }
+
+            .kontakt-kacheln .card h3 {
+                margin-left: -20px;
+                margin-right: -20px;
+                margin-bottom: 20px;
+                font-size: 20px;
+                padding: 11px 16px 12px;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .page-header h2 {
+                font-size: 20px;
+            }
+
+            .kontakt-kacheln {
+                padding: 12px;
+            }
+
+            .kontakt-kacheln .card {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .kontakt-kacheln .card h3 {
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+<!-- Zentraler Header aus includes/header.html -->
+<div id="header"></div>
+<script>
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+        const currentPage = (window.location.pathname.split('/').pop() || 'home.html').toLowerCase();
+        const nav = document.getElementById('mainNavigation');
+        if (nav) {
+            nav.querySelectorAll('a.active, .submenu-toggle.active').forEach(el => el.classList.remove('active'));
+            const currentLink = Array.from(nav.querySelectorAll('a[href]')).find(link => {
+                const target = (link.getAttribute('href') || '').split(/[?#]/)[0].split('/').pop().toLowerCase();
+                return target === currentPage;
+            });
+            if (currentLink) {
+                currentLink.classList.add('active');
+                const parent = currentLink.closest('.has-submenu');
+                const parentButton = parent && parent.querySelector('.submenu-toggle');
+                if (parentButton) parentButton.classList.add('active');
+            }
+        }
+        const header = document.querySelector('#header header');
+        const toggle = document.getElementById('mobileMenuToggle');
+        if (!header || !toggle || !nav) return;
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+        function closeAllSubmenus(except) {
+            nav.querySelectorAll('.has-submenu').forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+        toggle.addEventListener('click', event => {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+        nav.querySelectorAll('.has-submenu').forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            if (!button) return;
+            button.addEventListener('click', event => {
+                event.preventDefault();
+                event.stopPropagation();
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+        });
+        nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            closeAllSubmenus();
+            closeMobileMenu();
+        }));
+        document.addEventListener('click', event => {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) closeMobileMenu();
+        });
+    })
+    .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+
+    <main>
+
+        <!-- ==========================================
+             SEITENKOPF
+        =========================================== -->
+
+        <section class="page-header">
+
+            <h2>Dein Kontakt zu uns</h2>
+
+        </section>
+
+
+        <!-- ==========================================
+             KONTAKT
+             =========================================== -->
+
+        <section class="page-section">
+
+            <div class="kontakt-kacheln">
+
+                <div class="card">
+
+                    <h3>Schön, dass Du uns besuchst!</h3>
+
+                    <p>
+                        Du hast Fragen zum Club oder möchtest Mitglied werden?
+                        Dann schreib uns einfach eine Nachricht.
+                        Wir freuen uns, von Dir zu hören.
+                    </p>
+
+                    <p>
+                        Du hast Fragen rund um den Ford Capri, suchst Ersatzteile
+                        oder brauchst Hilfe? Auch dabei helfen wir Dir gerne weiter –
+                        soweit wir können.
+                    </p>
+
+                    <p>
+                        Du möchtest uns einfach einmal ganz zwanglos kennenlernen
+                        und besuchen? Dann gib uns gerne kurz Bescheid.
+                        Wir freuen uns auf Dich!
+                    </p>
+
+                    <p>
+                        <strong>Capri Club Westerholt e.V.</strong><br>
+                        Am Trimmbuschhof 10<br>
+                        44628 Herne
+                    </p>
+
+                </div>
+
+
+                <div class="card kontakt-formular">
+
+                    <h3>Ihre Nachricht an uns</h3>
+
+                    <div id="form-status" class="form-status" hidden></div>
+
+                    <form id="contact-form" action="https://formspree.io/f/mkjnkbwz" method="post">
+
+                        <label for="name">Name:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <label for="email">E-Mail-Adresse:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <label for="telefon">
+                            Telefonnummer (nur für WhatsApp):
+                        </label>
+                        <input
+                            type="tel"
+                            id="telefon"
+                            name="phone"
+                            autocomplete="tel"
+                        >
+
+                        <label for="nachricht">Ihre Nachricht:</label>
+                        <textarea
+                            id="nachricht"
+                            name="message"
+                            required
+                        ></textarea>
+
+                        <button type="submit">Senden</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+<!-- FOOTER -->
+    <!-- ========================= -->
+
+                <!-- =============================================================================
+                     footer        footer
+                     ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+<script>
+        (function () {
+            const form = document.getElementById("contact-form");
+            const status = document.getElementById("form-status");
+
+            if (!form || !status) return;
+
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                const button = form.querySelector('button[type="submit"]');
+                const originalText = button.textContent;
+
+                status.hidden = true;
+                status.className = "form-status";
+                status.textContent = "";
+                button.disabled = true;
+                button.textContent = "Wird gesendet …";
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: "POST",
+                        body: new FormData(form),
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    });
+
+                    const result = await response.json().catch(() => ({}));
+
+                    if (response.ok) {
+                        form.innerHTML = `
+                            <div class="form-status form-success">
+                                <h4>Vielen Dank!</h4>
+                                <p>Deine Nachricht wurde erfolgreich an den Capri Club Westerholt übermittelt.</p>
+                                <p>Wir freuen uns über Deine Nachricht und melden uns so bald wie möglich.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    status.className = "form-status form-error";
+                    status.textContent = result.errors?.map(error => error.message).join(" ") ||
+                        "Die Nachricht konnte leider nicht gesendet werden. Bitte versuche es noch einmal.";
+                    status.hidden = false;
+                } catch (error) {
+                    status.className = "form-status form-error";
+                    status.textContent = "Die Nachricht konnte leider nicht gesendet werden. Bitte prüfe Deine Internetverbindung und versuche es noch einmal.";
+                    status.hidden = false;
+                } finally {
+                    button.disabled = false;
+                    button.textContent = originalText;
+                }
+            });
+        })();
+    </script>
+
+<script>
+    /* =========================================================
+       KONTAKTSEITE – MENÜ UND DROPDOWN-SUBMENÜS
+       Gleiche Menübedienung wie auf der Links-Seite
+       ========================================================= */
+
+    (function () {
+
+        "use strict";
+
+        const header = document.querySelector("header");
+        const toggle = document.getElementById("mobileMenuToggle");
+        const nav = document.getElementById("mainNavigation");
+
+        if (!header || !toggle || !nav) {
+            return;
+        }
+
+        function closeMobileMenu() {
+            header.classList.remove("nav-open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Menü öffnen");
+        }
+
+        function closeAllSubmenus(except) {
+            nav.querySelectorAll(".has-submenu").forEach(function (item) {
+                if (item !== except) {
+                    item.classList.remove("submenu-open");
+
+                    const button = item.querySelector(".submenu-toggle");
+                    if (button) {
+                        button.setAttribute("aria-expanded", "false");
+                    }
+                }
+            });
+        }
+
+        /* Hamburger-Menü öffnen und schließen */
+        toggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const open = header.classList.toggle("nav-open");
+
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+        });
+
+        /* Dropdowns wie "Der Club" und "Capri Literatur" bedienen */
+        nav.querySelectorAll(".has-submenu").forEach(function (item) {
+            const button = item.querySelector(".submenu-toggle");
+            const submenu = item.querySelector(".submenu");
+
+            if (!button || !submenu) {
+                return;
+            }
+
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const isOpen = item.classList.contains("submenu-open");
+
+                closeAllSubmenus(item);
+
+                if (isOpen) {
+                    item.classList.remove("submenu-open");
+                    button.setAttribute("aria-expanded", "false");
+                } else {
+                    item.classList.add("submenu-open");
+                    button.setAttribute("aria-expanded", "true");
+                }
+            });
+        });
+
+        /* Nach Auswahl eines Unterseitenlinks Menü schließen */
+        nav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                closeAllSubmenus();
+                closeMobileMenu();
+            });
+        });
+
+        /* Klick außerhalb der Navigation schließt offene Menüs */
+        document.addEventListener("click", function (event) {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        /* ESC schließt Dropdowns und das mobile Menü */
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        /* Bei Wechsel auf Desktop das Hamburger-Menü schließen */
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 900) {
+                closeMobileMenu();
+            }
+        });
+
+    })();
+</script>
+
+</body>
+</html>
