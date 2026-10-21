@@ -928,9 +928,6 @@
         <p class="maintenance-note">
             Diese Seite wird derzeit überarbeitet. Schau gerne bald wieder vorbei!
         </p>
-        <p class="maintenance-home">
-            <a href="../index.html">Zurück zur Startseite</a>
-        </p>
     </main>
 
 
@@ -956,62 +953,7 @@
                                       });
                 </script>
 
-<script>
-        (function () {
-            const form = document.getElementById("contact-form");
-            const status = document.getElementById("form-status");
 
-            if (!form || !status) return;
-
-            form.addEventListener("submit", async function (event) {
-                event.preventDefault();
-
-                const button = form.querySelector('button[type="submit"]');
-                const originalText = button.textContent;
-
-                status.hidden = true;
-                status.className = "form-status";
-                status.textContent = "";
-                button.disabled = true;
-                button.textContent = "Wird gesendet …";
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: "POST",
-                        body: new FormData(form),
-                        headers: {
-                            "Accept": "application/json"
-                        }
-                    });
-
-                    const result = await response.json().catch(() => ({}));
-
-                    if (response.ok) {
-                        form.innerHTML = `
-                            <div class="form-status form-success">
-                                <h4>Vielen Dank!</h4>
-                                <p>Deine Nachricht wurde erfolgreich an den Capri Club Westerholt übermittelt.</p>
-                                <p>Wir freuen uns über Deine Nachricht und melden uns so bald wie möglich.</p>
-                            </div>
-                        `;
-                        return;
-                    }
-
-                    status.className = "form-status form-error";
-                    status.textContent = result.errors?.map(error => error.message).join(" ") ||
-                        "Die Nachricht konnte leider nicht gesendet werden. Bitte versuche es noch einmal.";
-                    status.hidden = false;
-                } catch (error) {
-                    status.className = "form-status form-error";
-                    status.textContent = "Die Nachricht konnte leider nicht gesendet werden. Bitte prüfe Deine Internetverbindung und versuche es noch einmal.";
-                    status.hidden = false;
-                } finally {
-                    button.disabled = false;
-                    button.textContent = originalText;
-                }
-            });
-        })();
-    </script>
 
 <script>
     /* =========================================================
