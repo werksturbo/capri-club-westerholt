@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../">
+<title>Jahresrückblick 2024 | Capri Club Westerholt e.V.</title>
+<link rel="stylesheet" href="../css/home.css">
+<style>
+:root {
+  --blue: #4169e1;
+  --blue-dark: #3155c9;
+  --ink: #26384b;
+  --muted: #6b7b8e;
+  --page: #f4f6fa;
+  --line: #dce3ed;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--page);
+  line-height: 1.55;
+}
+.jahresrueckblick-page { padding: 32px 0 50px; }
+.jahres-header {
+  position: relative;
+  background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.10);
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  overflow: hidden;
+}
+.jahres-header h1 { margin: 0; color: #fff; font-size: 24px; line-height: 1.25; font-weight: 700; }
+.jahres-header p { margin: 5px 0 0; color: #fff; font-size: 15px; line-height: 1.4; }
+.jahres-container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+main { margin: 0; }
+.entry {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  margin: 0 0 22px;
+  box-shadow: 0 4px 14px rgba(32, 55, 88, .06);
+}
+.entry h2 { color: var(--blue-dark); margin: 0 0 14px; font-size: clamp(20px, 2vw, 25px); line-height: 1.3; }
+.story p { margin: 0 0 12px; }
+.story p:last-child { margin-bottom: 0; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+.photo {
+  height: 132px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #edf1f7;
+}
+.photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.placeholder {
+  display: flex; align-items: center; justify-content: center;
+  color: #7a899b; text-align: center; font-size: 13px;
+  background: linear-gradient(135deg, #f2f5f9, #e6ebf3);
+  border-style: dashed;
+}
+.note {
+  margin: 0 0 22px;
+  border-left: 4px solid #e0a12e;
+  padding: 12px 16px;
+  background: #fff8e9;
+  color: #634c1c;
+  border-radius: 5px;
+  font-size: 14px;
+}
+@media (max-width: 760px) {
+  .jahresrueckblick-page { padding: 20px 0 35px; }
+  .jahres-container { padding: 0 12px; }
+  .jahres-header { padding: 15px; }
+  .jahres-header h1 { font-size: 22px; }
+  .entry { padding: 18px; }
+  .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+  .photo { height: 105px; }
+}
+@media (max-width: 440px) {
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .photo { height: 115px; }
+}
+</style>
+</head>
+<body>
+<div id="header"></div>
+<script>
+fetch('../includes/header.html')
+  .then(response => {
+    if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+    return response.text();
+  })
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+
+    const currentPage = (window.location.pathname.split('/').pop() || 'home.html').toLowerCase();
+    const navigation = document.getElementById('mainNavigation');
+    if (navigation) {
+      navigation.querySelectorAll('a.active, .submenu-toggle.active').forEach(element => element.classList.remove('active'));
+      const currentLink = Array.from(navigation.querySelectorAll('a[href]')).find(link => {
+        const rawHref = link.getAttribute('href') || '';
+        const targetPage = rawHref.split(/[?#]/)[0].split('/').pop().toLowerCase();
+        return targetPage === currentPage;
+      });
+      if (currentLink) {
+        currentLink.classList.add('active');
+        const parentSubmenu = currentLink.closest('.has-submenu');
+        if (parentSubmenu) {
+          const parentButton = parentSubmenu.querySelector('.submenu-toggle');
+          if (parentButton) parentButton.classList.add('active');
+        }
+      }
+    }
+
+    const header = document.querySelector('#header header');
+    const toggle = document.getElementById('mobileMenuToggle');
+    const nav = document.getElementById('mainNavigation');
+    if (!header || !toggle || !nav) return;
+    function closeMobileMenu() {
+      header.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Menü öffnen');
+    }
+    function closeAllSubmenus(except) {
+      nav.querySelectorAll('.has-submenu').forEach(item => {
+        if (item !== except) {
+          item.classList.remove('submenu-open');
+          const button = item.querySelector('.submenu-toggle');
+          if (button) button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    toggle.addEventListener('click', function(event) {
+      event.stopPropagation();
+      const open = header.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    });
+    nav.querySelectorAll('.has-submenu').forEach(item => {
+      const button = item.querySelector('.submenu-toggle');
+      if (!button) return;
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        const isOpen = item.classList.contains('submenu-open');
+        closeAllSubmenus(item);
+        item.classList.toggle('submenu-open', !isOpen);
+        button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      });
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', function() {
+      closeAllSubmenus(); closeMobileMenu();
+    }));
+    document.addEventListener('click', function(event) {
+      if (!header.contains(event.target)) { closeAllSubmenus(); closeMobileMenu(); }
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') { closeAllSubmenus(); closeMobileMenu(); }
+    });
+    window.addEventListener('resize', function() { if (window.innerWidth > 900) closeMobileMenu(); });
+  })
+  .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+
+<main>
+  <section class="jahresrueckblick-page">
+    <div class="jahres-container">
+      <div class="jahres-header">
+        <h1>Jahresrückblick 2024</h1>
+        <p>Erinnerungen und gemeinsame Erlebnisse</p>
+      </div>
+
+    <article class="entry">
+      <h2>30. November 2024 – Der Turbo ist verstumm!</h2>
+      <div class="story"><p>Unser Freund und langjähriges Vereinsmitglied Dirk Trapka ist am 30.11.2024 nach langer Krankheit verstorben.<br>Mit ihm ist ein Mensch von uns gegangen, der immer hilfsbereit gewesen ist und sich aufrichtig in die Gemeinschaft eingebracht hat. Sein weißer Turbo war sein Stolz, gern ist er damit mit uns zusammen zu Treffen gefahren, um mit der ganzen Capri-Gemeinde in lockerer Runde schöne Stunden zu verbringen.<br>Unvergessen ist bei unseren Grillfesten und dem Teilemarkt der Einsatz seines legendären „Würstchenklebers“.<br>Seiner Tochter Nicole und seinem Enkel Joey wünschen wir viel Kraft in dieser Zeit.<br>„Trabbel“-Flügelmann – nun bist Du aufgebrochen zu Deiner letzten Fahrt und bist wieder mit Bärbel vereint.</p><p>Ruhe in Frieden, alter Freund!</p></div>
+      <div class="gallery gallery-empty" aria-label="Galerie noch nicht befüllt"><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div></div>
+    </article>
+    
+
+    <article class="entry">
+      <h2>November 2024</h2>
+      <div class="story"><p>Der 2.8i Capri von unserem Fördermitglied Manfred F. aus Alfter wurde bei unserem Haus &amp; Hof Lackierer Harald H. in Herten ausgebessert.</p></div>
+      <div class="gallery gallery-empty" aria-label="Galerie noch nicht befüllt"><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div></div>
+    </article>
+    
+
+    <article class="entry">
+      <h2>28. Juni 2024 – Zeitreise durch die Linse: Eine alte Kamera fängt den Charme klassischer Autos ein</h2>
+      <div class="story"><p>Bei einem besonderen Fototermin wurden alte Capris und eine nostalgische Kamera zu einer faszinierenden Einheit. Die Kamera, mit ihrem klassischen Design und der Handwerkskunst vergangener Zeiten, fing die Schönheit der Vintage-Fahrzeuge perfekt ein. Mit jedem Klick der Kamera wurden die glänzenden Karosserien und die Details der Autos in Bildern festgehalten. Der Fototermin bot nicht nur eine Zeitreise zu den historischen Autos, sondern auch zu der Kameratechnik von damals.<br>Unser Dank geht an den Fotografen: Joeragjonix</p></div>
+      <div class="gallery gallery-empty" aria-label="Galerie noch nicht befüllt"><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div></div>
+    </article>
+    
+
+    <article class="entry">
+      <h2>05. März 2024 – Neue Radläufe braucht der Capri</h2>
+      <div class="story"><p>Der Vorbesitzer des weißen Capri 1 Sonderedition „Fussel“ war nicht nur ein Elektro-Genie, sondern auch bildender Künstler. Früh am Anfang des Jahres, lange vor den Schneeglöckchen, blühten beide hinteren Radläufe prächtig auf. Als Ausklang der Winterpause wurde dann entschieden, die Radläufe noch mal eben schnell zu erneuern. Entgegen aller Erwartungen kam nur wenig Rost zutage, da einfach kein Stahlblech mehr vorhanden war. Noch eine Sitzung, dann bestehen beide Seiten wieder aus Stahlblech und der Capri kann zum Lackierer.</p></div>
+      <div class="gallery"></div>
+    </article>
+    
+
+    <article class="entry">
+      <h2>05. Januar 2024 – Die erste Clubsitzung im neuen Jahr</h2>
+      <div class="story"><p>Ein frohes neues Jahr 2024 wünscht der CCW allen Lesern unserer Internetseite.<br>Wir haben uns zu Beginn des Jahres getroffen, um schon mal einige Themen zu besprechen: Capri- und Oldtimertreffen, unseren Teilemarkt, eine Ausfahrt, Anschaffungen und vieles mehr. Es entstanden viele interessante Gespräche und Überlegungen für das neue Jahr. Für unsere Mitglieder aus anderen Bundesländern wurde eine Videoübertragung zur Sitzung eingerichtet.</p></div>
+      <div class="gallery gallery-empty" aria-label="Galerie noch nicht befüllt"><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div></div>
+    </article>
+    
+
+    <article class="entry">
+      <h2>Juli 2024 – Ausfahrt Gerolstein</h2>
+      <div class="story"><p>Ein Rückblick auf unsere gemeinsame Ausfahrt nach Gerolstein. Bilder und weitere Erinnerungen ergänzen wir hier.</p></div>
+      <div class="gallery gallery-empty" aria-label="Galerie noch nicht befüllt"><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div><div class="photo placeholder"><span>Bilder aus<br>Google Drive</span></div></div>
+    </article>
+    
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+<script>
+fetch('../includes/footer.html')
+  .then(response => {
+    if (!response.ok) throw new Error('Footer konnte nicht geladen werden.');
+    return response.text();
+  })
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  })
+  .catch(error => console.error('Fehler beim Laden des Footers:', error));
+</script>
+</body>
+</html>
