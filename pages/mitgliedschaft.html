@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Mitgliedschaft | Capri Club Westerholt</title>
+
+    <meta name="description" content="Capri Club Westerholt – Informationen, Fahrzeuge, Treffen, Bilder, Rückblicke und Geschichte des Clubs.">
+
+    <meta name="keywords" content="Capri Club Westerholt, CCW, Ford Capri, Capri Treffen, Capri Club">
+
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/aufnahmeantrag-popup.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon"
+          href="../images/favicon_set/favicon.ico">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="../images/favicon_set/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="../images/favicon_set/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="../images/favicon_set/apple-touch-icon.png">
+
+    <link rel="manifest"
+          href="../images/favicon_set/site.webmanifest">
+
+    <meta name="theme-color" content="#05019B">
+
+    <meta name="msapplication-config"
+          content="../images/favicon_set/browserconfig.xml">
+
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="theme-color" content="#05019B">
+
+
+    <!-- =========================================================
+         MOBILE NAVIGATION
+         Bis 900px bleibt die Navigation auch im Querformat mobil.
+         ========================================================= -->
+
+    <style>
+        /* =====================================================
+           MITGLIEDSCHAFT – EINHEITLICHES CCW-LOOK & FEEL
+           ===================================================== */
+
+        .mitgliedschaft-page {
+            padding: 32px 0 50px;
+        }
+
+        .mitgliedschaft-container {
+            width: calc(100% - 40px);
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .mitgliedschaft-header {
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,.10);
+            padding: 14px 20px;
+            margin-bottom: 20px;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .mitgliedschaft-header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .mitgliedschaft-bereich {
+            background: rgba(255,255,255,.92);
+            border: 1px solid #dfe5ec;
+            border-radius: 12px;
+            box-shadow: 0 7px 18px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .mitgliedschaft-bereich-titel {
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            color: #fff;
+            padding: 12px 18px;
+            box-shadow: 0 2px 7px rgba(0,0,0,.12);
+        }
+
+        .mitgliedschaft-bereich-titel h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .mitgliedschaft-bereich-inhalt {
+            padding: 22px;
+            background: linear-gradient(to bottom, #f7f9fb 0%, #f2f5f8 100%);
+        }
+
+        .mitgliedschaft-intro p {
+            margin: 0 0 14px;
+            color: #243746;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .mitgliedschaft-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mitgliedschaft-karten {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            /* Alle Mitgliedschaftskarten grundsätzlich untereinander */
+            grid-template-columns: minmax(0, 1fr);
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .mitgliedschaft-karten .card-link {
+            display: flex;
+            min-width: 0;
+            height: 100%;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .mitgliedschaft-karten .card {
+            width: 100%;
+            min-width: 0;
+            margin: 0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            background: #fff;
+            border: 1px solid #dfe5ec;
+            border-top: 1px solid #dfe5ec;
+            border-radius: 12px;
+            box-shadow: 0 5px 14px rgba(0,0,0,.08);
+            overflow: hidden;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .mitgliedschaft-karten .card-link:hover .card,
+        .mitgliedschaft-karten .mitglied-werden-link:hover .card {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(0,0,0,.13);
+        }
+
+        .mitgliedschaft-karten .card h3 {
+            display: block;
+            margin: -24px -24px 20px;
+            padding: 13px 18px;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            color: #fff;
+            font-size: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .mitgliedschaft-karten .card p {
+            margin: 0 0 15px;
+            color: #4b5965;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .mitgliedschaft-karten .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mitgliedschaft-karten .card ul,
+        .mitgliedschaft-karten .card ol {
+            margin: 0 0 17px 22px;
+            padding: 0;
+            color: #4b5965;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .mitgliedschaft-karten .card li {
+            margin-bottom: 7px;
+            padding-left: 3px;
+            color: #4b5965;
+        }
+
+        .mitgliedschaft-karten .card li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Aufnahmeantrag: volle Breite unter den drei Mitgliedschaftsarten */
+        .mitgliedschaft-karten .mitglied-werden-link {
+            grid-column: 1 / -1;
+        }
+
+        .mitglied-werden-card {
+            cursor: pointer;
+        }
+
+        .mitglied-werden-layout {
+            display: grid;
+            grid-template-columns: 190px minmax(0, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .antrag-vorschau {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #243746;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .antrag-vorschau img {
+            display: block;
+            width: 170px;
+            height: 220px;
+            object-fit: contain;
+            background: #fff;
+            border: 1px solid #d7dce1;
+            border-radius: 4px;
+            box-shadow: 0 5px 14px rgba(0,0,0,.16);
+            margin-bottom: 9px;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .antrag-vorschau a {
+            display: inline-block;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .antrag-vorschau a:focus-visible {
+            outline: 3px solid #1d7fc3;
+            outline-offset: 4px;
+        }
+
+        .mitglied-werden-card:hover .antrag-vorschau img {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,.20);
+        }
+
+        .antrag-inhalt p {
+            margin: 0 0 14px;
+            line-height: 1.6;
+        }
+
+        .antrag-inhalt ol {
+            margin: 0 0 17px 22px;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .antrag-inhalt li {
+            margin-bottom: 5px;
+            padding-left: 3px;
+        }
+
+        .antrag-button {
+            display: inline-block;
+            margin-top: 3px;
+            padding: 10px 18px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 3px 8px rgba(0,0,0,.15);
+        }
+
+        .antrag-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-top: 3px;
+        }
+
+        button.antrag-button {
+            border: 0;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .antrag-button-pdf {
+            text-decoration: none;
+            background: #fff;
+            color: #05019B;
+            border: 1px solid #05019B;
+            box-shadow: none;
+        }
+
+        .antrag-button:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 500px) {
+            .antrag-buttons {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .antrag-buttons .antrag-button {
+                box-sizing: border-box;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        .antrag-kontakt {
+            margin-top: 26px;
+            padding-top: 18px;
+            border-top: 1px solid #dfe3e7;
+        }
+
+        .antrag-kontakt h4 {
+            margin: 0 0 7px;
+            color: #05019B;
+            font-size: 17px;
+        }
+
+        .antrag-kontakt p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        @media (max-width: 1050px) {
+            .mitgliedschaft-karten {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .mitgliedschaft-karten .mitglied-werden-link {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .mitgliedschaft-page {
+                padding: 22px 0 35px;
+            }
+
+            .mitgliedschaft-container {
+                width: calc(100% - 24px);
+            }
+
+            .mitgliedschaft-header {
+                padding: 13px 16px;
+                border-radius: 10px;
+            }
+
+            .mitgliedschaft-header h1 {
+                font-size: 22px;
+            }
+
+            .mitgliedschaft-bereich-titel {
+                padding: 11px 14px;
+            }
+
+            .mitgliedschaft-bereich-titel h2 {
+                font-size: 18px;
+            }
+
+            .mitgliedschaft-bereich-inhalt {
+                padding: 14px;
+            }
+
+            .mitgliedschaft-intro p {
+                font-size: 15px;
+                line-height: 1.65;
+            }
+
+            .mitgliedschaft-karten {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .mitgliedschaft-karten .mitglied-werden-link {
+                grid-column: auto;
+            }
+
+            .mitgliedschaft-karten .card {
+                padding: 20px;
+            }
+
+            .mitgliedschaft-karten .card h3 {
+                margin: -20px -20px 18px;
+                padding: 12px 15px;
+                font-size: 19px;
+            }
+
+            .mitgliedschaft-karten .card p,
+            .mitgliedschaft-karten .card ul,
+            .mitgliedschaft-karten .card ol {
+                font-size: 15px;
+            }
+
+            .mitglied-werden-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .antrag-vorschau img {
+                width: 145px;
+                height: 190px;
+            }
+
+            .antrag-kontakt p {
+                font-size: 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .mitgliedschaft-karten .card,
+            .antrag-vorschau img {
+                transition: none;
+            }
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <!-- Gemeinsamer Header mit Navigation -->
+    <div id="header"></div>
+    <script>
+        fetch('../includes/header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const header = document.querySelector('#header header');
+                if (!header) return;
+
+                header.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('active');
+                    const linkPage = link.getAttribute('href')?.split('/').pop();
+                    if (linkPage === currentPage) {
+                        link.classList.add('active');
+                        const parent = link.closest('.has-submenu');
+                        if (parent) {
+                            parent.classList.add('submenu-open');
+                            const button = parent.querySelector('.submenu-toggle');
+                            if (button) {
+                                button.classList.add('active');
+                                button.setAttribute('aria-expanded', 'true');
+                            }
+                        }
+                    }
+                });
+
+                const toggle = header.querySelector('#mobileMenuToggle');
+                const nav = header.querySelector('#mainNavigation');
+                if (!toggle || !nav) return;
+
+                const closeMobileMenu = () => {
+                    header.classList.remove('nav-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.setAttribute('aria-label', 'Menü öffnen');
+                };
+
+                toggle.addEventListener('click', event => {
+                    event.stopPropagation();
+                    const open = header.classList.toggle('nav-open');
+                    toggle.setAttribute('aria-expanded', String(open));
+                    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+                });
+
+                const submenuItems = nav.querySelectorAll('.has-submenu');
+                const closeAllSubmenus = except => {
+                    submenuItems.forEach(item => {
+                        if (item !== except) {
+                            item.classList.remove('submenu-open');
+                            const button = item.querySelector('.submenu-toggle');
+                            if (button) button.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                };
+
+                submenuItems.forEach(item => {
+                    const button = item.querySelector('.submenu-toggle');
+                    const submenu = item.querySelector('.submenu');
+                    if (!button || !submenu) return;
+                    button.addEventListener('click', event => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        const wasOpen = item.classList.contains('submenu-open');
+                        closeAllSubmenus(item);
+                        item.classList.toggle('submenu-open', !wasOpen);
+                        button.setAttribute('aria-expanded', String(!wasOpen));
+                    });
+                });
+
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeAllSubmenus();
+                        closeMobileMenu();
+                    });
+                });
+
+                document.addEventListener('click', event => {
+                    if (!header.contains(event.target)) {
+                        closeAllSubmenus();
+                        closeMobileMenu();
+                    }
+                });
+
+                document.addEventListener('keydown', event => {
+                    if (event.key === 'Escape') {
+                        closeAllSubmenus();
+                        closeMobileMenu();
+                    }
+                });
+
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 900) closeMobileMenu();
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+
+
+<!-- ============================================================================================================= -->
+    <!-- CCW STARTSEITE – GRUNDGERÜST -->
+    <!-- ============================================================================================================= -->
+
+<main class="mitgliedschaft-page">
+
+    <div class="mitgliedschaft-container">
+
+        <header class="mitgliedschaft-header">
+            <h1>Mitgliedschaft</h1>
+        </header>
+
+
+        <section class="mitgliedschaft-bereich">
+            <div class="mitgliedschaft-bereich-titel">
+                <h2>Mitglied im Capri Club Westerholt werden</h2>
+            </div>
+            <div class="mitgliedschaft-bereich-inhalt mitgliedschaft-intro">
+
+            <p>
+                Die Erhaltung und Pflege eines Kult-Coupés, der tägliche Kampf gegen den Rost, das Zusammengehörigkeitsgefühl eines Clubs – und natürlich die Freude an einer genussvollen Ausfahrt am Steuer des Kölner Klassikers: All das hat uns im Juni 1988 zusammengeführt.
+            </p>
+
+            <p>
+                Der <strong>Capri-Club Westerholt e.V.</strong> gehört zu den ältesten Vereinen seiner Art in Deutschland. Seit unserer Gründung dreht sich bei uns alles um den Ford Capri – um seine Geschichte, seine Technik, seine Erhaltung und vor allem um die Menschen, die diese Leidenschaft miteinander teilen.
+            </p>
+
+            <p>
+                An den Bestseller aus Köln, von dem zwischen 1968 und 1986 rund 1,9 Millionen Exemplare gebaut wurden, haben wir unser Herz verloren. Und genau diese Begeisterung verbindet uns bis heute – über Generationen hinweg.
+            </p>
+
+            <p>
+                <strong>Du möchtest Teil dieser Gemeinschaft werden?</strong><br>
+                Wir bieten drei verschiedene Mitgliedsvarianten an – damit Du die für Dich passende Form der Mitgliedschaft wählen kannst.
+            </p>
+            </div>
+        </section>
+
+        <section class="mitgliedschaft-bereich">
+            <div class="mitgliedschaft-bereich-titel">
+                <h2>Unsere Mitgliedschaftsmodelle</h2>
+            </div>
+            <div class="mitgliedschaft-bereich-inhalt">
+                <section class="cards ccw-cards mitgliedschaft-karten">
+
+            <div class="card-link">
+                <div class="card">
+                    <h3>1. Vollmitglied</h3>
+
+                    <p>
+                        Als Vollmitglied hast Du alle Rechte – aber auch einige kleine Pflichten gemäß unserer Satzung, zum Beispiel das Wahlrecht bei der Wahl des Vorstandes.
+                    </p>
+
+                    <p>
+                        Du kannst das Vereinsgeschehen aktiv mitgestalten und Deine Ideen und Wünsche einbringen. Natürlich kannst Du aber auch einfach die Gemeinschaft genießen und die Vorteile einer Mitgliedschaft nutzen.
+                    </p>
+
+                    <p>
+                        <strong>Exklusiv für Vollmitglieder:</strong> Nur als Vollmitglied hast Du die Möglichkeit, unsere <strong>Schrauberbude</strong> zu nutzen. Die Nutzung wird unter den Mitgliedern abgestimmt und ist nur möglich, wenn mindestens ein Mitglied mit Schlüsselgewalt vor Ort ist.
+                    </p>
+
+                    <p>
+                        <strong>Mitgliedsbeitrag:</strong><br>
+                        <strong>15 € / Monat</strong> bzw. <strong>180 € / Jahr</strong>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="card-link">
+                <div class="card">
+                    <h3>2. Familienmitglied</h3>
+
+                    <p>
+                        Im Rahmen der Familienmitgliedschaft reduziert sich der Mitgliedsbeitrag
+                        pro Familienmitglied. Damit können auch der Partner oder heranwachsende
+                        Kinder – sofern sie das 15. Lebensjahr vollendet haben – aktiv am Vereinsleben
+                        und an der Vereinsgestaltung teilnehmen.
+                    </p>
+
+                    <p>
+                        Die Rechte und Pflichten der Familienmitglieder entsprechen denen der
+                        Vollmitgliedschaft. <strong>Alle Familienmitglieder sind voll stimmberechtigt.</strong>
+                    </p>
+
+                    <p>
+                        Bei Kindern endet die Familienmitgliedschaft, sobald sie ihre Ausbildung
+                        abgeschlossen haben und einer regelmäßigen Tätigkeit nachgehen.
+                    </p>
+
+                    <p>
+                        <strong>Mitgliedsbeitrag pro Familienmitglied:</strong><br>
+                        <strong>10 € / Monat bzw. 120 € / Jahr</strong>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="card-link">
+                <div class="card">
+                    <h3>3. Supporter</h3>
+
+                    <p>
+                        Der Supporter-Mitgliedschaft liegt der Gedanke zugrunde, den
+                        <strong>Capri Club Westerholt zu unterstützen und zu fördern.</strong>
+                        Im Mittelpunkt steht dabei insbesondere die Weiterentwicklung unseres
+                        Clubs und die Schaffung unseres neuen Vereinsheims.
+                    </p>
+
+                    <p>
+                        Als Dankeschön für Deine Unterstützung erhältst Du bei Deinem Beitritt
+                        im ersten Jahr ein <strong>T-Shirt mit unserem Club-Logo</strong>, das
+                        Dich als Supporter ausweist.
+                    </p>
+
+                    <p>
+                        Darüber hinaus bist Du herzlich eingeladen, Dich auch aktiv einzubringen.
+                        Wenn Du uns tatkräftig unterstützt, möchten wir Dich nach erfolgreichem
+                        Umzug natürlich auch zu unserer <strong>Einweihungsparty</strong> einladen.
+                        Und feiern – das können wir, wie Du weißt.
+                    </p>
+
+                    <p><strong>Deine Vorteile:</strong></p>
+
+                    <ul>
+                        <li>Sachkundige Ansprechpartner rund um den Ford Capri</li>
+                        <li>Teilnahme an gemeinsamen Aktionen wie Grillfeiern und Ausfahrten</li>
+                        <li>Teilnahme an Clubsitzungen, allerdings <strong>ohne Stimmrecht</strong></li>
+                        <li>Regelmäßige Informationen rund um den CCW über unsere WhatsApp-Gruppe</li>
+                    </ul>
+
+                    <p>
+                        Mit Deiner Supporter-Mitgliedschaft leistest Du einen Beitrag dazu,
+                        unser gemeinsames, <strong>kulturerbeerhaltendes Hobby</strong> und den
+                        Capri Club Westerholt zu unterstützen.
+                    </p>
+
+                    <p>
+                        <strong>Mitgliedsbeitrag:</strong><br>
+                        <strong>40 € im ersten Jahr (inkl. T-Shirt), danach 30 € pro Jahr</strong>
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- =====================================================
+                 GEMEINSAME INFORMATIONEN ZUM BEITRITT
+                 ===================================================== -->
+                    <div class="card-link mitglied-werden-link">
+                    <div class="card mitglied-werden-card">
+                        
+                    <h3>Mitglied werden</h3>
+
+                    <div class="mitglied-werden-layout">
+
+                        <div class="antrag-vorschau">
+                            <a href="../data/Aufnahmeantrag-Supporter.pdf"
+                               target="_blank" rel="noopener noreferrer"
+                               aria-label="Aufnahmeantrag als PDF öffnen">
+                                <img src="../images/thn_der_club/thn_aufnahmeantrag.jpg"
+                                     alt="Aufnahmeantrag – anklicken, um das PDF zu öffnen">
+                            </a>
+                        </div>
+
+                        <div class="antrag-inhalt">
+                            <p>
+                                Du möchtest Teil des Capri Club Westerholt e.V. werden?
+                                Dann freuen wir uns über Deinen Antrag!
+                            </p>
+
+                            <p>
+                                Du möchtest Mitglied im Capri Club Westerholt e.V. werden?
+                                Fülle Deinen <strong>Aufnahmeantrag bequem online</strong> aus und sende
+                                ihn direkt über unsere Website an uns. Alternativ kannst Du den Antrag
+                                weiterhin als PDF herunterladen, ausfüllen, unterschreiben und per Post
+                                oder E-Mail einreichen.
+                            </p>
+
+                            <p><strong>So einfach geht's:</strong></p>
+
+                            <ol>
+                                <li>Online-Aufnahmeantrag öffnen und ausfüllen – oder das PDF nutzen</li>
+                                <li>Angaben prüfen und den Antrag absenden</li>
+                                <li>Den ersten Mitgliedsbeitrag bezahlen</li>
+                            </ol>
+
+                            <p>
+                                Die Mitgliedschaft beginnt mit dem <strong>Eingang des ersten Mitgliedsbeitrages</strong>.
+                            </p>
+
+                            <p>
+                                Die Mitgliedschaft kann jederzeit <strong>schriftlich und ohne Angabe von Gründen</strong>
+                                beendet werden.
+                            </p>
+
+                            <div class="antrag-buttons">
+                                <button type="button" class="antrag-button" onclick="openAufnahmePopup()">
+                                    Online-Aufnahmeantrag ausfüllen →
+                                </button>
+                                <a class="antrag-button antrag-button-pdf"
+                                   href="../data/Aufnahmeantrag-Supporter.pdf"
+                                   target="_blank" rel="noopener noreferrer">
+                                    PDF herunterladen
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="antrag-kontakt">
+                        <h4>Dein Ansprechpartner für die Mitgliedschaft</h4>
+                        <p>
+                            <strong>Dirk Zentara</strong><br>
+                            Akkoallee 58 · 45659 Recklinghausen<br>
+                            WhatsApp: 0178 / 8289142<br>
+                            E-Mail: dirk.zentara@freenet.de
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+                </section>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+    <!-- =============================================================================
+                     footer        footer
+    ============================================================================= -->
+
+
+    
+                <div id="footer"></div>
+
+                <script>
+                        fetch('../includes/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                                        document.getElementById('footer').innerHTML = data;
+                                      });
+                </script>
+
+    <!-- Online-Aufnahmeantrag: Popup und Formspree-Versand -->
+    <script src="../js/aufnahmeantrag-popup.js"></script>
+</body>
+
+</html>
