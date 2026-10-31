@@ -1,0 +1,150 @@
+<!--
+    popup-aufnahmeantrag.html
+    Wiederverwendbares Online-Aufnahmeformular für den Capri Club Westerholt e.V.
+    Wird per JavaScript in die jeweilige Seite geladen.
+    Enthält bewusst kein <html>, <head> oder <body>.
+-->
+<div id="aufnahmePopup" class="aufnahme-overlay" aria-hidden="true">
+  <section class="aufnahme-dialog" role="dialog" aria-modal="true" aria-labelledby="aufnahmeTitel">
+    <header class="aufnahme-header">
+      <h2 id="aufnahmeTitel">Online-Aufnahmeantrag · Supporter</h2>
+      <button type="button" class="aufnahme-close" onclick="closeAufnahmePopup()" aria-label="Fenster schließen">&times;</button>
+    </header>
+
+    <div class="aufnahme-content">
+      <div class="aufnahme-intro">
+        <h3>Schön, dass Du den Capri Club Westerholt unterstützen möchtest!</h3>
+        <p>Mit diesem Formular kannst Du Deinen Antrag als Supporter online vorbereiten. Felder mit <span class="aufnahme-required">*</span> sind Pflichtfelder.</p>
+        <div class="aufnahme-info">
+          <strong>Mitgliedsbeitrag:</strong> 40 € im ersten Jahr (inklusive T-Shirt), danach 30 € pro Jahr.
+        </div>
+        <p class="aufnahme-small">Die Fahrzeugangaben sind freiwillig und nur für Capri-Besitzer bzw. Fahrer gedacht. Das Geburtsdatum ist ebenfalls freiwillig.</p>
+      </div>
+
+      <form id="aufnahmeForm" class="aufnahme-form">
+        <section class="aufnahme-card">
+          <h3>1. Persönliche Daten</h3>
+          <div class="aufnahme-grid">
+            <div class="aufnahme-field">
+              <label for="aufnahmeName">Name <span class="aufnahme-required">*</span></label>
+              <input id="aufnahmeName" name="name" autocomplete="family-name" required>
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeVorname">Vorname <span class="aufnahme-required">*</span></label>
+              <input id="aufnahmeVorname" name="vorname" autocomplete="given-name" required>
+            </div>
+            <div class="aufnahme-field aufnahme-span2">
+              <label for="aufnahmeStrasse">Straße und Hausnummer <span class="aufnahme-required">*</span></label>
+              <input id="aufnahmeStrasse" name="strasse" autocomplete="street-address" required>
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmePlz">PLZ <span class="aufnahme-required">*</span></label>
+              <input id="aufnahmePlz" name="plz" autocomplete="postal-code" required>
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeOrt">Ort <span class="aufnahme-required">*</span></label>
+              <input id="aufnahmeOrt" name="ort" autocomplete="address-level2" required>
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeLand">Land</label>
+              <input id="aufnahmeLand" name="land" value="Deutschland" autocomplete="country-name">
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeGeburtstag">Geburtsdatum (freiwillig)</label>
+              <input id="aufnahmeGeburtstag" name="geburtsdatum" type="date">
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeTelefon">Telefon</label>
+              <input id="aufnahmeTelefon" name="telefon" type="tel" autocomplete="tel">
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeWhatsApp">WhatsApp (optional)</label>
+              <input id="aufnahmeWhatsApp" name="whatsapp" type="tel">
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeEmail">E-Mail-Adresse <span class="aufnahme-required">*</span></label>
+              <input id="aufnahmeEmail" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeShirt">T-Shirt-Größe (Supporter)</label>
+              <select id="aufnahmeShirt" name="shirt">
+                <option value="">Bitte auswählen</option>
+                <option>XS</option><option>S</option><option>M</option><option>L</option>
+                <option>XL</option><option>XXL</option><option>3XL</option><option>4XL</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="aufnahme-card">
+          <h3>2. Angaben zum Fahrzeug <span class="aufnahme-subtitle">– freiwillig, für Capri-Besitzer / Fahrer</span></h3>
+          <div class="aufnahme-modelle" role="group" aria-label="Capri-Modell">
+            <span class="aufnahme-label">Modell:</span>
+            <label><input type="checkbox" name="modell" value="Capri I"> Capri I</label>
+            <label><input type="checkbox" name="modell" value="Capri II"> Capri II</label>
+            <label><input type="checkbox" name="modell" value="Capri III"> Capri III</label>
+          </div>
+          <div class="aufnahme-grid">
+            <div class="aufnahme-field aufnahme-span2">
+              <label for="aufnahmeFahrzeug">Fahrzeug / Typ</label>
+              <input id="aufnahmeFahrzeug" name="fahrzeug">
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeLeistung">Motorleistung</label>
+              <input id="aufnahmeLeistung" name="motorleistung">
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeAusfuehrung">Ausführung</label>
+              <input id="aufnahmeAusfuehrung" name="ausfuehrung">
+            </div>
+            <div class="aufnahme-field">
+              <label for="aufnahmeHubraum">Hubraum</label>
+              <input id="aufnahmeHubraum" name="hubraum">
+            </div>
+            <div class="aufnahme-field">
+              <label>Zustand</label>
+              <div class="aufnahme-inline-options">
+                <label><input type="radio" name="zustand" value="original"> Original</label>
+                <label><input type="radio" name="zustand" value="modifiziert"> Modifiziert</label>
+              </div>
+            </div>
+            <div class="aufnahme-field aufnahme-span2">
+              <label for="aufnahmeBemerkungen">Bemerkungen zum Fahrzeug</label>
+              <textarea id="aufnahmeBemerkungen" name="bemerkungen" rows="3"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="aufnahme-card">
+          <h3>3. Beitragszahlung</h3>
+          <p class="aufnahme-payment-intro">Bitte wähle aus, wie Du den Jahresbeitrag bezahlen möchtest.</p>
+          <div class="aufnahme-payment-options">
+            <label><input type="radio" name="zahlung" value="Barzahlung oder Scheck liegt bei" required> Der Jahresbeitrag liegt in bar oder als Scheck bei.</label>
+            <label><input type="radio" name="zahlung" value="Überweisung oder PayPal"> Ich überweise den Jahresbeitrag auf das Konto oder per PayPal.</label>
+            <label><input type="radio" name="zahlung" value="Dauerauftrag"> Ich richte einen Dauerauftrag ein.</label>
+          </div>
+          <div class="aufnahme-bankdaten">
+            <div><strong>Bank:</strong> Stadtsparkasse Gladbeck<br><strong>IBAN:</strong> DE97 4245 0040 0015 0007 63</div>
+            <div><strong>PayPal:</strong><br>ccwesterholt@gmx.de</div>
+          </div>
+        </section>
+
+        <section class="aufnahme-card">
+          <h3>4. Kündigungsfrist und Bestätigung</h3>
+          <p class="aufnahme-terms">Die Kündigung als Supporter kann jederzeit ohne Angabe von Gründen zum Jahresende erfolgen. Die Kündigung ist schriftlich einzureichen. Eine Rückerstattung der geleisteten Beiträge erfolgt nicht.</p>
+          <label class="aufnahme-consent">
+            <input type="checkbox" id="aufnahmeBestaetigung" required>
+            <span>Ich bestätige, dass meine Angaben vollständig und richtig sind und ich die Hinweise zur Kündigungsfrist gelesen habe. <span class="aufnahme-required">*</span></span>
+          </label>
+          <p class="aufnahme-privacy">Beim Absenden öffnet sich Dein E-Mail-Programm mit den Formularangaben als Nachricht an den Ansprechpartner des Clubs. Du kannst die Nachricht dort prüfen und selbst versenden. Es wird durch diese statische Website nichts automatisch übertragen.</p>
+        </section>
+
+        <div class="aufnahme-actions">
+          <button type="reset" class="aufnahme-secondary">Formular zurücksetzen</button>
+          <button type="submit" class="aufnahme-submit">Antrag per E-Mail vorbereiten →</button>
+        </div>
+        <p id="aufnahmeStatus" class="aufnahme-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</div>
