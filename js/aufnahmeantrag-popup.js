@@ -76,7 +76,20 @@
         });
         const result = await response.json().catch(() => ({}));
         if (response.ok) {
-          form.innerHTML = '<div class="aufnahme-success" role="status" aria-live="polite"><h3>Vielen Dank für Deinen Antrag!</h3><p>Dein Aufnahmeantrag wurde erfolgreich an den Capri Club Westerholt übermittelt.</p><p>Wir melden uns so bald wie möglich bei Dir.</p></div>';
+          form.innerHTML = `
+            <div class="aufnahme-success" role="status" aria-live="polite">
+              <h3>Vielen Dank für Deinen Aufnahmeantrag!</h3>
+              <p>Dein Aufnahmeantrag wurde erfolgreich an den Capri Club Westerholt übermittelt.</p>
+              <p><strong>Wichtig:</strong> Der Aufnahmeantrag wird erst mit der Bezahlung des Clubbeitrags wirksam.</p>
+              <h4>Beitrag und Zahlungsdaten</h4>
+              <p><strong>Mitgliedsbeitrag:</strong> 40 € im ersten Jahr (inklusive T-Shirt), danach 30 € pro Jahr.</p>
+              <p><strong>Bank:</strong> Stadtsparkasse Gladbeck<br>
+                 <strong>IBAN:</strong> DE97 4245 0040 0015 0007 63</p>
+              <p><strong>PayPal:</strong> ccwesterholt@gmx.de</p>
+              <p>Bitte gib bei der Zahlung Deinen Namen an, damit wir den Beitrag zuordnen können.</p>
+              <p>Wir melden uns so bald wie möglich bei Dir.</p>
+            </div>`;
+
           return;
         }
         const message = Array.isArray(result.errors) ? result.errors.map(e => e.message).join(" ") : "";
