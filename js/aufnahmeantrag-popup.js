@@ -1,0 +1,139 @@
+/* CCW Online-Aufnahmeantrag Popup */
+(function () {
+  const popupDatei = "../popups/popup-aufnahmeantrag.html";
+  const formspreeEndpoint = "https://formspree.io/f/mpppywlr";
+  let popupGeladen = false;
+
+  window.openAufnahmePopup = async function () {
+    if (!popupGeladen) {
+      try {
+        const response = await fetch(popupDatei);
+        if (!response.ok) throw new Error("Popup konnte nicht geladen werden.");
+        const container = document.createElement("div");
+        container.id = "aufnahmePopupContainer";
+        container.innerHTML = await response.text();
+        document.body.appendChild(container);
+        popupGeladen = true;
+        setupAufnahmePopup();
+      } catch (error) {
+        console.error(error);
+        alert("Der Online-Aufnahmeantrag konnte nicht geladen werden. Bitte versuche es später erneut.");
+        return;
+      }
+    }
+    const popup = document.getElementById("aufnahmePopup");
+    if (popup) {
+      popup.classList.add("aktiv");
+      popup.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      setTimeout(() => document.getElementById("aufnahmeName")?.focus(), 100);
+    }
+  };
+
+  window.closeAufnahmePopup = function () {
+    const popup = document.getElementById("aufnahmePopup");
+    if (popup) {
+      popup.classList.remove("aktiv");
+      popup.setAttribute("aria-hidden", "true");
+    }
+    document.body.style.overflow = "";
+  };
+
+  function setupAufnahmePopup() {
+    const popup = document.getElementById("aufnahmePopup");
+    const form = document.getElementById("aufnahmeForm");
+    if (!popup || !form) return;
+
+    popup.addEventListener("click", event => {
+      if (event.target === popup) window.closeAufnahmePopup();
+    });
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const button = form.querySelector('button[type="submit"]');
+      const originalText = button ? button.textContent : "";
+      const formData = new FormData(form);
+      formData.append("_subject", "Neuer Online-Aufnahmeantrag – Capri Club Westerholt");
+      formData.append("_replyto", String(formData.get("email") || ""));
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = "Antrag wird gesendet …";
+      }
+      const status = document.getElementById("aufnahmeStatus");
+      if (status) {
+        status.textContent = "";
+        status.className = "aufnahme-status";
+      }
+
+      try {
+        const response = await fetch(formspreeEndpoint, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+        const result = await response.json().catch(() => ({}));
+        if (response.ok) {
+          // Die Einleitung liegt außerhalb des Formulars und muss nach erfolgreichem
+          // Versand separat ausgeblendet werden.
+          const intro = popup.querySelector(".aufnahme-intro");
+          if (intro) intro.hidden = true;
+
+          const mitgliedschaft = String(formData.get("mitgliedschaft") || "");
+          let beitragText = "";
+          switch (mitgliedschaft) {
+            case "Vollmitglied":
+              beitragText = "15 € pro Monat.";
+              break;
+            case "Familienmitglied":
+              beitragText = "10 € pro Monat pro Familienmitglied.";
+              break;
+            case "Supporter":
+              beitragText = "40 € im ersten Jahr / 30 € jedes weitere Jahr.";
+              break;
+            default:
+              beitragText = "Bitte entnimm Deinen Beitrag den Angaben zur gewählten Mitgliedschaft.";
+          }
+
+          form.innerHTML = `
+            <div class="aufnahme-success" role="status" aria-live="polite">
+              <h3>Vielen Dank für Deinen Aufnahmeantrag!</h3>
+              <p>Dein Aufnahmeantrag wurde erfolgreich an den Capri-Club-Westerholt e.V. übermittelt.</p>
+              <p><strong>Wichtig:</strong> Der Aufnahmeantrag wird erst mit der Bezahlung des Clubbeitrags wirksam.</p>
+              <h4>Beitrag und Zahlungsdaten</h4>
+              <p><strong>Gewählte Mitgliedschaft:</strong> ${mitgliedschaft || "Nicht angegeben"}</p>
+              <p><strong>Mitgliedsbeitrag:</strong> ${beitragText}</p>
+              <p><strong>Bank:</strong> Stadtsparkasse Gladbeck<br>
+                 <strong>IBAN:</strong> DE97 4245 0040 0015 0007 63</p>
+              <p><strong>PayPal:</strong> ccwesterholt@gmx.de</p>
+              <p>Bitte gib bei der Zahlung Deinen Namen an, damit wir den Beitrag zuordnen können.</p>
+              <p>Wir melden uns so bald wie möglich bei Dir.</p>
+            </div>`;
+
+          return;
+        }
+        const message = Array.isArray(result.errors) ? result.errors.map(e => e.message).join(" ") : "";
+        if (status) {
+          status.className = "aufnahme-status aufnahme-status-error";
+          status.textContent = message || "Der Antrag konnte leider nicht gesendet werden. Bitte versuche es erneut.";
+        }
+      } catch (error) {
+        if (status) {
+          status.className = "aufnahme-status aufnahme-status-error";
+          status.textContent = "Der Antrag konnte nicht gesendet werden. Bitte prüfe Deine Internetverbindung und versuche es erneut.";
+        }
+      } finally {
+        if (button && document.body.contains(button)) {
+          button.disabled = false;
+          button.textContent = originalText;
+        }
+      }
+    });
+  }
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") window.closeAufnahmePopup();
+  });
+})();
