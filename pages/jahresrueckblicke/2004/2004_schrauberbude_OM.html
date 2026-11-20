@@ -191,7 +191,7 @@ fetch('../../../includes/header.html')
 
       <section class="werbung-bereich">
         <div class="werbung-titel">
-          <h2>Bildergalerie – 18 Fotos</h2>
+          <h2>Bildergalerie</h2>
         </div>
         <div class="galerie-inhalt">
           <p class="galerie-hinweis">Ein Klick auf ein Vorschaubild öffnet das jeweilige Foto in Großansicht.</p>
@@ -222,7 +222,7 @@ fetch('../../../includes/footer.html')
 
 <script>
 /*
-  Erwartete Bildnamen: 01.jpg bis 18.jpg
+  Erwartete Bildnamen: 01.jpg bis 17.jpg
   Ablage im Repository:
   data/jahresrueckblicke/2004/schrauberbude_OM/
 */
@@ -232,7 +232,7 @@ const lightbox = document.getElementById('fotoLightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const lightboxCaption = document.getElementById('lightboxCaption');
 
-for (let number = 1; number <= 18; number++) {
+for (let number = 1; number <= 17; number++) {
   const filename = String(number).padStart(2, '0') + '.jpg';
   const fullPath = photoFolder + filename;
   const link = document.createElement('a');
