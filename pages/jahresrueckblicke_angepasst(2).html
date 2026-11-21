@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jahresrückblicke | Capri Club Westerholt e.V.</title>
+<link rel="stylesheet" href="../css/home.css">
+<link rel="icon" type="image/x-icon" href="../images/favicon_set/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon_set/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon_set/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon_set/apple-touch-icon.png">
+<link rel="manifest" href="../images/favicon_set/site.webmanifest">
+<style>
+:root{--blue:#05019B;--dark:#05019B;--pale:#e9edff;--bg:#f3f5fa;--ink:#20243a;--muted:#68708a;--line:#dfe4f0}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Arial,Helvetica,sans-serif}
+.shell{width:min(1120px,calc(100% - 36px));margin:auto}.site-header{background:white;border-bottom:4px solid var(--blue);box-shadow:0 3px 14px #0000000d}
+.head{min-height:72px;display:flex;align-items:center;justify-content:space-between;padding:12px 0}.brand{color:var(--blue);font-weight:bold;text-decoration:none}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.2px}
+.headnote{text-align:right;color:var(--muted);font-size:13px}.hero{margin:28px 0 22px;padding:44px 20px;border-radius:18px;text-align:center;color:white;background:linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);box-shadow:0 8px 24px #08069b12}
+h1{font-size:clamp(24px,3vw,34px);line-height:1.2;margin:0 0 8px}.hero p{margin:0;color:#fff;font-size:17px;line-height:1.5}
+.intro{max-width:820px;margin:0 auto 24px;text-align:center;color:#4f5871}.intro strong{color:var(--blue)}
+.navwrap{position:sticky;top:0;z-index:5;background:#f3f5faf2;backdrop-filter:blur(8px);padding:10px 0;border-bottom:1px solid #d8deed}
+.nav{display:flex;gap:8px;overflow-x:auto;padding:2px 0 7px}.nav a{flex:none;padding:7px 12px;border:1px solid #d7dcf0;border-radius:30px;background:white;color:var(--blue);font-size:13px;font-weight:bold;text-decoration:none}.nav a:hover{background:var(--blue);color:white}
+.section-title{margin:32px 0 14px;color:var(--blue);font-size:21px}.section-title small{display:block;color:var(--muted);font-size:13px;font-weight:normal;margin-top:3px}
+.year{margin:0 0 28px;scroll-margin-top:82px}.yearhead{display:flex;align-items:baseline;gap:14px;border-bottom:3px solid var(--blue);padding:0 2px 10px;margin-bottom:12px}.yearhead h2{margin:0;color:var(--blue);font-size:36px;line-height:1}.yearhead span{color:var(--muted);font-size:14px}.tag{margin-left:auto;padding:4px 10px;border-radius:30px;background:var(--pale);color:var(--blue)!important;font-size:11px!important;font-weight:bold}
+ .topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:stretch}
+.topic{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 4px 14px #141e460a;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.topic:hover{transform:translateY(-4px);border-color:#aeb7ef;box-shadow:0 10px 24px #08069b1c}
+.photo{display:block;width:100%;height:205px;object-fit:cover;background:#e9edff;border:0;border-bottom:1px solid var(--line)}
+.copy{flex:1;min-width:0;padding:15px 17px 17px}.copy h3{margin:0;color:var(--blue);font-size:19px;line-height:1.3}.copy p{margin:4px 0 0;color:var(--muted);font-size:13px}.copy .date{display:block;margin-top:7px;color:var(--muted);font-size:13px}.arrow{display:none}
+.older{margin:30px 0 42px;padding:22px;border:1px solid var(--line);border-radius:15px;background:white;text-align:center}.older h2{margin:0 0 7px;color:var(--blue);font-size:21px}.older p{color:var(--muted);font-size:14px}.older a{display:inline-block;margin:4px;padding:7px 12px;border-radius:8px;background:var(--pale);color:var(--blue);font-size:13px;font-weight:bold;text-decoration:none}
+footer{padding:24px;background:var(--dark);color:#ffffffdf;text-align:center;font-size:13px}footer strong{color:white}
+@media(max-width:650px){.shell{width:calc(100% - 22px)}.headnote{display:none}.hero{margin-top:18px;padding:18px 15px}.hero p{font-size:15px}.yearhead{gap:9px;flex-wrap:wrap}.yearhead h2{font-size:31px}.yearhead span{font-size:12px}.tag{font-size:10px!important}.topics{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}.photo{height:180px}.copy{padding:13px 14px 15px}.copy h3{font-size:17px}.copy .date{font-size:12px}}
+@media(max-width:480px){.topics{grid-template-columns:1fr}.photo{height:210px}}
+
+/* Korrektur des Titelblocks: kompakt und sauber zweizeilig */
+.hero {
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 22px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+}
+.hero h1 {
+  text-shadow: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+  display: block !important;
+  position: static !important;
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+}
+.hero p {
+  display: block !important;
+  position: static !important;
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.45 !important;
+  text-align: center !important;
+}
+@media (max-width: 650px) {
+  .hero { padding: 18px 14px !important; gap: 6px !important; }
+  .hero p { font-size: 15px !important; }
+}
+
+</style></head><body>
+<!-- Zentraler Header wie in in-bearbeitung.html -->
+<div id="header"></div>
+<script>
+fetch('../includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        const currentPage = (window.location.pathname.split('/').pop() || '').toLowerCase();
+        const nav = document.getElementById('mainNavigation');
+
+        if (nav) {
+            nav.querySelectorAll('a.active, .submenu-toggle.active')
+                .forEach(el => el.classList.remove('active'));
+
+            const currentLink = Array.from(nav.querySelectorAll('a[href]')).find(link => {
+                const target = (link.getAttribute('href') || '')
+                    .split(/[?#]/)[0].split('/').pop().toLowerCase();
+                return target === currentPage;
+            });
+
+            if (currentLink) {
+                currentLink.classList.add('active');
+                const parent = currentLink.closest('.has-submenu');
+                const parentButton = parent && parent.querySelector('.submenu-toggle');
+                if (parentButton) parentButton.classList.add('active');
+            }
+        }
+
+        const header = document.querySelector('#header header');
+        const toggle = document.getElementById('mobileMenuToggle');
+        if (!header || !toggle || !nav) return;
+
+        function closeMobileMenu() {
+            header.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+        }
+
+        function closeAllSubmenus(except) {
+            nav.querySelectorAll('.has-submenu').forEach(item => {
+                if (item !== except) {
+                    item.classList.remove('submenu-open');
+                    const button = item.querySelector('.submenu-toggle');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        toggle.addEventListener('click', event => {
+            event.stopPropagation();
+            const open = header.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+
+        nav.querySelectorAll('.has-submenu').forEach(item => {
+            const button = item.querySelector('.submenu-toggle');
+            if (!button) return;
+            button.addEventListener('click', event => {
+                event.preventDefault();
+                event.stopPropagation();
+                const isOpen = item.classList.contains('submenu-open');
+                closeAllSubmenus(item);
+                item.classList.toggle('submenu-open', !isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+        });
+
+        nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            closeAllSubmenus();
+            closeMobileMenu();
+        }));
+
+        document.addEventListener('click', event => {
+            if (!header.contains(event.target)) {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeAllSubmenus();
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) closeMobileMenu();
+        });
+    })
+    .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+<main class="shell">
+<section class="hero">
+  <h1>Jahresrückblicke</h1>
+  <p>Unsere Geschichte. Unsere Leidenschaft. Unsere Erinnerungen.</p>
+</section>
+<p class="intro">Viele Jahre Capri-Leidenschaft, gemeinsame Treffen, Ausfahrten und unvergessliche Momente. Hier blicken wir auf die <strong>Höhepunkte unserer Clubgeschichte</strong> zurück – Jahr für Jahr, von 2004 bis heute.</p>
+<div class="navwrap"><nav class="nav shell" id="yearNav" aria-label="Jahresnavigation"></nav></div>
+<h2 class="section-title">Unsere Erinnerungen – Jahr für Jahr</h2>
+<div id="years"></div>
+<section class="older"><h2>23 Jahre Capri-Leidenschaft</h2><p>Von den Anfängen 2004 bis heute – und jedes Jahr kommen neue Erinnerungen hinzu.</p><div id="bottomLinks"></div></section>
+</main><!-- Zentraler Footer wie in in-bearbeitung.html -->
+<div id="footer"></div>
+<script>
+fetch('../includes/footer.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Footer konnte nicht geladen werden.');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => console.error('Fehler beim Laden des Footers:', error));
+</script>
+<script>
+/*
+ * Jahresrückblicke:
+ * Für jedes Jahr können beliebig viele Beiträge mit eigenen Titeln angelegt werden.
+ * Die Links sind relativ zu dieser Datei (pages/jahresrueckblicke.html).
+ */
+const jahresbeitraege = {
+  2004: [
+    {
+      titel: "Grillfeier",
+      datei: "2004_grillfeier.html",
+      bildOrdner: "grillfeier",
+      datum: "11. Juni 2024"
+    },
+    {
+      titel: "Schleudertrauma",
+      datei: "2004_schleudertrauma.html",
+      bildOrdner: "schleudertrauma"
+    },
+    {
+      titel: "Schrauberbude OM",
+      datei: "2004_schrauberbude_OM.html",
+      bildOrdner: "schrauberbude_OM"
+    }
+  ]
+
+  // Weitere Jahre später einfach ergänzen, zum Beispiel:
+  // 2005: [
+  //   { titel: "Euer individueller Titel", datei: "dateiname.html" }
+  // ]
+};
+
+const nav = document.getElementById("yearNav");
+const years = document.getElementById("years");
+const bottom = document.getElementById("bottomLinks");
+
+for (let y = 2026; y >= 2004; y--) {
+  const id = "jahr-" + y;
+  const beitraege = jahresbeitraege[y] || [];
+
+  const link = document.createElement("a");
+  link.href = "#" + id;
+  link.textContent = y;
+  nav.appendChild(link);
+
+  const section = document.createElement("section");
+  section.className = "year";
+  section.id = id;
+
+  const heading = document.createElement("div");
+  heading.className = "yearhead";
+  heading.innerHTML = `<h2>${y}</h2>`;
+  section.appendChild(heading);
+
+  const list = document.createElement("div");
+  list.className = "topics";
+
+  if (beitraege.length) {
+    beitraege.forEach((beitrag, i) => {
+      const a = document.createElement("a");
+      a.className = "topic";
+      a.href = `jahresrueckblicke/${y}/${beitrag.datei}`;
+      const bildPfad = `../data/jahresrueckblicke/${y}/${beitrag.bildOrdner}/00.jpg`;
+
+      a.innerHTML = `
+        <img class="photo" src="${bildPfad}" alt="Vorschaubild zu ${beitrag.titel} ${y}" loading="lazy"
+             onerror="this.style.visibility='hidden'">
+        <div class="copy">
+          <h3>${beitrag.titel}</h3>
+          ${beitrag.datum ? `<span class="date">${beitrag.datum}</span>` : ""}
+        </div>
+        <span class="arrow" aria-hidden="true">›</span>
+      `;
+      list.appendChild(a);
+    });
+  } else {
+    const empty = document.createElement("p");
+    empty.style.cssText = "margin:8px 4px 12px;color:var(--muted);font-size:14px";
+    empty.textContent = "Weitere Rückblicke für dieses Jahr folgen.";
+    list.appendChild(empty);
+  }
+
+  section.appendChild(list);
+  years.appendChild(section);
+
+  const bottomLink = document.createElement("a");
+  bottomLink.href = "#" + id;
+  bottomLink.textContent = y;
+  bottom.appendChild(bottomLink);
+}
+</script></body></html>
