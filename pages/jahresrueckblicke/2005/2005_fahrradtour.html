@@ -199,7 +199,7 @@ fetch('../../../includes/header.html')
 
       <section class="werbung-bereich">
         <div class="werbung-titel">
-          <h2>Bildergalerie – 20 Fotos</h2>
+          <h2>Bildergalerie – 6 Fotos</h2>
         </div>
         <div class="galerie-inhalt">
           <p class="galerie-hinweis">Ein Klick auf ein Vorschaubild öffnet das jeweilige Foto in Großansicht.</p>
@@ -232,7 +232,7 @@ fetch('../../../includes/footer.html')
 
 <script>
 /*
-  Erwartete Bildnamen: 01.jpg bis 20.jpg
+  Erwartete Bildnamen: 01.jpg bis 06.jpg
   Ablage im Repository:
   data/jahresrueckblicke/2005/fahrradtour/
 */
@@ -241,7 +241,7 @@ const grid = document.getElementById('fotoGrid');
 const lightbox = document.getElementById('fotoLightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const lightboxCaption = document.getElementById('lightboxCaption');
-const totalPhotos = 20;
+const totalPhotos = 6;
 let currentPhoto = 1;
 
 function showPhoto(number) {
