@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erste HistoriCar in Duisburg – 2005 | Capri Club Westerholt e.V.</title>
+  <link rel="stylesheet" href="../../../css/home.css">
+  <style>
+    .rueckblick-container{max-width:1200px;margin:0 auto;padding:24px 18px 48px}
+    .rueckblick-kopf{margin-bottom:26px;padding:22px 26px;color:#fff;border-radius:10px;background:linear-gradient(135deg,#123b63,#287db2)}
+    .rueckblick-kopf h1{margin:0 0 8px;font-size:clamp(1.45rem,3vw,2.15rem);line-height:1.2}
+    .rueckblick-datum{margin:0;opacity:.92;font-size:.98rem}
+    .rueckblick-text{background:#fff;border-radius:10px;padding:24px;margin-bottom:28px;line-height:1.65;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+    .rueckblick-text h2{margin:24px 0 8px;color:#174f7a;font-size:1.2rem}
+    .rueckblick-galerie{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+    .rueckblick-bild{margin:0;overflow:hidden;border-radius:8px;background:#f2f4f6;box-shadow:0 2px 8px rgba(0,0,0,.12);cursor:pointer}
+    .rueckblick-bild img{display:block;width:100%;height:180px;object-fit:cover;transition:transform .2s ease}
+    .rueckblick-bild:hover img{transform:scale(1.035)}
+    .rueckblick-bild figcaption{padding:8px 10px;color:#444;font-size:.88rem;text-align:center}
+    .lightbox{display:none;position:fixed;z-index:9999;inset:0;align-items:center;justify-content:center;padding:55px 65px;background:rgba(0,0,0,.94)}
+    .lightbox.aktiv{display:flex}.lightbox img{max-width:100%;max-height:85vh;object-fit:contain;box-shadow:0 4px 24px rgba(0,0,0,.5)}
+    .lightbox-schliessen,.lightbox-pfeil{position:absolute;border:0;color:#fff;background:rgba(255,255,255,.14);cursor:pointer;border-radius:50%;width:46px;height:46px;font-size:30px;line-height:1}
+    .lightbox-schliessen{top:14px;right:18px}.lightbox-pfeil{top:50%;transform:translateY(-50%)}.lightbox-zurueck{left:12px}.lightbox-weiter{right:12px}
+    .lightbox-zaehler{position:absolute;bottom:16px;left:0;right:0;color:#fff;text-align:center;font-size:.95rem}
+    @media(max-width:600px){.rueckblick-container{padding:14px 10px 32px}.rueckblick-text{padding:18px}.rueckblick-galerie{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.rueckblick-bild img{height:135px}.lightbox{padding:55px 42px}.lightbox-pfeil{width:38px;height:38px;font-size:25px}}
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="rueckblick-container">
+    <header class="rueckblick-kopf">
+      <h1>Erste HistoriCar in Duisburg – der CCW war von Anfang an dabei!</h1>
+      <p class="rueckblick-datum">22. und 23. Oktober 2005 · Landschaftspark Duisburg-Nord</p>
+    </header>
+    <article class="rueckblick-text">
+      <p>Am 22. und 23. Oktober 2005 feierte die HistoriCar im Landschaftspark Duisburg-Nord ihre Premiere. Das ehemalige Hüttenwerk wurde an diesem Wochenende zum Treffpunkt zahlreicher Oldtimerfreunde. Die Veranstaltung sollte zu einer festen Größe im Terminkalender der Freunde historischer Fahrzeuge werden – und der Capri Club Westerholt war von Anfang an dabei!</p>
+      <h2>Stefan Glowatz auf der Showbühne</h2>
+      <p>Am Samstag präsentierte Stefan Glowatz seinen Capri und den Capri Club Westerholt souverän auf der Showbühne. Dabei vertrat er unseren Club und zeigte die Begeisterung für unsere Fahrzeuge.</p>
+      <h2>Benjamin Dressler übernimmt am Sonntag</h2>
+      <p>Am Sonntag war Benjamin Dressler an der Reihe. Auch er machte auf der Bühne eine gute Figur und präsentierte den CCW vor dem Publikum.</p>
+      <h2>Ein Mercedes-Lkw, der es fast zum Clubfahrzeug geschafft hätte</h2>
+      <p>Abseits der Bühne gab es ebenfalls interessante Fahrzeuge zu entdecken. Besonders angetan hatte es uns ein Mercedes-Lkw aus dem Jahr 1955. Beinahe wäre er sogar Eigentum des Capri Clubs geworden – leider scheiterte der Kauf dann doch am notwendigen Kleingeld!</p>
+      <h2>Huberts Taunus als gefragte Bühnenrequisite</h2>
+      <p>Auch der Ford Taunus P7b 17 M RS von Hubert Kappmann war immer wieder auf der Showbühne gefragt und diente dort als passende Requisite.</p>
+      <p>Ein gelungenes Premierenwochenende mit vielen historischen Fahrzeugen, tollen Eindrücken und einem Capri Club Westerholt, der von Anfang an Teil dieser Veranstaltung war.</p>
+    </article>
+    <section aria-label="Bildergalerie HistoriCar 2005">
+      <div class="rueckblick-galerie" id="rueckblickGalerie"></div>
+    </section>
+  </main>
+  <div id="footer"></div>
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Bildansicht">
+    <button class="lightbox-schliessen" id="lbSchliessen" aria-label="Schließen">&times;</button>
+    <button class="lightbox-pfeil lightbox-zurueck" id="lbZurueck" aria-label="Vorheriges Bild">&#8249;</button>
+    <img id="lbBild" src="" alt="">
+    <button class="lightbox-pfeil lightbox-weiter" id="lbWeiter" aria-label="Nächstes Bild">&#8250;</button>
+    <div class="lightbox-zaehler" id="lbZaehler"></div>
+  </div>
+  <script>
+    fetch("../../../includes/header.html").then(r=>r.text()).then(t=>document.getElementById("header").innerHTML=t).catch(e=>console.error("Header konnte nicht geladen werden:",e));
+    fetch("../../../includes/footer.html").then(r=>r.text()).then(t=>document.getElementById("footer").innerHTML=t).catch(e=>console.error("Footer konnte nicht geladen werden:",e));
+
+    // Erwartete Bildnamen: 01.jpg bis 25.jpg
+    const bildPfad="../../../data/jahresrueckblicke/2005/historicar/";
+    const anzahlBilder=25;
+    const galerie=document.getElementById("rueckblickGalerie");
+    const bilder=[];
+    for(let i=1;i<=anzahlBilder;i++){
+      const nummer=String(i).padStart(2,"0");
+      const quelle=`${bildPfad}${nummer}.jpg`;
+      bilder.push(quelle);
+      const figure=document.createElement("figure");
+      figure.className="rueckblick-bild";
+      figure.innerHTML=`<img src="${quelle}" alt="HistoriCar 2005 – Bild ${nummer}" loading="lazy"><figcaption>HistoriCar 2005 – Bild ${nummer}</figcaption>`;
+      figure.addEventListener("click",()=>lightboxOeffnen(i-1));
+      galerie.appendChild(figure);
+    }
+    const lightbox=document.getElementById("lightbox"),lbBild=document.getElementById("lbBild"),lbZaehler=document.getElementById("lbZaehler");
+    let aktuellesBild=0;
+    function bildAnzeigen(index){aktuellesBild=(index+bilder.length)%bilder.length;lbBild.src=bilder[aktuellesBild];lbBild.alt=`HistoriCar 2005 – Bild ${String(aktuellesBild+1).padStart(2,"0")}`;lbZaehler.textContent=`Bild ${aktuellesBild+1} von ${bilder.length}`;}
+    function lightboxOeffnen(index){bildAnzeigen(index);lightbox.classList.add("aktiv");document.body.style.overflow="hidden";}
+    function lightboxSchliessen(){lightbox.classList.remove("aktiv");document.body.style.overflow="";}
+    document.getElementById("lbSchliessen").addEventListener("click",lightboxSchliessen);
+    document.getElementById("lbZurueck").addEventListener("click",()=>bildAnzeigen(aktuellesBild-1));
+    document.getElementById("lbWeiter").addEventListener("click",()=>bildAnzeigen(aktuellesBild+1));
+    lightbox.addEventListener("click",e=>{if(e.target===lightbox)lightboxSchliessen();});
+    document.addEventListener("keydown",e=>{if(!lightbox.classList.contains("aktiv"))return;if(e.key==="Escape")lightboxSchliessen();if(e.key==="ArrowLeft")bildAnzeigen(aktuellesBild-1);if(e.key==="ArrowRight")bildAnzeigen(aktuellesBild+1);});
+  </script>
+</body>
+</html>
