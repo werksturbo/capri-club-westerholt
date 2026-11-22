@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baumarkteroeffnung | Jahresrückblicke 2004</title>
+  <meta name="description" content="Rückblick auf die Einladung des Capri Club Westerholt zur Baumarkteröffnung im April 2004.">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="icon" type="image/x-icon" href="../../../images/favicon_set/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../images/favicon_set/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon_set/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../images/favicon_set/apple-touch-icon.png">
+  <link rel="manifest" href="../../../images/favicon_set/site.webmanifest">
+
+  <style>
+    .werbung-page { padding: 32px 0 50px; }
+    .werbung-header {
+      background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+      border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,.10);
+      padding: 14px 20px; margin-bottom: 20px; color: #fff;
+    }
+    .werbung-header h1 { margin: 0; color: #fff; font-size: 24px; line-height: 1.25; font-weight: 700; }
+    .werbung-bereich {
+      background: rgba(255,255,255,.92); border: 1px solid #dfe5ec;
+      border-radius: 12px; box-shadow: 0 7px 18px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+      margin-bottom: 24px; overflow: hidden;
+    }
+    .werbung-titel {
+      background: linear-gradient(90deg, #05019B 0%, #1d7fc3 100%);
+      color: #fff; padding: 12px 18px; box-shadow: 0 2px 7px rgba(0,0,0,.12);
+    }
+    .werbung-titel h2 { margin: 0; color: #fff; font-size: 20px; line-height: 1.3; font-weight: 700; }
+    .artikel-inhalt {
+      padding: 26px 30px 30px;
+      background: linear-gradient(to bottom, #f7f9fb 0%, #f2f5f8 100%);
+    }
+    .artikel-text { max-width: 1050px; margin: 0 auto; color: #243746; }
+    .artikel-text p { margin: 0 0 18px; color: #243746; font-size: 16px; line-height: 1.65; }
+    .artikel-text p:last-child { margin-bottom: 0; }
+    .artikel-text .artikel-untertitel { font-weight: 700; font-size: 17px; margin-bottom: 5px; }
+    .artikel-text .artikel-datum { color: #526273; font-weight: 700; margin-bottom: 18px; }
+    .sendetermine {
+      margin: 0 0 22px; padding: 16px 20px; background: #fff;
+      border-left: 5px solid #05019B; border-radius: 0 8px 8px 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,.05);
+    }
+    .sendetermine strong { display: block; margin-bottom: 7px; color: #05019B; }
+    .sendetermine ul { margin: 0; padding-left: 20px; }
+    .sendetermine li { margin: 3px 0; line-height: 1.5; }
+    .galerie-inhalt { padding: 22px; background: linear-gradient(to bottom, #f7f9fb 0%, #f2f5f8 100%); }
+    .galerie-hinweis { margin: 0 0 17px; color: #526273; font-size: 14px; }
+    .foto-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+    .foto-link {
+      display: block; overflow: hidden; border-radius: 9px; background: #e7edf5;
+      border: 1px solid #d7e0eb; box-shadow: 0 3px 9px rgba(0,0,0,.08);
+      aspect-ratio: 4 / 3; transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .foto-link:hover, .foto-link:focus-visible { transform: translateY(-3px); box-shadow: 0 7px 16px rgba(0,0,0,.15); outline: 2px solid #1d7fc3; }
+    .foto-link img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .foto-lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      align-items: center; justify-content: center; padding: 28px;
+      background: rgba(0,0,0,.88);
+    }
+    .foto-lightbox.open { display: flex; }
+    .foto-lightbox img { max-width: min(1100px, 94vw); max-height: 88vh; object-fit: contain; box-shadow: 0 8px 30px rgba(0,0,0,.4); }
+    .lightbox-close {
+      position: absolute; top: 14px; right: 22px; border: 0; background: transparent;
+      color: #fff; font-size: 38px; line-height: 1; cursor: pointer; z-index: 2;
+    }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 48px; height: 64px; border: 0; border-radius: 8px;
+      background: rgba(255,255,255,.18); color: #fff;
+      font-size: 42px; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s ease; z-index: 2;
+    }
+    .lightbox-nav:hover, .lightbox-nav:focus-visible {
+      background: rgba(255,255,255,.35); outline: 2px solid #fff;
+    }
+    .lightbox-prev { left: 18px; }
+    .lightbox-next { right: 18px; }
+    .lightbox-caption { position: absolute; bottom: 12px; left: 0; right: 0; color: #fff; text-align: center; font-size: 14px; }
+    @media (max-width: 900px) { .foto-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (max-width: 600px) {
+      .werbung-page { padding: 20px 0 35px; }
+      .werbung-header { padding: 15px; }
+      .werbung-header h1 { font-size: 22px; }
+      .werbung-titel { padding: 11px 14px; }
+      .werbung-titel h2 { font-size: 18px; }
+      .artikel-inhalt { padding: 18px 15px 22px; }
+      .artikel-text p, .sendetermine { font-size: 15px; line-height: 1.6; }
+      .sendetermine { padding: 14px 16px; }
+      .galerie-inhalt { padding: 14px; }
+      .foto-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .foto-lightbox { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Zentraler Header wie in in-bearbeitung.html -->
+<div id="header"></div>
+<script>
+fetch('../../../includes/header.html')
+  .then(response => {
+    if (!response.ok) throw new Error('Header konnte nicht geladen werden.');
+    return response.text();
+  })
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+    const currentPage = (window.location.pathname.split('/').pop() || '').toLowerCase();
+    const nav = document.getElementById('mainNavigation');
+    if (nav) {
+      nav.querySelectorAll('a.active, .submenu-toggle.active').forEach(el => el.classList.remove('active'));
+      const currentLink = Array.from(nav.querySelectorAll('a[href]')).find(link => {
+        const target = (link.getAttribute('href') || '').split(/[?#]/)[0].split('/').pop().toLowerCase();
+        return target === currentPage;
+      });
+      if (currentLink) {
+        currentLink.classList.add('active');
+        const parent = currentLink.closest('.has-submenu');
+        const parentButton = parent && parent.querySelector('.submenu-toggle');
+        if (parentButton) parentButton.classList.add('active');
+      }
+    }
+    const header = document.querySelector('#header header');
+    const toggle = document.getElementById('mobileMenuToggle');
+    if (!header || !toggle || !nav) return;
+    function closeMobileMenu() {
+      header.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Menü öffnen');
+    }
+    function closeAllSubmenus(except) {
+      nav.querySelectorAll('.has-submenu').forEach(item => {
+        if (item !== except) {
+          item.classList.remove('submenu-open');
+          const button = item.querySelector('.submenu-toggle');
+          if (button) button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    toggle.addEventListener('click', event => {
+      event.stopPropagation();
+      const open = header.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    });
+    nav.querySelectorAll('.has-submenu').forEach(item => {
+      const button = item.querySelector('.submenu-toggle');
+      if (!button) return;
+      button.addEventListener('click', event => {
+        event.preventDefault(); event.stopPropagation();
+        const isOpen = item.classList.contains('submenu-open');
+        closeAllSubmenus(item);
+        item.classList.toggle('submenu-open', !isOpen);
+        button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      });
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      closeAllSubmenus(); closeMobileMenu();
+    }));
+    document.addEventListener('click', event => {
+      if (!header.contains(event.target)) { closeAllSubmenus(); closeMobileMenu(); }
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') { closeAllSubmenus(); closeMobileMenu(); }
+    });
+    window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMobileMenu(); });
+  })
+  .catch(error => console.error('Fehler beim Laden des Headers:', error));
+</script>
+
+<main>
+  <section class="werbung-page">
+    <div class="container">
+      <div class="werbung-header">
+        <h1>Jahresrückblicke 2004</h1>
+      </div>
+
+      <section class="werbung-bereich">
+        <div class="werbung-titel">
+          <h2>Baumarkteroeffnung</h2>
+        </div>
+        <div class="artikel-inhalt">
+          <div class="artikel-text">
+            <p class="artikel-untertitel">Baumarkteroeffnung</p>
+            <p class="artikel-datum">April 2004</p>
+
+            <p>Im April 2004 gab es für den Capri Club Westerholt eine besondere Einladung: Ein Baumarkt feierte seine Neueröffnung und hatte den CCW dazu eingeladen, mit einigen Fahrzeugen dabei zu sein.</p>
+
+            <p>Am Samstagvormittag machten sich Stefan, Markus – damals noch mit seinem Taunus unterwegs –, Benjamin und Dirk mit insgesamt vier Fahrzeugen auf den Weg. Für eine kleine Attraktion war ebenfalls gesorgt: Der ADAC bot einen kostenlosen Bremsen- und Stoßdämpfertest an, den wir natürlich auch gerne in Anspruch nahmen.</p>
+
+            <p>So verbrachten wir einen abwechslungsreichen Samstagvormittag, präsentierten unsere Fahrzeuge und nutzten die Gelegenheit, gemeinsam ein wenig Zeit zu verbringen.</p>
+          </div>          </div>
+      </section>
+
+      <section class="werbung-bereich">
+        <div class="werbung-titel">
+          <h2>Bildergalerie – 12 Fotos</h2>
+        </div>
+        <div class="galerie-inhalt">
+          <p class="galerie-hinweis">Ein Klick auf ein Vorschaubild öffnet das jeweilige Foto in Großansicht.</p>
+          <div class="foto-grid" id="fotoGrid"></div>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<div class="foto-lightbox" id="fotoLightbox" role="dialog" aria-modal="true" aria-label="Foto-Großansicht">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Schließen">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Vorheriges Foto">&#8249;</button>
+  <img id="lightboxImage" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Nächstes Foto">&#8250;</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- Zentraler Footer wie in in-bearbeitung.html -->
+<div id="footer"></div>
+<script>
+fetch('../../../includes/footer.html')
+  .then(response => {
+    if (!response.ok) throw new Error('Footer konnte nicht geladen werden.');
+    return response.text();
+  })
+  .then(data => { document.getElementById('footer').innerHTML = data; })
+  .catch(error => console.error('Fehler beim Laden des Footers:', error));
+</script>
+
+<script>
+/*
+  Erwartete Bildnamen: 01.jpg bis 12.jpg
+  Ablage im Repository:
+  data/jahresrueckblicke/2004/baumarkteroeffnung/
+*/
+const photoFolder = '../../../data/jahresrueckblicke/2004/baumarkteroeffnung/';
+const grid = document.getElementById('fotoGrid');
+const lightbox = document.getElementById('fotoLightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const totalPhotos = 12;
+let currentPhoto = 1;
+
+function showPhoto(number) {
+  currentPhoto = ((number - 1 + totalPhotos) % totalPhotos) + 1;
+  const filename = String(currentPhoto).padStart(2, '0') + '.jpg';
+  const fullPath = photoFolder + filename;
+  lightboxImage.src = fullPath;
+  lightboxImage.alt = 'Baumarkteroeffnung 2004 – Foto ' + String(currentPhoto).padStart(2, '0');
+  lightboxCaption.textContent = 'Foto ' + String(currentPhoto).padStart(2, '0') + ' von ' + totalPhotos;
+}
+
+for (let number = 1; number <= totalPhotos; number++) {
+  const filename = String(number).padStart(2, '0') + '.jpg';
+  const fullPath = photoFolder + filename;
+  const link = document.createElement('a');
+  link.className = 'foto-link';
+  link.href = fullPath;
+  link.setAttribute('aria-label', 'Foto ' + String(number).padStart(2, '0') + ' groß anzeigen');
+  link.innerHTML = `<img src="${fullPath}" alt="Baumarkteroeffnung 2004 – Foto ${String(number).padStart(2, '0')}" loading="lazy">`;
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    showPhoto(number);
+    lightbox.classList.add('open');
+  });
+  grid.appendChild(link);
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightboxImage.src = '';
+}
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', event => {
+  event.stopPropagation();
+  showPhoto(currentPhoto - 1);
+});
+document.getElementById('lightboxNext').addEventListener('click', event => {
+  event.stopPropagation();
+  showPhoto(currentPhoto + 1);
+});
+lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', event => {
+  if (!lightbox.classList.contains('open')) return;
+  if (event.key === 'Escape') closeLightbox();
+  if (event.key === 'ArrowLeft') showPhoto(currentPhoto - 1);
+  if (event.key === 'ArrowRight') showPhoto(currentPhoto + 1);
+});
+</script>
+</body>
+</html>
